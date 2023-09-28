@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function testFunction(){
+        return "merci bcp";
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +45,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function roles(){
+       return  $this->belongsToMany(Role::class,"users_roles","user_id","role_id");
+    } 
+
+    public function hasRole($role){
+        return $this->roles()->where("nomRole",$role)->first()!==null;
+    }
+
+    public function hasAnyRole($roleS){
+        return $this->roles()->whereIn("nomRole",$roleS)->first()!==null;
+    }
+
+    public function Vente(){
+        return  $this->hasMany(Vente::class);
+    }
+
+
 }

@@ -16,12 +16,17 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');//$table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreignId("agents_id")->constrained("agents");
+            $table->foreignId("societe_id")->constrained("societe");
+
         });
+        schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -31,6 +36,15 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+
+        Schema::table("agents", function(Blueprint $table){
+            $table->dropConstrainedForeignId("agents_id");
+        });
+
+        Schema::table("societe", function(Blueprint $table){
+            $table->dropConstrainedForeignId("societe_id");
+        });
+
         Schema::dropIfExists('users');
     }
 }
