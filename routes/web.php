@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Counter;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('layouts.master');
 });
+
+
+Route::get("/test", Counter::class)->name("test.index");
+
+
+
+
+
+
+
