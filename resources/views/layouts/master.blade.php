@@ -24,6 +24,10 @@
             <div class="nk-wrap ">
                 <!-- main header @s -->
                 <x-navbar/>
+
+                {{-- <x-navbar0/> --}}
+
+
                 <!-- main header @e -->
 
                 <!-- content @s -->

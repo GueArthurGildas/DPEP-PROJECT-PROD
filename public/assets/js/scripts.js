@@ -425,9 +425,9 @@
           headerTag: ".nk-wizard-head",
           bodyTag: ".nk-wizard-content",
           labels: {
-            finish: "Submit",
-            next: "Next",
-            previous: "Prev",
+            finish: "Soumettre",
+            next: "Suivant" ,// "Next",
+            previous: "Retour", //Prev",
             loading: "Loading ..."
           },
           titleTemplate: '<span class="number">0#index#</span> #title#',

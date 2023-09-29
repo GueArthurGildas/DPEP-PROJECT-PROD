@@ -3,8 +3,9 @@
                         <div class="nk-header-wrap">
                             <div class="nk-header-brand">
                                 <a href="html/index.html" class="logo-link">
-                                    <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                                    <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                                    {{-- <img class="" src="{{asset("images/logo_mirah.png")}}" alt="User profile picture"> --}}
+                                    <img class="" src="{{asset("images/logo_mirah.png")}}" srcset="{{asset("images/logo_mirah.png")}}"  alt="logo">
+                                    {{-- <img class="" src="{{asset("images/logo_mirah.png")}}" srcset="{{asset("images/logo_mirah.png")}}" alt="logo-dark"> --}}
                                 </a>
                             </div><!-- .nk-header-brand -->
                             <div class="nk-header-menu">
@@ -20,7 +21,7 @@
                                         </a>
                                         <ul class="nk-menu-sub">
                                             <li class="nk-menu-item">
-                                                <a href="{{route('test.index')}}" class="nk-menu-link"><span class="nk-menu-text">Messages</span></a>
+                                                <a href="{{ route('logout') }}" class="nk-menu-link"><span class="nk-menu-text">Messages</span></a>                                                        
                                             </li>
                                             <li class="nk-menu-item">
                                                 <a href="html/apps-inbox.html" class="nk-menu-link"><span class="nk-menu-text">Inbox / Mail</span></a>
@@ -58,41 +59,7 @@
                             </div><!-- .nk-header-menu -->
                             <div class="nk-header-tools">
                                 <ul class="nk-quick-nav">
-                                    <li class="dropdown language-dropdown d-none d-sm-block me-n1">
-                                        <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
-                                            <div class="quick-icon border border-light">
-                                                <img class="icon" src="./images/flags/english-sq.png" alt="">
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-s1">
-                                            <ul class="language-list">
-                                                <li>
-                                                    <a href="#" class="language-item">
-                                                        <img src="./images/flags/english.png" alt="" class="language-flag">
-                                                        <span class="language-name">English</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="language-item">
-                                                        <img src="./images/flags/spanish.png" alt="" class="language-flag">
-                                                        <span class="language-name">Español</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="language-item">
-                                                        <img src="./images/flags/french.png" alt="" class="language-flag">
-                                                        <span class="language-name">Français</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="language-item">
-                                                        <img src="./images/flags/turkey.png" alt="" class="language-flag">
-                                                        <span class="language-name">Türkçe</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li><!-- .dropdown -->
+                                <img class="" src="{{asset("images/CI-Logov-2.png")}}" alt="User profile picture">
                                     <li class="dropdown notification-dropdown">
                                         <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
                                             <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
@@ -180,8 +147,8 @@
                                                         <span>AB</span>
                                                     </div>
                                                     <div class="user-info">
-                                                        <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                        <span class="sub-text">info@softnio.com</span>
+                                                        <span class="lead-text"> {{userFullName()}}</span>
+                                                        <span class="sub-text">{{Auth()->user()->email}}</span>
                                                     </div>
                                                     <div class="user-action">
                                                         <a class="btn btn-icon me-n2" href="html/user-profile-setting.html"><em class="icon ni ni-setting"></em></a>
@@ -198,7 +165,16 @@
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li>
+                                                        <a href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault();
+                                                                            document.getElementById('logout-form').submit();">
+                                                            <em class="icon ni ni-signout"></em><span>Déconnexion</span>
+                                                        </a>
+                                                    </li>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                    </form>
                                                 </ul>
                                             </div>
                                         </div>

@@ -1,8 +1,9 @@
+
 <div>
    <div class="nk-block">
       <div class="row g-gs">
-         <div class="col-lg-4 col-xl-4 col-xxl-3">
-            <div class="card card-bordered ">
+         <div class="col-lg-4 col-xl-4 col-xxl-3 ">
+            <div class="card card-bordered">
                <div class="card-inner-group">
                   <div class="card-inner">
                      <div class="user-card user-card-s2">
@@ -11,8 +12,8 @@
                         </div>
                         <div class="user-info">
                            <div class="badge bg-light rounded-pill ucap">Platinam</div>
-                           <h5>Francis Mitcham</h5>
-                           <span class="sub-text">info@softnio.com</span>
+                           <h5>{{Auth()->user()->name}}</h5>
+                           <span class="sub-text">{{Auth()->user()->email}}</span>
                         </div>
                      </div>
                   </div>
@@ -86,72 +87,36 @@
          </div>
          <!-- .col -->
          <div class="col-lg-8 col-xl-8 col-xxl-9">
-            <div class="nk-block-head nk-block-head-sm nk-block-head">
-               <div class="nk-block-between">
-                  <div class="nk-block-head-content">
-                     <div class="nk-block-head-content">
-                     <div class="nk-block-head-sub"><a class="back-to" href="html/subscription/subscriptions.html"><em class="icon ni ni-arrow-left"></em><span>Subscription</span></a></div>
-                        <h2 class="nk-block-title fw-normal">Mes demandes</h2>
-                        <div class="nk-block-des">
-                           <p>Your subscription renews on Oct 28, 2020 <span class="text-soft">(11 months 16 days remaining)</span> <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- .nk-block-head-content -->
-                  <div class="nk-block-head-content">
-                     <div class="toggle-wrap nk-block-tools-toggle">
-                        <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
-                        <div class="toggle-expand-content" data-content="pageMenu">
-                           <ul class="nk-block-tools g-3">
-                              <li>
-                                 <div class="drodown">
-                                    <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown"><em class="d-none d-sm-inline icon ni ni-filter-alt"></em><span>Filtrer par</span><em class="dd-indc icon ni ni-chevron-right"></em></a>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                       <ul class="link-list-opt no-bdr">
-                                          <li><a href="#"><span>Open</span></a></li>
-                                          <li><a href="#"><span>Closed</span></a></li>
-                                          <li><a href="#"><span>Onhold</span></a></li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </li>
-                              <li class="nk-block-tools-opt d-none d-sm-block">
-                                 <a href="#" class="btn btn-primary"><em class="icon ni ni-plus"></em><span>Nouvelle demande</span></a>
-                              </li>
-                              <li class="nk-block-tools-opt d-block d-sm-none">
-                                 <a href="#" class="btn btn-icon btn-primary"><em class="icon ni ni-plus"></em></a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <!-- .toggle-wrap -->
-                  </div>
-                  <!-- .nk-block-head-content -->
-               </div>
-               <!-- .nk-block-between -->
-            </div>
-            <!-- .nk-block-head -->
             <div class="nk-block">
+               <div class="nk-block-head nk-block-head-lg wide-sm">
+                  <div class="nk-block-head-content">
+                     <div class="nk-block-head-sub"><a class="back-to" href="{{route('home')}}"><em class="icon ni ni-arrow-left"></em><span>Retour</span></a></div>
+                     <h2 class="nk-block-title fw-normal">Mes Demandes</h2>
+                  </div>
+               </div>
+               <!-- nk-block-head -->
                <div class="card card-bordered card-stretch">
-                @for ($i = 1; $i <= 4; $i++)
+                  @for ($i = 1; $i <= 4; $i++)
                   <div class="card card-bordered sp-plan m-3">
                      <div class="row no-gutters">
                         <div class="col-md-8">
                            <div class="sp-plan-info card-inner">
                               <div class="row gx-0 gy-3">
-                                 <div class="col-xl-9 col-sm-8">
+                                 <div class="col-xl-6 col-sm-7">
                                     <div class="sp-plan-name">
                                        <h6 class="title"><a href="html/subscription/subscriptions-detail.html">Enterprise Plan </a></h6>
                                        <p>Subscription ID: <span class="text-base">100394949</span></p>
                                     </div>
                                  </div>
-                                 <div class="col-xl-3 col-sm-4">
-                                                                <div class="sp-plan-opt">
-                                                                    <div class="custom-control custom-switch">
-                                                                        <input type="checkbox" class="custom-control-input" id="auto-plan-p{{$i}}" checked>
-                                                                        <label class="custom-control-label text-soft" for="auto-plan-p1"></label>
-                                                                    </div>
-                                                                </div>
+                                 <div class="col-xl-6 col-sm-5">
+                                                   <div class="card-inner card-inner-sm">
+                     <ul class="btn-toolbar justify-center gx-1">
+                        <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-shield-off"></em></a></li>
+                        <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-mail"></em></a></li>
+                        <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-bookmark"></em></a></li>
+                        <li><a href="#" class="btn btn-trigger btn-icon text-danger"><em class="icon ni ni-na"></em></a></li>
+                     </ul>
+                  </div>
                                  </div>
                               </div>
                            </div>
@@ -188,14 +153,12 @@
                         <!-- .col -->
                      </div>
                      <!-- .row -->
-                  </div><!-- .sp-plan -->  
-                @endfor
-
-                  
+                  </div>
+                  <!-- .sp-plan -->  
+                  @endfor
                </div>
                <!-- .card -->
             </div>
-            <!-- .nk-block -->
          </div>
          <!-- .col -->
       </div>

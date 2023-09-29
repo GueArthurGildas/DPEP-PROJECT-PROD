@@ -57,12 +57,18 @@ define("PAGECREATEFORM", "create");
 define("PAGEEDITFORM", "edit");
 define("DEFAULTPASSOWRD", "password");
 
-///*******///
+///*****************  Les constantes @s*****************///
 //les constantes pour me dire dans quelle page je me trouve
 define("DashbordPage","dashbod");
 define("DemandePage","demandepage");
 define("UserPage","userpage");
 define("NavirePage","navirepage");
+
+/// Cosntantes Users
+define("USERDEMANDELISTE","userdemandeliste");
+define("USERPAGEACCUEIL","userpageaccueil");
+
+///*****************  Les constantes @e*****************///
 
 
 
