@@ -3,6 +3,7 @@
 // use App\Http\Controllers\invoiceControleur;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\demandeController;
 use App\Http\Livewire\Demandes;
 // use App\Http\Livewire\Loading;
 
@@ -69,13 +70,17 @@ Route::group([
         "as" => "demandes."
     ], function(){
         Route::get('/liste-demandes', Demandes::class)->name("listdemande.index"); //home.demandes.listdemande.index
-        Route::get('/new-demande', Demandes::class)->name("newdemande.index"); // home.demandes.newdemande.index
+        Route::get('/new-demande', [demandeController::class,'index'])->name("newdemande.index"); // home.demandes.newdemande.index
+        Route::get('/testajax', [demandeController::class,'checkIfTransbordSelection'])->name("ajax.index"); // home.demandes.ajax.index
         Route::get('/user-demandes', Demandes::class)->name("mesdemande.index"); //home.demandes.mesdemande.index
         Route::get('/demande', Demandes::class)->name("voirdemande.index"); //home.demandes.voirdemande.index
-        Route::get('/user-demande', Demandes::class)->name("userdemande.index"); //home.demandeuser.demande.index
+        //Route::get('/user-demande',  [EtudiantController::class,'index'])->name("userdemande.index"); //home.demandeuser.demande.index
         Route::get('/demande-detail', Demandes::class)->name("demandedetail.index"); //home.demandeuser.demande.index
+        
 
     });
+
+    
 
 
 
@@ -87,6 +92,7 @@ Route::group([
     ], function(){
         Route::get('/listeinspections', [App\Http\Controllers\demandeController::class, 'index'])->name("listinspections.index"); //home.newinspections.newinspections.index
         Route::get('/newinspections', [App\Http\Controllers\demandeController::class, 'index'])->name("newinspections.index"); 
+        
     });
 });  
 

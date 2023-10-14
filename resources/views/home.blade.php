@@ -6,7 +6,7 @@
 
     {{-- affiche l'interface de l'armateur s'il s'agit bien d'un armateur --}}
     
-    @include("livewire.user.armateur.accueil")       
+    @include("livewire.user.armateur.mesdemandes")       
 
 
     {{-- ----- ----------- ------ --}}

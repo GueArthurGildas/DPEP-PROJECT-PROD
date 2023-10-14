@@ -34,7 +34,7 @@
                                                     <div class="form-group ">
                                                         <div class="form-control-wrap">
                                                             <div class="form-icon form-icon-left">
-                                                                <em class="icon ni ni-search"></em>
+                                                                {{-- <em class="icon ni ni-search"></em> --}}
                                                             </div>
                                                             <input type="text" class="form-control form-round" id="default-03" placeholder="Entrez le nom du navire">
                                                         </div>

@@ -88,12 +88,28 @@
          <!-- .col -->
          <div class="col-lg-8 col-xl-8 col-xxl-9">
             <div class="nk-block">
-               <div class="nk-block-head nk-block-head-lg wide-sm">
+               {{-- <div class="nk-block-head nk-block-head-lg wide-sm">
                   <div class="nk-block-head-content">
                      <div class="nk-block-head-sub"><a class="back-to" href="{{route('home')}}"><em class="icon ni ni-arrow-left"></em><span>Retour</span></a></div>
                      <h2 class="nk-block-title fw-normal">Mes Demandes</h2>
                   </div>
-               </div>
+               </div> --}}
+                <div class="nk-block-head nk-block-head-lg">
+                                        <div class="nk-block-head-sub"><span></span></div>
+                                        <div class="nk-block-between-md g-4">
+                                            <div class="nk-block-head-content">
+                                                <h2 class="nk-block-title fw-normal">Bienvenue,  {{Auth()->user()->name}}</h2>
+                                                <div class="nk-block-des">
+                                                    <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
+                                                </div>
+                                            </div>
+                                            <div class="nk-block-head-content">
+                                                <ul class="nk-block-tools gx-3">
+                                                    <li class="order-md-last"><a href="{{route("home.demandes.newdemande.index")}}" class="btn btn-white btn-dim btn-outline-primary"><span>Nouvelle Demande</span><em class="icon ni ni-arrow-long-right"></em></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><!-- .nk-block-head -->
                <!-- nk-block-head -->
                <div class="card card-bordered card-stretch">
                   @for ($i = 1; $i <= 4; $i++)
@@ -104,7 +120,7 @@
                               <div class="row gx-0 gy-3">
                                  <div class="col-xl-6 col-sm-7">
                                     <div class="sp-plan-name">
-                                       <h6 class="title"><a href="html/subscription/subscriptions-detail.html">Enterprise Plan </a></h6>
+                                       <h5 class="title">DPEP-AYX-014 </a></h5>
                                        <p>Subscription ID: <span class="text-base">100394949</span></p>
                                     </div>
                                  </div>
@@ -121,7 +137,7 @@
                               </div>
                            </div>
                            <!-- .sp-plan-info -->
-                           <div class="sp-plan-desc card-inner">
+                           {{-- <div class="sp-plan-desc card-inner">
                               <ul class="row gx-1">
                                  <li class="col-6 col-lg-3">
                                     <p><span class="text-soft">Started On</span> Oct 12, 2018</p>
@@ -136,18 +152,18 @@
                                     <p><span class="text-soft">Access</span> Unlimited</p>
                                  </li>
                               </ul>
-                           </div>
+                           </div> --}}
                            <!-- .sp-plan-desc -->
                         </div>
                         <!-- .col -->
                         <div class="col-md-4">
                            <div class="sp-plan-action card-inner">
-                              <div class="sp-plan-btn">
-                                 <a class="btn btn-primary" data-bs-toggle="modal" href="#subscription-change"><span>Change Plan</span></a>
+                              <div class="sp-plan-btn" >
+                                 <a class="btn btn-success" data-bs-toggle="modal" href="#subscription-change"><span>Change Plan</span></a>
                               </div>
-                              <div class="sp-plan-note text-md-center">
+                              {{-- <div class="sp-plan-note text-md-center">
                                  <p>Next Billing on <span>Oct 11, 2020</span></p>
-                              </div>
+                              </div> --}}
                            </div>
                         </div>
                         <!-- .col -->

@@ -111,7 +111,8 @@ class Demandes extends Component
     public $uploadAutoTransb ="";
     public $uploadAutoOthers ="";
 
-    
+
+    public $VariableTestForBinding = "okokTest";
 
    
 
@@ -180,11 +181,17 @@ class Demandes extends Component
                 "navireSent"=>$this->navireForDemande,
                 "isNavireSent"=> $this->isNavireSent,
                 "currentSousPageDemande"=> $this->currentSousPageDemande,
+                "VariableTestForBinding" =>$this->VariableTestForBinding,
          ])
                 ->extends("layouts.master")
                 ->section("content");
     }
 
+
+    
+
+
+    // une fonction qui genere des textes aleatoires afin de les utiliser dans code ref de la demande lors l'enregistrement dans la bd
     public function generateRandomString($length)
     {
         return bin2hex(random_bytes($length));

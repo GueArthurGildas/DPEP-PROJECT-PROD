@@ -15,8 +15,8 @@
     lineTension: 0.15,
     datasets: [{
       label: "Total Received",
-      color: "#798bff",
-      background: NioApp.hexRGB('#798bff', .3),
+      color: "#9d72ff",
+      background: NioApp.hexRGB('#9d72ff', .3),
       data: [111, 80, 125, 75, 95, 75, 90, 111, 80, 125, 75, 95, 75, 90, 111, 80, 125, 75, 95, 75, 90, 111, 80, 125, 75, 95, 75, 90, 75, 90]
     }]
   };
@@ -70,13 +70,13 @@
                   return "".concat(context.parsed.y, " ").concat(_get_data.dataUnit);
                 }
               },
-              backgroundColor: '#eff6ff',
+              backgroundColor: '#1c2b46',
               titleFont: {
                 size: 11
               },
-              titleColor: '#6783b8',
+              titleColor: '#fff',
               titleMarginBottom: 4,
-              bodyColor: '#9eaecf',
+              bodyColor: '#fff',
               bodyFont: {
                 size: 10
               },
@@ -116,7 +116,7 @@
       data: [1740, 2500, 1820, 1200, 1600, 2500, 1820, 1200, 1700, 1820, 1400, 1600, 1930, 2100]
     }, {
       label: "Sell Orders",
-      color: "#9cabff",
+      color: "#b695ff",
       data: [2420, 1820, 3000, 5000, 2450, 1820, 2700, 5000, 2400, 2600, 4000, 2380, 2120, 1700]
     }]
   };
@@ -168,13 +168,13 @@
                   return "".concat(context.parsed.y, " ").concat(_get_data.dataUnit);
                 }
               },
-              backgroundColor: '#eff6ff',
+              backgroundColor: '#1c2b46',
               titleFont: {
                 size: 13
               },
-              titleColor: '#6783b8',
+              titleColor: '#fff',
               titleMarginBottom: 6,
-              bodyColor: '#9eaecf',
+              bodyColor: '#fff',
               bodyFont: {
                 size: 12
               },
@@ -245,11 +245,11 @@
     stacked: true,
     datasets: [{
       label: "Direct Join",
-      color: "#9cabff",
+      color: "#b695ff",
       data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90]
     }, {
       label: "Referral Join",
-      color: NioApp.hexRGB("#9cabff", .2),
+      color: "#ccd4ff",
       data: [125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 75, 90]
     }]
   };
@@ -301,13 +301,13 @@
                   return "".concat(context.parsed.y, " ").concat(_get_data.dataUnit);
                 }
               },
-              backgroundColor: '#eff6ff',
+              backgroundColor: '#1c2b46',
               titleFont: {
                 size: 13
               },
-              titleColor: '#6783b8',
+              titleColor: '#fff',
               titleMarginBottom: 6,
-              bodyColor: '#9eaecf',
+              bodyColor: '#fff',
               bodyFont: {
                 size: 12
               },
@@ -347,11 +347,11 @@
     stacked: true,
     datasets: [{
       label: "Buy Orders",
-      color: ["#f98c45", "#9cabff", "#8feac5", "#6b79c8", "#79f1dc"],
+      color: ["#f98c45", "#b695ff", "#8feac5", "#6b79c8", "#79f1dc"],
       data: [1740, 2500, 1820, 1200, 1600, 2500]
     }, {
       label: "Sell Orders",
-      color: [NioApp.hexRGB('#f98c45', .2), NioApp.hexRGB('#9cabff', .4), NioApp.hexRGB('#8feac5', .4), NioApp.hexRGB('#6b79c8', .4), NioApp.hexRGB('#79f1dc', .4)],
+      color: [NioApp.hexRGB('#f98c45', .2), NioApp.hexRGB('#b695ff', .4), NioApp.hexRGB('#8feac5', .4), NioApp.hexRGB('#6b79c8', .4), NioApp.hexRGB('#79f1dc', .4)],
       data: [2420, 1820, 3000, 5000, 2450, 1820]
     }]
   };
@@ -405,13 +405,13 @@
                   return "".concat(context.parsed.y, " ").concat(_get_data.dataUnit);
                 }
               },
-              backgroundColor: '#eff6ff',
+              backgroundColor: '#1c2b46',
               titleFont: {
                 size: 13
               },
-              titleColor: '#6783b8',
+              titleColor: '#fff',
               titleMarginBottom: 6,
-              bodyColor: '#9eaecf',
+              bodyColor: '#fff',
               bodyFont: {
                 size: 12
               },
@@ -471,7 +471,7 @@
     stacked: true,
     datasets: [{
       label: "Sales Revenue",
-      color: [NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), "#6576ff"],
+      color: [NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), "#854fff"],
       data: [11000, 8000, 12500, 5500, 9500, 14299, 11000, 8000, 12500, 5500, 9500, 14299]
     }]
   };
@@ -481,7 +481,7 @@
     stacked: true,
     datasets: [{
       label: "Active User",
-      color: [NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), NioApp.hexRGB("#6576ff", .2), "#6576ff"],
+      color: [NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), "#854fff"],
       data: [8200, 7800, 9500, 5500, 9200, 9690]
     }]
   };
@@ -514,8 +514,8 @@
           borderColor: 'transparent',
           hoverBorderColor: 'transparent',
           borderSkipped: 'bottom',
-          barPercentage: .8,
-          categoryPercentage: .8
+          barPercentage: .7,
+          categoryPercentage: .7
         });
       }
       var chart = new Chart(selectCanvas, {
@@ -546,13 +546,13 @@
                   return "".concat(context.parsed.y, " ").concat(_get_data.dataUnit);
                 }
               },
-              backgroundColor: '#eff6ff',
+              backgroundColor: '#1c2b46',
               titleFont: {
                 size: 11
               },
-              titleColor: '#6783b8',
+              titleColor: '#fff',
               titleMarginBottom: 4,
-              bodyColor: '#9eaecf',
+              bodyColor: '#fff',
               bodyFont: {
                 size: 10
               },
@@ -589,13 +589,13 @@
   });
   var salesOverview = {
     labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
-    dataUnit: 'USD',
-    lineTension: .3,
+    dataUnit: 'BTC',
+    lineTension: 0.1,
     datasets: [{
       label: "Sales Overview",
-      color: "#798bff",
-      background: NioApp.hexRGB('#798bff', .35),
-      data: [6200, 7850, 8500, 6500, 5790, 9690, 8200, 6860, 9500, 8590, 8230, 8950, 8200, 7680, 8500, 5500, 9200, 9690, 8200, 7800, 9500, 7500, 9200, 9690, 8200, 7800, 8500, 9100, 9360, 9690]
+      color: "#9d72ff",
+      background: NioApp.hexRGB('#9d72ff', .3),
+      data: [8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690]
     }]
   };
   function lineSalesOverview(selector, set_data) {
@@ -612,7 +612,7 @@
           tension: _get_data.lineTension,
           backgroundColor: _get_data.datasets[i].background,
           fill: true,
-          borderWidth: 4,
+          borderWidth: 2,
           borderColor: _get_data.datasets[i].color,
           pointBorderColor: "transparent",
           pointBackgroundColor: "transparent",
@@ -651,13 +651,13 @@
                   return "".concat(context.parsed.y, " ").concat(_get_data.dataUnit);
                 }
               },
-              backgroundColor: '#eff6ff',
+              backgroundColor: '#1c2b46',
               titleFont: {
                 size: 13
               },
-              titleColor: '#6783b8',
+              titleColor: '#fff',
               titleMarginBottom: 6,
-              bodyColor: '#9eaecf',
+              bodyColor: '#fff',
               bodyFont: {
                 size: 12
               },
@@ -727,15 +727,15 @@
     stacked: true,
     datasets: [{
       label: "Solved",
-      color: ["#f98c45", "#9cabff", "#8feac5", "#6b79c8", "#79f1dc"],
+      color: ["#f98c45", "#b695ff", "#8feac5", "#6b79c8", "#79f1dc"],
       data: [66, 74, 92, 142, 189]
     }, {
       label: "Open",
-      color: [NioApp.hexRGB('#f98c45', .4), NioApp.hexRGB('#9cabff', .4), NioApp.hexRGB('#8feac5', .4), NioApp.hexRGB('#6b79c8', .4), NioApp.hexRGB('#79f1dc', .4)],
+      color: [NioApp.hexRGB('#f98c45', .4), NioApp.hexRGB('#b695ff', .4), NioApp.hexRGB('#8feac5', .4), NioApp.hexRGB('#6b79c8', .4), NioApp.hexRGB('#79f1dc', .4)],
       data: [66, 74, 92, 32, 26]
     }, {
       label: "Pending",
-      color: [NioApp.hexRGB('#f98c45', .2), NioApp.hexRGB('#9cabff', .2), NioApp.hexRGB('#8feac5', .2), NioApp.hexRGB('#6b79c8', .2), NioApp.hexRGB('#79f1dc', .2)],
+      color: [NioApp.hexRGB('#f98c45', .2), NioApp.hexRGB('#b695ff', .2), NioApp.hexRGB('#8feac5', .2), NioApp.hexRGB('#6b79c8', .2), NioApp.hexRGB('#79f1dc', .2)],
       data: [66, 74, 92, 21, 9]
     }]
   };
@@ -789,13 +789,13 @@
                   return "".concat(context.parsed.y, " ").concat(_get_data.dataUnit);
                 }
               },
-              backgroundColor: '#eff6ff',
+              backgroundColor: '#1c2b46',
               titleFont: {
                 size: 13
               },
-              titleColor: '#6783b8',
+              titleColor: '#fff',
               titleMarginBottom: 6,
-              bodyColor: '#9eaecf',
+              bodyColor: '#fff',
               bodyFont: {
                 size: 12
               },
