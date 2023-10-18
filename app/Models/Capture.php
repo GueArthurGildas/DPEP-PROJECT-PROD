@@ -9,7 +9,7 @@ class Capture extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["navires_id","demandes_id","qte_a_bord","qte_debarque","Produit","espece","zone_capture"]; 
+    protected $fillable = ["navires_id","qte_a_bord","qte_debarque","Produit","espece","zone_capture",'demande_id']; 
 
 
     public function navire(){

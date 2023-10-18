@@ -1,27 +1,34 @@
-<div class="kyc-app wide-sm m-auto .border-primary">
+
    <div class="card text-white bg-secondary">
-      <div class="card-inner">
-         <div class="nk-block-head nk-block-head-lg wide-xs mx-auto">
-            <div class="nk-block-head-content text-center">
-            <div class="nk-kycfm-count text-white">01</div>
-               <h2 class="nk-block-title fw-normal">Information sur  Le Navire</h2>
-               
+   <div class="card-inner">
+      <div class="nk-block-head nk-block-head-lg">
+         <div class="nk-block-head-sub"><span></span></div>
+         <div class="nk-block-between-md g-4">
+            <div class="nk-block-head-content">
+               <h2 class="nk-block-title fw-normal">Les informations du navires </h2>
                <div class="nk-block-des text-white">
-               
-                  <p>To comply with regulation each participant will have to go through indentity verification (KYC/AML) to prevent fraud causes. </p>
+                  <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
                </div>
-               
-               <img class="" src="{{asset("images/CI-Logov.png")}}" alt="User profile picture" width="100" height="50">
-               
+            </div>
+            <div class="nk-block-head-content">
+               {{-- <ul class="nk-block-tools gx-3"> --}}
+               <div class="user-avatar lg bg-white">
+                  <img class="" src="{{asset("images/CI-Logov.png")}}" alt="User profile picture" width="100" height="50">        
+               </div>
+                  {{-- 
+                  <li class="order-md-last"><a href="{{route("home.demandes.newdemande.index")}}" class="btn btn-white btn-dim btn-outline-primary"><span>Nouvelle Demande</span><em class="icon ni ni-arrow-long-right"></em></a></li>
+                  --}}
+               {{-- </ul> --}}
             </div>
          </div>
-         <!-- nk-block --> 
       </div>
+      <!-- .nk-block-head -->
    </div>
+</div>
    <div class="nk-block ">
       <div class="card card-bordered mt-2 ">
          <div class="nk-kycfm">
-            <div class="nk-kycfm-head">
+            <div class="nk-kycfm-head ">
                {{-- <div class="nk-kycfm-count">01</div> --}}
                <div class="nk-kycfm-title">
                   <h5 class="title"> Détails concernant le navire</h5>
@@ -105,7 +112,7 @@
                <!-- .row -->
             </div>
             <!-- nk-kycfm-content -->
-            <div class="nk-kycfm-head">
+            <div class="nk-kycfm-head ">
                {{-- <div class="nk-kycfm-count">02</div> --}}
                <div class="nk-kycfm-title">
                   <h5 class="title">Dimension du navire</h5>
@@ -145,7 +152,7 @@
                <!-- .row -->
             </div>
             <!-- nk-kycfm-content -->
-            <div class="nk-kycfm-head">
+            <div class="nk-kycfm-head ">
                {{-- <div class="nk-kycfm-count">03</div> --}}
                <div class="nk-kycfm-title">
                   <h5 class="title">Autres informations</h5>
@@ -207,7 +214,7 @@
                <!-- .row -->
             </div>
             <!-- nk-kycfm-content -->
-            <div class="nk-kycfm-head">
+            <div class="nk-kycfm-head ">
                {{-- <div class="nk-kycfm-count">04</div> --}}
                <div class="nk-kycfm-title">
                   <h5 class="title">Propirétaire du Navire</h5>
@@ -315,5 +322,3 @@
       <!-- .card -->
    </div>
    <!-- nk-block -->
-</div>
-<!-- .kyc-app -->

@@ -42,15 +42,15 @@
             </div>
             <form action="#">
                <div class="form-group">
-                  <label class="form-label" for="full-name">Identificateur <span class="text-danger">*</span></label>
+                  <label class="form-label" for="full-name"> Identificateur <span class="text-danger">*</span></label>
                   <div class="form-control-wrap">
-                     <input type="text" class="form-control" id="full-name">
+                     <input type="text" class="form-control"  id="identAutoTransb">
                   </div>
                </div>
                <div class="form-group">
                   <label class="form-label" for="email-address">Délivré par<span class="text-danger">*</span></label>
                   <div class="form-control-wrap">
-                     <input type="text" class="form-control" id="email-address">
+                     <input type="text" class="form-control" id="delivre_parAutoTransb">
                   </div>
                </div>
                <div class="row mb-3">
@@ -58,7 +58,7 @@
                      <div class="form-group">
                         <label class="form-label" for="pay-amount"> Date émission<span class="text-danger">*</span></label>
                         <div class="form-control-wrap">
-                           <input type="number" class="form-control" id="pay-amount">
+                           <input type="number" class="form-control" id="dateEmissionAutoTransb">
                         </div>
                      </div>
                   </div>
@@ -66,13 +66,13 @@
                      <div class="form-group">
                         <label class="form-label" for="pay-amount">Date Expiration <span class="text-danger">*</span></label>
                         <div class="form-control-wrap">
-                           <input type="number" class="form-control" id="">
+                           <input type="number" class="form-control" id="dateExpAutoTransbo">
                         </div>
                      </div>
                   </div>
                </div>
                <div class="form-group">
-                  <a href="#" class="btn btn-icon btn-small btn-primary"><em class="icon ni ni-plus"></em></a>
+                  <a class="btn btn-icon btn-small btn-primary" id="btnAddAutoTransbToCollection"><em class="icon ni ni-plus"></em></a>
                   <a href="#" class="btn btn-icon btn-small btn-primary"><em class="icon ni ni-trash"></em></a>
                </div>
             </form>

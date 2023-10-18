@@ -23,13 +23,13 @@
                <div class="form-group">
                   <label class="form-label" for="full-name">Date de transbordement <span class="text-danger">*</span></label>
                   <div class="form-control-wrap">
-                     <input type="text" class="form-control" id="full-name">
+                     <input type="text" class="form-control" id="dateTransb">
                   </div>
                </div>
                <div class="form-group">
                   <label class="form-label" for="email-address">Lieu <span class="text-danger">*</span></label>
                   <div class="form-control-wrap">
-                     <input type="text" class="form-control" id="email-address">
+                     <input type="text" class="form-control" id="lieuTransb">
                   </div>
                </div>
                <div class="row mb-3">
@@ -40,7 +40,7 @@
                            <div class="form-icon form-icon-right">
                               <em class="icon ni ni-calendar-alt"></em>
                            </div>
-                           <input type="text" class="form-control date-picker">
+                           <input type="text" class="form-control date-picker" id="nomTransb">
                         </div>
                      </div>
                   </div>
@@ -51,7 +51,7 @@
                            <div class="form-icon form-icon-right">
                               <em class="icon ni ni-calendar-alt"></em>
                            </div>
-                           <input type="text" class="form-control date-picker">
+                           <input type="text" class="form-control date-picker" id="numIdTransb">
                         </div>
                      </div>
                   </div>
@@ -59,7 +59,7 @@
                <div class="form-group">
                   <label class="form-label" for="email-address">Espèce <span class="text-danger">*</span></label>
                   <div class="form-control-wrap">
-                     <select class="form-select js-select2" data-search="on">
+                     <select class="form-select js-select2" data-search="on" id="especeTransb">
                         <option value="default_option">Default Option</option>
                         <option value="option_select_name">Option select name  </option>
                         <option value="option_select_name">Option select name</option>
@@ -69,7 +69,7 @@
                <div class="form-group">
                   <label class="form-label" for="phone-no">Produit <span class="text-danger">*</span></label>
                   <div class="form-control-wrap">
-                     <select class="form-select js-select2" data-search="on">
+                     <select class="form-select js-select2" data-search="on" id="idProduitTransb">
                         <option value="default_option">Default Option</option>
                         <option value="option_select_name">Option select name</option>
                         <option value="option_select_name">Option select name</option>
@@ -78,18 +78,14 @@
                </div>
                <div class="form-group">
                   <label class="form-label" for="phone-no">Quantité <span class="text-danger">*</span></label>
-                  <div class="form-control-wrap">
-                     <select class="form-select js-select2" data-search="on">
-                        <option value="default_option">Default Option</option>
-                        <option value="option_select_name">Option select name</option>
-                        <option value="option_select_name">Option select name</option>
-                     </select>
-                  </div>
+                        <div class="form-control-wrap">
+                           <input type="number" class="form-control" id="qteTransb">
+                        </div>
                </div>
                <div class="form-group">
                   <label class="form-label" for="phone-no">Zone de capture<span class="text-danger">*</span></label>
                   <div class="form-control-wrap">
-                     <select class="form-select js-select2" data-search="on">
+                     <select class="form-select js-select2" data-search="on" id="zoneCapture">
                         <option value="default_option">Default Option</option>
                         <option value="option_select_name">Option select name</option>
                         <option value="option_select_name">Option select name</option>

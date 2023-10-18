@@ -1,7 +1,7 @@
-<div class="nk-header nk-header-fluid nk-header-fixed is-theme">
-                <div class="container-xl wide-xl">
-                    <div class="nk-header-wrap">
-                        <div class="nk-menu-trigger me-sm-2 d-lg-none">
+<div class="nk-header nk-header-fluid nk-header-fixed is-theme" >
+                <div class="container-xl wide-xl" >
+                    <div class="nk-header-wrap" >
+                        <div class="nk-menu-trigger me-sm-2 d-lg-none" >
                             <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-menu"></em></a>
                         </div>
                         <div class="nk-header-brand">
@@ -10,7 +10,7 @@
                                 <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                             </a>
                         </div><!-- .nk-header-brand -->
-                        <div class="nk-header-menu" data-content="headerNav">
+                        <div class="nk-header-menu" data-content="headerNav" >
                             <div class="nk-header-mobile">
                                 <div class="nk-header-brand">
                                     <a href="html/index.html" class="logo-link">

@@ -81,6 +81,9 @@
         <!-- wrap @e -->
     </div>
     <!-- app-root @e -->
+
+    @include("components.modal-capture-detail")
+
     <!-- select region modal -->
     <div class="modal fade" tabindex="-1" role="dialog" id="region">
         <div class="modal-dialog modal-lg" role="document">
@@ -314,7 +317,7 @@
 
             $.ajax({
                 type: "GET",
-                url: '{{route("home.demandes.ajax.index")}}',
+                url: '',
                 dataType: 'json',
                 data: { testData:objetPortSelect },
                 success: function (result) {
@@ -342,9 +345,10 @@
     });*/
 </script>
 {{-- @e test d'envoi de requête ajax vers le serveur   --}}
+{{-- --------------------------------------------------------------------------- --}}
 
-
-{{-- @s send navire section to the controller throw ajax query --}}
+{{-- --------------------------------------------------------------------------- --}}
+{{-- @es send navire and port section to the controller throw ajax query --}}
 <script>
 $(document).ready(function () {
 
@@ -357,7 +361,8 @@ $(document).ready(function () {
                 }
             });
 
-            let objetPortSelect = $('#objetPortSelect').val();
+            /// @s data from navire Form
+
             let nomNavire = $('#nomNavire').val();
             let etatPavillonNavire = $('#etatPavillonNavire').val();
             let typeNavire = $('#typeNavire').val();
@@ -372,10 +377,35 @@ $(document).ready(function () {
             let proprioNavire = $('#proprioNavire').val();
             let captaineName = $('#captaineName').val();
             let captaineNationality = $('#captaineNationality').val();
+            /// @e data from navire Form
+
+            /// @s data from Port Form
+            let objetAccesPort = $('#objetAccesPort').val();
+            let minuteArriveEstim = $('#minuteArriveEstim').val();
+            let heureArriveEstim = $('#heureArriveEstim').val();
+            let dateArriveEstim = $('#dateArriveEstim').val();
+            let accueilPort = $('#accueilPort').val();
+            let dateLastEscale = $('#dateLastEscale').val();
+            let objetPortEntre = $('#objetPortEntre').val();
+            let pays = $('#pays').val();
+
+            /// @e data from Port Form
+
+
+            /// @s data from Capture Form
+
+            let espece = $('#espece').val();
+            let produit = $('#produit').val();
+            let zoneCapture = $('#zoneCapture').val();
+            let qteBord = $('#qteBord').val();
+            let qteDebarque = $('#qteDebarque').val();
+            /// @e data from Capture Form
+
 
 
             var donnees = {
-                objetPortSelect: objetPortSelect,
+                /// @s data from navire Form
+
                 nomNavire: nomNavire,
                 etatPavillonNavire: etatPavillonNavire,
                 typeNavire: typeNavire,
@@ -389,11 +419,227 @@ $(document).ready(function () {
                 contactNavireForInfo: contactNavireForInfo,
                 proprioNavire: proprioNavire,
                 captaineName: captaineName,
-                captaineNationality: captaineNationality
+                captaineNationality: captaineNationality,
+                /// @e data from navire Form
+
+                /// @s data from Port Form
+                objetAccesPort: objetAccesPort,
+                minuteArriveEstim: minuteArriveEstim,
+                heureArriveEstim: heureArriveEstim,
+                dateArriveEstim: dateArriveEstim,
+                accueilPort: accueilPort,
+                dateLastEscale: dateLastEscale,
+                objetPortEntre: objetPortEntre,
+                pays: pays,
+                /// @e data from Port Form
+
+
+                /// @s data from capture Form
+                espece: espece,
+                produit: produit,
+                zoneCapture: zoneCapture,
+                qteBord: qteBord,
+                qteDebarque: qteDebarque
+                /// @e data from capture Form
+
             };
 
+
             $.ajax({
-                url: '{{route("home.demandes.ajax.index")}}',
+                url: '',
+                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
+                data: donnees,
+                success: function (response) {
+                   console.log(response);
+                },
+                error: function (error) {
+                    // Gestion des erreurs
+                }
+            });
+
+        })
+
+})
+
+
+</script>
+{{-- @e send navire and port section to the controller throw ajax query --}}
+{{-- --------------------------------------------------------------------------- --}}
+
+
+<script>
+
+
+        function myDelete(element) {
+            // Récupérer l'élément parent de l'élément cliqué
+            var parentTr = $(element).closest('tr');
+
+            // Récupérer l'ID de l'élément parent
+            var captureId = parentTr.find('.text-white').text();
+
+            // recuperer l'Id de la demande en cours de traitement
+             let demandeId = $('#demandeId').text();
+
+            // remplir la valeur data
+             var data = {
+                captureId: captureId,
+                demandeId: demandeId,
+            };
+
+             $.ajax({
+                url: '{{route("home.demandes.capturedelete.index")}}',
+                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
+                data: data,
+                success: function (response) {
+                   parentTr.html('');
+                   console.log(response);          
+                },
+                error: function (error) {
+                    // Gestion des erreurs
+                }
+            });
+
+        }
+
+         function openFormCaptureShowDetail() {
+              $('#modalForm').modal('show');
+         }
+
+
+    
+
+
+
+</script>
+
+
+{{-- --------------------------------------------------------------------------- --}}
+{{-- @s send capture section to the controller throw ajax query --}}
+<script>
+
+$(document).ready(function () {
+
+    // Ici on envoie la capture dans la bd pour être sauvegarder
+
+
+    // Ici on envoie la capture dans la bd pour être sauvegarder
+    $('#btnAddCaptureToCollection').click(function(e) {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+
+            /// @s data from Capture Form
+            let espece = $('#espece').val();
+            let produit = $('#produit').val();
+            let zoneCapture = $('#zoneCapture').val();
+            let qteBord = $('#qteBord').val();
+            let qteDebarque = $('#qteDebarque').val();
+            let demandeId = $('#demandeId').text();
+            /// @e data from Capture Form
+
+
+
+            var donnees = {
+
+                /// @s data from capture Form
+                espece: espece,
+                produit: produit,
+                zoneCapture: zoneCapture,
+                qteBord: qteBord,
+                qteDebarque: qteDebarque,
+                demandeId: demandeId
+                /// @e data from capture Form
+
+            };
+
+
+            $.ajax({
+                url: '{{route("home.demandes.capture.index")}}',
+                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
+                data: donnees,
+                success: function (response) {
+                   console.log(response.testCapture);
+                   $("#iciAddRetourAcptureOk").append(response.testCapture);
+                   $('#espece').val("");
+                   $('#produit').val("");
+                   $('#zoneCapture').val("");
+                   $('#qteBord').val("");
+                   $('#qteDebarque').val("");
+                   $('#demandeId').val("");
+                   toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+                },
+                error: function (error) {
+                    // Gestion des erreurs
+                }
+            });
+
+        })
+
+        
+
+    })
+
+
+
+</script>
+{{-- @e send capture section to the controller throw ajax query --}}
+{{-- --------------------------------------------------------------------------- --}}
+
+
+
+
+
+
+{{-- --------------------------------------------------------------------------- --}}
+{{-- @s send peche section to the controller throw ajax query --}}
+<script>
+
+$(document).ready(function () {
+
+
+    $('#btnAddPecheToCollection').click(function(e) {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+
+            /// @s data from Peche Form
+                let identificateur = $('#Identificateur').val();
+                let devlivrePar = $('#devlivrePar').val();
+                let dateEmission = $('#dateEmission').val();
+                let dateExpiration = $('#dateExpiration').val();
+                let zondPeche = $('#zondPeche').val();
+                let especeForPeche = $('#especeForPeche').val();
+                let engin = $('#engin').val();
+
+            /// @e data from Peche Form
+
+
+
+            var donnees = {
+
+                /// @s data from peche Form
+                devlivrePar:devlivrePar,
+                Identificateur: identificateur,
+                dateEmission: dateEmission,
+                dateExpiration: dateExpiration,
+                zondPeche: zondPeche,
+                especeForPeche: especeForPeche,
+                engin: engin
+                /// @e data from peche Form
+
+            };
+
+
+            $.ajax({
+                url: '',
                 type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
                 data: donnees,
                 success: function (response) {
@@ -406,12 +652,121 @@ $(document).ready(function () {
 
         })
 
-    })
-   
-
+})
 </script>
-{{-- @e send navire section to the controller throw ajax query --}}
+{{-- @e send peche section to the controller throw ajax query --}}
+{{-- --------------------------------------------------------------------------- --}}
 
+
+{{-- --------------------------------------------------------------------------- --}}
+{{-- @s send auto transbordement section to the controller throw ajax query --}}
+<script>
+
+$(document).ready(function () {
+
+
+    $('#btnAddAutoTransbToCollection').click(function(e) {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+
+            let identAutoTransb = $('#identAutoTransb').val();
+            let delivreParAutoTransb = $('#delivre_parAutoTransb').val();
+            let dateEmissionAutoTransb = $('#dateEmissionAutoTransb').val();
+            let dateExpAutoTransbo = $('#dateExpAutoTransbo').val();
+
+            var data = {
+
+                identAutoTransb: identAutoTransb,
+                delivreParAutoTransb: delivreParAutoTransb,
+                dateEmissionAutoTransb: dateEmissionAutoTransb,
+                dateExpAutoTransbo: dateExpAutoTransbo
+            };
+
+
+            $.ajax({
+                url: '',
+                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
+                data: data,
+                success: function (response) {
+                    // Traitement en cas de succès
+                },
+                error: function (error) {
+                    // Gestion des erreurs
+                }
+            });
+
+        })
+
+})
+</script>
+{{-- @e send auto transbordement section to the controller throw ajax query --}}
+{{-- --------------------------------------------------------------------------- --}}
+
+
+
+{{-- --------------------------------------------------------------------------- --}}
+{{-- @s send info transbordement section to the controller throw ajax query --}}
+<script>
+
+$(document).ready(function () {
+
+
+    $('#btnAddinfoTransbToCollection').click(function(e) {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+
+
+            let dateTransb = $('#dateTransb').val();
+            let lieuTransb = $('#lieuTransb').val();
+            let nomTransb = $('#nomTransb').val();
+            let numIdTransb = $('#numIdTransb').val();
+            let especeTransb = $('#especeTransb').val();
+            let qteInfoTranb = $('#qteInfoTranb').val();
+
+            let idProduitTransb = $('#idProduitTransb').val();
+            let zoneCapture = $('#zoneCaptureInfoTranb').val();
+
+            // Créez un objet contenant ces variables
+            let data = {
+                dateTransb: dateTransb,
+                lieuTransb: lieuTransb,
+                nomTransb: nomTransb,
+                numIdTransb: numIdTransb,
+                especeTransb: especeTransb,
+                qteInfoTranb :qteInfoTranb,
+                idProduitTransb: idProduitTransb,
+                zoneCapture: zoneCapture
+            };
+
+
+            $.ajax({
+                url: '',
+                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
+                data: data,
+                success: function (response) {
+                    // Traitement en cas de succès
+                },
+                error: function (error) {
+                    // Gestion des erreurs
+                }
+            });
+
+        })
+
+})
+</script>
+{{-- @e send info transbordement section to the controller throw ajax query --}}
+{{-- --------------------------------------------------------------------------- --}}
 
 </body>
 

@@ -56,7 +56,7 @@
                <form class="nk-stepper stepper-init is-alter" action="#" id="stepper-survey-v2">
                   <div class="nk-stepper-content">
                      <div class="nk-stepper-progress stepper-progress mb-4">
-                        <div class="stepper-progress-count mb-2 text-white">de</div>
+                        <div class="stepper-progress-count mb-2 text-white">de {{$idDemadne}}</div>
                         <div class="progress progress-md">
                            <div class="progress-bar stepper-progress-bar"></div>
                         </div>
@@ -64,12 +64,13 @@
                      <div class="nk-stepper-steps stepper-steps">
 
                         <div class="nk-stepper-step">
-                            @include("livewire.demandes.section-demande.navire")
+                            @include("livewire.demandes.section-demande.port")
                         </div>
 
                         <div class="nk-stepper-step">
-                            @include("livewire.demandes.section-demande.port")
+                            @include("livewire.demandes.section-demande.navire")
                         </div>
+
 
                         <div class="nk-stepper-step">
                             @include("livewire.demandes.section-demande.capture")
@@ -91,7 +92,7 @@
                      </div>
                      <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
                         <li class="step-prev"><button class="btn btn-dim btn-primary">Retour</button></li>
-                        <li class="step-next"><button class="btn btn-primary" id="nextFormButton">Suivant <em class="icon ni ni-arrow-long-right"></em></button></li>
+                        <li class="step-next"><button class="btn btn-primary" id="">Suivant <em class="icon ni ni-arrow-long-right"></em></button></li>
                         <li class="step-submit"><button class="btn btn-primary">Soumettre</button></li>
                      </ul>
                   </div>

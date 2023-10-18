@@ -71,12 +71,21 @@ Route::group([
     ], function(){
         Route::get('/liste-demandes', Demandes::class)->name("listdemande.index"); //home.demandes.listdemande.index
         Route::get('/new-demande', [demandeController::class,'index'])->name("newdemande.index"); // home.demandes.newdemande.index
-        Route::get('/testajax', [demandeController::class,'checkIfTransbordSelection'])->name("ajax.index"); // home.demandes.ajax.index
         Route::get('/user-demandes', Demandes::class)->name("mesdemande.index"); //home.demandes.mesdemande.index
         Route::get('/demande', Demandes::class)->name("voirdemande.index"); //home.demandes.voirdemande.index
-        //Route::get('/user-demande',  [EtudiantController::class,'index'])->name("userdemande.index"); //home.demandeuser.demande.index
         Route::get('/demande-detail', Demandes::class)->name("demandedetail.index"); //home.demandeuser.demande.index
-        
+
+
+        /************************************************************************************************************************** */
+        //****Ici les routes qui intercepteront les requêtes ajax pour les fonctions appropriées à chaque section du formulaire demande */
+        Route::get('/demande/capture', [demandeController::class,'CaptureFunct'])->name("capture.index"); // home.demandes.capture.index
+        Route::get('/demande/capture-delete', [demandeController::class,'CaptureDeleteFunct'])->name("capturedelete.index"); // home.demandes.capturedelete.index
+        Route::get('/demande/peche', [demandeController::class,'PecheFunct'])->name("peche.index"); // home.demandes.peche.index
+        Route::get('/demande/transb', [demandeController::class,'TransbFunct'])->name("transb.index"); // home.demandes.transb.index
+        Route::get('/demande/info-transb', [demandeController::class,'infoTransbFunct'])->name("infotransb.index"); // home.demandes.infotransb.index
+        Route::get('/demande/navire-port', [demandeController::class,'navireAndPortFunct'])->name("navireport.index"); // home.demandes.navireport.index
+        /************************************************************************************************************************** */
+
 
     });
 
