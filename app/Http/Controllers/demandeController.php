@@ -5,6 +5,8 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Demande;
 use App\Models\Capture;
+use App\Models\Navire;
+use App\Models\Autori_peche;
 use Exception;
 use Illuminate\Support\Facades\DB;
 
@@ -27,8 +29,14 @@ class demandeController extends Controller
     public $totalAbord;
 
     function index(){
+        $navireEnCours= Navire::orderby("Nom_Navire","asc")->paginate(5);;
+
         $this->setCurrentPageView();
-        return view('livewire.demandes.index',['currentPage'=>$this->currentPage, 'idDemadne'=>$this->idDemandeLoading]);
+        return view('livewire.demandes.index',[
+            'currentPage'=>$this->currentPage, 
+            'idDemadne'=>$this->idDemandeLoading,
+            'lesNavires'=>$navireEnCours,
+        ]);
     }
 
 
@@ -54,13 +62,80 @@ class demandeController extends Controller
 
     }
 
+    /******************************************************/
+    /******************************************************/
+    // la fonction qui permet de créer une demande dans la base de données //
+    /******************************************************/
+    /******************************************************/
+
+
     
     /******************************************************/
     /******************************************************/
-    //  ici gère la section navire et port section        //
+    //  ici gère la section navire  section        //
     /******************************************************/
     /******************************************************/
-    public function navireAndPortFunct(){
+    public function navireAndPortFunct(request $request){
+
+        // ici recuperer dejà les informations arrivées de la vue grace aux requêtes Ajax 
+        $objetAccesPort = $request->input('objetAccesPort');
+        $minuteArriveEstim = $request->input('minuteArriveEstim');
+        $heureArriveEstim = $request->input('heureArriveEstim');
+        $dateArriveEstim = $request->input('dateArriveEstim');
+        $accueilPort = $request->input('accueilPort');
+        $dateLastEscale = $request->input('dateLastEscale');
+        $demandeId =  $request->input('demandeId');
+
+        DB::table('demandes' )
+        ->where('id', $demandeId)
+        ->update([ 
+            'Objet_Acces_Port' => $objetAccesPort,
+            'Date_escale' => $dateLastEscale,
+            'Date_arrivee' => $dateArriveEstim,
+            'Port' => $accueilPort,
+            'heure_arrivee' => $heureArriveEstim.":".$minuteArriveEstim,
+        ]);
+
+        return response()->json([
+            'succes' => "enregistré avec succes",
+        ], 203);
+
+        // ici recuperer liées uniquement au Navire venues de la vue grace aux requêtes Ajax
+        $nomNavire =  $request->input('nomNavire');  
+        $etatPavillonNavire =  $request->input('etatPavillonNavire');  
+        $typeNavire =  $request->input('typeNavire');  
+        $certifNavire =  $request->input('certifNavire');  
+        $tiranNavire =  $request->input('tiranNavire');  
+        $longNavire =  $request->input('longNavire');
+        $largNavire =  $request->input('largNavire'); 
+        $immaCertifNavire =  $request->input('immaCertifNavire'); 
+        $omi =  $request->input('omi'); 
+        $orgp =  $request->input('orgp'); 
+        $contactNavireForInfo =  $request->input('contactNavireForInfo'); 
+        $proprioNavire =  $request->input('proprioNavire');
+        $captaineName =  $request->input('captaineName');
+        $captaineNationality =  $request->input('captaineNationality'); 
+
+        DB::table('navires' )
+        ->where('id', )
+        ->where('id', $demandeId)
+        ->update([   
+           'Nom_Navire' => $nomNavire ,  
+           'Etat_Pavillon' => $etatPavillonNavire  ,
+           'Type_Navire' => $typeNavire,  
+            //=>$certifNavire,  
+            'Type_Navire' => $tiranNavire , 
+            'Length_Overall' =>  $longNavire   ,
+            'Dimension_Navire' => $largNavire  , 
+            'Id_Certificat_Immat' => $immaCertifNavire,
+            'Omi'  => $omi, 
+            'ORGP' => $orgp, 
+            // $contactNavireForInfo; 
+            // $proprioNavire ;
+            // $captaineName;
+            // $captaineNationality;
+        ]);
+
 
     }
 
@@ -72,8 +147,85 @@ class demandeController extends Controller
     //        ici gère la section peche section        //
     /******************************************************/
     /******************************************************/
-    public function PecheFunct(){
+
+    //**supprimer l'auto peche depuis la base de données */
+    public function PecheDeleteFunct(request $request){
         
+        $idPeche = $request->input('pecheId');
+        $demandeId =  $request->input('demandeId');
+        $msgIssue= "supprimé avec succes";
+
+       
+        try {
+            DB::table('autori_peches')
+            ->where('id',  $idPeche)
+            ->where('demande_id',  $demandeId)
+            ->delete();
+        } catch (Exception $e) {
+           
+            $msgIssue= $e->getMessage();
+        }
+
+        return response()->json([
+            'succes' => $msgIssue,
+           
+        ], 203);
+       
+
+    }
+
+    // ici inserer l'auto peche dans la base de donnée
+    public function PecheFunct(request $request){
+
+        
+        // ici recuperer dejà les informations arrivées de la vue grace aux requêtes Ajax 
+        $Identificateur = $request->input('Identificateur');
+        $devlivrePar = $request->input('devlivrePar');
+        $dateEmission = $this->convertDateFormat( $request->input('dateEmission'));
+        $dateExpiration =  $this->convertDateFormat ($request->input('dateExpiration'));
+        $zondPeche = $request->input('zondPeche');
+        $especeForPeche = $request->input('especeForPeche');
+        $engin = $request->input('engin');
+        $demandeId =  $request->input('demandeId');
+        
+
+        // iserer directement dans une base de donnée chaque objet capture 
+            $myPeche = Autori_peche::create([
+                'Produit' => $Identificateur,
+                'Deliv_Par' =>  $devlivrePar,
+                'Date_Stat_Activities' => $dateEmission,
+                'Date_end_Activities' => $dateExpiration,
+                'Zone_peche' => $zondPeche,
+                'espece' => $especeForPeche,
+                'engin' => $engin,
+                'navires_id' =>	3,
+                'demande_id' => $demandeId
+            ]);
+
+            
+
+
+            // Retourner dans la vue lo'bjet mis en base de données de sorte à le voir s'afficher dans un tableau 
+            
+            $testPeche ='<tr>
+                        
+                            <td class="tb-col-os">'.$devlivrePar.'<span class="sub-text text-white">'.$myPeche->id.'</span></td>
+                            <td class="tb-col-ip"><span class="sub-text">'.$devlivrePar.'</span></td>
+                            <td class="tb-col-ip"><span class="sub-text">'.$dateEmission.'/span></td>
+                            <td class="tb-col-ip"><span class="sub-text">'.$dateExpiration.'</span></td>
+                            <td class="tb-col-ip"><span class="sub-text">'.$zondPeche.'</span></td>
+                            <td class="tb-col-ip"><span class="sub-text">'.$especeForPeche.'</span></td>
+                            <td class="tb-col-time"><span class="sub-text">'.$engin.'<span class="d-none d-sm-inline-block">'.$myPeche->id.'</span></span></td>
+                            <td class="tb-col-action"><a href="javascript:void(0);" onclick="myDeleteAutoPeche(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                               
+                        </tr>';
+
+
+            return response()->json([
+                'succes' => "enregistré avec succes",
+                'testPeche'=> $testPeche,
+            ], 203);
+                
     }
 
         
@@ -186,6 +338,34 @@ class demandeController extends Controller
 
 
 
+    /******************************************************/
+    /******************************************************/
+    //  Fonction qui fait le Formatage de la date         //
+    /******************************************************/
+    //funcction pour convertir la date au format universal
+    function convertDateFormat($date)
+    {
+        $date=(string) $date;
+        $parts = explode('/', $date);
+
+        $month= $parts[0] ?? null;
+        $day = $parts[1] ?? null;
+        $year = $parts[2] ?? null;
+        $formattedDate = $year."-".$month."-".$day;
+    
+        return $formattedDate;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     /******************************************************/
     /******************************************************/
@@ -251,8 +431,8 @@ class demandeController extends Controller
            $this->currentPage = PAGELISTDEMANDE;
        }
 
-       if(myContains($nameRequest, "new")){
-           $this->idDemandeLoading = $this->createDemande();
+       if(myContains($nameRequest, "newdemande")){
+           $this->createDemande();
            $this->currentPage = PAGENEWDEMANDE;
            
            

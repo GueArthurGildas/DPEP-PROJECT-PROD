@@ -9,6 +9,10 @@ class Navire extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['Nom_Navire','Engin_Interne','Dimension_Navire','Num_IRCS','couleur_Navire','Etat_Pavillon','Port_Attache',
+                           'Doc_Navire','Pays_originin_Navire','Pays_enregistre_Navire','Unique_Vessel_Identifier','Length_Overall','Net_Registered_Tonnage','Gross_Tonnage',
+                           'Gross_Registered_Tonnage','Power_of_Main_Engine','Power_unit','Hull_Material','Fish_Hold_Capacity','Fish_Hold_Type','Net_tonnage',
+                           '','Id_Certificat_Immat','Type_Navire','Omi','ORGP','Id_Extern','societe_id']; 
 
 
     public function Inspection(){

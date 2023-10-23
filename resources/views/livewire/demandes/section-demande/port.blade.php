@@ -15,30 +15,30 @@
    </div>
 </div>
 --}}
-<div class="card text-white bg-secondary">
+{{-- <div class="card  " style="background-color:#ffe6d7">
    <div class="card-inner">
       <div class="nk-block-head nk-block-head-lg">
          <div class="nk-block-head-sub"><span></span></div>
          <div class="nk-block-between-md g-4">
             <div class="nk-block-head-content">
                <h2 class="nk-block-title fw-normal">Les informations relatives au port </h2>
-               <div class="nk-block-des text-white">
+               <div class="nk-block-des ">
                   <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
                </div>
             </div>
             <div class="nk-block-head-content">
                <ul class="nk-block-tools gx-3">
-                  <img class="" src="{{asset("images/CI-Logov.png")}}" alt="User profile picture" width="150" height="70">
-                  {{-- 
-                  <li class="order-md-last"><a href="{{route("home.demandes.newdemande.index")}}" class="btn btn-white btn-dim btn-outline-primary"><span>Nouvelle Demande</span><em class="icon ni ni-arrow-long-right"></em></a></li>
-                  --}}
+               <div class="user-avatar lg bg-white">
+                  <img class="" src="{{asset("images/CI-Logov.png")}}" alt="User profile picture" width="100" height="50">        
+               </div>
+                  
                </ul>
             </div>
          </div>
       </div>
       <!-- .nk-block-head -->
    </div>
-</div>
+</div> --}}
 
    {{-- 
    <div class="nk-block-head nk-block-head-lg wide-xs mx-auto">
@@ -56,16 +56,16 @@
             <div class="nk-kycfm-head">
                <div class="nk-kycfm-count bg-light">01</div>
                <div class="nk-kycfm-title">
-                  <h5 class="title"> Port d'acceuil et objet d'entrée</h5>
-                  <p class="sub-title">Your simple personal information required for identification</p>
+                  <h4 class="title"> Port d'acceuil et objet d'entrée</h4>
+                  <p class="sub-title">Sélectionnez le pays où vous prévoyez d'arriver. Précisez également le but de votre arrivée.</p>
                </div>
             </div>
             <!-- nk-kycfm-head -->
             <div class="nk-kycfm-content">
-               <div class="nk-kycfm-note">
+               {{-- <div class="nk-kycfm-note">
                   <em class="icon ni ni-info-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"></em>
-                  <p>Please type carefully and fill out the form with your personal details. Your can’t edit these details once you submitted the form.</p>
-               </div>
+                  <p>Please Sélectionnez le pays où vous prévoyez d'arriver. Précisez également le but de votre arrivée.</p>
+               </div> --}}
                <div class="row g-4">
                   <div class="col-md-6">
                      <div class="form-group">
@@ -96,7 +96,7 @@
                               <option value="default_option">Default Option</option>
                               --}}
                               <option value="Ravitaillement">Ravitaillement</option>
-                              <option value="Débarquement">Débarquement</option>
+                              <option value="Debarquement">Débarquement</option>
                               <option value="Transbordement">Transbordement</option>
                               <option value="Escale Technique">Escale Technique</option>
                               <option value="Autre">Autre </option>
@@ -110,18 +110,18 @@
             </div>
             <!-- nk-kycfm-content -->
             <div class="nk-kycfm-head">
-               <div class="nk-kycfm-count bg-warning text-white">02</div>
+               <div class="nk-kycfm-count bg-light">02</div>
                <div class="nk-kycfm-title">
-                  <h5 class="title">Escale effectuée</h5>
-                  <p class="sub-title">Your simple personal information required for identification</p>
+                  <h4 class="title">Escale effectuée</h4>
+                  <p class="sub-title">Remplir cette partie si vous avez effectué une escale avant d'arriver au port d'accueil final.</p>
                </div>
             </div>
             <!-- nk-kycfm-head -->
             <div class="nk-kycfm-content">
-               <div class="nk-kycfm-note">
+               {{-- <div class="nk-kycfm-note">
                   <em class="icon ni ni-info-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"></em>
-                  <p>Your can’t edit these details once you submitted the form.</p>
-               </div>
+                  <p>Veuillez correctement remplir cette partie si vous avez effectué une escale avant d'arriver au port d'accueil final</p>
+               </div> --}}
                <div class="row g-4">
                   <div class="col-md-6">
                      <div class="form-group">
@@ -129,7 +129,7 @@
                            <label class="form-label">Date de la dernière escale<span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control"  id="dateLastEscale">
+                           <input type="text" class="form-control date-picker" id="dateLastEscale" >
                         </div>
                      </div>
                   </div>
@@ -137,12 +137,12 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <div class="form-label-group">
-                           <label class="form-label">Port d'escale</label>
+                           <label class="form-label">Port d'escale<span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <select class="form-select js-select2" data-placeholder="Select  options"  id="accueilPort">
-                              <option value="option_select_name">Abidjan</option>
-                              <option value="option_select_name">San-Pedro</option>
+                           <select required class="form-select js-select2" data-placeholder="Select  options"  id="accueilPort" >
+                              <option value="Abidjan" >Abidjan</option>
+                              <option value="San-Pedro">San-Pedro</option>
                            </select>
                         </div>
                      </div>
@@ -153,18 +153,18 @@
             </div>
             <!-- nk-kycfm-content -->
             <div class="nk-kycfm-head">
-               <div class="nk-kycfm-count bg-warning text-white">03</div>
+               <div class="nk-kycfm-count bg-light">03</div>
                <div class="nk-kycfm-title">
-                  <h5 class="title">Arrivée estimée</h5>
-                  <p class="sub-title">Your simple personal information required for identification</p>
+                  <h4 class="title">Arrivée estimée</h4>
+                  <p class="sub-title">Fournissez la date prévue d'arrivée au port.</p>
                </div>
             </div>
             <!-- nk-kycfm-head -->
             <div class="nk-kycfm-content">
-               <div class="nk-kycfm-note">
+               {{-- <div class="nk-kycfm-note">
                   <em class="icon ni ni-info-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"></em>
                   <p>Please type carefully and fill out the form with your personal details. Your can’t edit these details once you submitted the form.</p>
-               </div>
+               </div> --}}
                <div class="row g-4">
                   <div class="col-md-6">
                      <div class="form-group">
@@ -172,7 +172,7 @@
                            <label class="form-label">Date d'arrivée estimée<span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control"  id="dateArriveEstim">
+                           <input type="text" class="form-control date-picker"  id="dateArriveEstim">
                         </div>
                      </div>
                   </div>
@@ -187,13 +187,13 @@
                               <div class="col-lg-6 col-sm-6">
                                  <div class="form-group">
                                     <div class="form-control-wrap">
-                                       <select class="form-select js-select2" data-placeholder="Select Multiple options"  id="heureArriveEstim">
+                                       <select class="form-select js-select2" data-placeholder="Select Multiple options"  id="heureArriveEstim" >
                                           @for ($i = 0; $i < 24; $i++)
                                           @if ($i<10)
-                                          <option value="option_select_name">0{{$i}} H</option>
+                                          <option value={{$i}}>0{{$i}} H</option>
                                           @endif
                                           @if ($i>=10)
-                                          <option value="option_select_name">{{$i}} H</option>
+                                          <option value={{$i}}>{{$i}} H</option>
                                           @endif
                                           @endfor
                                        </select>
@@ -207,10 +207,10 @@
                                        <select class="form-select js-select2" data-placeholder="Select Multiple options" id="minuteArriveEstim">
                                           @for ($i = 0; $i <= 60; $i++)
                                           @if ($i<10)
-                                          <option value="option_select_name">0{{$i}}</option>
+                                          <option value={{$i}}>0{{$i}}</option>
                                           @endif
                                           @if ($i>=10)
-                                          <option value="option_select_name">{{$i}}</option>
+                                          <option value={{$i}}>{{$i}}</option>
                                           @endif
                                           @endfor
                                        </select>

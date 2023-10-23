@@ -7,7 +7,7 @@
 
             @if ($currentPage==PAGENEWDEMANDE)
               
-               @include("livewire.demandes.new-demande")
+               @include("livewire.demandes.model-form")
             @endif
         
         </div>    

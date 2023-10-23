@@ -82,7 +82,42 @@
     </div>
     <!-- app-root @e -->
 
-    @include("components.modal-capture-detail")
+
+
+
+     <!-- Modal Form -->
+    <div class="modal fade" id="modalForm">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Customer Info</h5>
+                    <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <em class="icon ni ni-cross"></em>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-validate is-alter">
+                       
+                        <div class="form-group">
+                            <select    class="form-select js-select2" data-search="on" >
+                             {{-- @foreach ($lesNavires as $i )
+                                 <option value="Ravitaillement">{{$i->Nom_Navire}} {{$i->Nom_Navire}}</option>
+                             @endforeach --}}
+                           </select>
+                        </div>
+                      
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-lg btn-primary">Save Informations</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer bg-light">
+                    <span class="sub-text">Modal Footer Text</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- select region modal -->
     <div class="modal fade" tabindex="-1" role="dialog" id="region">
@@ -347,315 +382,27 @@
 {{-- @e test d'envoi de requête ajax vers le serveur   --}}
 {{-- --------------------------------------------------------------------------- --}}
 
-{{-- --------------------------------------------------------------------------- --}}
-{{-- @es send navire and port section to the controller throw ajax query --}}
+@include("js-ajax-file.port-navire-js") {{-- @es send navire and port section to the controller throw ajax query --}}
+
+@include("js-ajax-file.capture-js") {{--@s Ici j'implique le fichier Js des captures --}}
+
+@include("js-ajax-file.peche-js") {{--@s Ici j'implique le fichier Js des captures --}}
+
+
+
+
+
+{{-- ici affichage le modal selection de navire au click du boiuton  --}}
+
 <script>
-$(document).ready(function () {
 
+$('#btnOpenMoalSelectNavire').click(function(e) {
 
-    $('#nextFormButton').click(function(e) {
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            /// @s data from navire Form
-
-            let nomNavire = $('#nomNavire').val();
-            let etatPavillonNavire = $('#etatPavillonNavire').val();
-            let typeNavire = $('#typeNavire').val();
-            let certifNavire = $('#certifNavire').val();
-            let tiranNavire = $('#tiranNavire').val();
-            let longNavire = $('#longNavire').val();
-            let largNavire = $('#largNavire').val();
-            let immaCertifNavire = $('#immaCertifNavire').val();
-            let omi = $('#omi').val();
-            let orgp = $('#orgp').val();
-            let contactNavireForInfo = $('#contactNavireForInfo').val();
-            let proprioNavire = $('#proprioNavire').val();
-            let captaineName = $('#captaineName').val();
-            let captaineNationality = $('#captaineNationality').val();
-            /// @e data from navire Form
-
-            /// @s data from Port Form
-            let objetAccesPort = $('#objetAccesPort').val();
-            let minuteArriveEstim = $('#minuteArriveEstim').val();
-            let heureArriveEstim = $('#heureArriveEstim').val();
-            let dateArriveEstim = $('#dateArriveEstim').val();
-            let accueilPort = $('#accueilPort').val();
-            let dateLastEscale = $('#dateLastEscale').val();
-            let objetPortEntre = $('#objetPortEntre').val();
-            let pays = $('#pays').val();
-
-            /// @e data from Port Form
-
-
-            /// @s data from Capture Form
-
-            let espece = $('#espece').val();
-            let produit = $('#produit').val();
-            let zoneCapture = $('#zoneCapture').val();
-            let qteBord = $('#qteBord').val();
-            let qteDebarque = $('#qteDebarque').val();
-            /// @e data from Capture Form
-
-
-
-            var donnees = {
-                /// @s data from navire Form
-
-                nomNavire: nomNavire,
-                etatPavillonNavire: etatPavillonNavire,
-                typeNavire: typeNavire,
-                certifNavire: certifNavire,
-                tiranNavire: tiranNavire,
-                longNavire: longNavire,
-                largNavire: largNavire,
-                immaCertifNavire: immaCertifNavire,
-                omi: omi,
-                orgp: orgp,
-                contactNavireForInfo: contactNavireForInfo,
-                proprioNavire: proprioNavire,
-                captaineName: captaineName,
-                captaineNationality: captaineNationality,
-                /// @e data from navire Form
-
-                /// @s data from Port Form
-                objetAccesPort: objetAccesPort,
-                minuteArriveEstim: minuteArriveEstim,
-                heureArriveEstim: heureArriveEstim,
-                dateArriveEstim: dateArriveEstim,
-                accueilPort: accueilPort,
-                dateLastEscale: dateLastEscale,
-                objetPortEntre: objetPortEntre,
-                pays: pays,
-                /// @e data from Port Form
-
-
-                /// @s data from capture Form
-                espece: espece,
-                produit: produit,
-                zoneCapture: zoneCapture,
-                qteBord: qteBord,
-                qteDebarque: qteDebarque
-                /// @e data from capture Form
-
-            };
-
-
-            $.ajax({
-                url: '',
-                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
-                data: donnees,
-                success: function (response) {
-                   console.log(response);
-                },
-                error: function (error) {
-                    // Gestion des erreurs
-                }
-            });
-
-        })
 
 })
 
-
-</script>
-{{-- @e send navire and port section to the controller throw ajax query --}}
-{{-- --------------------------------------------------------------------------- --}}
-
-
-<script>
-
-
-        function myDelete(element) {
-            // Récupérer l'élément parent de l'élément cliqué
-            var parentTr = $(element).closest('tr');
-
-            // Récupérer l'ID de l'élément parent
-            var captureId = parentTr.find('.text-white').text();
-
-            // recuperer l'Id de la demande en cours de traitement
-             let demandeId = $('#demandeId').text();
-
-            // remplir la valeur data
-             var data = {
-                captureId: captureId,
-                demandeId: demandeId,
-            };
-
-             $.ajax({
-                url: '{{route("home.demandes.capturedelete.index")}}',
-                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
-                data: data,
-                success: function (response) {
-                   parentTr.html('');
-                   console.log(response);          
-                },
-                error: function (error) {
-                    // Gestion des erreurs
-                }
-            });
-
-        }
-
-         function openFormCaptureShowDetail() {
-              $('#modalForm').modal('show');
-         }
-
-
-    
-
-
-
 </script>
 
-
-{{-- --------------------------------------------------------------------------- --}}
-{{-- @s send capture section to the controller throw ajax query --}}
-<script>
-
-$(document).ready(function () {
-
-    // Ici on envoie la capture dans la bd pour être sauvegarder
-
-
-    // Ici on envoie la capture dans la bd pour être sauvegarder
-    $('#btnAddCaptureToCollection').click(function(e) {
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-
-            /// @s data from Capture Form
-            let espece = $('#espece').val();
-            let produit = $('#produit').val();
-            let zoneCapture = $('#zoneCapture').val();
-            let qteBord = $('#qteBord').val();
-            let qteDebarque = $('#qteDebarque').val();
-            let demandeId = $('#demandeId').text();
-            /// @e data from Capture Form
-
-
-
-            var donnees = {
-
-                /// @s data from capture Form
-                espece: espece,
-                produit: produit,
-                zoneCapture: zoneCapture,
-                qteBord: qteBord,
-                qteDebarque: qteDebarque,
-                demandeId: demandeId
-                /// @e data from capture Form
-
-            };
-
-
-            $.ajax({
-                url: '{{route("home.demandes.capture.index")}}',
-                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
-                data: donnees,
-                success: function (response) {
-                   console.log(response.testCapture);
-                   $("#iciAddRetourAcptureOk").append(response.testCapture);
-                   $('#espece').val("");
-                   $('#produit').val("");
-                   $('#zoneCapture').val("");
-                   $('#qteBord').val("");
-                   $('#qteDebarque').val("");
-                   $('#demandeId').val("");
-                   toastr.success('Have fun storming the castle!', 'Miracle Max Says')
-                },
-                error: function (error) {
-                    // Gestion des erreurs
-                }
-            });
-
-        })
-
-        
-
-    })
-
-
-
-</script>
-{{-- @e send capture section to the controller throw ajax query --}}
-{{-- --------------------------------------------------------------------------- --}}
-
-
-
-
-
-
-{{-- --------------------------------------------------------------------------- --}}
-{{-- @s send peche section to the controller throw ajax query --}}
-<script>
-
-$(document).ready(function () {
-
-
-    $('#btnAddPecheToCollection').click(function(e) {
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-
-            /// @s data from Peche Form
-                let identificateur = $('#Identificateur').val();
-                let devlivrePar = $('#devlivrePar').val();
-                let dateEmission = $('#dateEmission').val();
-                let dateExpiration = $('#dateExpiration').val();
-                let zondPeche = $('#zondPeche').val();
-                let especeForPeche = $('#especeForPeche').val();
-                let engin = $('#engin').val();
-
-            /// @e data from Peche Form
-
-
-
-            var donnees = {
-
-                /// @s data from peche Form
-                devlivrePar:devlivrePar,
-                Identificateur: identificateur,
-                dateEmission: dateEmission,
-                dateExpiration: dateExpiration,
-                zondPeche: zondPeche,
-                especeForPeche: especeForPeche,
-                engin: engin
-                /// @e data from peche Form
-
-            };
-
-
-            $.ajax({
-                url: '',
-                type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
-                data: donnees,
-                success: function (response) {
-                    // Traitement en cas de succès
-                },
-                error: function (error) {
-                    // Gestion des erreurs
-                }
-            });
-
-        })
-
-})
-</script>
-{{-- @e send peche section to the controller throw ajax query --}}
-{{-- --------------------------------------------------------------------------- --}}
 
 
 {{-- --------------------------------------------------------------------------- --}}

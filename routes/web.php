@@ -81,7 +81,9 @@ Route::group([
         Route::get('/demande/capture', [demandeController::class,'CaptureFunct'])->name("capture.index"); // home.demandes.capture.index
         Route::get('/demande/capture-delete', [demandeController::class,'CaptureDeleteFunct'])->name("capturedelete.index"); // home.demandes.capturedelete.index
         Route::get('/demande/peche', [demandeController::class,'PecheFunct'])->name("peche.index"); // home.demandes.peche.index
+        Route::get('/demande/peche-delete', [demandeController::class,'PecheDeleteFunct'])->name("pechedelete.index"); // home.demandes.pechedelete.index
         Route::get('/demande/transb', [demandeController::class,'TransbFunct'])->name("transb.index"); // home.demandes.transb.index
+        Route::get('/demande/update-demande', [demandeController::class,'updateDemandeFunct'])->name("updateDemande.index"); // home.demandes.updateDemande.index
         Route::get('/demande/info-transb', [demandeController::class,'infoTransbFunct'])->name("infotransb.index"); // home.demandes.infotransb.index
         Route::get('/demande/navire-port', [demandeController::class,'navireAndPortFunct'])->name("navireport.index"); // home.demandes.navireport.index
         /************************************************************************************************************************** */

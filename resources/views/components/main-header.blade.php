@@ -568,6 +568,7 @@
                                                         <div class="nk-notification-time">2 hrs ago</div>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="nk-notification-item dropdown-inner">
                                                     <div class="nk-notification-icon">
                                                         <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
@@ -661,11 +662,25 @@
                                                 <li><a class="dark-mode-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
                                             </ul>
                                         </div>
-                                        <div class="dropdown-inner">
+                                        {{-- <div class="dropdown-inner">
                                             <ul class="link-list">
                                                 <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
+                                        <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li>
+                                                        <a href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault();
+                                                                            document.getElementById('logout-form').submit();">
+                                                            <em class="icon ni ni-signout"></em><span>Déconnexion</span>
+                                                        </a>
+                                                    </li>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                    </form>
+                                                </ul>
+                                            </div>
                                     </div>
                                 </li><!-- .dropdown -->
                                 <li class="dropdown language-dropdown d-none d-sm-flex me-n1">
