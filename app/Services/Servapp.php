@@ -7,6 +7,10 @@ use Illuminate\Support\Str;
 
 class  Servapp
 {
+
+
 public static $statutSousPageNewDemande;
+
+public static $newNavireForDemande;
 
 }

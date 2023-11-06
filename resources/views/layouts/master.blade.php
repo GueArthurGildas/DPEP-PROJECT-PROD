@@ -11,10 +11,20 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Invest Dashboard | DashLite Admin Template</title>
+    <title>MIRAH | e-DPEP</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="./assets/css/dashlite.css?ver=3.2.2">
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=3.2.2">
+     <!-- FontAwesome Icons --> 
+ <link rel="stylesheet" type="text/css" href="./assets/css/libs/fontawesome-icons.css"> 
+
+ <!-- Themify Icons --> 
+ <link rel="stylesheet" type="text/css" href="./assets/css/libs/themify-icons.css"> 
+
+ <!-- Bootstrap Icons --> 
+ <link rel="stylesheet" type="text/css" href="./assets/css/libs/bootstrap-icons.css"> 
+    @include("style-css.css-for-circle")
+    @include("style-css.css-fleche-blade")
 </head>
 
 <body class="nk-body npc-invest bg-lighter ">
@@ -22,6 +32,7 @@
         <!-- wrap @s -->
         <div class="nk-wrap ">
             <!-- main header @s -->
+                <x-navbar/>
                 <x-main-header/>
             <!-- main header @e -->
             <!-- content @s -->
@@ -387,6 +398,9 @@
 @include("js-ajax-file.capture-js") {{--@s Ici j'implique le fichier Js des captures --}}
 
 @include("js-ajax-file.peche-js") {{--@s Ici j'implique le fichier Js des captures --}}
+@include("js-ajax-file.switch-to-search-navire")  {{--@s Le script pour faire basculer la demande vers la recherche de navire--}}
+@include("js-ajax-file.navire-js") {{--ici le script pour gerer que le navire--}}
+
 
 
 

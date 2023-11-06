@@ -74,6 +74,7 @@ Route::group([
         Route::get('/user-demandes', Demandes::class)->name("mesdemande.index"); //home.demandes.mesdemande.index
         Route::get('/demande', Demandes::class)->name("voirdemande.index"); //home.demandes.voirdemande.index
         Route::get('/demande-detail', Demandes::class)->name("demandedetail.index"); //home.demandeuser.demande.index
+        Route::get('/demande-presentation', [demandeController::class,'index'])->name("presentDemande.index"); //home.demandeuser.presentDemande.index
 
 
         /************************************************************************************************************************** */
@@ -86,6 +87,8 @@ Route::group([
         Route::get('/demande/update-demande', [demandeController::class,'updateDemandeFunct'])->name("updateDemande.index"); // home.demandes.updateDemande.index
         Route::get('/demande/info-transb', [demandeController::class,'infoTransbFunct'])->name("infotransb.index"); // home.demandes.infotransb.index
         Route::get('/demande/navire-port', [demandeController::class,'navireAndPortFunct'])->name("navireport.index"); // home.demandes.navireport.index
+        route::get('/demande/navire-for-demande',[demandeController::class,'getNavieForDemandeFunct'])->name("navirefordemande.index"); // home.demandes.navirefordemande.index
+        
         /************************************************************************************************************************** */
 
 
@@ -116,3 +119,7 @@ Route::group([
 Auth::routes();
 
 Route::get('/Accueil', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

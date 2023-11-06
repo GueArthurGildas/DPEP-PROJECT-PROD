@@ -23,6 +23,26 @@
       <!-- .nk-block-head -->
    </div>
 </div> --}}
+   <div class="circle-line justify-content-center ">
+        <div class="circle">1</div>
+        <div class="line"></div>
+        <div class="circle">2</div>
+        <div class="line"></div>
+        <div class="circle"><i class=" fas fa-solid fa-check"></i></div>
+        <div class="line"></div>
+        <div class="circle">4</div>
+        <div class="line"></div>
+        <div class="circle">5</div>
+    </div><br>
+
+ <div class="nk-kycfm-head bg-white">
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
+               <div class="nk-kycfm-title">
+                  <h4 class="title"> Les captures à bord du Navire </h4>
+                  <p class="sub-title">Sélectionnez le pays où vous prévoyez d'arriver. Précisez également le but de votre arrivée.</p>
+               </div>
+            </div>
+            <!-- nk-kycfm-head -->
 <div class="row g-gs  mt-1">
    <div class="col-lg-6">
       <div class="card card-bordered h-100">
@@ -51,8 +71,8 @@
                         </div>
                      </div>
                <div class="form-group">
-                  <a class="btn btn-icon btn-small btn-primary" eg-toastr-top-right id="btnAddCaptureToCollection"><em class="icon ni ni-plus"></em></a>
-                  <a href="#" class="btn btn-icon btn-small btn-primary"><em class="icon ni ni-trash"></em></a>
+                  <a class="btn btn-icon btn-small btn-dark" eg-toastr-top-right id="btnAddCaptureToCollection"><em class="icon ni ni-plus"></em></a>
+                  <a href="#" class="btn btn-icon btn-small btn-dark"><em class="icon ni ni-trash"></em></a>
                </div>
             </form>
          </div>
@@ -82,21 +102,7 @@
                <hr>
                <span class="text-white" id="demandeId">{{$idDemadne}}</span>
 
-               <table class="table table-bordered">
-   <thead>
-      <tr>
-         <th scope="col text-danger">Total à Bord</th>
-         <th scope="col text-danger">Total à débarquer</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <th scope="row">0</th>
-         <td scope="row">0</td>
-         
-      </tr>
-   </tbody>
-</table>
+
 
             </form>
          </div>

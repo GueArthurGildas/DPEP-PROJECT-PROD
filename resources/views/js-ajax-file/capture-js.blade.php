@@ -9,7 +9,10 @@
             var parentTr = $(element).closest('tr');
 
             // Récupérer l'ID de l'élément parent
-            var captureId = parentTr.find('.text-white').text();
+            //var captureId = parentTr.find('.text-white').text();
+            var captureId = $(element).closest('a').attr("data-id");
+            console.log(captureId);
+
 
             // recuperer l'Id de la demande en cours de traitement
              let demandeId = $('#demandeId').text();

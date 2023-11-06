@@ -1,101 +1,78 @@
 @extends("layouts.master")
 @section("content")
 <div >
-   <div class="nk-block">
-      <div class="row g-gs">
-         <div class="col-lg-3 col-xl-3 col-xxl-3 ">
-            <div class="card card-bordered m-4">
-               <div class="card-inner-group">
-                  <ul class="link-list-opt no-bdr">
-                     <li><a href="#"><em class="icon ni ni-setting"></em><span>Navire </span></a></li>
-                     <li><a href="#"><em class="icon ni ni-notify"></em><span>Port d'Accueil</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Captures</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Autorisation de pêche</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Autorisation transbodement</span></a></li>
-                  </ul>
-               </div>
-            </div>
-            <div class="card card-bordered m-4">
-               <div class="card-inner-group">
-                  <ul class="link-list-opt no-bdr">
-                     <li><a href="#"><em class="icon ni ni-setting"></em><span>Navire </span></a></li>
-                     <li><a href="#"><em class="icon ni ni-notify"></em><span>Port d'Accueil</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Captures</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Autorisation de pêche</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Autorisation transbodement</span></a></li>
-                  </ul>
-               </div>
-            </div>
-            <div class="card card-bordered m-4">
-               <div class="card-inner-group">
-                  <ul class="link-list-opt no-bdr">
-                     <li><a href="#"><em class="icon ni ni-setting"></em><span>Navire </span></a></li>
-                     <li><a href="#"><em class="icon ni ni-notify"></em><span>Port d'Accueil</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Captures</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Autorisation de pêche</span></a></li>
-                     <li><a href="#"><em class="icon ni ni-activity-alt"></em><span>Autorisation transbodement</span></a></li>
-                  </ul>
-               </div>
-            </div>
-            
-         </div>
-         <!-- .col -->
-         <div class="col-lg-9 col-xl-9 col-xxl-9" style="display:none;">
-            
-            <div class="nk-block">
-            
-               <form class="nk-stepper stepper-init is-alter" action="#" id="stepper-survey-v2" style="background*color:orange">
-                  <div class="nk-stepper-content ">
-                     <div class="nk-stepper-progress stepper-progress mb-4 ">
-                        <div class="stepper-progress-count mb-2 text-white">de {{$idDemadne}}</div>
-                        <div class="progress progress-md" >
-                           <div class="progress-bar stepper-progress-bar" ></div>
-                        </div>
-                     </div>
-                     <div class="nk-stepper-steps stepper-steps">
-                        <div class="nk-stepper-step">
-                           @include("livewire.demandes.section-demande.navire")
-                        </div>
-                        <div class="nk-stepper-step">
-                           @include("livewire.demandes.section-demande.port")
-                        </div>
-                        <div class="nk-stepper-step">
-                           @include("livewire.demandes.section-demande.capture")
-                        </div>
-                        <div class="nk-stepper-step" id="existantDiv">
-                           @include("livewire.demandes.section-demande.peche-auto")
-                        </div>
-                        <div class="nk-stepper-step" >
-                           @include("livewire.demandes.section-demande.transb")
-                        </div>
-
-                        <div class="nk-stepper-step " >
-                           <div  class="nk-stepper-step-" id="testClassToRemove">
-                              @include("livewire.demandes.section-demande.uploadfile")
-                           </div>
-                        </div>
-                     </div>
-                     <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
-
-                        <li class="step-prev"><button class="btn btn-dim btn-primary">Retour</button></li>
-                        <li class="step-next"><button class="btn btn-primary" id="nextFormButton">Suivant <em class="icon ni ni-arrow-long-right"></em></button></li>
-                        <li class="step-submit"><button class="btn btn-primary">Soumettre</button></li>
-                     </ul>
-                  </div>
-               </form>
-            </div>
-         </div>
-         <!-- .col -->
-
-         <div class="col-lg-9 col-xl-9 col-xxl-9" >
-                        
-            
-                     @include("livewire.demandes.selectnavire")
-            
+   <div class="nk-block pl-5 pr-5" ></div>
+   <div class=""><a class="back-to text-danger" href="{{route('home')}}" ><em class="icon ni ni-arrow-left"></em><span>Annuler la demande</span></a></div>
+   <div class="nk-block-head-sub"><span></span></div>
+   <div class="nk-block-between-md g-4">
+      <div class="nk-block-head-content">
+         <h2 class="nk-block-title fw-normal">Formulaire DPEP, 👋</h2>
+         <div class="nk-block-des">
+            <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
          </div>
       </div>
-      <!-- .row -->
+      <div class="nk-block-head-content">
+         <li class="order-md-last"><a href="{{route("home.demandes.newdemande.index")}}" class="btn btn-white btn-dim btn-outline-dark"><span>Etape de soummission</span></a></li>
+         <li>
+            <div id="loading-svg" style=" display: none;" class="pl-5">
+               <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
+            </div>
+         </li>
+         </ul>
+      </div>
    </div>
-   <!-- .nk-block -->
+</div>
+<!-- .nk-block-head -->
+<div class="row g-gs" >
+   <form class="nk-stepper stepper-init is-alter p-4 m-4" action="#" id="stepper-survey-v2" style="background*color:orange">
+      <div class="nk-stepper-content ">
+         <div class="nk-stepper-steps stepper-steps">
+            
+             <div class="nk-stepper-step " >
+               <div  class="nk-stepper-step-" id="testClassToRemove">
+                  @include("livewire.demandes.section-demande.uploadfile")
+               </div>
+               </div>
+
+            <div class="nk-stepper-step">
+               @include("livewire.demandes.section-demande.port")
+            </div>
+            <div class="nk-stepper-step">
+               @include("livewire.demandes.section-demande.navire")
+            </div>
+            <div class="nk-stepper-step">
+               @include("livewire.demandes.section-demande.capture")
+            </div>
+            <div class="nk-stepper-step" id="existantDiv">
+               @include("livewire.demandes.section-demande.peche-auto")
+            </div>
+            {{-- 
+            <div class="nk-stepper-step" id="existantDiv">
+               @include("livewire.demandes.section-demande.transb")
+            </div>
+            --}}
+            
+           
+            
+           
+         </div>
+         <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
+            <li class="step-prev"><button class="btn btn-dim "  style="background*color:orange">Retour</button></li>
+            <li class="step-next loading-svg">
+               <button class="btn btn-danger" id="nextFormButton"  style="background*color:orange">Suivant <em class="icon ni ni-arrow-long-right"></em></button>
+            </li>
+            <li class="step-submit"><button class="btn btn-danger">Soumettre</button></li>
+         </ul>
+      </div>
+      <div class="nk-stepper-progress stepper-progress mb-4 ">
+         <div class="stepper-progress-count mb-2 text-light">de {{$idDemadne}}</div>
+         <div class="progress progress-md bg-light" >
+            <div class="progress-bar stepper-progress-bar bg-danger" ></div>
+         </div>
+      </div>
+   </form>
+</div>
+</div>
+<!-- .row -->
 </div>
 @endsection

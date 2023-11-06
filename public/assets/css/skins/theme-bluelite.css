@@ -1,5 +1,5 @@
 /*!
- * Theme: BlueLite
+ * Theme: Blue Light
  * Package: DashLite v3.2.2
  * Updated: 08.22.2023
  * Author: Softnio
@@ -37,12 +37,6 @@
 .is-dark .nk-menu-link {
   color: #8699b2;
 }
-.is-dark .nk-menu-link:hover {
-  background: #172641;
-}
-.is-dark .active > .nk-menu-link {
-  background: #172641;
-}
 .is-dark .nk-menu-icon {
   color: #9faec2;
 }
@@ -55,7 +49,16 @@
 .is-dark .nk-menu-link:hover .nk-menu-icon, .is-dark .nk-menu-item.active > .nk-menu-link .nk-menu-icon, .is-dark .nk-menu-item.current-menu > .nk-menu-link .nk-menu-icon {
   color: #98a3ff;
 }
-.is-dark .user-name {
+.is-dark .nk-news-icon .icon {
+  color: #6576ff;
+}
+.is-dark .nk-news-text .icon {
+  color: #8094ae;
+}
+.is-dark .nk-news-text p span {
+  color: rgba(128, 148, 174, 0.9);
+}
+.is-dark .user-name, .is-dark .nk-news-text p {
   color: #90a1b8;
 }
 .is-dark .nk-quick-nav-icon {
@@ -65,12 +68,6 @@
 .is-theme .nk-menu-link {
   color: #bac6fe;
 }
-.is-theme .nk-menu-link:hover {
-  background: #313d91;
-}
-.is-theme .active > .nk-menu-link {
-  background: #313d91;
-}
 .is-theme .nk-menu-icon {
   color: #e2e7ff;
 }
@@ -78,13 +75,16 @@
   color: #fefeff;
   background: #3644a0;
 }
-.is-theme .nk-quick-nav-icon, .is-theme .overline-title {
+.is-theme .nk-news-icon .icon {
+  color: #b2baff;
+}
+.is-theme .nk-news-text .icon, .is-theme .nk-quick-nav-icon, .is-theme .overline-title {
   color: #c4cefe;
 }
-.is-theme .nk-menu-heading .overline-title {
+.is-theme .nk-news-text p span, .is-theme .nk-menu-heading .overline-title {
   color: rgba(196, 206, 254, 0.8);
 }
-.is-theme .user-name {
+.is-theme .user-name, .is-theme .nk-news-text p {
   color: #dde3fe;
 }
 
@@ -95,9 +95,10 @@
 .bg-primary,
 .icon-circle,
 .noUi-connect,
+.nk-kycfm-label::after,
+.buysell-pm-label:after,
 .nk-msg-menu-item a:after,
-.ui-shady .nk-msg-item.active:after, .ui-shady .nk-msg-item.current:after,
-.ui-softy .nk-msg-item.active:after, .ui-softy .nk-msg-item.current:after {
+.ui-shady .nk-msg-item.active:after, .ui-shady .nk-msg-item.current:after {
   background: #6576ff;
 }
 
@@ -115,6 +116,10 @@
 
 .user-avatar, [class^=user-avatar]:not([class*=-group]) {
   background: #98a3ff;
+}
+
+.nk-news-item:hover .nk-news-text .icon {
+  color: #98a3ff;
 }
 
 .nk-menu-link:hover,
@@ -166,6 +171,16 @@
 .form-clip,
 .form-text-hint,
 .search-submit:hover,
+.nk-news-icon .icon,
+.nk-refwg-name .title,
+.nk-wg1-amount .amount,
+.nk-wgw-add a .title,
+.nk-wgw-actions a:hover span,
+.nk-wgw-actions a:hover .icon,
+.nk-wg4-note span,
+.nk-kycfm-control:checked ~ .nk-kycfm-label .label-icon,
+.wallet-item-add a:hover .wallet-icon,
+.wallet-item-add a:hover .wallet-name,
 .attach-item .icon,
 .attach-download:hover span,
 .nk-reply-meta-info .whom,
@@ -173,15 +188,17 @@
 .nk-msg-menu-item a:hover,
 .nk-msg-menu-item.active a,
 .user-balance,
-.user-avatar[class*=-primary-dim], a,
+.user-avatar[class*=-primary-dim],
+.nk-order-ovwg-data.sell .amount,
+.nk-order-ovwg-data.sell .title .icon,
+.nk-wg-action-content p strong, a,
 .dropzone .dz-message-text span,
 .nk-switch-icon.active,
 .link-list-plain a .icon,
 .chat-upload-option a,
 .is-unread .chat-context .status,
 .add-opt:hover .sub-text, .add-opt:hover .icon,
-.icon[class*=bg-primary-dim],
-.nk-tb-list .tb-asterisk a {
+.icon[class*=bg-primary-dim] {
   color: #6576ff;
 }
 
@@ -227,8 +244,6 @@ a.bg-primary:hover, a.bg-primary:focus, button.bg-primary:hover, button.bg-prima
 }
 
 .alert-pro.alert-primary, .bg-primary,
-.sp-package-choose:checked ~ label,
-.plan-control:checked + .plan-item-card,
 .form-control:focus,
 .form-control.focus,
 .custom-file-input:focus ~ .custom-file-label,
@@ -244,10 +259,6 @@ a.bg-primary:hover, a.bg-primary:focus, button.bg-primary:hover, button.bg-prima
 
 .dropdown-menu-s1 {
   border-top-color: #6576ff;
-}
-
-.nk-iv-wg2-amount.ui-v2 {
-  border-bottom-color: #6576ff;
 }
 
 .page-item.active .page-link,
@@ -283,12 +294,28 @@ a.bg-primary:hover, a.bg-primary:focus, button.bg-primary:hover, button.bg-prima
   color: #ffffff;
 }
 
-.icon-avatar {
+.icon-avatar, .nk-iv-scheme-icon.is-running {
   color: #6576ff;
   background-color: #e8eaff;
 }
 
-.is-theme .nk-quick-nav-icon:before {
+.is-dark .nk-wgw-icon {
+  background: #8491ff;
+}
+
+.is-dark .nk-wgw-balance .amount-sm, .is-dark .nk-wgw-actions a .icon, .is-dark .nk-wgw-more .btn-trigger {
+  color: #c4cefe;
+}
+
+.is-dark .nk-wgw-actions a {
+  color: #c4cefe;
+}
+
+.is-dark .nk-wgw-actions {
+  border-color: rgba(196, 206, 254, 0.4);
+}
+
+.is-dark .nk-wgw-more .btn-trigger:before, .is-theme .nk-quick-nav-icon:before {
   background-color: #1f275c;
 }
 
@@ -444,15 +471,20 @@ a.bg-primary:hover, a.bg-primary:focus, button.bg-primary:hover, button.bg-prima
   background-color: #f0f1ff;
 }
 
-.is-theme .nk-sidebar-footer, .nk-apps-sidebar.is-theme, .is-theme .nk-sidebar-profile-fixed {
+.is-theme .nk-sidebar-footer, .is-theme .nk-sidebar-profile-fixed {
   background: #29347a;
   border-color: #3644a0;
 }
 
-.is-theme .nk-menu-footer .nk-menu-link, .is-theme .sub-text, .is-theme .lead-text span {
+.is-theme .wallet-name, .is-theme .wallet-icon, .is-theme .wallet-balance span, .is-theme .nk-menu-footer .nk-menu-link, .is-theme .sub-text, .is-theme .lead-text span {
   color: #c4cefe;
 }
 
+@media (min-width: 1200px) {
+  .nk-sidebar.is-theme .nk-menu > li:hover > a, .nk-sidebar.is-theme .nk-menu > li.active > a, .nk-sidebar.is-theme .nk-menu > li.current-menu > a, .nk-sidebar.is-theme .nk-menu > li > a:hover, .is-theme .wallet-item a:before {
+    background: #344199;
+  }
+}
 .nav-switch-s2 .nav-link:hover, .nav-switch-s2 .nav-link:focus {
   color: #526484;
 }
@@ -519,4 +551,70 @@ a.bg-primary:hover, a.bg-primary:focus, button.bg-primary:hover, button.bg-prima
 .custom-control-pro.no-control .custom-control-input:not(:disabled):active ~ .custom-control-label,
 .custom-control.color-control .custom-control-label:before {
   border-color: #6576ff !important;
+}
+
+.has-sub.active > .nk-menu-toggle:after {
+  color: #6576ff;
+}
+
+.nk-sidebar .nk-menu > li .nk-menu-sub .nk-menu-link:before {
+  border-color: #eceefa;
+  background: #dee2fb;
+}
+.nk-sidebar .nk-menu > li.active > .nk-menu-link {
+  background: #dee2fb;
+}
+.nk-sidebar .nk-menu > li > .nk-menu-link:hover {
+  background: #dee2fb;
+}
+.nk-sidebar .nk-menu-sub {
+  background: #eceefa;
+}
+.nk-sidebar .nk-menu-sub:before {
+  background: #dee2fb;
+}
+.nk-sidebar .nk-menu-sub .active > .nk-menu-link:before {
+  background: #6576ff !important;
+}
+.nk-sidebar.is-dark .nk-menu > li .nk-menu-sub .nk-menu-link:before {
+  border-color: #141f37;
+  background: #1d284c;
+}
+.nk-sidebar.is-dark .nk-menu > li.active > .nk-menu-link {
+  background: #1d284c;
+}
+.nk-sidebar.is-dark .nk-menu > li > .nk-menu-link:hover {
+  background: #1d284c;
+}
+.nk-sidebar.is-dark .nk-menu-sub {
+  background: #141f37;
+}
+.nk-sidebar.is-dark .nk-menu-sub:before {
+  background: #1d284c;
+}
+.nk-sidebar.is-dark .nk-menu-sub .active > .nk-menu-link:before {
+  background: #ffffff !important;
+}
+.nk-sidebar.is-dark .nk-menu .nk-menu-link:hover .nk-menu-icon, .nk-sidebar.is-dark .nk-menu .nk-menu-item.active > .nk-menu-link .nk-menu-icon, .nk-sidebar.is-dark .nk-menu .nk-menu-item.current-menu > .nk-menu-link .nk-menu-icon,
+.nk-sidebar.is-dark .nk-menu .nk-menu-link:hover, .nk-sidebar.is-dark .nk-menu .active > .nk-menu-link {
+  color: #ffffff;
+}
+.nk-sidebar.is-theme .nk-menu > li .nk-menu-sub .nk-menu-link:before {
+  border-color: #2d3882;
+  background: #333f8f;
+}
+.nk-sidebar.is-theme .nk-menu > li.active > .nk-menu-link {
+  background: #333f8f;
+}
+.nk-sidebar.is-theme .nk-menu > li > .nk-menu-link:hover {
+  background: #333f8f;
+}
+.nk-sidebar.is-theme .nk-menu-sub {
+  background: #2d3882;
+}
+.nk-sidebar.is-theme .nk-menu-sub:before {
+  background: #333f8f;
+}
+.nk-sidebar.is-theme .nk-menu-sub .active > .nk-menu-link:before {
+  background: #ffffff !important;
 }

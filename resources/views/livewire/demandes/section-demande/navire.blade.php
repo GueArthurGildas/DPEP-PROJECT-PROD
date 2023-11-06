@@ -1,57 +1,51 @@
 
-   {{-- <div class="card  " style="background-color:#ffe6d7" >
-   <div class="card-inner" >
-      <div class="nk-block-head nk-block-head-lg">
-         <div class="nk-block-head-sub"><span></span></div>
-         <div class="nk-block-between-md g-4">
-            <div class="nk-block-head-content">
-               <h2 class="nk-block-title fw-normal">Les informations du navires </h2>
-               <div class="nk-block-des ">
-                  <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
-                  <div class="nk-block-head-content">
-                                                <ul class="nk-block-tools gx-3">
-                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalForm">Modal With Form</button>
-                                                    <li class="order-md-last"><a id="MoalSelectNavire" class="btn btn-white btn-dim btn-outline-primary"><span>Nouvelle Demande</span></a></li>
-                                                </ul>
-                                            </div>
-               </div>
-            </div>
-            <div class="nk-block-head-content">
-               <ul class="nk-block-tools gx-3">
-               <div class="user-avatar lg bg-white">
-                  <img class="" src="{{asset("images/CI-Logov.png")}}" alt="User profile picture" width="100" height="50">        
-               </div>
-               </ul>
-            </div>
-         </div>
+   <div class="circle-line justify-content-center ">
+        <div class="circle">1</div>
+        <div class="line"></div>
+        <div class="circle"><i class=" fas fa-solid fa-check"></i></div>
+        <div class="line"></div>
+        <div class="circle">3</div>
+        <div class="line"></div>
+        <div class="circle">4</div>
+        <div class="line"></div>
+        <div class="circle">5</div>
+    </div>
+<br><div id="block-search-navire" style=" display: none;">
+   <div class="form-group">
+      <div class="form-control-wrap">
+         <select class="form-select js-select2" data-search="on" id="navire-selected">
+            <option value="selectNavire">Selectionner le Navire</option>
+            @foreach ( $lesNavires as $i )
+            <option value="{{$i->id}}">{{$i->id}}  | {{$i->Nom_Navire}} |  {{$i->Etat_Pavillon}}</option>
+            @endforeach
+         </select>
       </div>
-      <!-- .nk-block-head -->
    </div>
-</div> --}}
-   <div class="nk-block ">
-   
-      <div class="card card-bordered mt-2 ">
+   <ul>
+   </ul>
+   <div class="form-group">
+      <a href="#" id="valide-select-navire" class="btn btn-danger">valider</a>
+      <a href="#" id="annul-select-navire" class="btn btn-dark">annuler</a>
+   </div>
+</div>
+<div class="nk-block ">
+   <div class="card card-bordered mt-2 ">
       <form>
-      
          <div class="nk-kycfm">
-         
             <div class="nk-kycfm-head ">
-
-               <div class="nk-kycfm-count bg-light">01</div>
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
                <div class="nk-kycfm-title">
-                  <h4 class="title"> Détails concernant le navire</h4>
+                  <h4 class="title"> Détails concernant le navire  </h4>
+                  <p id="newNavireCreated"> je suis ici </p>
                   <p class="sub-title">Veuillez fournir les informations essentielles concernant le navire.</p>
-                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalForm">Selectionner un navire</button>
+                  {{-- <button type="button" id="btnSwitchToNavireSearch" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalForm">Selectionner un navire</button> --}}
+                  <button type="button" id="btnSwitchToNavireSearch" class="btn btn-danger" >Selectionner un navire</button>
+                  <button type="button" id="btnDoappearFieldNavire" class="btn btn-danger" >Vider</button>
                </div>
-
             </div>
             <!-- nk-kycfm-head -->
-            
             <div class="nk-kycfm-content">
-               {{-- <div class="nk-kycfm-note">
-                  <em class="icon ni ni-info-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"></em>
-                  <p>Please type carefully and fill out the form with your personal details. Your can’t edit these details once you submitted the form.</p>
-               </div> --}}
+
                <div class="row g-4">
                   <div class="col-md-6">
                      <div class="form-group">
@@ -59,19 +53,18 @@
                            <label class="form-label">Nom du Navire <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="nomNavire">
+                           <input type="text" class="form-control form-control field-navire" id="nomNavire" >
                         </div>
                      </div>
-                     
                   </div>
                   <!-- .col -->
                   <div class="col-md-6">
-                     <div class="form-group">
-                        <div class="form-label-group">
-                           <label class="form-label">IRCS <span class="text-danger">*</span></label>
+                     <div class="form-group" id="pereIrcsNavire">
+                        <div class="form-label-group" >
+                           <label class="form-label">IRCS<span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="ircs">
+                           <input type="text" class="form-control form-control field-navire" id="ircsNavire">
                         </div>
                      </div>
                   </div>
@@ -82,21 +75,19 @@
                            <label class="form-label">Etat Pavillon <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="etatPavillonNavire">
+                           <input type="text" class="form-control form-control field-navire" id="etatPavillonNavire">
                         </div>
                      </div>
                   </div>
                   <!-- .col -->
                   <div class="col-md-6">
-                     <div class="form-group">
-                        <div class="form-label-group">
-                           <label class="form-label">Type Navire <span class="text-danger">*</span></label>
-                        </div>
-                        <div class="form-control-group">
-                        
-                           <select class="form-select js-select2" data-search="on" id="typeNavire">
+                     
+                     <div class="form-group" >
+                        <label class="form-label">Type Navire </label> <span class="text-danger">*</span></label>
+                        <div class="form-control-wrap field-navire" id="pereTypeNavire">
+                           <select class="form-select js-select2 " data-search="on" id="typeNavire">
                               <option value="default_option">Default Option</option>
-                              <option value="option_select_name">Option select name  </option>
+                              <option value="option_select_name">Option select name</option>
                               <option value="option_select_name">Option select name</option>
                            </select>
                         </div>
@@ -109,7 +100,7 @@
                            <label class="form-label">ID Certificat <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control date-picker-alt" id="certifNavire">
+                           <input type="text" class="form-control form-control field-navire" id="certifNavire">
                         </div>
                      </div>
                   </div>
@@ -120,7 +111,7 @@
                            <label class="form-label">Tirant d'eau <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="tiranNavire">
+                           <input type="text" class="form-control form-control field-navire" id="tiranNavire">
                         </div>
                      </div>
                   </div>
@@ -130,7 +121,7 @@
             </div>
             <!-- nk-kycfm-content -->
             <div class="nk-kycfm-head ">
-               <div class="nk-kycfm-count bg-light">02</div>
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
                <div class="nk-kycfm-title">
                   <h4 class="title">Dimension du navire</h4>
                   <p class="sub-title">Spécifiez les caractéristiques physiques du navire.</p>
@@ -138,10 +129,7 @@
             </div>
             <!-- nk-kycfm-head -->
             <div class="nk-kycfm-content">
-               {{-- <div class="nk-kycfm-note">
-                  <em class="icon ni ni-info-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"></em>
-                  <p>Your can’t edit these details once you submitted the form.</p>
-               </div> --}}
+              
                <div class="row g-4">
                   <div class="col-md-6">
                      <div class="form-group">
@@ -149,7 +137,7 @@
                            <label class="form-label">Longueur <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="longNavire">
+                           <input type="number" class="form-control form-control field-navire" id="longNavire">
                         </div>
                      </div>
                   </div>
@@ -160,7 +148,7 @@
                            <label class="form-label">Largeur <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="largNavire">
+                           <input type="number" class="form-control form-control field-navire" id="largNavire">
                         </div>
                      </div>
                   </div>
@@ -170,7 +158,7 @@
             </div>
             <!-- nk-kycfm-content -->
             <div class="nk-kycfm-head ">
-               <div class="nk-kycfm-count bg-light">03</div>
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
                <div class="nk-kycfm-title">
                   <h4 class="title">Autres informations </h4>
                   <p class="sub-title">Incluez des détails supplémentaires pertinents sur le navire.</p>
@@ -178,18 +166,15 @@
             </div>
             <!-- nk-kycfm-head -->
             <div class="nk-kycfm-content">
-               {{-- <div class="nk-kycfm-note">
-                  <em class="icon ni ni-info-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"></em>
-                  <p>Please type carefully and fill out the form with your personal details. Your can’t edit these details once you submitted the form.</p>
-               </div> --}}
+              
                <div class="row g-4">
                   <div class="col-md-6">
                      <div class="form-group">
                         <div class="form-label-group">
-                           <label class="form-label">ID certificat d'immatriculation<span class="text-danger">*</span></label>
+                           <label class="form-label">ID certificat d'immatriculation <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="immaCertifNavire">
+                           <input type="text" class="form-control form-control field-navire" id="immaCertifNavire">
                         </div>
                      </div>
                   </div>
@@ -197,10 +182,10 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <div class="form-label-group">
-                           <label class="form-label">ID navivire OMI<span class="text-danger">*</span></label>
+                           <label class="form-label">ID navivire OMI <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="omi">
+                           <input type="text" class="form-control form-control field-navire" id="omi">
                         </div>
                      </div>
                   </div>
@@ -208,10 +193,10 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <div class="form-label-group">
-                           <label class="form-label">ID externe<span class="text-danger">*</span></label>
+                           <label class="form-label">ID externe <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="nomNavire">
+                           <input type="text" class="form-control form-control field-navire" id="idExterne">
                         </div>
                      </div>
                   </div>
@@ -219,10 +204,10 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <div class="form-label-group">
-                           <label class="form-label">ID ORGP<span class="text-danger">*</span></label>
+                           <label class="form-label">ID ORGP <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="orgp">
+                           <input type="text" class="form-control form-control field-navire" id="orgp">
                         </div>
                      </div>
                   </div>
@@ -231,48 +216,10 @@
                <!-- .row -->
             </div>
             <!-- nk-kycfm-content -->
-               {{-- <div class="nk-kycfm-head ">
-                  <div class="nk-kycfm-count bg-light">04</div>
-                  <div class="nk-kycfm-title">
-                     <h4 class="title">Propirétaire du Navire</h4>
-                     <p class="sub-title">Indiquez les informations du propriétaire. </p>
-                  </div>
-               </div> --}}
-            <!-- nk-kycfm-head -->
-               {{-- <div class="nk-kycfm-content">
-                  <div class="nk-kycfm-note">
-                     <em class="icon ni ni-info-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"></em>
-                     <p>Your can’t edit these details once you submitted the form.</p>
-                  </div>
-                  <div class="row g-4">
-                     <div class="col-md-6">
-                        <div class="form-group">
-                           <div class="form-label-group">
-                              <label class="form-label">Contact pour infos sur le Navire<span class="text-danger">*</span></label>
-                           </div>
-                           <div class="form-control-group">
-                              <input type="text" class="form-control form-control" id="contactNavireForInfo">
-                           </div>
-                        </div>
-                     </div>
-                     <!-- .col -->
-                     <div class="col-md-6">
-                        <div class="form-group">
-                           <div class="form-label-group">
-                              <label class="form-label">Propirétaire du Navire</label>
-                           </div>
-                           <div class="form-control-group">
-                              <input type="text" class="form-control form-control" id="proprioNavire">
-                           </div>
-                        </div>
-                     </div>
-                     <!-- .col -->
-                  </div>
-                  <!-- .row -->
-               </div> --}}
+           
             <!-- nk-kycfm-content -->
             <div class="nk-kycfm-head">
-               <div class="nk-kycfm-count bg-light">04</div>
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
                <div class="nk-kycfm-title">
                   <h4 class="title">Capitaine du navire</h4>
                   <p class="sub-title">Indiquez le nom et le pays du capitaine responsable du navire pour cette demande.</p>
@@ -280,18 +227,15 @@
             </div>
             <!-- nk-kycfm-head -->
             <div class="nk-kycfm-content">
-               {{-- <div class="nk-kycfm-note">
-                  <em class="icon ni ni-info-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"></em>
-                  <p>Your can’t edit these details once you submitted the form.</p>
-               </div> --}}
+
                <div class="row g-4">
                   <div class="col-md-6">
                      <div class="form-group">
                         <div class="form-label-group">
-                           <label class="form-label">Nom du capitaine<span class="text-danger">*</span></label>
+                           <label class="form-label">Nom du capitaine <span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="captaineName">
+                           <input type="text" class="form-control form-control field-navire" id="captaineName">
                         </div>
                      </div>
                   </div>
@@ -299,10 +243,10 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <div class="form-label-group">
-                           <label class="form-label">Nationalité du Capitaine</label>
+                           <label class="form-label">Nationalité du Capitaine <span class="text-danger">*</span></label> 
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control form-control" id="captaineNationality">
+                           <input type="text" class="form-control form-control field-navire" id="captaineNationality">
                         </div>
                      </div>
                   </div>
@@ -311,20 +255,20 @@
                <!-- .row -->
             </div>
             <!-- nk-kycfm-content -->
-            <div class="nk-kycfm-footer">
+            <div class="nk-kycfm-footer field-navire">
                <div class="form-group">
                   <label class="form-label">National ? </label>
                   <div class="form-control-wrap">
                      <ul class="custom-control-group">
                         <li>
                            <div class="custom-control custom-radio">
-                              <input type="radio" class="custom-control-input" name="sv2-work-place" id="sv2-work-place-office" value="in-ofice" required>
+                              <input type="radio" class="custom-control-input field-navire" name="sv2-work-place" id="sv2-work-place-office" value="in-ofice" required>
                               <label class="custom-control-label" for="sv2-work-place-office">Oui </label>
                            </div>
                         </li>
                         <li>
                            <div class="custom-control custom-radio">
-                              <input type="radio" class="custom-control-input" name="sv2-work-place" id="sv2-work-place-remote" value="remote-home" required>
+                              <input type="radio" class="custom-control-input field-navire" name="sv2-work-place" id="sv2-work-place-remote" value="remote-home" required>
                               <label class="custom-control-label" for="sv2-work-place-remote">Non</label>
                            </div>
                         </li>
@@ -333,14 +277,10 @@
                </div>
             </div>
             <!-- nk-kycfm-footer -->
-               
          </div>
          <!-- nk-kycfm -->
-      
-      
       </form>
-      
-      </div>
-      <!-- .card -->
    </div>
-   <!-- nk-block -->
+   <!-- .card -->
+</div>
+<!-- nk-block -->

@@ -50,11 +50,24 @@
       </div>
    </div>
    <!-- nk-block --> --}}
+
+   <div class="circle-line justify-content-center ">
+        <div class="circle"><i class=" fas fa-solid fa-check"></i></div>
+        <div class="line"></div>
+        <div class="circle">2</div>
+        <div class="line"></div>
+        <div class="circle">3</div>
+        <div class="line"></div>
+        <div class="circle">4</div>
+        <div class="line"></div>
+        <div class="circle">5</div>
+    </div>
+
    <div class="nk-block">
       <div class="card card-bordered mt-2">
          <div class="nk-kycfm">
             <div class="nk-kycfm-head">
-               <div class="nk-kycfm-count bg-light">01</div>
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
                <div class="nk-kycfm-title">
                   <h4 class="title"> Port d'acceuil et objet d'entrée</h4>
                   <p class="sub-title">Sélectionnez le pays où vous prévoyez d'arriver. Précisez également le but de votre arrivée.</p>
@@ -74,7 +87,7 @@
                         </div>
                         <div class="form-control-group">
                            {{-- <input type="text" class="form-control form-control-lg"> --}}
-                           <select id="pays"  class="form-select-lg js-select2 form-control form-control-lg" >
+                           <select id="pays"  class="form-select-lg js-select2 form-control form-control-lg"  required>
                               <option value="CI">Côte d'IVoire</option>
                               <option value="Mali">Mali</option>
                               {{-- 
@@ -90,8 +103,8 @@
                         <div class="form-label-group">
                            <label class="form-label">Objet de l'accès au port <span class="text-danger">*</span></label>
                         </div>
-                        <div class="form-control-group">
-                           <select  id="objetAccesPort"  class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options" >
+                        <div class="form-control-group" >
+                           <select  id="objetAccesPort"  class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options" required >
                               {{-- 
                               <option value="default_option">Default Option</option>
                               --}}
@@ -110,7 +123,7 @@
             </div>
             <!-- nk-kycfm-content -->
             <div class="nk-kycfm-head">
-               <div class="nk-kycfm-count bg-light">02</div>
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
                <div class="nk-kycfm-title">
                   <h4 class="title">Escale effectuée</h4>
                   <p class="sub-title">Remplir cette partie si vous avez effectué une escale avant d'arriver au port d'accueil final.</p>
@@ -140,7 +153,7 @@
                            <label class="form-label">Port d'escale<span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <select required class="form-select js-select2" data-placeholder="Select  options"  id="accueilPort" >
+                           <select required class="form-select js-select2" data-placeholder="Select  options"  id="accueilPort"   required>
                               <option value="Abidjan" >Abidjan</option>
                               <option value="San-Pedro">San-Pedro</option>
                            </select>
@@ -153,7 +166,7 @@
             </div>
             <!-- nk-kycfm-content -->
             <div class="nk-kycfm-head">
-               <div class="nk-kycfm-count bg-light">03</div>
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
                <div class="nk-kycfm-title">
                   <h4 class="title">Arrivée estimée</h4>
                   <p class="sub-title">Fournissez la date prévue d'arrivée au port.</p>
@@ -172,7 +185,7 @@
                            <label class="form-label">Date d'arrivée estimée<span class="text-danger">*</span></label>
                         </div>
                         <div class="form-control-group">
-                           <input type="text" class="form-control date-picker"  id="dateArriveEstim">
+                           <input type="text" class="form-control date-picker"  id="dateArriveEstim" required>
                         </div>
                      </div>
                   </div>
@@ -186,8 +199,8 @@
                            <div class="row g-4">
                               <div class="col-lg-6 col-sm-6">
                                  <div class="form-group">
-                                    <div class="form-control-wrap">
-                                       <select class="form-select js-select2" data-placeholder="Select Multiple options"  id="heureArriveEstim" >
+                                    <div class="form-control-wrap" required>
+                                       <select class="form-select js-select2" data-placeholder="Select Multiple options"  id="heureArriveEstim" required>
                                           @for ($i = 0; $i < 24; $i++)
                                           @if ($i<10)
                                           <option value={{$i}}>0{{$i}} H</option>
@@ -224,6 +237,8 @@
                   </div>
                   <!-- .col -->
                </div>
+
+               
                <!-- .row -->
             </div>
             <!-- nk-kycfm-footer -->

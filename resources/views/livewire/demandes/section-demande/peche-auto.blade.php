@@ -25,6 +25,26 @@
       <!-- .nk-block-head -->
    </div>
 </div> --}}
+   <div class="circle-line justify-content-center ">
+        <div class="circle">1</div>
+        <div class="line"></div>
+        <div class="circle">2</div>
+        <div class="line"></div>
+        <div class="circle">3</div>
+        <div class="line"></div>
+        <div class="circle"><i class=" fas fa-solid fa-check"></i></div>
+        <div class="line"></div>
+        <div class="circle">5</div>
+    </div> <br>
+
+ <div class="nk-kycfm-head bg-white">
+               <div class="nk-kycfm-count bg-light"><i class=" fas fa-solid fa-check"></i></div>
+               <div class="nk-kycfm-title">
+                  <h4 class="title"> Les autorisations de pêches</h4>
+                  <p class="sub-title">Sélectionnez le pays où vous prévoyez d'arriver. Précisez également le but de votre arrivée.</p>
+               </div>
+            </div>
+            <!-- nk-kycfm-head -->
 <div class="row g-gs  mt-1">
    <div class="col-lg-6">
       <div class="card card-bordered h-100">
@@ -72,8 +92,8 @@
                   </div>
                </div>
                <div class="form-group">
-                  <a  class="btn btn-icon btn-small btn-primary" id="btnAddAutoPecheToCollection"><em class="icon ni ni-plus"></em></a>
-                  <a href="#" class="btn btn-icon btn-small btn-primary"><em class="icon ni ni-trash"></em></a>
+                  <a  class="btn btn-icon btn-small btn-dark" id="btnAddAutoPecheToCollection"><em class="icon ni ni-plus"></em></a>
+                  <a href="#" class="btn btn-icon btn-small btn-dark"><em class="icon ni ni-trash"></em></a>
                </div>
             </form>
          </div>
@@ -82,11 +102,11 @@
    <div class="col-lg-6">
       <div class="card card-bordered h-100">
          <div class="card-inner">
-            {{-- 
-            <div class="card-head">
+            
+            {{-- <div class="card-head">
                <h5 class="card-title">Customer Info</h5>
-            </div>
-            --}}
+            </div> --}}
+           
             <form action="#">
 
                <div class="form-group">
@@ -99,14 +119,13 @@
                      </select>
                   </div>
                </div>
+         
 
                <div class="form-group">
                   <label class="form-label" for="phone-no">Espèce <span class="text-danger">*</span></label>
                   <div class="form-control-wrap">
                      <select class="form-select js-select2" data-search="on" id="especeForPeche">
-                          @foreach ($lesNavires as $i )
-                                 <option value="Ravitaillement">{{$i->Nom_Navire}} {{$i->Nom_Navire}}</option>
-                             @endforeach
+                        <option value="option_select_name">Option select name  </option>
                      </select>
                   </div>
                </div>

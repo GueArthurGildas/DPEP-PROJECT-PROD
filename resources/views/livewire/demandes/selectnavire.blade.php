@@ -1,7 +1,8 @@
 
-<div class="nk-block-head-sub"><a class="back-to" href="{{route('home')}}"><em class="icon ni ni-arrow-left"></em><span>Retour</span></a></div>
+<div class="nk-block-head-sub"><a class="back-to" href="" id="btnSwitchFromNavireSearchToDemandeForm"><em class="icon ni ni-arrow-left"></em><span>Retour</span></a></div>
+
 <div class="nk-block-head-content">
-   <h2 class="nk-block-title fw-normal">Selectionner un navire</h2>
+   <h2 class="nk-block-title fw-normal text-danger">Selectionner un navire</h2>
    <div class="nk-block-des">
       {{-- <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p> --}}
    </div>
@@ -9,8 +10,9 @@
 </div>
 <div class="nk-fmg-body-head  d-lg-flex p-2 bg-light">
    <div class="nk-fmg-search">
-      <input type="text" class="form-control border-transparent form-focus-none"  style="font-size: 18px;" placeholder="Entrez le nom du navire">  &nbsp; &nbsp;
+      {{-- <input type="text" class="form-control border-transparent form-focus-none"  style="font-size: 18px;" placeholder="Entrez le nom du navire">  &nbsp; &nbsp; --}}
    </div>
+   
    <div class="nk-fmg-actions">
       <ul class="nk-block-tools g-3">
          <li>
@@ -182,7 +184,7 @@
                <div class="nk-tb-col nk-tb-col-tools"></div>
             </div>
             <!-- .nk-tb-item -->
-            @foreach ( $lesNavires as $i )
+           
             <div class="nk-tb-item">
                <div class="nk-tb-col">
                   <div class="nk-tnx-type">
@@ -237,13 +239,13 @@
                </div>
             </div>
             <!-- .nk-tb-item -->
-            @endforeach 
+         
          </div>
          <!-- .nk-tb-list -->
       </div>
       <!-- .card-inner -->
       <div class="card-inner">
-         {{$lesNavires->links()}}
+        
          {{-- 
          <ul class="pagination justify-content-center justify-content-md-start">
             <li class="page-item"><a class="page-link" href="#">Prev</a></li>

@@ -5,6 +5,7 @@
 
         //// ici la fonction qui supprime la peche depuis la base deonnées
         function myDeleteAutoPeche(element) {
+           
             // Récupérer l'élément parent de l'élément cliqué
             var parentTr = $(element).closest('tr');
 
@@ -12,7 +13,7 @@
             var pecheId = parentTr.find('.text-white').text();
 
             // recuperer l'Id de la demande en cours de traitement
-             let demandeId = $('#demandeId').text();
+            let demandeId = $('#demandeId').text();
 
             
 

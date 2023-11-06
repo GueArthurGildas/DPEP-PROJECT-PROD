@@ -9,6 +9,9 @@ use App\Models\Navire;
 use App\Models\Autori_peche;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use  App\Services;
+use Carbon\Carbon;
+use DateTime;
 
 
 class demandeController extends Controller
@@ -19,6 +22,7 @@ class demandeController extends Controller
     public $section=""; // la section ici pour identifier dans quelle partie du formulaire nous nosu trouvons pour faire le traitement
     public $myNewDemande ; // la variable qui retiendra la nouvelle demande créée
     public $idDemandeLoading="";
+    public  $newNavireCreated = "";
 
     //Section de capture
     public $capture = [];
@@ -29,7 +33,7 @@ class demandeController extends Controller
     public $totalAbord;
 
     function index(){
-        $navireEnCours= Navire::orderby("Nom_Navire","asc")->paginate(5);;
+        $navireEnCours= Navire::all();
 
         $this->setCurrentPageView();
         return view('livewire.demandes.index',[
@@ -39,6 +43,24 @@ class demandeController extends Controller
         ]);
     }
 
+
+
+
+    /******************************************************/
+    /******************************************************/
+    // la fonction-ci nous permettra de recuperer le navire necessaire pour la demande en cours de traitement //
+    /******************************************************/
+    /******************************************************/
+    public function getNavieForDemandeFunct(request $request){
+        
+        $navireSelected= Navire::find($request->input('idNavireSelcted'));
+        
+        return response()->json([
+            'succes' => "enregistré avec succes",
+            'navireSelected' => $navireSelected,
+        ], 203);
+
+    }
 
 
     /******************************************************/
@@ -64,78 +86,240 @@ class demandeController extends Controller
 
     /******************************************************/
     /******************************************************/
-    // la fonction qui permet de créer une demande dans la base de données //
+    // la fonction qui va ajouter le nouveau navire dans la base  //
     /******************************************************/
     /******************************************************/
+    public function addNewNavire(request $request, int $demandeId){
+        // ici je crée le nouveau navire avec tous les champs renseignés
+        $nomNavire  = $request->input('nomNavire');
+        $etatPavillonNavire = $request->input('etatPavillonNavire'); 
+        $typeNavire = $request->input('typeNavire'); 
+        $certifNavire = $request->input('certifNavire'); 
+        $tiranNavire = $request->input('tiranNavire'); 
+        $longNavire = $request->input('longNavire'); 
+        $largNavire = $request->input('largNavire'); 
+        $immaCertifNavire = $request->input('immaCertifNavire'); 
+        $omi = $request->input('omi');
+        $orgp = $request->input('orgp');
+
+        $myNewNavireForDemandeLoading = Navire::create(
+            [
+                'Nom_Navire' => $nomNavire  ,
+                'Etat_Pavillon' => $etatPavillonNavire ,
+                'Type_Navire'=>  $typeNavire , 
+                'Id_Certificat_Immat' =>  $certifNavire, 
+                'Hull_Material'=> $tiranNavire, 
+                'Dimension_Navire'=> $longNavire  , 
+                'Length_Overall' => $largNavire , 
+                'Id_Certificat_Immat' =>$immaCertifNavire , 
+                'Omi' => $omi,
+                'ORGP' =>  $orgp ,
+                "societe_id"=> 3, 
+            ]
+        );
+
+        // ici je mets à jour le damande avec le navire
+        
+        DB::table('demandes' )
+        ->where('id', $demandeId)
+        ->update([ 
+            'navires_id' => $myNewNavireForDemandeLoading->id,
+        ]);
+
+        return $myNewNavireForDemandeLoading->id;
+
+    }
+
+    /******************************************************/
+    /******************************************************/
+    // la fonction qui permet de mettre à jour  un navire de la base de donnée lié a une damande   //
+    /******************************************************/
+    /******************************************************/
+    public function updateNewNavire(Navire $navire, request $request ){
+
+         $nomNavire  = $request->input('nomNavire');
+        $etatPavillonNavire = $request->input('etatPavillonNavire'); 
+        $typeNavire = $request->input('typeNavire'); 
+        $certifNavire = $request->input('certifNavire'); 
+        $tiranNavire = $request->input('tiranNavire'); 
+        $longNavire = $request->input('longNavire'); 
+        $largNavire = $request->input('largNavire'); 
+        $immaCertifNavire = $request->input('immaCertifNavire'); 
+        $omi = $request->input('omi');
+        $orgp = $request->input('orgp');
+       
+        $navire->update([
+            'Nom_Navire' => $nomNavire  ,
+            'Etat_Pavillon' => $etatPavillonNavire ,
+            'Type_Navire'=>  $typeNavire , 
+            'Id_Certificat_Immat' =>  $certifNavire, 
+            'Hull_Material'=> $tiranNavire, 
+            'Dimension_Navire'=> $longNavire  , 
+            'Length_Overall' => $largNavire , 
+            'Id_Certificat_Immat' =>$immaCertifNavire , 
+            'Omi' => $omi,
+            'ORGP' =>  $orgp ,
+       ]);
+
+    }
+   
+    
 
 
     
     /******************************************************/
     /******************************************************/
-    //  ici gère la section navire  section        //
+    //  ici gère la section port Form section        //
     /******************************************************/
     /******************************************************/
     public function navireAndPortFunct(request $request){
 
-        // ici recuperer dejà les informations arrivées de la vue grace aux requêtes Ajax 
+        //ici je recupère le navire qui a été selectionné depuis le selector de navire( je verifie si oui ou non il a été selectionné)
+        $navireSelected =  $request->input('navireSelected');
+
+        // icije recupère la demande qui est en train de courrir dans le forumaire
+        $demandeId =  $request->input('demandeId');
+
+        // ici je vais deja recuperer la demande pour voir si elle un navire pre
+        $myDemande = Demande::find($demandeId); 
+
+        // le resultat censé être retourné à la fin de la fonction
+        $res="";
+
+
+        if($navireSelected!="selectNavire"){
+            $myDemande ->update([ 
+                'navires_id' => $navireSelected,
+            ]);
+        }
+
+
+
+       
+
+        // ici recuperer dejà les informations du form objet Port  arrivées de la vue grace aux requêtes Ajax 
         $objetAccesPort = $request->input('objetAccesPort');
         $minuteArriveEstim = $request->input('minuteArriveEstim');
         $heureArriveEstim = $request->input('heureArriveEstim');
         $dateArriveEstim = $request->input('dateArriveEstim');
         $accueilPort = $request->input('accueilPort');
         $dateLastEscale = $request->input('dateLastEscale');
-        $demandeId =  $request->input('demandeId');
+
+        
+        
+        
+       
+        
+
+        if($dateArriveEstim){
+
+            $testDateOk = $this->checkDateArrivEstime("/",$dateArriveEstim);
+            
+            $res= response()->json([
+                'serverDate' => $testDateOk,
+            ], 203);
+        }else{
+            dd("je suis ici");
+            // ici un tableau qui va enregistrer les data de la demande concernant le port 
+            $data=[$objetAccesPort,$minuteArriveEstim,$dateArriveEstim, $accueilPort,$dateLastEscale];
+
+            $this->updateDemande( $data);
+            $res= response()->json([
+                'succes' => "enregistré avec succes",
+            ], 203);
+        }
+
+
+        return $res; 
+        
+
+    }
+
+
+    // ici une fonction me permettant de controler la date d'arrivée estimée reseingée par l'user de sorte à verifier si cette date 
+    // est valable et respecte les 3 jours d'envoi avant l'entre du navire au port
+    public function checkDateArrivEstime($separator,$date){
+
+        $resultCompareDate =false;
+
+        $serverDate = Carbon::now(); // Utilisation de Carbon pour obtenir la date du serveur
+        
+        /// la fonction qui va spliter la date carborne passée en parametre
+        $splitDateServer = $this->obtenirMoisJourAnnee($serverDate); 
+        
+        $moisServer = $splitDateServer['mois'];
+        $dayServer= $splitDateServer['jour'];
+        $yearServer= $splitDateServer['annee'];
+        $newFormatDateServer = $yearServer.'-'.$moisServer.'-'.$dayServer; // ici je reformat la date du serveur a ma convenance 
+        
+        
+        /// date donnée par le user qui sera prise pour etre comparée à la date du serveur
+        $splitDateUser = explode($separator, $date); // Utilisez la fonction explode pour diviser le texte en fonction du séparateur
+
+        $moisUser = $splitDateUser[0];
+        $dayUser= $splitDateUser[1];
+        $yearUser= $splitDateUser[2];
+        $newFormatDateUser = $yearUser.'-'.$moisUser.'-'.$dayUser; // ici je reformat la date du l'user a ma convenance 
+
+        $diffbetweenDate = $this->differenceEnJours($newFormatDateServer, $newFormatDateUser );
+
+        if( $diffbetweenDate > 3){
+            $resultCompareDate = true;
+        }
+
+        return $resultCompareDate;
+       
+    } 
+
+
+    // ici la fonction qui me permet de faire la difference en jours à l'aide de deux dates données en parametre
+    function differenceEnJours($date1, $date2) {
+        // Créez deux objets DateTime à partir des dates fournies
+        $dateObj1 = new DateTime($date1);
+        $dateObj2 = new DateTime($date2);
+    
+        // Calculez la différence entre les deux dates
+        $difference = $dateObj1->diff($dateObj2);
+    
+        // Obtenez le nombre de jours de différence
+        $jours = $difference->days;
+    
+        return $jours;
+    }
+    
+
+
+    // ici lla fonction qui recupère le jour, le mois et l'année depuis le serveur a partir de carborne
+    function obtenirMoisJourAnnee($dateCarbon) {
+        $mois = $dateCarbon->format('m');  // Obtient le mois au format 01-12
+        $jour = $dateCarbon->format('d');  // Obtient le jour au format 01-31
+        $annee = $dateCarbon->format('Y'); // Obtient l'année au format AAAA
+    
+        return [
+            'mois' => $mois,
+            'jour' => $jour,
+            'annee' => $annee,
+        ];
+    }
+    
+   
+    
+
+
+    
+
+    // ici la fonction qui eme permettra de mettre à jour dans la base la demande contenant les info envoyé renseignée par l'user
+    public function updateDemande($var){
 
         DB::table('demandes' )
-        ->where('id', $demandeId)
+        ->where('id', $var["demandeId"])
         ->update([ 
-            'Objet_Acces_Port' => $objetAccesPort,
-            'Date_escale' => $dateLastEscale,
-            'Date_arrivee' => $dateArriveEstim,
-            'Port' => $accueilPort,
-            'heure_arrivee' => $heureArriveEstim.":".$minuteArriveEstim,
+            'Objet_Acces_Port' =>  $var['objetAccesPort'],
+            'Date_escale' => $var ['dateLastEscale'],
+            'Date_arrivee' =>  $var ['dateArriveEstim'],
+            'Port' =>  $var['accueilPort'],
+            'heure_arrivee' =>  $var['heureArriveEstim'].":". $var['minuteArriveEstim'],
         ]);
-
-        return response()->json([
-            'succes' => "enregistré avec succes",
-        ], 203);
-
-        // ici recuperer liées uniquement au Navire venues de la vue grace aux requêtes Ajax
-        $nomNavire =  $request->input('nomNavire');  
-        $etatPavillonNavire =  $request->input('etatPavillonNavire');  
-        $typeNavire =  $request->input('typeNavire');  
-        $certifNavire =  $request->input('certifNavire');  
-        $tiranNavire =  $request->input('tiranNavire');  
-        $longNavire =  $request->input('longNavire');
-        $largNavire =  $request->input('largNavire'); 
-        $immaCertifNavire =  $request->input('immaCertifNavire'); 
-        $omi =  $request->input('omi'); 
-        $orgp =  $request->input('orgp'); 
-        $contactNavireForInfo =  $request->input('contactNavireForInfo'); 
-        $proprioNavire =  $request->input('proprioNavire');
-        $captaineName =  $request->input('captaineName');
-        $captaineNationality =  $request->input('captaineNationality'); 
-
-        DB::table('navires' )
-        ->where('id', )
-        ->where('id', $demandeId)
-        ->update([   
-           'Nom_Navire' => $nomNavire ,  
-           'Etat_Pavillon' => $etatPavillonNavire  ,
-           'Type_Navire' => $typeNavire,  
-            //=>$certifNavire,  
-            'Type_Navire' => $tiranNavire , 
-            'Length_Overall' =>  $longNavire   ,
-            'Dimension_Navire' => $largNavire  , 
-            'Id_Certificat_Immat' => $immaCertifNavire,
-            'Omi'  => $omi, 
-            'ORGP' => $orgp, 
-            // $contactNavireForInfo; 
-            // $proprioNavire ;
-            // $captaineName;
-            // $captaineNationality;
-        ]);
-
 
     }
 
@@ -258,12 +442,12 @@ class demandeController extends Controller
 
     /**supprimer la capture */
     public function CaptureDeleteFunct(request $request){
-        
+       
         $idCapture = $request->input('captureId');
         $demandeId =  $request->input('demandeId');
         $msgIssue= "enregistré avec succs";
 
-        //dd($idCapture);
+       
         
         try {
             DB::table('captures')
@@ -317,7 +501,7 @@ class demandeController extends Controller
                             <td class="tb-col-ip"><span class="sub-text">'.$zoneCapture.'</span></td>
                             <td class="tb-col-ip"><span class="sub-text">'.$qteBord.'</span></td>
                             <td class="tb-col-time"><span class="sub-text"><span class="d-none d-sm-inline-block">'.$qteDebarque.'</span></span></td>
-                            <td class="tb-col-action"><a href="javascript:void(0);" onclick="myDelete(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                            <td class="tb-col-action"><a href="javascript:void(0);" data-id="'.$myCapture->id.'" onclick="myDelete(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
                         </tr>';
 
         return response()->json([
@@ -432,11 +616,16 @@ class demandeController extends Controller
        }
 
        if(myContains($nameRequest, "newdemande")){
-           $this->createDemande();
-           $this->currentPage = PAGENEWDEMANDE;
+        $this->createDemande();
+        $this->currentPage = PAGENEWDEMANDE;
+
+        }
+
+        if(myContains($nameRequest, "presentDemande")){
            
-           
-       }
+            $this->currentPage = PRESENTDEMANDES;
+    
+        }
 
        if(myContains($nameRequest, "mesdemande")){
            $this->currentPage = PAGEMESDEMANDES;
