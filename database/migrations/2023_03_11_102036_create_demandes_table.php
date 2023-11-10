@@ -26,7 +26,8 @@ class CreateDemandesTable extends Migration
             $table->boolean("Resultat");        
             $table->string("Date_arrivee");        
             $table->string("Date_escale");        
-            $table->string("Port");      
+            $table->string("Port_Dern_Escal");      
+            $table->string("Port_Escale_Envisag");      
             $table->string("heure_arrivee"); 
             
             $table->string("page_demande");  

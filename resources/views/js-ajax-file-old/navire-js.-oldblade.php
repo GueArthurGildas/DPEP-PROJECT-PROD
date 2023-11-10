@@ -1,7 +1,7 @@
 <script>
 /// ici au click du bouton faire griser tous les champs du navire
     /// ici le btn quui affiche le navire a rechercher 
-$('#valide-select-navire').click(function(e) {
+/*$('#valide-select-navire').click(function(e) {
 
         e.preventDefault();
 
@@ -62,7 +62,7 @@ $('#valide-select-navire').click(function(e) {
                             
                             /* ici remplissage des champs quand l'user change le navire selectionné alors qu'il était déjà selectionné un première fois, de sorte à supprimer les informations du champs
                              champs au prealbale rensignés */
-                            if ($(".test").length > 0) {
+                            /*if ($(".test").length > 0) {
                                 $(".test").remove();
                                 $("h5.ok").remove();
                                 
@@ -120,7 +120,7 @@ $('#valide-select-navire').click(function(e) {
         }
  
 
-})
+})*/
 
 
 //ici le buton qui permet de reafficher tous les champs du form de navire

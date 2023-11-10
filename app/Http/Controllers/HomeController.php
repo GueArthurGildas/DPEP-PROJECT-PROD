@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        
+        $userRoleAuth=userRole();
+        $viewToShow = "home";
+
+        if($userRoleAuth!=="Armateur"){
+            $viewToShow="home-agent";
+        }
+
+        return view($viewToShow);
     }
 }

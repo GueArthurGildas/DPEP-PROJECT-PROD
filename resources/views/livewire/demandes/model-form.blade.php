@@ -27,12 +27,8 @@
    <form class="nk-stepper stepper-init is-alter p-4 m-4" action="#" id="stepper-survey-v2" style="background*color:orange">
       <div class="nk-stepper-content ">
          <div class="nk-stepper-steps stepper-steps">
+           
             
-             <div class="nk-stepper-step " >
-               <div  class="nk-stepper-step-" id="testClassToRemove">
-                  @include("livewire.demandes.section-demande.uploadfile")
-               </div>
-               </div>
 
             <div class="nk-stepper-step">
                @include("livewire.demandes.section-demande.port")
@@ -51,14 +47,18 @@
                @include("livewire.demandes.section-demande.transb")
             </div>
             --}}
-            
-           
-            
-           
+              <div class="nk-stepper-step " >
+               <div  class="nk-stepper-step-" id="testClassToRemove">
+                  @include("livewire.demandes.section-demande.uploadfile")
+               </div>
+               </div>
          </div>
          <ul class="nk-stepper-pagination pt-4 gx-4 gy-2 stepper-pagination">
             <li class="step-prev"><button class="btn btn-dim "  style="background*color:orange">Retour</button></li>
             <li class="step-next loading-svg">
+            
+            {{-- <a href="#" class="btn btn-wider btn-primary" style="background*color:orange"><span>Action Button</span><em class="icon ni ni-arrow-right"></em></a> --}}
+
                <button class="btn btn-danger" id="nextFormButton"  style="background*color:orange">Suivant <em class="icon ni ni-arrow-long-right"></em></button>
             </li>
             <li class="step-submit"><button class="btn btn-danger">Soumettre</button></li>

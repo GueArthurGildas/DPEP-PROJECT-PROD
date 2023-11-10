@@ -1,4 +1,4 @@
-                <div class="nk-header is-gray">
+                <div class="nk-header bg-white is-white">
                     <div class="container-lg wide-xl">
                         <div class="nk-header-wrap">
                             <div class="nk-header-brand">

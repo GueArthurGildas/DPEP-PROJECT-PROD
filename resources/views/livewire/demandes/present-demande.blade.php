@@ -6,7 +6,7 @@
 <div class="nk-block-head-sub"><span></span></div>
 <div class="nk-block-between-md g-4">
    <div class="nk-block-head-content">
-      <h2 class="nk-block-title fw-normal">Etape de soumission, 👋</h2>
+      <h2 class="nk-block-title fw-normal">Etape de soumission, </h2>
       <div class="nk-block-des">
          <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
       </div>

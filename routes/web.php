@@ -27,19 +27,11 @@ use App\Http\Livewire\Utilisateurs;
 |
 */
 
-// // Route::get('/dashbord', function () {return view('myDashbord');})->name("dashbord");
-// Route::get('/dashb-recept', [invoiceControleur::class,'printRecept'] )->name("dashbord");
-// Route::get('/dashb-demande', [invoiceControleur::class,'printDemande'] )->name("dashbord-demande");
 
 
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-// Route::post('/pdf', [invoiceControleur::class,'index'])->name("pdf");
-
-
 
 // Groupe relative aux demandes
 Route::group([
@@ -47,58 +39,47 @@ Route::group([
     "as" => "home."
 ], function(){
     
-    // Route::group([
-    //     "prefix" => "habilitations",
-    //     'as' => 'habilitations.'
-    // ], function(){
-
-    //     Route::get("/utilisateurs", Utilisateurs::class)->name("users.index");
-
-    // });
-
-    // Route::group([
-    //     "prefix" => "navires",
-    //     "as" => "navires."
-    // ], function(){
-    //     Route::get('/liste-navire', NaviresComp::class)->name("listenavire.index"); //home.navires.newnavire.index
-    //     Route::get('/historique-navire', NaviresComp::class)->name("histonavire.index"); 
-    // });
 
 
+    /*** ici les routes destinées à gérer les requêtes liées au demandes ***/
     Route::group([
         "prefix" => "demandes", 
         "as" => "demandes."
     ], function(){
-        Route::get('/liste-demandes', Demandes::class)->name("listdemande.index"); //home.demandes.listdemande.index
-        Route::get('/new-demande', [demandeController::class,'index'])->name("newdemande.index"); // home.demandes.newdemande.index
-        Route::get('/user-demandes', Demandes::class)->name("mesdemande.index"); //home.demandes.mesdemande.index
-        Route::get('/demande', Demandes::class)->name("voirdemande.index"); //home.demandes.voirdemande.index
-        Route::get('/demande-detail', Demandes::class)->name("demandedetail.index"); //home.demandeuser.demande.index
-        Route::get('/demande-presentation', [demandeController::class,'index'])->name("presentDemande.index"); //home.demandeuser.presentDemande.index
+
+        Route::get('/detail-demande', [demandeController::class,'affOneDemandeDetail'])->name("detailonedemande.index"); //home.demandes.detailonedemande.index
+
+        Route::get('/demande-presentation', [demandeController::class,'affpresentDemande'])->name("presentdemande.index"); //home.demandes.presentdemande.index
+        Route::get('/step-1', [demandeController::class,'affNavireForDemande'])->name("naviredemande.index"); //home.demandes.naviredemande.index
+        Route::post('/step-1/traitement', [demandeController::class,'traitStep1'])->name("traitStep1.index"); //home.demandes.traitStep1.index
+        Route::get('/demande/navire-for-demande',[demandeController::class,'getNavieForDemandeFunct'])->name("navirefordemande.index"); // home.demandes.navirefordemande.index
+
+        Route::get('/step-2', [demandeController::class,'affCaptuDemande'])->name("caputredemande.index"); //home.demandes.caputredemande.index
+        Route::get('/step-2/traitement', [demandeController::class,'traitStep2'])->name("traitStep2.index"); //home.demandes.traitStep2.index
 
 
-        /************************************************************************************************************************** */
-        //****Ici les routes qui intercepteront les requêtes ajax pour les fonctions appropriées à chaque section du formulaire demande */
+
         Route::get('/demande/capture', [demandeController::class,'CaptureFunct'])->name("capture.index"); // home.demandes.capture.index
         Route::get('/demande/capture-delete', [demandeController::class,'CaptureDeleteFunct'])->name("capturedelete.index"); // home.demandes.capturedelete.index
+       
+        
+        Route::get('/step-3', [demandeController::class,'affAutoPecheDemande'])->name("autopechedemande.index"); //home.demandes.autopechedemande.index
         Route::get('/demande/peche', [demandeController::class,'PecheFunct'])->name("peche.index"); // home.demandes.peche.index
         Route::get('/demande/peche-delete', [demandeController::class,'PecheDeleteFunct'])->name("pechedelete.index"); // home.demandes.pechedelete.index
-        Route::get('/demande/transb', [demandeController::class,'TransbFunct'])->name("transb.index"); // home.demandes.transb.index
-        Route::get('/demande/update-demande', [demandeController::class,'updateDemandeFunct'])->name("updateDemande.index"); // home.demandes.updateDemande.index
-        Route::get('/demande/info-transb', [demandeController::class,'infoTransbFunct'])->name("infotransb.index"); // home.demandes.infotransb.index
-        Route::get('/demande/navire-port', [demandeController::class,'navireAndPortFunct'])->name("navireport.index"); // home.demandes.navireport.index
-        route::get('/demande/navire-for-demande',[demandeController::class,'getNavieForDemandeFunct'])->name("navirefordemande.index"); // home.demandes.navirefordemande.index
+
+        Route::get('/step-4', [demandeController::class,'affuploadFileDemande'])->name("uploadfiledemande.index"); //home.demandes.uploadfiledemande.index
+        Route::get('/step-4/traitement', [demandeController::class,'traitStep4'])->name("traitStep4.index"); //home.demandes.traitStep4.index
+
+        Route::get('/recape-demande', [demandeController::class,'affRecapDemande'])->name("recapedemande.index"); //home.demandes.recapedemande.index
+
+
+
+        // --------------------------------
         
-        /************************************************************************************************************************** */
 
 
     });
 
-    
-
-
-
-    
 
     Route::group([
         "prefix" => "inspections",
@@ -108,18 +89,5 @@ Route::group([
         Route::get('/newinspections', [App\Http\Controllers\demandeController::class, 'index'])->name("newinspections.index"); 
         
     });
+
 });  
-
-
-
-
-
-
-
-Auth::routes();
-
-Route::get('/Accueil', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -10,8 +10,9 @@ class Demande extends Model
     use HasFactory;
 
 
-    protected $fillable = ['Objet_Acces_Port','Resultat','Ref','Date_escale','Date_arrivee','users_id','navires_id','Port','heure_arrivee']; 
+    protected $fillable = ['Objet_Acces_Port','Resultat','Ref','Date_escale','Port_Dern_Escal','Date_arrivee','users_id','navires_id','Port_Escale_Envisag','heure_arrivee']; 
 
+    
     public function User(){
       return  $this->belongsTo(User::class);
     }

@@ -19,6 +19,9 @@ class CreateDocumentsTable extends Migration
 
             $table->string("Libelle_Doc");
 
+            $table->string("Path_Doc");
+
+
             $table->foreignId("demandes_id")->constrained("demandes");
 
         });

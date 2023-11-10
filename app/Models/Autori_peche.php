@@ -9,7 +9,7 @@ class Autori_peche extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["Date_demande",	"Zone_peche","espece","Libelle_Autorisation",	"Date_Deliv_Autorisation","Commentaire","Deliv_Par","Date_Stat_Activities","Date_end_Activities","demande_id","navires_id"	]; 
+    protected $fillable = ["Date_demande","identif_auto_peche"	,"Zone_peche","espece","Libelle_Autorisation","engin","Date_Deliv_Autorisation","Commentaire","Deliv_Par","Date_Stat_Activities","Date_end_Activities","demande_id","navires_id"	]; 
 
 
     public function demande(){

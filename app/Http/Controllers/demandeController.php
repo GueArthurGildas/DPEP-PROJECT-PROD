@@ -32,37 +32,146 @@ class demandeController extends Controller
     public $totalQteDebaq;
     public $totalAbord;
 
-    function index(){
-        $navireEnCours= Navire::all();
 
-        $this->setCurrentPageView();
-        return view('livewire.demandes.index',[
+
+
+
+    
+
+    function index(){
+       
+
+       // $this->setCurrentPageView();
+
+        return view('demande.index',[
             'currentPage'=>$this->currentPage, 
             'idDemadne'=>$this->idDemandeLoading,
-            'lesNavires'=>$navireEnCours,
+           
         ]);
     }
 
 
+    /******************************************************/
+    /******************************************************/
+    /*******Affiche le detail d'une demande selectionnée par l'user dans son interface */
+    /******************************************************/
+    /******************************************************/
+    public function affOneDemandeDetail(Request $request ){
+        return view('demande.detail-one-demande');
+    }
+
+
 
 
     /******************************************************/
     /******************************************************/
-    // la fonction-ci nous permettra de recuperer le navire necessaire pour la demande en cours de traitement //
+    //        ici gère la section capture section        //
     /******************************************************/
     /******************************************************/
-    public function getNavieForDemandeFunct(request $request){
+
+    /****create la capture dans la bd */
+    public function CaptureFunct(request $request){
+                    
+        // ici recuperer dejà les informations arrivées de la vue grace aux requêtes Ajax 
+            $espece = $request->input('espece');
+            $produit = $request->input('produit');
+            $zoneCapture = $request->input('zoneCapture');
+            $qteBord = $request->input('qteBord');
+            $qteDebarque = $request->input('qteDebarque');
+            $demandeId =  session("IdDemandeRunning");
+            
+
+        // iserer directement dans une base de donnée chaque objet capture 
+             $myCapture = Capture::create([
+                'Produit' => $produit,
+                'qte_a_bord' =>  $qteBord,
+                'qte_debarque' => $qteDebarque,
+                'zone_capture' => $zoneCapture,
+                'espece' => $espece,
+                'navires_id' =>	session("step1")["navire-selected"],
+                'demande_id' => $demandeId 
+            ]);
+
+
+        // Retourner dans la vue lo'bjet mis en base de données de sorte à le voir s'afficher dans un tableau 
         
-        $navireSelected= Navire::find($request->input('idNavireSelcted'));
-        
+        $testCapture = ' <tr> 
+                            <span class="text-white" >'.$myCapture->id.'</span>
+                            <td class="tb-col-os">'.$espece.'</td>
+                            <td class="tb-col-ip"><span class="sub-text">'.$produit.'</span></td>
+                            <td class="tb-col-ip"><span class="sub-text">'.$zoneCapture.'</span></td>
+                            <td class="tb-col-ip"><span class="sub-text">'.$qteBord.'</span></td>
+                            <td class="tb-col-time"><span class="sub-text"><span class="d-none d-sm-inline-block">'.$qteDebarque.'</span></span></td>
+                            <td class="tb-col-action"><a href="javascript:void(0);" data-id="'.$myCapture->id.'" onclick="myDelete(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
+                        </tr>';
+
         return response()->json([
             'succes' => "enregistré avec succes",
-            'navireSelected' => $navireSelected,
+            'testCapture'=> $testCapture,
         ], 203);
+
+
+    }
+
+    //***cette fonction permettra à jour l'id du navire au cas ou l'user change le navire durant sa promenade dans le logiciel */
+    public function updateIdNavireForAllCapture(){
+
+        $lesCapturesToUpdate= DB::table('Captures')->where("demande_id","=", session("IdDemandeRunning"))->get();
+
+        foreach($lesCapturesToUpdate as $capture){
+
+            Capture::find($capture->id)        
+            ->update(['navires_id' =>session("step1")["navire-selected"]]);
+
+        }
 
     }
 
 
+
+    //***cette fonction permettra à jour l'id du navire au cas ou l'user change le navire durant sa promenade dans le logiciel */
+    public function updateIdNavireForAllAutoPeche(){
+
+        $lesAutoPechToUpdate= DB::table('autori_peches')->where("demande_id","=", session("IdDemandeRunning"))->get();
+
+        foreach($lesAutoPechToUpdate as $autoPeche){
+
+            Autori_peche::find($autoPeche->id)        
+            ->update(['navires_id' =>session("step1")["navire-selected"]]);
+
+        }
+
+    }
+
+
+
+    /**supprimer la capture */
+    public function CaptureDeleteFunct(request $request){
+       
+        $idCapture = $request->input('captureId');
+        $demandeId =   session("IdDemandeRunning");
+        $msgIssue= "enregistré avec succs";
+
+        
+        try {
+            DB::table('captures')
+            ->where('id',  $idCapture)
+            ->where('demande_id',  $demandeId)
+            ->delete();
+        } catch (Exception $e) {
+           
+            $msgIssue= $e->getMessage();
+        }
+
+        return response()->json([
+            'succes' => $msgIssue,
+           
+        ], 203);
+       
+    }
+
+
+    
     /******************************************************/
     /******************************************************/
     // la fonction qui permet de créer une demande dans la base de données //
@@ -76,267 +185,157 @@ class demandeController extends Controller
                 'Resultat' => '3',
                 'Ref'=>"DPEP-".Str::upper(Str::random(3)),
                 'users_id' => Auth()->user()->id,
-
             ]
         );
 
-       return $this->idDemandeLoading = $this->myNewDemande->id;
+     session(['IdDemandeRunning' => $this->myNewDemande->id]);
 
+
+    }
+    
+
+    //affiche la page de presentation des etapes de la demande
+    function affpresentDemande(){
+    
+        return view("demande.present-demande");
+
+    }
+
+    // affiche la page relative à la première section de la demande qui concerne le navire selectionné
+    function affNavireForDemande(request $request){
+
+        $navireStep1="";
+        //dd($request->input("idNavireStep1"));
+        if($request->input("idNavireStep1")){
+          
+            $navireStep1= Navire::find($request->input('idNavireStep1'));
+        }
+
+        if($request->input("newdemande")){
+            $this->createDemande();
+        }
+        
+
+        $lesNavires= Navire::all();
+        return view("demande.step-demande.step1",[
+            'lesNavires'=>$lesNavires,
+            'navireStep1'=>$navireStep1,
+        ]);
     }
 
     /******************************************************/
     /******************************************************/
-    // la fonction qui va ajouter le nouveau navire dans la base  //
+    // la fonction-ci nous permettra de recuperer le navire necessaire pour la demande en cours de traitement //
     /******************************************************/
     /******************************************************/
-    public function addNewNavire(request $request, int $demandeId){
-        // ici je crée le nouveau navire avec tous les champs renseignés
-        $nomNavire  = $request->input('nomNavire');
-        $etatPavillonNavire = $request->input('etatPavillonNavire'); 
-        $typeNavire = $request->input('typeNavire'); 
-        $certifNavire = $request->input('certifNavire'); 
-        $tiranNavire = $request->input('tiranNavire'); 
-        $longNavire = $request->input('longNavire'); 
-        $largNavire = $request->input('largNavire'); 
-        $immaCertifNavire = $request->input('immaCertifNavire'); 
-        $omi = $request->input('omi');
-        $orgp = $request->input('orgp');
+    public function getNavieForDemandeFunct(request $request){
 
-        $myNewNavireForDemandeLoading = Navire::create(
-            [
-                'Nom_Navire' => $nomNavire  ,
-                'Etat_Pavillon' => $etatPavillonNavire ,
-                'Type_Navire'=>  $typeNavire , 
-                'Id_Certificat_Immat' =>  $certifNavire, 
-                'Hull_Material'=> $tiranNavire, 
-                'Dimension_Navire'=> $longNavire  , 
-                'Length_Overall' => $largNavire , 
-                'Id_Certificat_Immat' =>$immaCertifNavire , 
-                'Omi' => $omi,
-                'ORGP' =>  $orgp ,
-                "societe_id"=> 3, 
-            ]
-        );
-
-        // ici je mets à jour le damande avec le navire
+      
+      $navireSelected= Navire::find($request->input('idNavireSelcted'));
         
-        DB::table('demandes' )
-        ->where('id', $demandeId)
-        ->update([ 
-            'navires_id' => $myNewNavireForDemandeLoading->id,
+        return response()->json([
+            'succes' => "enregistré avec succes",
+            'navireSelected' => $navireSelected,
+        ], 203);
+
+    }
+
+
+    /******************************************************/
+    /******************************************************/
+    // la fonction-ci permet de traiter les données envoyé depuis le formulaire step-1//
+    /******************************************************/
+    /******************************************************/
+
+    public function traitStep1(Request $request ){
+
+        
+
+        $request->validate([
+        "navire-selected" => "required",
+        "portEscalEnvisage" => "required",
+        "dateLastEscale" => "required",
+        "accueilPort" => "required",
+        "dateArriveEstim" => "required",
+        "heureArriveEstim" => "required",
+        "minuteArriveEstim" => "required",
+        "objetAccesPort" => "required"
+            
         ]);
 
-        return $myNewNavireForDemandeLoading->id;
+      
 
-    }
+        $step1= $request->all();
 
-    /******************************************************/
-    /******************************************************/
-    // la fonction qui permet de mettre à jour  un navire de la base de donnée lié a une damande   //
-    /******************************************************/
-    /******************************************************/
-    public function updateNewNavire(Navire $navire, request $request ){
+        session(['step1' => $step1]);
 
-         $nomNavire  = $request->input('nomNavire');
-        $etatPavillonNavire = $request->input('etatPavillonNavire'); 
-        $typeNavire = $request->input('typeNavire'); 
-        $certifNavire = $request->input('certifNavire'); 
-        $tiranNavire = $request->input('tiranNavire'); 
-        $longNavire = $request->input('longNavire'); 
-        $largNavire = $request->input('largNavire'); 
-        $immaCertifNavire = $request->input('immaCertifNavire'); 
-        $omi = $request->input('omi');
-        $orgp = $request->input('orgp');
-       
-        $navire->update([
-            'Nom_Navire' => $nomNavire  ,
-            'Etat_Pavillon' => $etatPavillonNavire ,
-            'Type_Navire'=>  $typeNavire , 
-            'Id_Certificat_Immat' =>  $certifNavire, 
-            'Hull_Material'=> $tiranNavire, 
-            'Dimension_Navire'=> $longNavire  , 
-            'Length_Overall' => $largNavire , 
-            'Id_Certificat_Immat' =>$immaCertifNavire , 
-            'Omi' => $omi,
-            'ORGP' =>  $orgp ,
-       ]);
+        //dd(session("step1")["navire-selected"]);
 
-    }
-   
-    
+        $this->updateIdNavireForAllCapture();
+        $this->updateIdNavireForAllAutoPeche();
 
+        return redirect()->route('home.demandes.caputredemande.index',["checkhascaptures"=>true]);
 
-    
-    /******************************************************/
-    /******************************************************/
-    //  ici gère la section port Form section        //
-    /******************************************************/
-    /******************************************************/
-    public function navireAndPortFunct(request $request){
-
-        //ici je recupère le navire qui a été selectionné depuis le selector de navire( je verifie si oui ou non il a été selectionné)
-        $navireSelected =  $request->input('navireSelected');
-
-        // icije recupère la demande qui est en train de courrir dans le forumaire
-        $demandeId =  $request->input('demandeId');
-
-        // ici je vais deja recuperer la demande pour voir si elle un navire pre
-        $myDemande = Demande::find($demandeId); 
-
-        // le resultat censé être retourné à la fin de la fonction
-        $res="";
-
-
-        if($navireSelected!="selectNavire"){
-            $myDemande ->update([ 
-                'navires_id' => $navireSelected,
-            ]);
-        }
-
-
-
-       
-
-        // ici recuperer dejà les informations du form objet Port  arrivées de la vue grace aux requêtes Ajax 
-        $objetAccesPort = $request->input('objetAccesPort');
-        $minuteArriveEstim = $request->input('minuteArriveEstim');
-        $heureArriveEstim = $request->input('heureArriveEstim');
-        $dateArriveEstim = $request->input('dateArriveEstim');
-        $accueilPort = $request->input('accueilPort');
-        $dateLastEscale = $request->input('dateLastEscale');
-
-        
-        
-        
-       
-        
-
-        if($dateArriveEstim){
-
-            $testDateOk = $this->checkDateArrivEstime("/",$dateArriveEstim);
-            
-            $res= response()->json([
-                'serverDate' => $testDateOk,
-            ], 203);
-        }else{
-            dd("je suis ici");
-            // ici un tableau qui va enregistrer les data de la demande concernant le port 
-            $data=[$objetAccesPort,$minuteArriveEstim,$dateArriveEstim, $accueilPort,$dateLastEscale];
-
-            $this->updateDemande( $data);
-            $res= response()->json([
-                'succes' => "enregistré avec succes",
-            ], 203);
-        }
-
-
-        return $res; 
-        
-
-    }
-
-
-    // ici une fonction me permettant de controler la date d'arrivée estimée reseingée par l'user de sorte à verifier si cette date 
-    // est valable et respecte les 3 jours d'envoi avant l'entre du navire au port
-    public function checkDateArrivEstime($separator,$date){
-
-        $resultCompareDate =false;
-
-        $serverDate = Carbon::now(); // Utilisation de Carbon pour obtenir la date du serveur
-        
-        /// la fonction qui va spliter la date carborne passée en parametre
-        $splitDateServer = $this->obtenirMoisJourAnnee($serverDate); 
-        
-        $moisServer = $splitDateServer['mois'];
-        $dayServer= $splitDateServer['jour'];
-        $yearServer= $splitDateServer['annee'];
-        $newFormatDateServer = $yearServer.'-'.$moisServer.'-'.$dayServer; // ici je reformat la date du serveur a ma convenance 
-        
-        
-        /// date donnée par le user qui sera prise pour etre comparée à la date du serveur
-        $splitDateUser = explode($separator, $date); // Utilisez la fonction explode pour diviser le texte en fonction du séparateur
-
-        $moisUser = $splitDateUser[0];
-        $dayUser= $splitDateUser[1];
-        $yearUser= $splitDateUser[2];
-        $newFormatDateUser = $yearUser.'-'.$moisUser.'-'.$dayUser; // ici je reformat la date du l'user a ma convenance 
-
-        $diffbetweenDate = $this->differenceEnJours($newFormatDateServer, $newFormatDateUser );
-
-        if( $diffbetweenDate > 3){
-            $resultCompareDate = true;
-        }
-
-        return $resultCompareDate;
-       
     } 
 
+    /******************************************************/
+    /******************************************************/
+    //  //affiche la page de step-2  de la demande//
+    /******************************************************/
+    /******************************************************/
+    // cette fonction se charge juste d'afficher la page du step-2
+    public function affCaptuDemande(Request $request){
 
-    // ici la fonction qui me permet de faire la difference en jours à l'aide de deux dates données en parametre
-    function differenceEnJours($date1, $date2) {
-        // Créez deux objets DateTime à partir des dates fournies
-        $dateObj1 = new DateTime($date1);
-        $dateObj2 = new DateTime($date2);
-    
-        // Calculez la différence entre les deux dates
-        $difference = $dateObj1->diff($dateObj2);
-    
-        // Obtenez le nombre de jours de différence
-        $jours = $difference->days;
-    
-        return $jours;
-    }
-    
+        $lesCaptures="";
 
-
-    // ici lla fonction qui recupère le jour, le mois et l'année depuis le serveur a partir de carborne
-    function obtenirMoisJourAnnee($dateCarbon) {
-        $mois = $dateCarbon->format('m');  // Obtient le mois au format 01-12
-        $jour = $dateCarbon->format('d');  // Obtient le jour au format 01-31
-        $annee = $dateCarbon->format('Y'); // Obtient l'année au format AAAA
-    
-        return [
-            'mois' => $mois,
-            'jour' => $jour,
-            'annee' => $annee,
-        ];
-    }
-    
-   
-    
-
-
-    
-
-    // ici la fonction qui eme permettra de mettre à jour dans la base la demande contenant les info envoyé renseignée par l'user
-    public function updateDemande($var){
-
-        DB::table('demandes' )
-        ->where('id', $var["demandeId"])
-        ->update([ 
-            'Objet_Acces_Port' =>  $var['objetAccesPort'],
-            'Date_escale' => $var ['dateLastEscale'],
-            'Date_arrivee' =>  $var ['dateArriveEstim'],
-            'Port' =>  $var['accueilPort'],
-            'heure_arrivee' =>  $var['heureArriveEstim'].":". $var['minuteArriveEstim'],
-        ]);
-
-    }
-
-
+        if($request->input("checkhascaptures")){
+            $lesCaptures =DB::table('Captures')->where("demande_id","like",session("IdDemandeRunning"))->get();
+        }
 
         
+
+        return view("demande.step-demande.step2",[
+            'lesCaptures'=>$lesCaptures,
+        ]);  //
+    }
+
+
+
+    // la fonction chargée de traiter la les information de la vue du step-2
+    public function traitStep2(){
+
+        return redirect()->route('home.demandes.autopechedemande.index',['checkhascautopeche'=>1]);
+
+    }
+
+  
+
+
+
     /******************************************************/
     /******************************************************/
-    //        ici gère la section peche section        //
+    //  //affiche la page de step-3  de la demande//
     /******************************************************/
     /******************************************************/
+    public function affAutoPecheDemande(Request $request ){
+
+        $lesAutoPeche="";
+
+        if($request->input("checkhascautopeche")){
+            $lesAutoPeche =DB::table('autori_peches')->where("demande_id","=", session("IdDemandeRunning"))->get();
+        }
+
+        return view("demande.step-demande.step3",[
+            'lesAutoPeches'=>$lesAutoPeche,
+        ]);  //
+    }
+
 
     //**supprimer l'auto peche depuis la base de données */
     public function PecheDeleteFunct(request $request){
         
         $idPeche = $request->input('pecheId');
-        $demandeId =  $request->input('demandeId');
+        $demandeId =  session("IdDemandeRunning");
         $msgIssue= "supprimé avec succes";
 
        
@@ -370,19 +369,21 @@ class demandeController extends Controller
         $zondPeche = $request->input('zondPeche');
         $especeForPeche = $request->input('especeForPeche');
         $engin = $request->input('engin');
-        $demandeId =  $request->input('demandeId');
+        $demandeId = session("IdDemandeRunning");
+
+        //dd("je suis ici");
         
 
         // iserer directement dans une base de donnée chaque objet capture 
             $myPeche = Autori_peche::create([
-                'Produit' => $Identificateur,
+                'identif_auto_peche' => $Identificateur,
                 'Deliv_Par' =>  $devlivrePar,
                 'Date_Stat_Activities' => $dateEmission,
                 'Date_end_Activities' => $dateExpiration,
                 'Zone_peche' => $zondPeche,
                 'espece' => $especeForPeche,
                 'engin' => $engin,
-                'navires_id' =>	3,
+                'navires_id' => session("step1")["navire-selected"]	,
                 'demande_id' => $demandeId
             ]);
 
@@ -393,7 +394,7 @@ class demandeController extends Controller
             
             $testPeche ='<tr>
                         
-                            <td class="tb-col-os">'.$devlivrePar.'<span class="sub-text text-white">'.$myPeche->id.'</span></td>
+                            <td class="tb-col-os">'.$Identificateur.'<span class="sub-text text-white">'.$myPeche->id.'</span></td>
                             <td class="tb-col-ip"><span class="sub-text">'.$devlivrePar.'</span></td>
                             <td class="tb-col-ip"><span class="sub-text">'.$dateEmission.'/span></td>
                             <td class="tb-col-ip"><span class="sub-text">'.$dateExpiration.'</span></td>
@@ -412,114 +413,6 @@ class demandeController extends Controller
                 
     }
 
-        
-    /******************************************************/
-    /******************************************************/
-    //        ici gère la section auto transb section        //
-    /******************************************************/
-    /******************************************************/
-    public function TransbFunct(){
-        
-    }
-
-        
-    /******************************************************/
-    /******************************************************/
-    //        ici gère la section info transb section        //
-    /******************************************************/
-    /******************************************************/
-    public function infoTransbFunct(){
-       
-        
-    }
-
-
-    /******************************************************/
-    /******************************************************/
-    //        ici gère la section capture section        //
-    /******************************************************/
-    /******************************************************/
-
-    /**supprimer la capture */
-    public function CaptureDeleteFunct(request $request){
-       
-        $idCapture = $request->input('captureId');
-        $demandeId =  $request->input('demandeId');
-        $msgIssue= "enregistré avec succs";
-
-       
-        
-        try {
-            DB::table('captures')
-            ->where('id',  $idCapture)
-            ->where('demande_id',  $demandeId)
-            ->delete();
-        } catch (Exception $e) {
-           
-            $msgIssue= $e->getMessage();
-        }
-
-        return response()->json([
-            'succes' => $msgIssue,
-           
-        ], 203);
-       
-
-    }
-
-
-    /****create la capture dans la bd */
-    public function CaptureFunct(request $request){
-                    
-        // ici recuperer dejà les informations arrivées de la vue grace aux requêtes Ajax 
-            $espece = $request->input('espece');
-            $produit = $request->input('produit');
-            $zoneCapture = $request->input('zoneCapture');
-            $qteBord = $request->input('qteBord');
-            $qteDebarque = $request->input('qteDebarque');
-            $demandeId =  $request->input('demandeId');
-            
-
-        // iserer directement dans une base de donnée chaque objet capture 
-             $myCapture = Capture::create([
-                'Produit' => $produit,
-                'qte_a_bord' =>  $qteBord,
-                'qte_debarque' => $qteDebarque,
-                'zone_capture' => $zoneCapture,
-                'espece' => $espece,
-                'navires_id' =>	3,
-                'demande_id' => $demandeId
-            ]);
-
-
-        // Retourner dans la vue lo'bjet mis en base de données de sorte à le voir s'afficher dans un tableau 
-        
-        $testCapture = ' <tr> 
-                            <span class="text-white" >'.$myCapture->id.'</span>
-                            <td class="tb-col-os">'.$espece.'</td>
-                            <td class="tb-col-ip"><span class="sub-text">'.$produit.'</span></td>
-                            <td class="tb-col-ip"><span class="sub-text">'.$zoneCapture.'</span></td>
-                            <td class="tb-col-ip"><span class="sub-text">'.$qteBord.'</span></td>
-                            <td class="tb-col-time"><span class="sub-text"><span class="d-none d-sm-inline-block">'.$qteDebarque.'</span></span></td>
-                            <td class="tb-col-action"><a href="javascript:void(0);" data-id="'.$myCapture->id.'" onclick="myDelete(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                        </tr>';
-
-        return response()->json([
-            'succes' => "enregistré avec succes",
-            'testCapture'=> $testCapture,
-        ], 203);
-
-
-    }
-
-
-
-       
-        
-                    
-                
-        
-
 
 
     /******************************************************/
@@ -531,7 +424,6 @@ class demandeController extends Controller
     {
         $date=(string) $date;
         $parts = explode('/', $date);
-
         $month= $parts[0] ?? null;
         $day = $parts[1] ?? null;
         $year = $parts[2] ?? null;
@@ -539,92 +431,71 @@ class demandeController extends Controller
     
         return $formattedDate;
     }
-
-
-
-
-
-
-
-
-
-
-
+    
 
     /******************************************************/
     /******************************************************/
-    //others function to see if i want grab some info     //
-    /******************************************************/
+    //  Fonction qui affiche la partie concernant l'uploader de fichier        //
     /******************************************************/
 
-    public function ajouterCaptureIntoCollectionCapture(request $request){
+    /******* ici la fonction qui permettra d'afficher la page de step-4 */
+    public function affuploadFileDemande(){
+        return view("demande.step-demande.step4");
+
         
-        $request->validate([
-            "nom"=>"required",
-            "prenom"=>"required",
-            "classe_id"=>"required"
-        ]);
+    }
 
-        $this->section="capture";
-        // je  verifie ici assez rapidement les quantité renseignées
-         if($this->capture["qteBord"]<$this->capture["qteDebarque"]){
-            return false;
-        }
-        
+
+    public function traitStep4(){
+        return redirect()->route('home.demandes.recapedemande.index');
+
+    }
+
+
+
+    /******************************************************/
+    /******************************************************/
+    //  Fonction qui affiche la partie concernant les recape de la demande       //
+    /******************************************************/
+
+
+    public function affRecapDemande(){
+        return view("demande.recap-demande");
     }
 
 
 
 
-
-
-    public function checkIfTransbordSelection(Request $request){
-            if($request->ajax()){
-                dd($request->all());
-                // if(myContains($test, "trans")){
-                //     dd("je suis ici");
-                //    return response()->json([
-                //     'succes' => "enregistré avec succes",
-                //     ], 203); 
-                // }else{
-                //     return response()->json([
-                //         'succes' => "enregistré avec ko",
-                //     ], 203); 
-                // };
-            }
-
-
-            return response()->json([
-                        'succes' => "enregistré avec oo",
-                    ], 203); 
-
-            
-    }
-
+    /// ici la fonction qui permet de verifier dans le contenu donné en paramettre s'il existe un element à l'interieur
     function myContains($container, $contenu){
         return Str::contains($container,$contenu);
     }
 
 
+    //ici la fonction qui me ermet de setter des page à a fficher dans l'index de la demande
     public function setCurrentPageView()
     {
        $nameRequest= request()->route()->getName();
 
-
-       if(myContains($nameRequest, "list")){
+        
+       // ici je set la page visible à la liste des demandes
+       if(myContains($nameRequest, "listdemande")){
            $this->currentPage = PAGELISTDEMANDE;
        }
 
+       // ici je set la page visible à une nouvelle des demandes
        if(myContains($nameRequest, "newdemande")){
-        $this->createDemande();
         $this->currentPage = PAGENEWDEMANDE;
-
         }
 
-        if(myContains($nameRequest, "presentDemande")){
-           
+       // ici je set la page visible à la presentation d'une demande
+        if(myContains($nameRequest, "presentdemande")){
             $this->currentPage = PRESENTDEMANDES;
-    
+        }
+
+        // ici je set la page visible à la presentation d'une demande
+        if(myContains($nameRequest, "naviredemande")){
+            $this->currentPage = PAGENAVIREDEMANDE;
         }
 
        if(myContains($nameRequest, "mesdemande")){

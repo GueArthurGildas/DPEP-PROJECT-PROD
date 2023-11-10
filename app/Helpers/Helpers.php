@@ -25,7 +25,7 @@ define("PRESENTDEMANDES", "presentDemande");
 
 
 define("PAGEPRESENTDEMANDE", "presentDemande");
-define("PAGENAVIREDEMANDE", "navireDemande");
+define("PAGENAVIREDEMANDE", "navireDemande"); //step-1-Demande
 define("PAGEPORTDEMANDE", "portDemande");
 define("PAGEPROPRIOTDEMANDE", "ProprietDemande");
 define("PAGECAPTUREDEMANDE", "captureDemande");
@@ -89,7 +89,7 @@ function notifNbNewDemande(){
 
 function userRole(){
     foreach(auth()->user()->roles as $role){
-        return $role->nomRole."  --";
+        return $role->nomRole;
     }
   
 }

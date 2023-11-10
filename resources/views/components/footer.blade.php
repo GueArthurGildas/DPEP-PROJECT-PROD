@@ -1,5 +1,5 @@
-                                <div class="nk-footer">
-                                    <div class="container wide-xl">
+                                <div class="nk-footer ">
+                                    <div class="container wide-xl bg-dark">
                                         <div class="nk-footer-wrap g-2">
                                             <div class="nk-footer-copyright"> &copy; 2023 DashLite. Template by <a href="https://softnio.com" target="_blank">Softnio</a>
                                             </div>
