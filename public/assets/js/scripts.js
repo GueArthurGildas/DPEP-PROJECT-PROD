@@ -14,7 +14,8 @@
     _mobile_nav = 'mobile-menu',
     _header = 'nk-header',
     _header_menu = 'nk-header-menu',
-    _aside = 'nk-aside',
+    _sidebar = 'nk-sidebar',
+    _sidebar_mob = 'nk-sidebar-mobile',
     //breakpoints
     _break = NioApp.Break;
   function extend(obj, ext) {
@@ -25,7 +26,7 @@
   }
   // ClassInit @v1.0
   NioApp.ClassBody = function () {
-    NioApp.AddInBody(_aside);
+    NioApp.AddInBody(_sidebar);
   };
 
   // ClassInit @v1.0
@@ -33,12 +34,8 @@
     NioApp.BreakClass('.' + _header_menu, _break.lg, {
       timeOut: 0
     });
-    NioApp.BreakClass('.' + _aside, _break.lg, {
-      timeOut: 0
-    });
     $win.on('resize', function () {
       NioApp.BreakClass('.' + _header_menu, _break.lg);
-      NioApp.BreakClass('.' + _aside, _break.lg);
     });
   };
 
@@ -108,6 +105,9 @@
         self.closest("li").addClass('active current-page').parents().closest("li").addClass("active current-page");
         self.closest("li").children('.nk-menu-sub').css('display', 'block');
         self.parents().closest("li").children('.nk-menu-sub').css('display', 'block');
+        this.scrollIntoView({
+          block: "start"
+        });
       } else {
         self.closest("li").removeClass('active current-page').parents().closest("li:not(.current-page)").removeClass("active");
       }
@@ -237,7 +237,7 @@
       },
       attr = opt ? extend(def, opt) : def;
     $(imenu).on('click', function (e) {
-      if (NioApp.Win.width < _break.lg || $(this).parents().hasClass(_aside)) {
+      if (NioApp.Win.width < _break.lg || $(this).parents().hasClass(_sidebar)) {
         NioApp.Toggle.dropMenu($(this), attr);
       }
       e.preventDefault();
@@ -250,14 +250,14 @@
       $toggle = $(toggle),
       $contentD = $('[data-content]'),
       toggleBreak = $contentD.hasClass(_header_menu) ? _break.lg : _break.xl,
-      toggleOlay = _header + '-overlay',
+      toggleOlay = _sidebar + '-overlay',
       toggleClose = {
         profile: true,
         menu: false
       },
       def = {
         active: 'toggle-active',
-        content: _header + '-active',
+        content: _sidebar + '-active',
         body: 'nav-shown',
         overlay: toggleOlay,
         "break": toggleBreak,
@@ -277,6 +277,21 @@
       if (NioApp.Win.width < _break.xl || NioApp.Win.width < toggleBreak) {
         NioApp.Toggle.removed($toggle.data('target'), attr);
       }
+    });
+  };
+
+  // Compact Sidebar @v1.0
+  NioApp.sbCompact = function () {
+    var toggle = '.nk-nav-compact',
+      $toggle = $(toggle),
+      $content = $('[data-content]');
+    $toggle.on('click', function (e) {
+      e.preventDefault();
+      var $self = $(this),
+        get_target = $self.data('target'),
+        $self_content = $('[data-content=' + get_target + ']');
+      $self.toggleClass('compact-active');
+      $self_content.toggleClass('is-compact');
     });
   };
 
@@ -472,8 +487,8 @@
         var export_title = $(this).data('export-title') ? $(this).data('export-title') : 'Export';
         var btn = has_export ? '<"dt-export-buttons d-flex align-center"<"dt-export-title d-none d-md-inline-block">B>' : '',
           btn_cls = has_export ? ' with-export' : '';
-        var dom_normal = '<"row justify-between g-2' + btn_cls + '"<"col-7 col-sm-4 text-start"f><"col-5 col-sm-8 text-start"<"datatable-filter"<"d-flex justify-content-end g-2"' + btn + 'l>>>><"datatable-wrap my-3"t><"row align-items-center"<"col-7 col-sm-12 col-md-9"p><"col-5 col-sm-12 col-md-3 text-start text-md-end"i>>';
-        var dom_separate = '<"row justify-between g-2' + btn_cls + '"<"col-7 col-sm-4 text-start"f><"col-5 col-sm-8 text-start"<"datatable-filter"<"d-flex justify-content-end g-2"' + btn + 'l>>>><"my-3"t><"row align-items-center"<"col-7 col-sm-12 col-md-9"p><"col-5 col-sm-12 col-md-3 text-start text-md-end"i>>';
+        var dom_normal = '<"row justify-between g-2' + btn_cls + '"<"col-7 col-sm-4 text-start"f><"col-5 col-sm-8 text-end"<"datatable-filter"<"d-flex justify-content-end g-2"' + btn + 'l>>>><"datatable-wrap my-3"t><"row align-items-center"<"col-7 col-sm-12 col-md-9"p><"col-5 col-sm-12 col-md-3 text-start text-md-end"i>>';
+        var dom_separate = '<"row justify-between g-2' + btn_cls + '"<"col-7 col-sm-4 text-start"f><"col-5 col-sm-8 text-end"<"datatable-filter"<"d-flex justify-content-end g-2"' + btn + 'l>>>><"my-3"t><"row align-items-center"<"col-7 col-sm-12 col-md-9"p><"col-5 col-sm-12 col-md-3 text-start text-md-end"i>>';
         var dom = $(this).hasClass('is-separate') ? dom_separate : dom_normal;
         var def = {
             responsive: true,
@@ -553,7 +568,7 @@
 
   // BootStrap Specific Tab Open
   NioApp.BS.tabfix = function (elm) {
-    var tab = elm ? elm : '[data-bs-toggle="modal"]';
+    var tab = elm ? elm : '[data-toggle="modal"]';
     $(tab).on('click', function () {
       var _this = $(this),
         target = _this.data('target'),
@@ -790,162 +805,6 @@
     });
   };
 
-  ///////////////////////////////
-  // Custom Script for Stepper form
-  /////////////////////////////
-  //Custom Stepper @v1.0
-  NioApp.Custom.Stepper = function (elm, opt) {
-    // data
-    var data_step_init = elm.dataset.stepInit && !isNaN(elm.dataset.stepInit) ? parseInt(elm.dataset.stepInit) : false;
-    var settings = {
-      selectors: {
-        nav: opt.selectors.nav ? opt.selectors.nav : 'stepper-nav',
-        progress: opt.selectors.progress ? opt.selectors.progress : 'stepper-progress',
-        content: opt.selectors.content ? opt.selectors.content : 'stepper-steps',
-        prev: opt.selectors.prev ? opt.selectors.prev : 'step-prev',
-        next: opt.selectors.next ? opt.selectors.next : 'step-next',
-        submit: opt.selectors.submit ? opt.selectors.submit : 'step-submit'
-      },
-      classes: {
-        nav_current: opt.classes.nav_current ? opt.classes.nav_current : 'current',
-        nav_done: opt.classes.nav_done ? opt.classes.nav_done : 'done',
-        step_active: opt.classes.step_active ? opt.classes.step_active : 'active',
-        step_done: opt.classes.step_done ? opt.classes.step_done : 'done'
-      },
-      current_step: data_step_init ? data_step_init : parseInt(opt.current_step)
-    };
-    var nav_items = elm.querySelectorAll(".".concat(settings.selectors.nav, " > *")),
-      step_items = elm.querySelectorAll(".".concat(settings.selectors.content, " > *")),
-      step_progress = elm.querySelector(".".concat(settings.selectors.progress)),
-      step_progress_count = elm.querySelector(".".concat(settings.selectors.progress, "-count")),
-      step_progress_bar = elm.querySelector(".".concat(settings.selectors.progress, "-bar")),
-      step_prev = elm.querySelector(".".concat(settings.selectors.prev)),
-      step_next = elm.querySelector(".".concat(settings.selectors.next)),
-      step_submit = elm.querySelector(".".concat(settings.selectors.submit)),
-      _nav_current_class = settings.classes.nav_current,
-      _nav_done_class = settings.classes.nav_done,
-      _step_active_class = settings.classes.step_active,
-      _step_done_class = settings.classes.step_done,
-      _init_step = settings.current_step ? settings.current_step : 1,
-      _current_step = _init_step,
-      _count_error_message = "Stepper nav should have same amount of child element as Stepper steps",
-      _nav_count = nav_items.length,
-      _step_count = step_items.length,
-      _step_nav = elm.querySelectorAll(".".concat(settings.selectors.nav)).length > 0 ? true : false,
-      _step_progress = elm.querySelectorAll(".".concat(settings.selectors.progress)).length > 0 ? true : false;
-    //Show step function
-    function showStep(_current) {
-      var _index = _current - 1;
-      elm.style.display = 'block';
-      if (_step_nav) {
-        nav_items.forEach(function (itm, idx) {
-          itm.classList.remove(_nav_current_class);
-        });
-        nav_items[_index].classList.add(_nav_current_class);
-      }
-      step_items.forEach(function (itm, idx) {
-        itm.classList.remove(_step_active_class);
-      });
-      step_items[_index].classList.add(_step_active_class);
-
-      //update pagination
-      paginateStep(_current);
-      if (_step_progress) {
-        step_progress_count.innerHTML = "".concat(_current, " of ").concat(_step_count);
-        step_progress_bar.style.width = "".concat(100 / _step_count * _current, "%");
-      }
-    }
-
-    //Manage Step pagination
-    function paginateStep(_current) {
-      if (_current === 1) {
-        step_next.style.display = 'block';
-        step_prev.style.display = 'none';
-        step_submit.style.display = 'none';
-        elm.setAttribute("data-step-current", "first");
-      }
-      if (_step_count !== _current & _current !== 1) {
-        step_prev.style.display = 'block';
-        step_next.style.display = 'block';
-        step_submit.style.display = 'none';
-        elm.setAttribute("data-step-current", _current);
-      }
-      if (_step_count === _current) {
-        step_prev.style.display = 'block';
-        step_submit.style.display = 'block';
-        step_next.style.display = 'none';
-        elm.setAttribute("data-step-current", "last");
-      }
-    }
-
-    //Step Init
-    if (_nav_count === _step_count) {
-      showStep(_init_step);
-    } else if (!_step_nav) {
-      showStep(_init_step);
-    } else {
-      console.error(_count_error_message);
-    }
-
-    //step Validation
-    var validator = $('#' + elm.id).validate({
-      errorElement: "span",
-      errorClass: "invalid",
-      onfocusout: false,
-      errorPlacement: function errorPlacement(error, element) {
-        if (element.parents().hasClass('input-group')) {
-          error.appendTo(element.parent().parent());
-        } else {
-          error.appendTo(element.parent());
-        }
-      }
-    });
-
-    //Step Prev
-    step_prev.querySelector('button').addEventListener("click", function (e) {
-      e.preventDefault();
-      var validated = validator.form();
-      var _index = _current_step - 1;
-      if (!validated) {
-        // unmark as done
-        if (_step_nav) {
-          nav_items[_index].classList.remove(_nav_done_class);
-        }
-        step_items[_index].classList.remove(_step_done_class);
-      } else if (validated && _step_count !== _current_step) {
-        // mark as done
-        if (_step_nav) {
-          nav_items[_index].classList.add(_nav_done_class);
-        }
-        step_items[_index].classList.add(_step_done_class);
-      }
-      _current_step--;
-      showStep(_current_step);
-    });
-
-    //Step Next
-    step_next.querySelector('button').addEventListener("click", function (e) {
-      e.preventDefault();
-      var validated = validator.form();
-      if (validated) {
-        var _index = _current_step - 1;
-        // mark as done
-        if (_step_nav) {
-          nav_items[_index].classList.add(_nav_done_class);
-        }
-        step_items[_index].classList.add(_step_done_class);
-        _current_step++;
-        showStep(_current_step);
-      }
-    });
-
-    //Step Submit
-    step_submit.querySelector('button').addEventListener("click", function (e) {
-      e.preventDefault();
-      validator.form();
-    });
-  };
-
   // Stepper @v1.0
   NioApp.Stepper = function (elm, opt) {
     var element = document.querySelectorAll(elm);
@@ -1112,6 +971,7 @@
     NioApp.coms.docReady.push(NioApp.Picker.init);
     NioApp.coms.docReady.push(NioApp.Addons.Init);
     NioApp.coms.docReady.push(NioApp.Wizard);
+    NioApp.coms.docReady.push(NioApp.sbCompact);
     NioApp.coms.docReady.push(NioApp.Stepper.init);
     NioApp.coms.winLoad.push(NioApp.ModeSwitch);
     NioApp.coms.winLoad.push(NioApp.Preloader);
