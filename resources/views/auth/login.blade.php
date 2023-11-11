@@ -1,5 +1,8 @@
 @extends('layouts.auth')
 @section('container')
+
+
+
 {{-- 
 <div class="row justify-content-center">
    <div class="col-md-8">
@@ -58,7 +61,7 @@
    </div>
 </div>
 --}}
-<div class="nk-content ">
+<div class="nk-content m-4 ">
    <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
       
       <div class="card card-bordered ">
@@ -108,7 +111,8 @@
                 </div>
 
                <div class="form-group">
-               <button type="submit" class="btn btn-lg btn-block text-white" style="background-color:#df6d14">
+                   {{-- style="background-color:#df6d14" --}}
+               <button type="submit" class="btn btn-lg btn-block text-white bg-warning">
                      {{ __('Login') }}
                      </button>
                      @if (Route::has('password.request'))
@@ -187,6 +191,6 @@
             </div>
          </div>
       </div>
-   </div>
+ 
 </div>
 @endsection

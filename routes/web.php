@@ -1,13 +1,14 @@
 <?php
 
 // use App\Http\Controllers\invoiceControleur;
+
+use App\Http\Controllers\armateurController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\demandeController;
-use App\Http\Livewire\Demandes;
+use App\Http\Controllers\inspectionController;
+use App\Http\Controllers\navireController;
 // use App\Http\Livewire\Loading;
-
-use App\Http\Livewire\Utilisateurs;
 // use App\Http\Livewire\NaviresComp;
 // use App\Models\Role;
 // use App\Models\Demande;
@@ -40,7 +41,7 @@ Route::group([
 ], function(){
     
 
-
+    /********************************************************************** */
     /*** ici les routes destinées à gérer les requêtes liées au demandes ***/
     Route::group([
         "prefix" => "demandes", 
@@ -80,14 +81,58 @@ Route::group([
 
     });
 
-
+    /********************************************************************** */
+    /*** ici les routes destinées à gérer les requêtes liées aux inspections ***/
     Route::group([
         "prefix" => "inspections",
         "as" => "inspections."
     ], function(){
-        Route::get('/listeinspections', [App\Http\Controllers\demandeController::class, 'index'])->name("listinspections.index"); //home.newinspections.newinspections.index
-        Route::get('/newinspections', [App\Http\Controllers\demandeController::class, 'index'])->name("newinspections.index"); 
+        Route::get('/new-inspection', [inspectionController::class,'affAddNewInspection'])->name("newinspection.index"); //home.inspections.newinspection.index
+        Route::get('/liste-inspection', [inspectionController::class,'affListeInspection'])->name("listinspection.index"); //home.inspections.listinspection.index
         
+        Route::resource('/', 'App\Http\Controllers\inspectionController')->names([
+            'index' => 'action.index',//home.inspections.action.index     
+            'create' => 'action.create',
+            'store' => 'action.store',
+                        // Add other route names as needed
+        ]);
     });
+
+
+    /********************************************************************** */
+    /*** ici les routes destinées à gérer les requêtes liées à la gestion des armateurs ***/
+    Route::group([
+        "prefix" => "armateurs",
+        "as" => "armateurs."
+    ], function(){
+        Route::get('/liste-armateur', [armateurController::class,'affListeArmateur'])->name("listarmateur.index"); //home.armateurs.listarmateur.index
+        Route::resource('/', 'App\Http\Controllers\armateurController')->names([
+            'index' => 'action.index',//home.inspections.action.index     
+            'create' => 'action.create',
+            'store' => 'action.store',
+                        // Add other route names as needed
+        ]);
+    });
+
+
+
+    /********************************************************************** */
+    /*** ici les routes destinées à gérer les requêtes liées à la gestion des navires ***/
+    Route::group([
+        "prefix" => "navires",
+        "as" => "navires."
+    ], function(){
+        Route::get('/new-navire', [navireController::class,'affFormAddNewNavire'])->name("newnavire.index"); //home.navires.newnavire.index
+        Route::get('/liste-navire', [navireController::class,'affListeNavire'])->name("listnavire.index"); //home.navires.listnavire.index
+        
+        Route::resource('/', 'App\Http\Controllers\navireController')->names([
+            'index' => 'action.index',//home.navires.action.index     
+            'create' => 'action.create',
+            'store' => 'action.store',
+                        // Add other route names as needed
+        ]);
+    });    
+
+
 
 });  
