@@ -72,6 +72,9 @@ Route::group([
         Route::get('/step-4/traitement', [demandeController::class,'traitStep4'])->name("traitStep4.index"); //home.demandes.traitStep4.index
 
         Route::get('/recape-demande', [demandeController::class,'affRecapDemande'])->name("recapedemande.index"); //home.demandes.recapedemande.index
+        Route::get('/traite-recap-demande', [demandeController::class,'traiteRecapDemande'])->name("traiterecapedemande.index"); //home.demandes.traiterecapedemande.index
+
+
 
 
 

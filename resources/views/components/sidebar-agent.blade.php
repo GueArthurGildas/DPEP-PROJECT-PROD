@@ -1,10 +1,12 @@
- <div class="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
+ <div class="nk-sidebar nk-sidebar-fixed is-light" data-content="sidebarMenu">
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
                         <a href="#" class="logo-link nk-sidebar-logo">
-                            <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
+                            {{-- <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                             <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
-                            <img class="logo-small logo-img logo-img-small" src="./images/logo-small.png" srcset="./images/logo-small2x.png 2x" alt="logo-small">
+                            <img class="logo-small logo-img logo-img-small" src="./images/logo-small.png" srcset="./images/logo-small2x.png 2x" alt="logo-small"> --}}
+                                    <img class="" src="{{asset("images/logo_mirah.png")}}" srcset="{{asset("images/logo_mirah.png")}}"  alt="logo">
+
                         </a>
                     </div>
                     <div class="nk-menu-trigger me-n2">
@@ -19,8 +21,8 @@
                                 <li class="nk-menu-heading">
                                     <h6 class="overline-title text-primary-alt">Dashboards</h6>
                                 </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item  active current-page ">
-                                    <a href="#" class="nk-menu-link bg-light ">
+                                <li class="nk-menu-item ">
+                                    <a href="#" class="nk-menu-link ">
                                         <span class="nk-menu-icon"><em class="icon ni ni-growth-fill "></em></span>
                                         <span class="nk-menu-text">Statistiques</span>
                                     </a>
@@ -31,11 +33,11 @@
                                 <li class="nk-menu-item has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
                                         <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb-fill"></em></span>
-                                        <span class="nk-menu-text">Demande e-Dpep</span>
+                                        <span class="nk-menu-text">Demandes</span>
                                     </a>
                                     <ul class="nk-menu-sub">
-                                        <li class="nk-menu-item">
-                                            <a href="#" class="nk-menu-link"><span class="nk-menu-text">Statistique</span></a>
+                                          <li class="nk-menu-item">
+                                            <a href="#" class="nk-menu-link"><span class="nk-menu-text">Traiter une Demande</span></a>
                                         </li>
                                         <li class="nk-menu-item">
                                             <a href="#" class="nk-menu-link"><span class="nk-menu-text">Liste des Demandes</span></a>
@@ -55,9 +57,7 @@
                                         <span class="nk-menu-text">Navires</span>
                                     </a>
                                     <ul class="nk-menu-sub">
-                                        <li class="nk-menu-item">
-                                            <a href="{{route("home.navires.action.index")}}" class="nk-menu-link"><span class="nk-menu-text">Statistique</span></a>
-                                        </li>
+                                       
                                         <li class="nk-menu-item">
                                             <a href="{{route("home.navires.listnavire.index")}}"  class="nk-menu-link"><span class="nk-menu-text">Liste des navires</span></a>
                                         </li>
@@ -83,9 +83,7 @@
                                         <span class="nk-menu-text">Inspections</span>
                                     </a>
                                     <ul class="nk-menu-sub">
-                                        <li class="nk-menu-item">
-                                            <a href="{{route("home.inspections.action.index")}}" class="nk-menu-link"><span class="nk-menu-text">Stastiques</span></a>
-                                        </li>
+                                        
                                         <li class="nk-menu-item"> 
                                             <a href="{{route("home.inspections.newinspection.index")}}" class="nk-menu-link"><span class="nk-menu-text">Nouvelle Inspection</span></a>
                                         </li>
@@ -100,11 +98,11 @@
                                 <li class="nk-menu-item  ">
                                     <a href="#" class="nk-menu-link ">
                                         <span class="nk-menu-icon"><em class="icon ni ni-setting-alt-fill"></em></span>
-                                        <span class="nk-menu-text">Parametres</span>
+                                        <span class="nk-menu-text">Paramètre</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
-                                <li class="nk-menu-item"><a href="/demo2/lms/admin-profile.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-account-setting-fill"></em></span><span class="nk-menu-text">Administration</span></a></li>
+                                <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-account-setting-fill"></em></span><span class="nk-menu-text">Administration</span></a></li>
                                 
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->

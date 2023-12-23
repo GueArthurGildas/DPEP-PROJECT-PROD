@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Demande;
+
 
 use Illuminate\Http\Request;
 
@@ -25,12 +27,19 @@ class HomeController extends Controller
     {
         
         $userRoleAuth=userRole();
+        $nbDemdemandeUsers= Demande::where("users_id", "like", Auth()->user()->id)->count();
+         
+
+        //dd(userRole());
         $viewToShow = "home";
 
-        if($userRoleAuth!=="Armateur"){
+        if($userRoleAuth==="Armateur"){
             $viewToShow="home-agent";
         }
 
-        return view($viewToShow);
+        return view($viewToShow,[
+            "userdemandes"=> Demande::where("users_id", "like", Auth()->user()->id)->orderby("id","desc")->paginate(4),
+            "nbDemandeUser"=> $nbDemdemandeUsers,
+        ]);
     }
 }

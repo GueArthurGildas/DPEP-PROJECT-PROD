@@ -9,7 +9,7 @@
     <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
     <meta name="csrf-token" content="{{csrf_token()}}" />
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="./images/favicon.png">
+    <link rel="shortcut icon" href="">
     <!-- Page Title  -->
     <title>MIRAH | e-DPEP</title>
     <!-- StyleSheets  -->
@@ -37,6 +37,7 @@
             
                 <x-navbar/>
                 <x-main-header/>
+                {{-- <x-main-header/> --}}
             <!-- main header @e -->
             <!-- content @s -->
             <div class="nk-content nk-content-fluid">
@@ -51,7 +52,7 @@
             <div class="nk-footer nk-footer-fluid bg-dark">
                 <div class="container-xl">
                     <div class="nk-footer-wrap">
-                        <div class="nk-footer-copyright"> &copy; 2023 DashLite. Template by <a href="https://softnio.com" target="_blank">Softnio</a>
+                        <div class="nk-footer-copyright"> &copy;© 2023 MIRAH. Application / <a href="https://softnio.com" target="_blank"> e-Dpep</a>
                         </div>
                         <div class="nk-footer-links">
                             <ul class="nav nav-sm">
@@ -273,6 +274,7 @@
 @include("code-js.capture-js")
 @include("code-js.peche-auto")
 @include("code-js.upload-js")
+@include("code-js.present-js")
 
 </body>
 

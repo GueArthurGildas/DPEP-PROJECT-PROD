@@ -13,6 +13,9 @@ use  App\Services;
 use Carbon\Carbon;
 use DateTime;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\successDemandeSentMail;
+
 
 class demandeController extends Controller
 {
@@ -42,11 +45,10 @@ class demandeController extends Controller
        
 
        // $this->setCurrentPageView();
-
+        dd("je suis ici");
         return view('demande.index',[
             'currentPage'=>$this->currentPage, 
             'idDemadne'=>$this->idDemandeLoading,
-           
         ]);
     }
 
@@ -451,6 +453,24 @@ class demandeController extends Controller
 
     }
 
+
+
+
+    /******************************************************/
+    /******************************************************/
+    //  Fonction qui traiterons les information validées depuis la page de recap demande       //
+    /******************************************************/
+    public function traiteRecapDemande(Request $request){
+
+        $data=Auth()->user();
+        
+        //dd($data['email']);
+
+        Mail::to($data["email"])->send(new successDemandeSentMail($data)); // l'envoi du pour l'instant  à l'user ibi des l'enregitrement dans l'application
+
+        return redirect()->route('home');
+        
+    }
 
 
     /******************************************************/

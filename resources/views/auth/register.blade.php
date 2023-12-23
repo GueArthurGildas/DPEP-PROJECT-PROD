@@ -76,7 +76,7 @@
                <div class="nk-block-head-content">
                   <h4 class="nk-block-title text-center">S'enregistrer</h4>
                   <div class="nk-block-des">
-                     <p>Access the DashLite panel using your email and passcode.</p>
+                     {{-- <p>Accedez à votre espace de demande </p> --}}
                   </div>
                </div>
             </div>
@@ -129,11 +129,11 @@
                </div>
                <div class="form-group">
                   <button type="submit" class="btn btn-lg btn-warning btn-block">
-                  {{ __('Login') }}
+                  {{ __('Valider') }}
                   </button>
                   @if (Route::has('password.request'))
                   <a class="btn btn-link" href="{{ route('password.request') }}">
-                  {{ __('Forgot Your Password?') }}
+                  {{-- {{ __('Forgot Your Password?') }} --}}
                   </a>
                   @endif
                </div>
@@ -201,7 +201,7 @@
             </div>
             <div class="col-lg-6">
                <div class="nk-block-content text-center text-lg-left">
-                  <p class="text-soft">&copy; 2023 DashLite. All Rights Reserved.</p>
+                  <p class="text-soft">&copy; MIRAH APPLICATION e-Dpep. CI-0025 .</p>
                </div>
             </div>
          </div>

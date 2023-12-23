@@ -1,8 +1,25 @@
 @extends("layouts.master")
 @section("content")
 
+
+ <div class="nk-content-inner">
+                        <div class="nk-content-body">
+                            <div class="kyc-app wide-sm m-auto">
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="nk-content nk-content-lg nk-content-fluid">
-                <div class="container-xl wide-lg">
+                <div class="container-xl wide-lg"></div>
                     <div class="nk-content-inner">
                         <div class="nk-content-body">
 
@@ -41,7 +58,7 @@
 @if ($errors->any())
 @foreach ($errors->all() as $error )
 <div class="alert alert-warning alert-icon">
-   <em class="icon ni ni-cross-circle"></em> <strong>Attention</strong>! Rassurez-vous d'avoir renseigné tous les champs y compris le navire.
+   <em class="icon ni ni-cross-circle"></em> <strong>Attention</strong> ! Rassurez-vous d'avoir selectionné le navire et remplir correctement les champs ci-dessous !.
 </div>
 <p class="text-danger"></p>
 @endforeach
@@ -49,9 +66,9 @@
 <hr>
 <div class="nk-block-between-md g-4">
    <div class="nk-block-head-content">
-      <h2 class="nk-block-title fw-normal">Le navire et les informations relatives à la demande</h2>
+      <h2 class="nk-block-title fw-normal">Navire & Port d'accueil</h2>
       <div class="nk-block-des">
-         <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
+         <p>Facilitez la vie en utilisant e-Dpep pour vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
       </div>
    </div>
    <div class="nk-block-head-content">
@@ -96,7 +113,7 @@
                   <select class="form-select js-select2 "    data-search="on" id="navire-selected" onchange="getSelectNavire()" data-placeholder="Selectionner un navire"  >
                      <option value="default_option">-- Selectionner un navire --</option>
                      @foreach ( $lesNavires as $i )
-                     <option value="{{$i->id}}">{{$i->id}}  | {{$i->Nom_Navire}} |  {{$i->Etat_Pavillon}}</option>
+                     <option value="{{$i->id}}">{{$i->Nom_Navire}} |  {{$i->Etat_Pavillon}}    </option>
                      @endforeach
                   </select>
                </div>
@@ -118,7 +135,7 @@
             <div class="nk-refwg-head g-3">
                                                 <div class="nk-refwg-title">
                                                     <h5 class="title" id="enteteInfoNavire" >Détail du Navire  <em id="iconInfoNavireCheck" class="icon ni ni-check-fill-c "></em></h5>
-                                                    <div class="title-sub">Use the bellow link to invite your friends.</div>
+                                                    <div class="title-sub">Ci-dessous vous avez une breve descitpion du navire</div>
                                                 </div>
                                             </div>
                <div class="nk-iv-wg2">
@@ -132,101 +149,106 @@
                            <span class="item-label"><b>Nom : </b>  &ensp; </span>
                            @if ($navireStep1)
                                 
-                              <span class="item-value" id="nomNavire">{{$navireStep1->Nom_Navire}} </span>
+                              <span class="item-value text-danger" id="nomNavire">{{$navireStep1->Nom_Navire}} </span>
                            @else
-                              <span class="item-value" id="nomNavire">--</span>
+                              <span class="item-value text-danger" id="nomNavire">_</span>
                            @endif
                         </li>
                         <li>
                            <span class="item-label"><b> Etat Pavillon  : </b>  &ensp;</span>
                             @if ($navireStep1)
-                              <span class="item-value" id="nomNavire">{{$navireStep1->Etat_Pavillon}} </span>
+                              <span class="item-value text-danger" id="nomNavire">{{$navireStep1->Etat_Pavillon}} </span>
                            @else
-                               <span class="item-value" id="etatPavillonNavire">--</span>
+                               <span class="item-value text-danger" id="etatPavillonNavire">_</span>
                            @endif
                           
                         </li>
                         <li>
                            <span class="item-label"> <b>Type Navire :</b>  &ensp; </span>
                             @if ($navireStep1)
-                              <span class="item-value"  id="typeNavire">{{$navireStep1->Type_Navire}} </span>
+                              <span class="item-value text-danger"  id="typeNavire">{{$navireStep1->Type_Navire}} </span>
                            @else
                               
-                           <span class="item-value" id="typeNavire">--</span>
+                           <span class="item-value text-danger" id="typeNavire">_</span>
                            @endif
                         </li>
                         <li class="total">
                            <span class="item-label"> <b>ID Certificat: </b>  &ensp;</span>
                             @if ($navireStep1)
-                              <span class="item-value"  id="certifNavire">{{$navireStep1->Id_Certificat_Immat}} </span>
+                              <span class="item-value text-danger"  id="certifNavire">{{$navireStep1->Id_Certificat_Immat}} </span>
                            @else
                               
-                           <span class="item-value" id="certifNavire">--</span>
+                           <span class="item-value text-danger" id="certifNavire">_</span>
                            @endif
                         </li>
                         <li class="total">
                            <span class="item-label"> <b>Tirant d'eau : </b>  &ensp;</span>
                              @if ($navireStep1)
-                              <span class="item-value"  id="tiranNavire">{{$navireStep1->Power_of_Main_Engine}} </span>
+                              <span class="item-value text-danger"  id="tiranNavire">{{$navireStep1->Power_of_Main_Engine}} </span>
                            @else
                               
-                           <span class="item-value" id="tiranNavire">--</span>
+                           <span class="item-value text-danger" id="tiranNavire">_</span>
                            @endif
                         </li>
                         <li class="total">
                            <span class="item-label"> <b>Long du navire : </b>  &ensp;</span>
 
                             @if ($navireStep1)
-                              <span class="item-value"  id="longNavire">{{$navireStep1->Length_Overall}} </span>
+                              <span class="item-value text-danger"  id="longNavire">{{$navireStep1->Length_Overall}} </span>
                            @else
-                              <span class="item-value" id="longNavire">--</span>
+                              <span class="item-value text-danger" id="longNavire">_</span>
                            @endif
                            
                         </li>
                         <li class="total">
                            <span class="item-label"> <b>Larg du navire : </b>  &ensp;</span>
                            @if ($navireStep1)
-                              <span class="item-value"  id="largNavire">{{$navireStep1->Dimension_Navire}} </span>
+                              <span class="item-value text-danger"  id="largNavire">{{$navireStep1->Dimension_Navire}} </span>
                            @else
                               
-                           <span class="item-value" id="largNavire">--</span>
+                           <span class="item-value text-danger" id="largNavire">_</span>
                            @endif
                         </li>
                         <li class="total">
                            <span class="item-label"> <b>ID certif d'immat : </b>  &ensp;</span>
                             @if ($navireStep1)
-                              <span class="item-value"  id="immaCertifNavire">{{$navireStep1->Id_Certificat_Immat}} </span>
+                              <span class="item-value text-danger"  id="immaCertifNavire">{{$navireStep1->Id_Certificat_Immat}} </span>
                            @else
                               
-                           <span class="item-value" id="immaCertifNavire">--</span>
+                           <span class="item-value text-danger" id="immaCertifNavire">_</span>
                            @endif
                         </li>
                         <li class="total">
                            <span class="item-label"> <b>ID navire OMI : </b>  &ensp;</span>
                              @if ($navireStep1)
-                              <span class="item-value"  id="omi">{{$navireStep1->Omi}} </span>
+                              <span class="item-value text-danger"  id="omi">{{$navireStep1->Omi}} </span>
                            @else
                               
-                           <span class="item-value" id="omi">--</span>
+                           <span class="item-value text-danger" id="omi">_</span>
                            @endif
                         </li>
                         <li class="total">
                            <span class="item-label"> <b>ID ORGP : </b>  &ensp;</span>
                             @if ($navireStep1)
-                              <span class="item-value"  id="orgp">{{$navireStep1->ORGP}} </span>
+                              <span class="item-value text-danger"  id="orgp">{{$navireStep1->ORGP}} </span>
                            @else
                               
-                           <span class="item-value" id="orgp">--</span>
+                           <span class="item-value text-danger" id="orgp">_</span>
                            @endif
                         </li>
                      </ul>
                   </div>
-                  {{-- 
+                  
                   <div class="nk-iv-wg2-cta">
-                     <a href="#" class="btn btn-primary btn-lg btn-block">Invest & Earn</a>
-                     <div class="cta-extra">Earn up to 25$ <a href="#" class="link link-dark">Refer friend!</a></div>
+                           @if ($navireStep1)
+                              <a href="#" class="btn btn-danger btn-lg btn-block mt-2">Voir plus</a>
+                           @else
+                              
+                           <a href="#" class="btn btn-secondary btn-lg btn-block mt-2">Voir plus</a>
+                           @endif
+                           {{-- <div class="cta-extra">Earn up to 25$ <a href="#" class="link link-dark">Refer friend!</a></div> --}}
                   </div>
-                  --}}
+                 
                </div>
             </div>
          </div>
@@ -408,6 +430,10 @@
 
 
 
+
+                            </div>
+                            </div>
+                            </div>
 
 
 

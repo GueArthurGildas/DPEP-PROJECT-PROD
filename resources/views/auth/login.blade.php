@@ -78,18 +78,20 @@
                <div class="nk-block-head-content">
                   <h4 class="nk-block-title text-center">Connexion</h4>
                   <div class="nk-block-des">
-                     <p>Access the DashLite panel using your email and passcode.</p>
+                   {{-- <p>Accedez à votre espace de demande </p> --}}
                   </div>
                </div>
             </div>
             <form method="POST" action="{{ route('login') }}">
                @csrf
+               
                <div class="form-group">
                 {{-- <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label> --}}
                  <div class="form-label-group">
-                                            <label class="form-label" for="default-01">Email or Username</label>
+                                            <label class="form-label" for="default-01">Email or Username <em class="icon ni ni-user"></em></label>
                                         </div>
                      <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter your email address or username" required autocomplete="email" autofocus>
+                     
                      @error('email')
                      <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
@@ -117,7 +119,7 @@
                      </button>
                      @if (Route::has('password.request'))
                      <a class="btn btn-link" href="{{ route('password.request') }}">
-                     {{ __('Forgot Your Password?') }}
+                     {{ __('Mot de passe oublié ?') }}
                      </a>
                      @endif
                </div>
@@ -186,7 +188,7 @@
             </div>
             <div class="col-lg-6">
                <div class="nk-block-content text-center text-lg-left">
-                  <p class="text-soft">&copy; 2023 DashLite. All Rights Reserved.</p>
+                  <p class="text-soft">&copy; MIRAH APPLICATION e-Dpep. CI-0025 .</p>
                </div>
             </div>
          </div>

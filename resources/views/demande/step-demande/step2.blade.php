@@ -1,6 +1,10 @@
 @extends("layouts.master")
 @section("content")
 
+<div class="nk-content-inner">
+                        <div class="nk-content-body">
+                            <div class="kyc-app wide-sm m-auto">
+                           
    <div class="nk-content nk-content-lg nk-content-fluid">
                 <div class="container-xl wide-lg">
                     <div class="nk-content-inner">
@@ -226,5 +230,9 @@
 
                         </div>
                         </div></div></div>
+
+                         </div>
+                            </div>
+</div>
 
 @endsection

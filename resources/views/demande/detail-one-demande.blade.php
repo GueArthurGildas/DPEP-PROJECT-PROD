@@ -12,10 +12,11 @@
                                     <div class="nk-block-head-content">
                                         <div class="nk-block-head-sub"><span></span></div>
                                         <div class="align-center flex-wrap pb-2 gx-4 gy-3">
+                                            <div><a href="#" class="btn btn-white btn-light"> <em class="icon ni ni-arrow-long-left text-danger ms-2"></em> Retour </a></div>
+                                            
                                             <div>
                                                 <h2 class="nk-block-title fw-normal text-danger">DPEP-A03-2Z0 </h2>
                                             </div>
-                                            <div><a href="html/invest/schemes.html" class="btn btn-white btn-light">My Plans <em class="icon ni ni-arrow-long-right ms-2"></em></a></div>
                                         </div>
                                         <div class="nk-block-des">
                                             <p>At a glance summary of your investment account. Have fun!</p>
@@ -26,8 +27,8 @@
                                             <div class="slider-init" data-slick='{"dots": true, "arrows": false, "fade": true}'>
                                                 <div class="slider-item">
                                                     <div class="nk-iv-wg1">
-                                                        <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
-                                                        <h6 class="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
+                                                        <div class="nk-iv-wg1-sub sub-text">Traitement</div>
+                                                        <h6 class="nk-iv-wg1-info title">Traitement</h6>
                                                         <a href="#" class="nk-iv-wg1-link link link-light"><em class="icon ni ni-trend-up"></em> <span>Check Details</span></a>
                                                         <div class="nk-iv-wg1-progress">
                                                             <div class="progress-bar bg-primary" data-progress="80"></div>
@@ -36,8 +37,8 @@
                                                 </div><!-- .slider-item -->
                                                 <div class="slider-item">
                                                     <div class="nk-iv-wg1">
-                                                        <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
-                                                        <h6 class="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
+                                                        <div class="nk-iv-wg1-sub sub-text">Statuts</div>
+                                                        <h6 class="nk-iv-wg1-info title">Statuts</h6>
                                                         <a href="#" class="nk-iv-wg1-link link link-light"><em class="icon ni ni-trend-up"></em> <span>Check Details</span></a>
                                                         <div class="nk-iv-wg1-progress">
                                                             <div class="progress-bar bg-primary" data-progress="80"></div>
@@ -72,11 +73,11 @@
                                             <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
                                             <div class="toggle-expand-content" data-content="pageMenu">
                                                 <ul class="nk-block-tools g-3">
-                                                    <li><a href="#" class="btn btn-white btn-dim btn-outline-primary"><em class="icon ni ni-download-cloud"></em><span>Export</span></a></li>
-                                                    <li><a href="#" class="btn btn-white btn-dim btn-outline-primary"><em class="icon ni ni-reports"></em><span>Reports</span></a></li>
+                                                    <li><a href="#" class="btn btn-white btn-dim btn-outline-danger"><em class="icon ni ni-download-cloud"></em><span>Export</span></a></li>
+                                                    <li><a href="#" class="btn btn-white btn-dim btn-outline-warning"><em class="icon ni ni-reports"></em><span>Reports</span></a></li>
                                                     <li class="nk-block-tools-opt">
                                                         <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-icon btn-primary" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
+                                                            <a href="#" class="dropdown-toggle btn btn-icon btn-danger" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
                                                             <div class="dropdown-menu dropdown-menu-end">
                                                                 <ul class="link-list-opt no-bdr">
                                                                     <li><a href="#"><em class="icon ni ni-user-add-fill"></em><span>Add User</span></a></li>
@@ -100,8 +101,8 @@
                                                 
                                                 <div class="card-title-group align-start mb-3">
                                                     <div class="card-title">
-                                                        <h6 class="title">Orders Overview</h6>
-                                                        <p>In last 15 days buy and sells overview. <a href="#" class="link link-sm">Detailed Stats</a></p>
+                                                        <h6 class="title">Statut demande </h6>
+                                                        <p>Avancement de test test test test test test . <a href="#" class="link link-sm">Detailed Stats</a></p>
                                                     </div>
                                                     <div class="card-tools mt-n1 me-n1">
                                                         <div class="drodown">
@@ -136,16 +137,16 @@
                                                             <div class="row g-4">
                                                                 <div class="col-sm-6 col-xxl-12">
                                                                     <div class="nk-order-ovwg-data buy">
-                                                                        <div class="amount">12,954.63 <small class="currenct currency-usd">USD</small></div>
-                                                                        <div class="info">Last month <strong>39,485 <span class="currenct currency-usd">USD</span></strong></div>
-                                                                        <div class="title"><em class="icon ni ni-arrow-down-left"></em> Buy Orders</div>
+                                                                        <div class="amount"> Réception <small class="currenct currency-usd"></small></div>
+                                                                        <div class="info">Last month <strong> <span class="currenct currency-usd"></span></strong></div>
+                                                                        {{-- <div class="title"><em class="icon ni ni-arrow-down-left"></em> Buy Orders</div> --}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-6 col-xxl-12">
                                                                     <div class="nk-order-ovwg-data sell">
-                                                                        <div class="amount">12,954.63 <small class="currenct currency-usd">USD</small></div>
-                                                                        <div class="info">Last month <strong>39,485 <span class="currenct currency-usd">USD</span></strong></div>
-                                                                        <div class="title"><em class="icon ni ni-arrow-up-left"></em> Sell Orders</div>
+                                                                        <div class="amount">Traitement <small class="currenct currency-usd"></small></div>
+                                                                        <div class="info">Last month <strong> <span class="currenct currency-usd"></span></strong></div>
+                                                                        {{-- <div class="title"><em class="icon ni ni-arrow-up-left"></em> Sell Orders</div> --}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -180,8 +181,8 @@
                                                     <div class="nk-wg-action">
                                                         <div class="nk-wg-action-content">
                                                             <em class="icon ni ni-cc-alt-fill"></em>
-                                                            <div class="title">Pending Buy/Sell Orders</div>
-                                                            <p>We have still <strong>40 buy orders</strong> and <strong>12 sell orders</strong>, thats need to review.</p>
+                                                            <div class="title">Test Test Test</div>
+                                                            <p>Nous avons  <strong>Pour Vaildation</strong>  <strong>Le navire </strong>, Voir plus.</p>
                                                         </div>
                                                         <a href="#" class="btn btn-icon btn-trigger me-n2"><em class="icon ni ni-forward-ios"></em></a>
                                                     </div>
@@ -200,8 +201,8 @@
                                                     <div class="nk-wg-action">
                                                         <div class="nk-wg-action-content">
                                                             <em class="icon ni ni-wallet-fill"></em>
-                                                            <div class="title">Upcoming Deposit</div>
-                                                            <p>Here is <strong>7 upcoming</strong> deposit need to review.</p>
+                                                            <div class="title">Voir plus </div>
+                                                            <p>Here is <strong>Suivre le lien</strong> deposit need to review.</p>
                                                         </div>
                                                         <a href="#" class="btn btn-icon btn-trigger me-n2"><em class="icon ni ni-forward-ios"></em></a>
                                                     </div>
@@ -214,13 +215,13 @@
                                             <div class="card-inner">
                                                 <div class="card-title-group">
                                                     <div class="card-title">
-                                                        <h6 class="title"><span class="me-2">Orders Activities</span> <a href="#" class="link d-none d-sm-inline">See History</a></h6>
+                                                        <h6 class="title"><span class="me-2">Détail de la demande</span> <a href="#" class="link d-none d-sm-inline">Voir les Autorisations</a></h6>
                                                     </div>
                                                     <div class="card-tools">
                                                         <ul class="card-tools-nav">
-                                                            <li><a href="#"><span>Buy</span></a></li>
-                                                            <li><a href="#"><span>Sell</span></a></li>
-                                                            <li class="active"><a href="#"><span>All</span></a></li>
+                                                            <li><a href="#"><span>Pêches</span></a></li>
+                                                            <li><a href="#"><span>Capture </span></a></li>
+                                                            <li class="active"><a href="#"><span>Autre</span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>

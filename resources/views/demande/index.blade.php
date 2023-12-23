@@ -1,6 +1,6 @@
             
         <div>
-        
+            {{dd($userdemandes)}}
             @if ($currentPage==PAGEMESDEMANDES)
                @include("user.mesdemandes")
             @endif

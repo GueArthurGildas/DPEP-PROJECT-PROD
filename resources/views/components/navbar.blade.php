@@ -9,55 +9,36 @@
                                 </a>
                                 
                             </div><!-- .nk-header-brand -->
-                            <div class="nk-header-menu">
-                                <ul class="nk-menu nk-menu-main">
+                            <div class="">
+                                
                                     <li class="nk-menu-item">
                                         <a href="html/index.html" class="nk-menu-link">
-                                            <span class="nk-menu-text">Overview</span>
+                                            <span class="nk-menu-text">Accueil</span>
                                         </a>
                                     </li><!-- .nk-menu-item -->
-                                    <li class="nk-menu-item has-sub">
-                                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                                            <span class="nk-menu-text">Apps</span>
-                                        </a>
-                                        <ul class="nk-menu-sub">
-                                            <li class="nk-menu-item">
-                                                <a href="{{ route('logout') }}" class="nk-menu-link"><span class="nk-menu-text">Messages</span></a>                                                        
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-inbox.html" class="nk-menu-link"><span class="nk-menu-text">Inbox / Mail</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-file-manager.html" class="nk-menu-link"><span class="nk-menu-text">File Manager</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-chats.html" class="nk-menu-link"><span class="nk-menu-text">Chats / Messenger</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-calendar.html" class="nk-menu-link"><span class="nk-menu-text">Calendar</span></a>
-                                            </li>
-                                            <li class="nk-menu-item">
-                                                <a href="html/apps-kanban.html" class="nk-menu-link"><span class="nk-menu-text">Kanban Board</span></a>
-                                            </li>
-                                        </ul><!-- .nk-menu-sub -->
-                                    </li><!-- .nk-menu-item -->
+                               
+                            </div><!-- .nk-header-menu -->
+
+                            <div class="">
+                                
                                     <li class="nk-menu-item">
-                                        <a href="html/components.html" class="nk-menu-link">
-                                            <span class="nk-menu-text">Components</span>
-                                        </a>
-                                    </li><!-- .nk-menu-item -->
-                                    <li class="nk-menu-item">
-                                        <a href="html/support-kb.html" class="nk-menu-link">
-                                            <span class="nk-menu-text">Support</span>
-                                        </a>
-                                    </li><!-- .nk-menu-item -->
-                                    <li class="nk-menu-item">
-                                        <a href="html/pages/contact.html" class="nk-menu-link">
+                                        <a href="html/index.html" class="nk-menu-link">
                                             <span class="nk-menu-text">Contact</span>
                                         </a>
                                     </li><!-- .nk-menu-item -->
-                                </ul><!-- .nk-menu -->
+                               
                             </div><!-- .nk-header-menu -->
+
+                            <div class="">
+                                
+                                    <li class="nk-menu-item">
+                                        <a href="html/index.html" class="nk-menu-link">
+                                            <span class="nk-menu-text">Infos</span>
+                                        </a>
+                                    </li><!-- .nk-menu-item -->
+                               
+                            </div><!-- .nk-header-menu -->
+                            
                             <div class="nk-header-tools">
                                 <ul class="nk-quick-nav">
                                 <img class="" src="{{asset("images/CI-Logov-2.png")}}" alt="User profile picture">
@@ -70,7 +51,7 @@
                                                         </a>
                                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                             @csrf
-                                                    </form>
+                                                        </form>
                                     </li><!-- .dropdown -->
                                     {{-- <li class="dropdown user-dropdown">
                                         <a href="#" class="dropdown-toggle me-lg-n1" data-bs-toggle="dropdown">
