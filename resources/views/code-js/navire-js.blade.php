@@ -36,6 +36,18 @@ $('#btnGoToStep2').click(function(e) {
 function getObjectPort(){
     
     let objetAccesPort = $('#objetAccesPort').val();
+    
+    
+    if (objetAccesPort.includes('-Autre')) {
+       $('#autreObjetAccPort').css({
+         "display":"block"
+       })
+    }else {
+        $('#autreObjetAccPort').css({
+         "display":"none"
+       })
+    }
+
     $("#getObjectAccessPort").val(objetAccesPort);
     //alert(objetAccesPort);
     
@@ -57,8 +69,8 @@ function goToSelectionNavire(){
         
        
         /// @s data from navire Form  
-        let nomNavire = $('#nomNavire');
-        let etatPavillonNavire = $('#etatPavillonNavire');
+        let nomNavire = $('#navireName');
+        let etatPavillonNavire = $('#etatPavillon');
         let typeNavire = $('#typeNavire');
         let certifNavire = $('#certifNavire');
         let tiranNavire = $('#tiranNavire');
@@ -78,6 +90,8 @@ function goToSelectionNavire(){
         
 
         /// @e data from navire Form        
+        
+
 
 
        
@@ -108,13 +122,15 @@ function goToSelectionNavire(){
 
                                 $("#takeIdNavireSelected").val(response.navireSelected.id)
                                 
+                                $("#blockToShowNavireDetailSelected").css({
+                                        "display": "block"  ,
+                                });
 
                                console.log(response.navireSelected);
-                               
-                               nomNavire.html(response.navireSelected.Nom_Navire);
-                               etatPavillonNavire.html(response.navireSelected.Etat_Pavillon); 
-                               typeNavire.html(response.navireSelected.Type_Navire); 
-                               certifNavire.html(response.navireSelected.Id_Certificat_Immat); 
+                         
+                               etatPavillonNavire.val(response.navireSelected.Etat_Pavillon); 
+                               typeNavire.val(response.navireSelected.Type_Navire); 
+                               certifNavire.val(response.navireSelected.Id_Certificat_Immat); 
                                tiranNavire.html(response.navireSelected.Power_of_Main_Engine);
                                longNavire.html(response.navireSelected.Length_Overall); 
                                largNavire.html(response.navireSelected.Dimension_Navire); 
@@ -126,7 +142,7 @@ function goToSelectionNavire(){
                                captaineName.html(response.navireSelected.Nom_Navire); 
                                captaineNationality.html(response.navireSelected.Nom_Navire);      
                                idExterne.html(response.navireSelected.Id_Extern);
-                               ircsNavire.html(response.navireSelected.Num_IRCS);   
+                               ircsNavire.val(response.navireSelected.Num_IRCS);   
                               
                                                 
                                
@@ -256,6 +272,6 @@ $('#Ajouter-navire').click(function(e) {
                     $("#loading-svg").css({
                         "display": "none"   ,
                     });   
-                }, 600);  
+                }, 450);  
     }
 </script>

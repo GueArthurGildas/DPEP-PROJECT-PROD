@@ -1,6 +1,6 @@
 @extends("layouts.master")
 @section("content")
-<div class="row">
+<div class="row" id="Contain-present-with-image">
    <div class="col-6  ">
       <div class="nk-block-between-md g-4">
          <div class="nk-block-head-content">
@@ -30,7 +30,7 @@
             <div class="card-inner ">
                <div class="card-title-group">
                   <div class="card-title">
-                     <h6 class="title">Etapes de soummision</h6>
+                     <h5 class="title">Les etapes de soummision</h5>
                   </div>
                   <div class="card-tools"><a href="#" class="link">Télécharger</a></div>
                </div>
@@ -87,7 +87,7 @@
                         <div class="timeline-status bg-warning"></div>
                         <div class="timeline-date">Etape-5 <h5><em class="icon ni ni-check-fill-c text-success"></em></h5></div>
                         <div class="timeline-data">
-                           <h6 class="timeline-title">Submited KYC Application</h6>
+                           <h6 class="timeline-title">Télécharger les documents</h6>
                            <div class="timeline-des">
                               <p>Re-submitted KYC Application form.</p>
                               <span class="time">09:30am</span>
@@ -99,23 +99,34 @@
 
             </div> 
              
-            <a href="{{route("home.demandes.naviredemande.index",["newdemande"=>"ok"])}}" class="btn btn-xl btn-warning justify-center">
+            <a href="javascript:void(0);"  onclick="affSpinerInsideBtnCommencer()" class="btn btn-xl btn-warning justify-center">
 
-             <div class="spinner-border" id="loadingForButton" style="width: 3rem; height: 3rem" role="status">
+             <div class="spinner-border" id="loadingForButton" style="width: 3rem; height: 3rem; display:none" role="status">
                
              </div>
 
-               {{-- <span >
+               <span id="text-commencer">
                   Commencer
-               </span> --}}
+               </span>
 
-                <span class="">
-                   Loading...
-                </span>
             </a>
+            
+                                                        <form id="goToStep1" action="{{route("home.demandes.naviredemande.index",["newdemande"=>"ok"])}}" method="POST" class="d-none">
+                                                            @csrf
+                                                        </form> 
+
 
          </div>
      
    </div>
 </div>
+
+
+<div class="justify-center"  >
+   <h3  id="contain-only-loading-text" style="display:none;">Préparation ...</h3>
+</div>
+
+
 @endsection
+
+@include("code-js.present-js")

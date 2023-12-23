@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000);  
 });
 
+
 // cette fonction affiche la roue dans la page puis la faire disparaitre
     function afficheAndDisapearingLoadSvg(){
                 $("#loading-svg").fadeIn();
