@@ -39,11 +39,11 @@ function getObjectPort(){
     
     
     if (objetAccesPort.includes('-Autre')) {
-       $('#autreObjetAccPort').css({
+       $('#containAutreObjetAccPort').css({
          "display":"block"
        })
     }else {
-        $('#autreObjetAccPort').css({
+        $('#containAutreObjetAccPort').css({
          "display":"none"
        })
     }

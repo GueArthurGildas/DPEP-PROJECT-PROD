@@ -65,7 +65,7 @@
                         <div class="timeline-status bg-warning"></div>
                         <div class="timeline-date">Etape-3 <h5><em class="icon ni ni-check-fill-c text-success"></em></h5></div>
                         <div class="timeline-data">
-                           <h6 class="timeline-title">Les Autorisations de pêche (Optionnel)</h6>
+                           <h6 class="timeline-title">Les captures à bord du navire</h6>
                            <div class="timeline-des">
                               <p>Re-submitted KYC Application form.</p>
                               <span class="time">09:30am</span>
@@ -76,7 +76,7 @@
                         <div class="timeline-status bg-warning"></div>
                         <div class="timeline-date">Etape-4 <h5><em class="icon ni ni-check-fill-c text-success"></em></h5></div>
                         <div class="timeline-data">
-                           <h6 class="timeline-title">Les autorisatins de transbordement (Optionnel)</h6>
+                           <h6 class="timeline-title">Les autorisations de pêche (Optionnel)</h6>
                            <div class="timeline-des">
                               <p>Re-submitted KYC Application form.</p>
                               <span class="time">09:30am</span>
@@ -87,7 +87,7 @@
                         <div class="timeline-status bg-warning"></div>
                         <div class="timeline-date">Etape-5 <h5><em class="icon ni ni-check-fill-c text-success"></em></h5></div>
                         <div class="timeline-data">
-                           <h6 class="timeline-title">Télécharger les documents</h6>
+                           <h6 class="timeline-title">Les autorisations de transbordement (Optionnel)</h6>
                            <div class="timeline-des">
                               <p>Re-submitted KYC Application form.</p>
                               <span class="time">09:30am</span>
@@ -111,7 +111,7 @@
 
             </a>
             
-                                                        <form id="goToStep1" action="{{route("home.demandes.naviredemande.index",["newdemande"=>"ok"])}}" method="POST" class="d-none">
+                                                        <form id="goToStep1" action="{{route("home.demandes.naviredemande.index",["newdemande"=>"ok"])}}" method="get" class="d-none">
                                                             @csrf
                                                         </form> 
 

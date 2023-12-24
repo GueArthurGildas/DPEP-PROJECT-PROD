@@ -120,7 +120,7 @@
                               </div>
                               <div class="nk-block-head-content">
                                  <ul class="nk-block-tools gx-3">
-                                    <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn-xl btn-white btn-dim btn-outline-danger"><span>Nouvelle Demande</span></a></li>
+                                    <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn btn-warning  "><span>Nouvelle Demande</span></a></li>
                                  </ul>
                               </div>
                            </div>

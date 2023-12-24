@@ -37,9 +37,12 @@ class HomeController extends Controller
             $viewToShow="home-agent";
         }
 
-        return view($viewToShow,[
-            "userdemandes"=> Demande::where("users_id", "like", Auth()->user()->id)->orderby("id","desc")->paginate(4),
-            "nbDemandeUser"=> $nbDemdemandeUsers,
-        ]);
+        // return view($viewToShow,[
+        //     "userdemandes"=> Demande::where("users_id", "like", Auth()->user()->id)->orderby("id","desc")->paginate(4),
+        //     "nbDemandeUser"=> $nbDemdemandeUsers,
+        // ]);
+
+
+        return view("accueil");
     }
 }

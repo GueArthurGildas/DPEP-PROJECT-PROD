@@ -185,9 +185,13 @@
                                           {{-- <small class="text-primary">Veuillez cliquer ici si vous vloulez ajouter un motif d'entrée au port</small> --}}
                                        </div>
                                     </div>
-                                    <div class="form-control-group" id="autreObjetAccPort" style="display:none">
-                                       <input type="text" class="form-control"  placeholder="Saisir l'objet de votre entrée au port " required>
+                                    <div class="form-group mt-2"  id="containAutreObjetAccPort" style="display:none">
+                                       <label class="form-label text-danger">~ Autre objet d'accès au port <span class="text-danger"> * </span> </label>
+                                       
+                                       <input type="text" class="form-control"   placeholder="Saisir l'objet de votre entrée au port " required>
+                                   
                                     </div>
+                                    
                                  </div>
                                  <!-- .col -->
                               </div>
@@ -225,7 +229,7 @@
                               <!-- .row -->
                               <div class="row g-4">
                                  <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group mt-2">
                                        <div class="form-label-group">
                                           <label class="form-label">Date d'arrivée estimée<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
                                        </div>
@@ -236,7 +240,7 @@
                                  </div>
                                  <!-- .col -->
                                  <div class="col-md-6 mt-4 ">
-                                    <div class="form-group">
+                                    <div class="form-group mt-2">
                                        <div class="form-label-group">
                                           <label class="form-label">Heure d'arrivée estimée <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
                                        </div>
@@ -292,7 +296,7 @@
                                  <div class="nk-block-head-content">
                                     <div>
                                        <li class="order-md-last">
-                                          <input type="submit" class="btn btn-xl btn-white btn-dim btn-outline-danger" value="Etape 2">
+                                          <input type="submit" class="btn btn-xl  btn-warning" value="Suivant">
                                        </li>
                                     </div>
                                     <li>

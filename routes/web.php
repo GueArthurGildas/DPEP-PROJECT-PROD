@@ -51,7 +51,7 @@ Route::group([
         Route::get('/detail-demande', [demandeController::class,'affOneDemandeDetail'])->name("detailonedemande.index"); //home.demandes.detailonedemande.index
 
         Route::get('/demande-presentation', [demandeController::class,'affpresentDemande'])->name("presentdemande.index"); //home.demandes.presentdemande.index
-        Route::post('/step-1', [demandeController::class,'affNavireForDemande'])->name("naviredemande.index"); //home.demandes.naviredemande.index
+        Route::get('/step-1', [demandeController::class,'affNavireForDemande'])->name("naviredemande.index"); //home.demandes.naviredemande.index
         Route::post('/step-1/traitement', [demandeController::class,'traitStep1'])->name("traitStep1.index"); //home.demandes.traitStep1.index
         Route::get('/demande/navire-for-demande',[demandeController::class,'getNavieForDemandeFunct'])->name("navirefordemande.index"); // home.demandes.navirefordemande.index
 
