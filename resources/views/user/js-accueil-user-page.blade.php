@@ -21,7 +21,7 @@ function loadingPreloadPageUserDemandes(){
                     getIdArticlesInHideFieldForm();
 
                      
-                }, 2000);  
+                }, 1000);  
 
                 
 

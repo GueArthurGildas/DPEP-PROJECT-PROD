@@ -296,7 +296,7 @@
                                  <div class="nk-block-head-content">
                                     <div>
                                        <li class="order-md-last">
-                                          <input type="submit" class="btn btn-xl  btn-warning" value="Suivant">
+                                          <input type="submit" class="btn btn-xl text-white" value="Suivant" style="background-color:#066C02"> 
                                        </li>
                                     </div>
                                     <li>

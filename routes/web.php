@@ -30,9 +30,18 @@ use App\Http\Controllers\navireController;
 
 
 
+
+
+
+Route::get('/', function () {
+    return view('accueil');
+})->name("index-app");
+
+
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/accueil', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // Groupe relative aux demandes
 Route::group([

@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>MegaOne | Creative Parallax Logistic Template</title>
-    <link href="images/favicon.ico" rel="icon">
+    <!-- Author -->
+    <meta name="author" content="Themesindustry">
+    <!-- description -->
+    <meta name="description" content="MegaOne is a highly creative, modern, visually stunning and Bootstrap responsive multipurpose agency and portfolio HTML5 template with 8 ready home page demos.">
+    <!-- keywords -->
+    <meta name="keywords" content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal, masonry, grid, faq">
+    <!-- Page Title -->
+    <title>Corporate | MegaOne HTML5 Template</title>
+    <!-- Favicon -->
+    <link rel="icon" href="corporate/img/favicon.ico">
+    <!-- Bundle -->
+    <link rel="stylesheet" href="vendor/css/bundle.min.css">
+    <link rel="stylesheet" href="vendor/css/revolution-settings.min.css">
+    <!-- Plugin Css -->
+
     <link rel="stylesheet" href="{{asset("vendor/css/bundle.min.css")}}"> 
     <link rel="stylesheet" href="{{asset("vendor/css/owl.carousel.min.css")}}">
     <link rel="stylesheet" href=" {{asset("vendor/css/jquery.fancybox.min.css")}}">
@@ -14,473 +27,314 @@
     <link rel="stylesheet" href="{{asset("vendor/css/revolution-settings.min.css")}}"> 
     <link rel="stylesheet" href="{{asset("logistic/css/revolution/navigation.css")}}">
     <link rel="stylesheet" href="{{asset("logistic/css/style.css")}}">
+
+
+    ---------------
+    <link rel="stylesheet" href="{{asset("vendor/css/jquery.fancybox.min.css")}} ">
+    <link rel="stylesheet" href="{{asset("vendor/css/owl.carousel.min.css")}} ">
+    <link rel="stylesheet" href="{{asset("vendor/css/swiper.min.css")}}">
+    <link rel="stylesheet" href="{{asset("vendor/css/cubeportfolio.min.css")}}">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="{{asset("corporate/css/style.css")}}">
 </head>
-<body>
-<!--PreLoader-->
+
+<body data-spy="scroll" data-target=".navbar" data-offset="90">
+
+<!--Loader Start-->
 <div class="loader">
-    <div class="loader-spinner"></div>
-</div>
-<!--PreLoader Ends-->
-<!-- header -->
-<header class="site-header" id="header">
-    <nav class="navbar navbar-expand-lg transparent-bg darkcolor static-nav">
-        <div class="container">
-            <a class="navbar-brand" href="../index-logistic.html">
-                <img src="images/logo-gray.png" alt="logo" class="logo-default">
-                <img src="images/logo.png" alt="logo" class="logo-scrolled">
-            </a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown position-relative">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="../index-logistic.html">Standard Layout</a>
-                            <a class="dropdown-item" href="index-video.html">Video Background</a>
-                            <a class="dropdown-item" href="index-light.html">Light Version</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown static">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Pages </a>
-                        <ul class="dropdown-menu megamenu">
-                            <li>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-6 col-sm-12">
-                                            <h5 class="dropdown-title bottom10"> General </h5>
-                                            <a class="dropdown-item" href="services.html">Services</a>
-                                            <a class="dropdown-item" href="services-detail.html">Service Detail</a>
-                                            <a class="dropdown-item" href="testimonial.html">Testimonials</a>
-                                            <a class="dropdown-item" href="contact.html">Contact Us</a>
-                                            <a class="dropdown-item" href="team.html">Our Team</a>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12">
-                                            <h5 class="dropdown-title opacity-10"> Others </h5>
-                                            <a class="dropdown-item" href="work.html">Work</a>
-                                            <a class="dropdown-item" href="work-detail.html">Work Detail</a>
-                                            <a class="dropdown-item" href="pricing.html">Pricing</a>
-                                            <a class="dropdown-item" href="404.html">404 Error</a>
-                                            <a class="dropdown-item" href="coming-soon.html">Coming Soon</a>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12">
-                                            <h5 class="dropdown-title bottom10"> Account </h5>
-                                            <a class="dropdown-item" href="login.html">Login</a>
-                                            <a class="dropdown-item" href="register.html">Register</a>
-                                            <a class="dropdown-item" href="reset-password.html">Reset Password</a>
-                                            <a class="dropdown-item" href="faq.html">FAQ's</a>
-                                            <a class="dropdown-item" href="support.html">Support</a>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12">
-                                            <h5 class="dropdown-title bottom10"> Shop Pages </h5>
-                                            <a class="dropdown-item" href="shop.html">Shop</a>
-                                            <a class="dropdown-item" href="shop-detail.html">Shop Detail</a>
-                                            <a class="dropdown-item" href="shop-cart.html">Shopping Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown position-relative">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> News </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="news-1.html">News List</a>
-                            <a class="dropdown-item" href="news-2.html">News Sidebar</a>
-                            <a class="dropdown-item" href="news-detail.html">News Details</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="work.html">Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--side menu open button-->
-        <a href="javascript:void(0)" class="d-inline-block sidemenu_btn" id="sidemenu_toggle">
-            <span class="bg-dark"></span> <span class="bg-dark"></span> <span class="bg-dark"></span>
-        </a>
-    </nav>
-    <!-- side menu -->
-    <div class="side-menu opacity-0 bg-yellow">
-        <div class="overlay"></div>
-        <div class="inner-wrapper">
-            <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
-            <nav class="side-nav w-100">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link collapsePagesSideMenu" data-toggle="collapse" href="#sideNavPages1">
-                            Home <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <div id="sideNavPages1" class="collapse sideNavPages">
-                            <ul class="navbar-nav mt-2">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../index-logistic.html">Standard Layout</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index-video.html">Video Background</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index-light.html">Light Version</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link collapsePagesSideMenu" data-toggle="collapse" href="#sideNavPages2">
-                            News <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <div id="sideNavPages2" class="collapse sideNavPages">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="news-1.html">News List</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="news-2.html">News Sidebar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="news-detail.html">News Details</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="work.html">Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link collapsePagesSideMenu" data-toggle="collapse" href="#sideNavPages">
-                            Pages <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <div id="sideNavPages" class="collapse sideNavPages">
-                            <ul class="navbar-nav mt-2">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="team.html">Our Team</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="services.html">Service</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="services-detail.html">Service Detail</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="testimonial.html">Testimonials</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="work.html">Work</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="work-detail.html">Work Detail</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pricing.html">Pricing</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="404.html">Error 404</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="coming-soon.html">Coming Soon</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link collapsePagesSideMenu" data-toggle="collapse" href="#inner-2">
-                                        Account <i class="fas fa-chevron-down"></i>
-                                    </a>
-                                    <div id="inner-2" class="collapse sideNavPages sideNavPagesInner">
-                                        <ul class="navbar-nav mt-2">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="login.html">Login</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="register.html">Register</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="reset-password.html">Forget Password</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="faq.html">FAQ's</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="support.html">Support</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link collapsePagesSideMenu" data-toggle="collapse" href="#inner-1">
-                                        Shop <i class="fas fa-chevron-down"></i>
-                                    </a>
-                                    <div id="inner-1" class="collapse sideNavPages sideNavPagesInner">
-                                        <ul class="navbar-nav mt-2">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="shop.html">Shop Products</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="shop-detail.html">Shop Detail</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="shop-cart.html">Shop Cart</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="side-footer w-100">
-                <ul class="social-icons-simple white top40">
-                    <li><a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook-f"></i> </a> </li>
-                    <li><a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                    <li><a href="javascript:void(0)" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-                </ul>
-                <p class="whitecolor">&copy; 2023 MegaOne. Made With Love by ThemesIndustry</p>
-            </div>
+    <div class="loader-inner">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
         </div>
     </div>
-    <div id="close_side_menu" class="tooltip"></div>
-    <!-- End side menu -->
+</div>
+<!--Loader End-->
+
+<!--header Start-->
+<header class="header-with-top">
+    <!--header top-->
+    <div class="top-header-area text-white alt-font" style="background-color:#df6d14">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="address text-left">
+                        +1 234 888 9876  ( 9AM - 5PM GST )
+                    </div>
+                </div>
+                <div class="col-6">
+                    <ul class="header-social text-right">
+                        <li><a href="javascript:void(0);" class="facebook-text-hvr"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="javascript:void(0);" class="twitter-text-hvr"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="javascript:void(0);" class="instagram-text-hvr"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="javascript:void(0);" class="pinterest-text-hvr"><i class="fab fa-pinterest-p"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-static">
+        <div class="container">
+
+            <a href="#home" title="Logo" class="logo scroll">
+                <img src="corporate/img/logo-black.png" class="logo-dark default" alt="logo">
+            </a>
+
+            <button class="sidemenu-button d-lg-none" type="button" data-toggle="collapse" data-target="#ntg" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sidemenu-toggler"></span>
+                <span class="sidemenu-toggler"></span>
+                <span class="sidemenu-toggler"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between align-items-center" id="ntg">
+                <ul class="navbar-nav mx-auto alt-font">
+                    <li class="nav-item">
+                        <a class="nav-link scroll active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#services">Our Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#blog">Latest News</a>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-nav scroll">Connexion</a>
+                <a href="#contact" class="btn btn-nav scroll ml-2">Inscription</a>
+            </div>
+
+        </div>
+    </nav>
+
 </header>
-<!-- header -->
-<!--Main Slider-->
-<section id="main-banner-area" class="position-relative">
-    <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-light" data-alias="classic4export">
-        <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
-        <div id="rev_main" class="rev_slider fullwidthabanner" data-version="5.4.1">
-            <ul>
-                <!-- SLIDE 1 -->
-                <li data-index="rs-01" data-transition="fade" data-slotamount="default" data-easein="Power100.easeInOut" data-easeout="Power100.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="01">
+<!--header End-->
+
+<!--Slider Start-->
+<section id="home" class="home">
+    <div id="rev_slider_22_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="ntg_slider1" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+        <!-- START REVOLUTION SLIDER 5.4.8.1 fullwidth mode -->
+        <div id="rev_slider_22_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8.1">
+            <ul>	<!-- SLIDE  -->
+                <li data-index="rs-95" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="images/banner-light1-1.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="corporate/img/slider-slide1.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+                    <div class="bg-overlay bg-black opacity-5"></div>
                     <!-- LAYER NR. 1 -->
-                    <div class="tp-caption tp-resizeme"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-130','-130','-110','-80']"
-                         data-width="none" data-height="none" data-type="text"
+                    <div class="tp-caption   tp-resizeme"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','-1','-1']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-65','-65','-65','-65']"
+                         data-fontsize="['70','70','55','40']"
+                         data-lineheight="['75','75','60','60']"
+                         data-width="['1000','1000','600','450']"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":330,"speed":1490,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                          data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-xlight text-center">The Optimum</h1>
-                    </div>
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 5; min-width: 1000px; max-width: 1000px; white-space: nowrap; font-size: 70px; line-height: 75px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family: 'UbuntuTitling', Arial, sans-serif;">WE LOVE WEB DESIGN </div>
+
                     <!-- LAYER NR. 2 -->
-                    <div class="tp-caption tp-resizeme"
+                    <div class="tp-caption   tp-resizeme"
                          data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-50','-20']"
-                         data-width="none" data-height="none" data-type="text"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-11','-11']"
+                         data-fontsize="['20','20','18','16']"
+                         data-width="['800','800','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":1430,"speed":1490,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                          data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-bold text-center">Digital Marketing</h1>
-                    </div>
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6; min-width: 800px; max-width: 800px; white-space: normal; font-size: 18px; line-height: 20px; font-weight: 300; color: #ffffff; letter-spacing: 1px;font-family: 'Ubuntu', sans-serif;">Creativity And Productivity Reaches At Peak Here</div>
+
                     <!-- LAYER NR. 3 -->
-                    <div class="tp-caption tp-resizeme"
+                    <div class="tp-caption   tp-resizeme"
                          data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-10','-10','10','40']"
-                         data-width="none" data-height="none" data-type="text"
+                         data-y="['middle','top','middle','middle']" data-voffset="['69','370','50','70']"
+                         data-width="['801','801','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":2570,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                          data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1500"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-xlight text-center">In Market</h1>
-                    </div>
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption tp-resizeme"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['40','40','60','90']"
-                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
-                         data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="2000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h4 class="text-dark font-light text-center">The Best Multipurpose One Page Template in Market</h4>
-                    </div>
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 7; "><a class="btn btn-large btn-blue mr-3 btn-hvr-white" href="javascript:void(0);">START FREE TRIAL NOW</a><a class="btn btn-large btn-green btn-hvr-white" href="javascript:void(0);">GET STARTED NOW</a></div>
                 </li>
-                <!-- SLIDE 2 -->
-                <li data-index="rs-02" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="02">
+                <!-- SLIDE  -->
+                <li data-index="rs-96" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="images/banner-light1-2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="corporate/img/slider-slide2.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+                    <div class="bg-overlay bg-black opacity-5"></div>
                     <!-- LAYER NR. 1 -->
-                    <div class="tp-caption tp-resizeme"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-130','-130','-110','-80']"
-                         data-width="none" data-height="none" data-type="text"
+                    <div class="tp-caption   tp-resizeme"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','-1','-1']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-65','-65','-65','-65']"
+                         data-fontsize="['70','70','55','40']"
+                         data-lineheight="['75','75','60','60']"
+                         data-width="['1000','1000','600','450']"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":330,"speed":1490,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                          data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-xlight text-center">Let's Create</h1>
-                    </div>
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 5; min-width: 1000px; max-width: 1000px; white-space: nowrap; font-size: 70px; line-height: 75px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family: 'UbuntuTitling', Arial, sans-serif;">WE LOVE WEB DESIGN </div>
+
                     <!-- LAYER NR. 2 -->
-                    <div class="tp-caption tp-resizeme"
+                    <div class="tp-caption   tp-resizeme"
                          data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-50','-20']"
-                         data-width="none" data-height="none" data-type="text"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-11','-11']"
+                         data-fontsize="['20','20','18','16']"
+                         data-width="['800','800','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":1430,"speed":1490,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                          data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-bold text-center">Deep Creativity</h1>
-                    </div>
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6; min-width: 800px; max-width: 800px; white-space: normal; font-size: 18px; line-height: 20px; font-weight: 300; color: #ffffff; letter-spacing: 1px;font-family: 'Ubuntu', sans-serif;">Creativity And Productivity Reaches At Peak Here</div>
+
                     <!-- LAYER NR. 3 -->
-                    <div class="tp-caption tp-resizeme"
+                    <div class="tp-caption   tp-resizeme"
                          data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-10','-10','10','40']"
-                         data-width="none" data-height="none" data-type="text"
+                         data-y="['middle','top','middle','middle']" data-voffset="['69','370','50','70']"
+                         data-width="['801','801','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":2570,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
                          data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1500"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-xlight text-center">In Market</h1>
-                    </div>
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption tp-resizeme"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['40','40','60','90']"
-                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
-                         data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="2000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h4 class="text-dark font-light text-center">Responsive and Retina Ready for All Devices</h4>
-                    </div>
-                </li>
-                <!-- SLIDE 3 -->
-                <li data-index="rs-03" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="03">
-                    <!-- MAIN IMAGE -->
-                    <img src="images/banner-light1-3.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption tp-resizeme"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-130','-130','-110','-80']"
-                         data-width="none" data-height="none" data-type="text"
-                         data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-xlight text-center">We Work</h1>
-                    </div>
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption tp-resizeme"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-50','-20']"
-                         data-width="none" data-height="none" data-type="text"
-                         data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-bold text-center">For Creative Design</h1>
-                    </div>
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption tp-resizeme"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-10','-10','10','40']"
-                         data-width="none" data-height="none" data-type="text"
-                         data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="1500"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h1 class="text-dark text-capitalize font-xlight text-center">Our Trax</h1>
-                    </div>
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption tp-resizeme"
-                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['40','40','60','90']"
-                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
-                         data-textAlign="['center','center','center','center']"
-                         data-responsive_offset="on" data-start="2000"
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <h4 class="text-dark font-light text-center">Is a New Design Studio founded in NewYork</h4>
-                    </div>
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 7; "><a class="btn btn-large btn-blue mr-3 btn-hvr-white" href="javascript:void(0);">START FREE TRIAL NOW</a><a class="btn btn-large btn-green btn-hvr-white" href="javascript:void(0);">GET STARTED NOW</a></div>
+
+
                 </li>
             </ul>
-        </div>
-    </div>
-    <ul class="social-icons-simple darkcolor revicon">
-        <li class="d-table"><a href="javascript:void(0)" class="hover-light"><i class="fab fa-facebook-f"></i></a> </li>
-        <li class="d-table"><a href="javascript:void(0)" class="hover-light"><i class="fab fa-twitter"></i> </a> </li>
-        <li class="d-table"><a href="javascript:void(0)" class="hover-light"><i class="fab fa-linkedin-in"></i> </a> </li>
-        <li class="d-table"><a href="javascript:void(0)" class="hover-light"><i class="fab fa-instagram"></i> </a> </li>
-    </ul>
+            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
+    </div><!-- END REVOLUTION SLIDER -->
 </section>
-<!--Main Slider ends -->
-<!--Some Services-->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="services-slider" class="owl-carousel">
-                <div class="item">
-                    <div class="service-box">
-                        <span class="bottom25"><i class="fas fa-cubes"></i></span>
-                        <h4 class="bottom10 text-nowrap"><a href="javascript:void(0)">Best Approach</a></h4>
-                        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                    </div>
+<!--Slider End-->
+
+<!--About Start-->
+<section id="about" class="about-top pt-lg-0">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-4 col-md-12">
+                <!--Heading-->
+                <div class="title mb-md-0">
+                    <h2>The Ultimate Theme
+                        For A <span class="main-color">Wonderful</span> And
+                        <span class="main-color">Creative</span> Website</h2>
+                    <!--Button-->
+                    <a href="javascript:void(0);" class="btn btn-large btn-green mt-4 mb-5">GET STARTED NOW</a>
                 </div>
-                <div class="item">
-                    <div class="service-box">
-                        <span class="bottom25"><i class="fa fa-laptop"></i></span>
-                        <h4 class="bottom10"><a href="javascript:void(0)">Digital Access</a></h4>
-                        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="service-box">
-                        <span class="bottom25"><i class="fas fa-question-circle"></i></span>
-                        <h4 class="bottom10"><a href="javascript:void(0)">Full Support</a></h4>
-                        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="service-box">
-                        <span class="bottom25"><i class="fas fa-map-marked-alt"></i></span>
-                        <h4 class="bottom10"><a href="javascript:void(0)">Known Places</a></h4>
-                        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="service-box">
-                        <span class="bottom25"><i class="fa fa-edit"></i></span>
-                        <h4 class="bottom10"><a href="javascript:void(0)">Data Servant</a></h4>
-                        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="service-box">
-                        <span class="bottom25"><i class="fas fa-truck-moving"></i></span>
-                        <h4 class="bottom10"><a href="javascript:void(0)">24/7 On Work</a></h4>
-                        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="service-box">
-                        <span class="bottom25"><i class="fa fa-globe"></i></span>
-                        <h4 class="bottom10"><a href="javascript:void(0)">World Wide</a></h4>
-                        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                    </div>
-                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <ul class="feature-box">
+                    <!--Feature Item-->
+                    <li class="feature-item">
+                        <i class="fas fa-globe-asia main-color" aria-hidden="true"></i>
+                        <h4 class="mb-3">Website Design</h4>
+                        <p>Leverage agile framework to prove a robust synopsis for level.</p>
+                    </li>
+                    <!--Feature Item-->
+                    <li class="feature-item">
+                        <i class="fas fa-cloud main-color" aria-hidden="true"></i>
+                        <h4 class="mb-3">Cloud Infrastructure</h4>
+                        <p>Leverage agile framework to prove a robust synopsis for level.</p>
+                    </li>
+                    <!--Feature Item-->
+                    <li class="feature-item">
+                        <i class="fas fa-user-cog main-color" aria-hidden="true"></i>
+                        <h4 class="mb-3">Technical Support</h4>
+                        <p>Leverage agile framework to prove a robust synopsis for level.</p>
+                    </li>
+                    <!--Feature Item-->
+                    <li class="feature-item">
+                        <i class="fas fa-battery-half main-color" aria-hidden="true"></i>
+                        <h4 class="mb-3">Application Design</h4>
+                        <p>Leverage agile framework to prove a robust synopsis for level.</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-</div>
-<!--Some Services ends-->
-<!--Some Feature -->
+
+    
+</section>
+<!--About End-->
+---------
 <section id="about" class="single-feature padding mt-n5">
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-lg-6 text-sm-left text-center wow fadeInLeft" data-wow-delay="300ms">
                 <div class="heading-title mb-4">
-                    <h2 class="darkcolor font-normal bottom30">Let's spread <span class="defaultcolor">Products</span> to WorldWide</h2>
+                    <h2 class="darkcolor font-normal bottom30">Let's spread <span class="defaultcolor">Products</span> to Worldwide</h2>
                 </div>
                 <p class="bottom35">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu, lobortis id interdum vitae, interdum eget elit. Curabitur quis urna nulla. Suspendisse potenti. Duis suscipit ultrices maximus. </p>
                 <a href="javascript:void(0)" class="button gradient-btn mb-sm-0 mb-4">Learn More</a>
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-delay="300ms">
-                <div class="image"><img alt="SEO" src="images/awesome-feature.jpg"></div>
+                <div class="image"><img alt="SEO" src="logistic/images/awesome-feature.jpg"></div>
             </div>
         </div>
     </div>
 </section>
-<!--Some Feature ends-->
-<!-- WOrk Process-->
+
+-----------
 <section id="our-process" class="padding bgprimary">
     <div class="container">
         <div class="row">
@@ -522,580 +376,485 @@
         </div>
     </div>
 </section>
-<!--WOrk Process ends-->
-<!-- Mobile Apps -->
-<section id="our-apps" class="padding">
+
+
+-----------
+<!--Parallax Start-->
+<section id="services" class="parallax-content p-0 bg-img1">
+    <!--Half Image-->
+    <div class="half-right">
+        <img src="corporate/img/half-img1.jpg" alt="image" class="equalheight">
+    </div>
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-7 col-sm-12">
-                <div class="heading-title bottom30 wow fadeInLeft" data-wow-delay="200ms">
-                    <span class="defaultcolor text-center text-md-left">Quisque tellus risus, adipisci viverra</span>
-                    <h2 class="bottom30 darkcolor font-normal text-center text-md-left">Mobile App Access</h2>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-5 col-sm-12 wow fadeInRight" data-wow-delay="200ms">
-                <p class="heading_space mt-n3 mt-sm-0 text-center text-md-left">Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus metus sollicitudin. Quisque vitae sodales lectus. </p>
-            </div>
-        </div>
-        <div class="row d-flex align-items-center" id="app-feature">
-            <div class="col-lg-3 col-md-4 col-sm-12">
-                <div class="text-center text-md-left">
-                    <div class="feature-item mt-1 wow fadeInLeft" data-wow-delay="200ms">
-                        <div class="icon"><i class="fas fa-cog"></i></div>
-                        <div class="text">
-                            <h4 class="bottom15">
-                                <span class="d-inline-block">24/7 Support</span>
-                            </h4>
-                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                        </div>
-                    </div>
-                    <div class="feature-item mt-5 wow fadeInLeft" data-wow-delay="250ms">
-                        <div class="icon"><i class="fas fa-edit"></i></div>
-                        <div class="text">
-                            <h4 class="bottom15">
-                                <span class="d-inline-block">Best Feedback</span>
-                            </h4>
-                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-4 col-sm-12 text-center">
-                <div class="image feature-item d-inline-block wow fadeIn my-5 my-md-0" data-wow-delay="400ms">
-                    <img src="images/mobile.png" alt="mobile phones">
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-12">
-                <div class="text-center text-md-right">
-                    <div class="feature-item mt-1 wow fadeInRight" data-wow-delay="200ms">
-                        <div class="icon"><i class="fas fa-truck-moving"></i></div>
-                        <div class="text">
-                            <h4 class="bottom15">
-                                <span class="d-inline-block">Active Works</span>
-                            </h4>
-                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                        </div>
-                    </div>
-                    <div class="feature-item mt-5 wow fadeInRight" data-wow-delay="250ms">
-                        <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
-                        <div class="text">
-                            <h4 class="bottom15">
-                                <span class="d-inline-block">Ware Houses</span>
-                            </h4>
-                            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet</p>
-                        </div>
+            <div class="col-lg-12 wow fadeInLeft">
+                <div class="content-box equalheight center-block">
+                    <!--Heading-->
+                    <div class="title">
+                        <h5 class="mb-3 text-white">Conversion analytics and insights </h5>
+                        <h2 class="text-white">We empower your organization
+                            by creating beautiful websites </h2>
+
+                        <ul class="content-list alt-font text-white">
+                            <li><i class="fas fa-check"></i> The most intuitive drag and drop builder</li>
+                            <li><i class="fas fa-check"></i> Target each campaing to the right users</li>
+                            <li><i class="fas fa-check"></i> Learn and optimize with A/B testing</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
 </section>
-<!--Mobile Apps ends-->
-<!-- Counters -->
-<section id="bg-counters" class="padding bg-counters parallax">
+<!--Parallax End-->
+
+
+
+
+
+<!--Portfolio Start-->
+<section id="portfolio" class="portfolio1 no-transition pb-0 text-center">
     <div class="container">
-        <div class="row align-items-center text-center">
-            <div class="overlay overlay-dark opacity-6 z-index-0"></div>
-            <div class="col-lg-4 col-md-4 col-sm-4 bottom10">
-                <div class="counters whitecolor  top10 bottom10">
-                    <span class="count_nums font-light" data-to="1994" data-speed="2500"> </span>
-                </div>
-                <h3 class="font-light whitecolor top20">Since We Started</h3>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <p class="whitecolor top20 bottom20 font-light title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu, lobortis id interdum vitae, interdum eget elit. </p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 bottom10">
-                <div class="counters whitecolor top10 bottom10">
-                    <span class="count_nums font-light" data-to="1395" data-speed="2500"> </span>
-                </div>
-                <h3 class="font-light whitecolor top20">Happy Clients</h3>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Counters ends-->
-<!-- Our Team-->
-<section id="our-team" class="padding_top half-section-alt teams-border">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="heading-title wow fadeInLeft" data-wow-delay="200ms">
-                    <span class="defaultcolor text-center text-md-left">Quisque tellus risus, adipisci</span>
-                    <h2 class="darkcolor font-normal bottom30 text-center text-md-left">Meet Our Experts</h2>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="200ms">
-                <p class="heading_space mt-n3 mt-sm-0 text-center text-md-left">Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit. Vestibulum auctor nunc vitae diam eleifend, in maximus metus sollicitudin. Quisque vitae sodales lectus. </p>
-            </div>
-        </div>
-        <div class="row">
+
+        <div class="row wow fadeIn">
+            <!--title-->
             <div class="col-md-12">
-                <div id="ourteam-slider" class="owl-carousel">
-                    <div class="item">
-                        <div class="team-box wow fadeInUp" data-wow-delay="150ms">
-                            <div class="image">
-                                <img src="images/team-1.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h4 class="darkcolor">Jason Wudex</h4>
-                                <p>Agency Owner</p>
-                                <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                                </ul>
-                            </div>
-                        </div>
+                <!--Heading-->
+                <div class="title">
+                    <h2>World Class Portfolio</h2>
+                    <!--Portfolio Filters-->
+                    <div id="js-filters-mosaic-flat" class="cbp-l-filters-button alt-font">
+
+                        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</div>
+                        <span class="text-blue">/</span>
+                        <div data-filter=".graphic" class="cbp-filter-item">Graphic Design</div>
+                        <span class="text-blue"> / </span>
+                        <div data-filter=".web-design" class="cbp-filter-item">Web design</div>
+                        <span class="text-blue"> / </span>
+                        <div data-filter=".seo" class="cbp-filter-item">SEO</div>
+                        <span class="text-blue"> / </span>
+                        <div data-filter=".marketing" class="cbp-filter-item">Marketing</div>
                     </div>
-                    <div class="item">
-                        <div class="team-box wow fadeInUp" data-wow-delay="200ms">
-                            <div class="image">
-                                <img src="images/team-2.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h4 class="darkcolor">Mia Twain</h4>
-                                <p>Designer</p>
-                                <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                                </ul>
-                            </div>
+                    <!--Portfolio Items-->
+                    <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
+
+                        <!-- Item -->
+                        <div class="cbp-item graphic">
+                            <a href="corporate/img/port-1.jpg" class="cbp-caption cbp-lightbox">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="corporate/img/port-1.jpg" alt="port-1">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <i class="fas fa-long-arrow-alt-right p-icon"></i>
+                                    <div class="port-content">
+                                        <p class="mb-1 main-color">Elegent | Images</p>
+                                        <h5>Latest Work</h5>
+                                    </div>
+                                </div>
+
+                            </a>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="team-box wow fadeInUp" data-wow-delay="250ms">
-                            <div class="image">
-                                <img src="images/team-3.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h4 class="darkcolor">Peter Farry</h4>
-                                <p>Agency Owner</p>
-                                <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                                </ul>
-                            </div>
+                        <!-- Item -->
+                        <div class="cbp-item graphic marketing">
+                            <a href="corporate/img/port-2.jpg" class="cbp-caption cbp-lightbox">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="corporate/img/port-2.jpg" alt="port-1">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <i class="fas fa-long-arrow-alt-right p-icon"></i>
+                                    <div class="port-content">
+                                        <p class="mb-1 main-color">Elegent | Images</p>
+                                        <h5>Latest Work</h5>
+                                    </div>
+                                </div>
+
+                            </a>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="team-box wow fadeInUp" data-wow-delay="300ms">
-                            <div class="image">
-                                <img src="images/team-4.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h4 class="darkcolor">Hayden Wood</h4>
-                                <p>Marketing</p>
-                                <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                                </ul>
-                            </div>
+                        <!-- Item -->
+                        <div class="cbp-item web-design marketing graphic">
+                            <a href="corporate/img/port-3.jpg" class="cbp-caption cbp-lightbox">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="corporate/img/port-3.jpg" alt="port-1">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <i class="fas fa-long-arrow-alt-right p-icon"></i>
+                                    <div class="port-content">
+                                        <p class="mb-1 main-color">Elegent | Images</p>
+                                        <h5>Latest Work</h5>
+                                    </div>
+                                </div>
+
+                            </a>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="team-box wow fadeInUp" data-wow-delay="150ms">
-                            <div class="image">
-                                <img src="images/team-1.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h4 class="darkcolor">Shania Jackson</h4>
-                                <p>Print Media</p>
-                                <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                                </ul>
-                            </div>
+                        <!-- Item -->
+                        <div class="cbp-item seo web-design">
+                            <a href="corporate/img/port-4.jpg" class="cbp-caption cbp-lightbox">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="corporate/img/port-4.jpg" alt="port-1">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <i class="fas fa-long-arrow-alt-right p-icon"></i>
+                                    <div class="port-content">
+                                        <p class="mb-1 main-color">Elegent | Images</p>
+                                        <h5>Latest Work</h5>
+                                    </div>
+                                </div>
+
+                            </a>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="team-box wow fadeInUp" data-wow-delay="200ms">
-                            <div class="image">
-                                <img src="images/team-2.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h4 class="darkcolor">Jessica Biel</h4>
-                                <p>Agency Owner</p>
-                                <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                                </ul>
-                            </div>
+                        <!-- Item -->
+                        <div class="cbp-item web-design seo">
+                            <a href="corporate/img/port-5.jpg" class="cbp-caption cbp-lightbox">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="corporate/img/port-5.jpg" alt="port-1">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <i class="fas fa-long-arrow-alt-right p-icon"></i>
+                                    <div class="port-content">
+                                        <p class="mb-1 main-color">Elegent | Images</p>
+                                        <h5>Latest Work</h5>
+                                    </div>
+                                </div>
+
+                            </a>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="team-box wow fadeInUp" data-wow-delay="250ms">
-                            <div class="image">
-                                <img src="images/team-3.jpg" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h4 class="darkcolor">Jessica Jung</h4>
-                                <p>Agency Owner</p>
-                                <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                                </ul>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
+
+            <!--portfolio-->
+            <div class="col-md-12 p-0">
+
+            </div>
         </div>
+
     </div>
 </section>
-<!-- Our Team ends-->
-<!--Pricing Start-->
-<section id="pricing" class="padding bglight">
+<!--Portfolio End-->
+
+<!--Counter Start-->
+<section class="counters">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 text-center">
-                <div class="heading-title darkcolor wow fadeInUp" data-wow-delay="300ms">
-                    <span class="defaultcolor">Quisque tellus risus, adipisci </span>
-                    <h2 class="font-normal heading_space_half"> Pricing Offers </h2>
+            <!--counter item-->
+            <div class="col-lg-3 col-sm-6 mb-3 mb-lg-0">
+                <div class="counter-item bg-blue">
+                    <i class="fas fa-users"></i>
+                    <h2 class="text-white"><span class="count">820</span>+</h2>
+                    <p class="text-white">Happy Client</p>
                 </div>
             </div>
-            <div class="col-12 text-center ">
-                <div class="price-toggle-wrapper heading_space">
-                    <span class="Pricing-toggle-button month active">Trucking</span>
-                    <span class="Pricing-toggle-button year">Shipping</span>
+            <!--counter item-->
+            <div class="col-lg-3 col-sm-6  mb-3 mb-sm-0">
+                <div class="counter-item bg-blue">
+                    <i class="fas fa-layer-group"></i>
+                    <h2 class="text-white"><span class="count">6200</span>+</h2>
+                    <p class="text-white">Carried out Training</p>
                 </div>
             </div>
-        </div>
-        <div class="owl-carousel owl-theme no-dots" id="price-slider">
-            <div class="item">
-                <div class="col-md-12">
-                    <div class="pricing-item wow fadeInUp animated sale" data-wow-delay="300ms" data-sale="30">
-                        <h3 class="font-light darkcolor">Basic</h3>
-                        <p class="bottom30">The standard version</p>
-                        <div class="pricing-price darkcolor"><span class="pricing-currency">$13.55</span> /<span class="pricing-duration">truck</span></div>
-                        <ul class="pricing-list">
-                            <li>Support forum</li>
-                            <li>Free hosting</li>
-                            <li class="price-not">40MB of storage space</li>
-                            <li class="price-not">Social media integration</li>
-                            <li class="price-not">10GB of storage space</li>
-                        </ul>
-                        <a class="button" href="javascript:void(0)">Choose plan</a>
-                    </div>
+            <!--counter item-->
+            <div class="col-lg-3 col-sm-6 mb-3 mb-sm-0">
+                <div class="counter-item bg-blue">
+                    <i class="fas fa-list-ul"></i>
+                    <h2 class="text-white"><span class="count">500</span>+</h2>
+                    <p class="text-white">Completed Consultations</p>
                 </div>
             </div>
-            <div class="item">
-                <div class="col-md-12">
-                    <div class="pricing-item wow fadeInUp animated active selected" data-wow-delay="380ms">
-                        <h3 class="font-light darkcolor">Popular</h3>
-                        <p class="bottom30">The standard version</p>
-                        <div class="pricing-price darkcolor"><span class="pricing-currency">$22.85</span> /<span class="pricing-duration">truck</span></div>
-                        <ul class="pricing-list">
-                            <li>Support forum</li>
-                            <li>Free hosting</li>
-                            <li>40MB of storage space</li>
-                            <li class="price-not">Social media integration</li>
-                            <li class="price-not">10GB of storage space</li>
-                        </ul>
-                        <a class="button" href="javascript:void(0)">Choose plan</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="col-md-12">
-                    <div class="pricing-item wow fadeInUp animated" data-wow-delay="460ms">
-                        <h3 class="font-light darkcolor">Enterprise</h3>
-                        <p class="bottom30">The standard version</p>
-                        <div class="pricing-price darkcolor"><span class="pricing-currency">$34.65</span> /<span class="pricing-duration">truck</span></div>
-                        <ul class="pricing-list">
-                            <li>Support forum</li>
-                            <li>Free hosting</li>
-                            <li>40MB of storage space</li>
-                            <li>Social media integration</li>
-                            <li class="price-not">10GB of storage space</li>
-                        </ul>
-                        <a class="button" href="javascript:void(0)">Choose plan</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="col-md-12">
-                    <div class="pricing-item wow fadeInUp animated" data-wow-deeay="400ms">
-                        <h3 class="font-light darkcolor">Ultimate</h3>
-                        <p class="bottom30">The standard version</p>
-                        <div class="pricing-price darkcolor"><span class="pricing-currency">$41.25</span> /<span class="pricing-duration">truck</span></div>
-                        <ul class="pricing-list">
-                            <li>Support forum</li>
-                            <li>Free hosting</li>
-                            <li>40MB of storage space</li>
-                            <li>Social media integration</li>
-                            <li>10GB of storage space</li>
-                        </ul>
-                        <a class="button" href="javascript:void(0)">Choose plan</a>
-                    </div>
+            <!--counter item-->
+            <div class="col-lg-3 col-sm-6">
+                <div class="counter-item bg-blue">
+                    <i class="fas fa-trophy"></i>
+                    <h2 class="text-white"><span class="count">25</span>+</h2>
+                    <p class="text-white">Digital Awards</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--Pricing ends-->
-<!-- Partners-->
-<section id="our-partners" class="padding_bottom bglight">
+<!--Counter End-->
+
+<!--Parallax Start-->
+<section class="parallax bg-img2">
+    <div class="bg-overlay bg-black opacity-4"></div>
     <div class="container">
-        <div class="row">
-            <h2 class="d-none">Partners Carousel</h2>
-            <div class="col-md-12 col-sm-12">
-                <div id="partners-slider" class="owl-carousel">
-                    <div class="item">
-                        <div class="logo-item"> <img alt="" src="images/logo-1.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-2.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-3.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-4.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-5.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-1.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-2.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-3.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-4.png"></div>
-                    </div>
-                    <div class="item">
-                        <div class="logo-item"><img alt="" src="images/logo-5.png"></div>
-                    </div>
+        <div class="row wow zoomIn">
+            <div class="col-md-12">
+                <div class="parallax-text">
+                    <h5 class="mb-3 text-white">Let discuss the project</h5>
+                    <h2 class="text-white">Drop us a word and we will get back to you with
+                        a no-obligatory quotation of your project.</h2>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Partners ends-->
-<!-- Testimonials -->
-<section id="our-testimonial" class="bglight padding_bottom">
-    <div class="parallax page-header testimonial-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-6 col-md-12 text-center text-lg-right">
-                    <div class="heading-title wow fadeInUp padding_testi" data-wow-delay="300ms">
-                        <span class="whitecolor">Quisque tellus risus, adipisci</span>
-                        <h2 class="whitecolor font-normal">What People Say</h2>
-                    </div>
+<!--Parallax End-->
+
+<!--price-->
+<section id="price" class="price text-center">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <!--Heading-->
+                <div class="title mb-5">
+                    <h5 class="mb-2">Select the best available packages</h5>
+                    <h2>Simple, Affordable Pricing </h2>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="owl-carousel" id="testimonial-slider">
-            <!--item 1-->
-            <div class="item testi-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 text-center">
-                        <div class="testimonial-round d-inline-block">
-                            <img src="images/testimonial-2.jpg" alt="">
-                        </div>
-                        <h4 class="defaultcolor font-light top15"><a href="#.">John Smith</a></h4>
-                        <p>Shipping, New York</p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1 text-lg-left text-center">
-                        <p class="bottom15 top90">We have a number of different teams within our agency that specialise in different areas of business so you can be sure that you won’t receive a generic service and although we boast a years and years of service.</p>
-                        <span class="d-inline-block test-star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </span>
-                    </div>
+        <div class="row wow fadeInUp">
+            <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+                <div class="price-item">
+                    <h2 class="font-weight-bold alt-font mb-1">$39 <span class="period">/ month</span></h2>
+                    <h5 class="mb-3 alt-font font-weight-bold main-color">Starter Package</h5>
+                    <p class="description">Simple informatino website suiteable for any startup or personal brand</p>
+                    <ul class="p-0 price-list blue list-unstyled">
+                        <li><i class="fas fa-check"></i>Unlmited Pages HTML Website</li>
+                        <li><i class="fas fa-check"></i>Drag & Drop Page builder</li>
+                        <li><i class="fas fa-check"></i>Optimized Content & Images</li>
+                        <li><i class="fas fa-check"></i>Free Domain & Hosting</li>
+                        <li><i class="fas fa-check"></i>Free Images Library</li>
+                    </ul>
+                    <a href="javascript:void(0)" class="btn btn-large btn-blue d-block mt-3">Get The Package Now</a>
                 </div>
             </div>
-            <!--item 2-->
-            <div class="item testi-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 text-center">
-                        <div class="testimonial-round d-inline-block">
-                            <img src="images/testimonial-1.jpg" alt="">
-                        </div>
-                        <h4 class="defaultcolor font-light top15"><a href="#.">Hayden Wood</a></h4>
-                        <p>Cargo, Italy</p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1 text-lg-left text-center">
-                        <p class="bottom15 top90">MegaOne’s customer testimonial page is another beauty. Its simple design focuses on videos and standout quotes from customers. This approach is clean, straightforward, text that can be overwhelming and easy to skip.</p>
-                        <span class="d-inline-block test-star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </span>
-                    </div>
+            <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+                <div class="price-item">
+                    <h2 class="font-weight-bold alt-font mb-1">$79 <span class="period">/ month</span></h2>
+                    <h5 class="mb-3 alt-font font-weight-bold alt-color">Professional Package</h5>
+                    <p class="description">Simple informatino website suiteable for any startup or personal brand</p>
+                    <ul class="p-0 price-list green list-unstyled">
+                        <li><i class="fas fa-check"></i>Unlmited Pages HTML Website</li>
+                        <li><i class="fas fa-check"></i>Drag & Drop Page builder</li>
+                        <li><i class="fas fa-check"></i>Optimized Content & Images</li>
+                        <li><i class="fas fa-check"></i>Free Domain & Hosting</li>
+                        <li><i class="fas fa-check"></i>Free Images Library</li>
+                    </ul>
+                    <a href="javascript:void(0)" class="btn btn-large btn-green d-block mt-3">Get The Package Now</a>
                 </div>
             </div>
-            <!--item 3-->
-            <div class="item testi-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 text-center">
-                        <div class="testimonial-round d-inline-block">
-                            <img src="images/testimonial-3.jpg" alt="">
-                        </div>
-                        <h4 class="defaultcolor font-light top15"><a href="#.">Kevin Miller</a></h4>
-                        <p>Airplane, Australia</p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1 text-lg-left text-center">
-                        <p class="bottom15 top90">MegaOne is a company that provides tools to help professional event planning and execution, and their customers are very happy folks! The thing I love about their customer testimonial page provides content formats.</p>
-                        <span class="d-inline-block test-star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <!--item 4-->
-            <div class="item testi-box">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 text-center">
-                        <div class="testimonial-round d-inline-block">
-                            <img src="images/testimonial-4.jpg" alt="">
-                        </div>
-                        <h4 class="defaultcolor font-light top15"><a href="#.">Alina Johanson</a></h4>
-                        <p>Trucks, Sidney</p>
-                    </div>
-                    <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1 text-lg-left text-center">
-                        <p class="bottom15 top90">Startup Institute is a career accelerator that allows professionals to learn new skills, take their careers in a different direction, and pursue a career they are passionate about that have completed the program.</p>
-                        <span class="d-inline-block test-star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </span>
-                    </div>
+            <div class="col-lg-4 col-md-12 mb-0">
+                <div class="price-item">
+                    <h2 class="font-weight-bold alt-font mb-1">$199 <span class="period">/ month</span></h2>
+                    <h5 class="mb-3 alt-font font-weight-bold main-color">Ecommerce Package</h5>
+                    <p class="description">Simple informatino website suiteable for any startup or personal brand</p>
+                    <ul class="p-0 price-list blue list-unstyled">
+                        <li><i class="fas fa-check"></i>Unlmited Pages HTML Website</li>
+                        <li><i class="fas fa-check"></i>Drag & Drop Page builder</li>
+                        <li><i class="fas fa-check"></i>Optimized Content & Images</li>
+                        <li><i class="fas fa-check"></i>Free Domain & Hosting</li>
+                        <li><i class="fas fa-check"></i>Free Images Library</li>
+                    </ul>
+                    <a href="javascript:void(0)" class="btn btn-large btn-blue d-block mt-3">Get The Package Now</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--testimonials end-->
-<!-- Contact US -->
-<section id="stayconnect" class="bglight position-relative">
+<!--price end-->
+
+<!--Contact Start-->
+<section id="contact" class="parallax-content bg-img1">
     <div class="container">
-        <div class="contactus-wrapp">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="heading-title wow fadeInUp text-center text-md-left" data-wow-delay="300ms">
-                        <h3 class="darkcolor bottom20">Stay Connected</h3>
+        <div class="row align-items-md-center">
+            <div class="col-lg-8">
+                <!--Heading-->
+                <div class="title">
+                    <h5 class="mb-3 text-white">Let discuss the project</h5>
+                    <h2 class="text-white">Drop us a word and we will get back to you
+                        with a no-obligatory quotation of your
+                        project.</h2>
+                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec orci felis, feugiat in aliquam eu,
+                        dictum in arcu. Sed vel cursus lectus, quis placerat ipsum. Integer nec diam vel nunc.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInRight">
+                <!--Contact Form-->
+                <form class="contact-form" id="contact-form-data">
+                    <h4 class="mb-3">Get a free quote now</h4>
+                    <div id="result"></div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Name" required="" id="your_name" name="userName">
                     </div>
-                </div>
-                <div class="col-md-12 col-sm-12">
-                    <form class="getin_form wow fadeInUp" data-wow-delay="400ms" onsubmit="return false;">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12" id="result"></div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <label for="userName" class="d-none"></label>
-                                    <input class="form-control" type="text" placeholder="Name" required id="userName" name="userName">
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <label for="companyName" class="d-none"></label>
-                                    <input class="form-control" type="text" placeholder="Company"  id="companyName" name="companyName">
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <label for="email" class="d-none"></label>
-                                    <input class="form-control" type="email" placeholder="Email" required id="email" name="email">
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <button type="submit" class="button gradient-btn w-100" id="submit_btn">subscribe</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="email" placeholder="Email" required="" id="your_email" name="userEmail">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Message" required="" id="message" name="userMessage"></textarea>
+                    </div>
+
+                    <!--Button-->
+                    <a href="javascript:void(0);" id="submit_btn" class="btn btn-large btn-green d-block mt-4 contact_btn">Send Message</a>
+
+                </form>
+
             </div>
         </div>
     </div>
 </section>
-<!-- Contact US ends -->
-<!--Site Footer Here-->
-<footer id="site-footer" class=" bgprimary padding_top">
+<!--Contact End-->
+
+<!--Blog Start-->
+<section id="blog" class="blog pb-0">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer_panel padding_bottom_half bottom20">
-                    <a href="../index-logistic.html" class="footer_logo bottom25"><img src="images/logo-transparent.png" alt="MegaOne"></a>
-                    <p class="whitecolor bottom25">Keep away from people who try to belittle your ambitions Small people always do that but the really great Friendly.</p>
-                    <div class="d-table w-100 address-item whitecolor bottom25">
-                        <span class="d-table-cell align-middle"><i class="fas fa-mobile-alt"></i></span>
-                        <p class="d-table-cell align-middle bottom0">
-                            +01 - 123 - 4567 <a class="d-block" href="mailto:web@support.com">web@support.com</a>
-                        </p>
+        <div class="row align-items-md-center wow fadeInUp">
+            <!--Blog Item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-lg-0">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="corporate/img/blog-list1.jpg" alt="image">
                     </div>
-                    <ul class="social-icons white wow fadeInUp" data-wow-delay="300ms">
-                        <li><a href="javascript:void(0)" class=""><i class="fab fa-facebook-f"></i> </a> </li>
-                        <li><a href="javascript:void(0)" class=""><i class="fab fa-twitter"></i> </a> </li>
-                        <li><a href="javascript:void(0)" class=""><i class="fab fa-linkedin-in"></i> </a> </li>
-                        <li><a href="javascript:void(0)" class=""><i class="fab fa-instagram"></i> </a> </li>
+                    <div class="blog-content">
+                        <h4 class="mb-3">Black and White</h4>
+                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.</p>
+                        <a class="font-weight-bold alt-font" target="_blank" href="corporate/blog-details.html">Learn More</a>
+                    </div>
+                </div>
+           </div>
+            <!--Blog Item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-lg-0">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="corporate/img/blog-list2.jpg" alt="image">
+                    </div>
+                    <div class="blog-content">
+                        <h4 class="mb-3">Design Strategies</h4>
+                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.</p>
+                        <a class="font-weight-bold alt-font" target="_blank" href="corporate/blog-details.html">Learn More</a>
+                </div>
+                </div>
+            </div>
+            <!--Blog Item-->
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-md-0">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="corporate/img/blog-list3.jpg" alt="image">
+                    </div>
+                    <div class="blog-content">
+                        <h4 class="mb-3">Elegance at Peak</h4>
+                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.</p>
+                        <a class="font-weight-bold alt-font" target="_blank" href="corporate/blog-details.html">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!--Blog Item-->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="corporate/img/blog-list4.jpg" alt="image">
+                    </div>
+                    <div class="blog-content">
+                        <h4 class="mb-3">Art and Fashion</h4>
+                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis.</p>
+                        <a class="font-weight-bold alt-font" target="_blank" href="corporate/blog-details.html">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-md-5 pt-md-4">
+        <a target="_blank" href="corporate/blog-list.html" class="btn btn-large btn-green mt-5">Read More Articles</a>
+        </div>
+    </div>
+</section>
+<!--Blog End-->
+
+<!--Clients Start-->
+<section class="clients">
+    <div class="container">
+        <div class="owl-testimonial owl-carousel owl-theme wow fadeIn">
+            <div class="testimonial-item item text-center">
+                <div class="testimonial-text mb-3"><p>Donec semper euismod nisi quis feugiat. Nullam finibus metus eget orci volutpat porta. Morbi quis arcu vulputate, dignissim mi ac, varius magna.</p></div>
+                <div class="testimonial-photo"><img src="corporate/img/testimonial-1.jpg" alt="image"></div>
+                <h5 class="text-capitalize mt-3 mb-0">Jhon Serifs</h5>
+                <p class="text-small mb-0">Executive Manager</p>
+            </div>
+            <div class="testimonial-item item text-center">
+                <div class="testimonial-text mb-3"><p>Donec semper euismod nisi quis feugiat. Nullam finibus metus eget orci volutpat porta. Morbi quis arcu vulputate, dignissim mi ac, varius magna.</p></div>
+                <div class="testimonial-photo"><img src="corporate/img/testimonial-2.jpg" alt="image"></div>
+                <h5 class="text-capitalize mt-3 mb-0">Teena Walkin</h5>
+                <p class="text-small mb-0">Executive Manager</p>
+            </div>
+            <div class="testimonial-item item text-center">
+                <div class="testimonial-text mb-3"><p>Donec semper euismod nisi quis feugiat. Nullam finibus metus eget orci volutpat porta. Morbi quis arcu vulputate, dignissim mi ac, varius magna.</p></div>
+                <div class="testimonial-photo"><img src="corporate/img/testimonial-3.jpg" alt="image"></div>
+                <h5 class="text-capitalize mt-3 mb-0">Walk Hardy</h5>
+                <p class="text-small mb-0">Executive Manager</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Clients End-->
+
+<!--Footer Start-->
+<footer class="footer-area section-padding">
+    <div class="container">
+        <div class="row text-md-left text-center">
+            <!--Column-->
+            <div class="col-lg-4 col-md-6">
+                <h3 class="mb-3 text-white">Company</h3>
+                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <br>
+                    Donec orci felis, feugiat in aliquam eu, dictum in arcu. Sed vel cursus lectus,
+                    <br><br>
+                    quis placerat ipsum. Integer nec diam vel nunc.</p>
+
+            </div>
+            <!--Column-->
+            <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                <h3 class="mb-3 text-white">Services And Legal</h3>
+                <div class="footer-list">
+                    <!--List-->
+                    <ul class="mr-4">
+                        <li><a href="javascript:void(0);">Web Desing</a></li>
+                        <li><a href="javascript:void(0);">Photography</a></li>
+                        <li><a href="javascript:void(0);">Corporate</a></li>
+                        <li><a href="javascript:void(0);">Advertisement</a></li>
+                        <li><a href="javascript:void(0);">Application Design</a></li>
+                    </ul>
+                    <!--List-->
+                    <ul>
+                        <li><a href="javascript:void(0);">Company Terms</a></li>
+                        <li><a href="javascript:void(0);">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0);">Refund Policy</a></li>
+                        <li><a href="javascript:void(0);">GDPR Comliance</a></li>
+                        <li><a href="javascript:void(0);">Contact Legal</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer_panel padding_bottom_half bottom20">
-                    <h3 class="whitecolor bottom25">Latest News</h3>
-                    <ul class="latest_news whitecolor">
-                        <li> <a href="#.">Aenean tristique justo et... </a> <span class="date defaultcolor">15 March 2019</span> </li>
-                        <li> <a href="#.">Phasellus dapibus dictum augue... </a> <span class="date defaultcolor">15 March 2019</span> </li>
-                        <li> <a href="#.">Mauris blandit vitae. Praesent non... </a> <span class="date defaultcolor">15 March 2019</span> </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer_panel padding_bottom_half bottom20 pl-0 pl-lg-5">
-                    <h3 class="whitecolor bottom25">Our Services</h3>
-                    <ul class="links">
-                        <li><a href="../index-logistic.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="news-1.html">Latest News</a></li>
-                        <li><a href="pricing.html">Business Planning</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="faq.html">Faq's</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer_panel padding_bottom_half bottom20">
-                    <h3 class="whitecolor bottom25">Business hours</h3>
-                    <p class="whitecolor bottom25">Our support available to help you 24 hours a day, seven days week</p>
-                    <ul class="hours_links whitecolor">
-                        <li><span>Monday-Saturday:</span> <span>8.00-18.00</span></li>
-                        <li><span>Friday:</span> <span>09:00-21:00</span></li>
-                        <li><span>Sunday:</span> <span>09:00-20:00</span></li>
-                        <li><span>Calendar Events:</span> <span>24-Hour Shift</span></li>
-                    </ul>
-                </div>
+            <!--Column-->
+            <div class="col-lg-4 col-md-12 mt-4 mt-lg-0">
+                <h3 class="mb-3 text-white">We Are Social</h3>
+                <ul class="footer-icon">
+                    <li><a href="javascript:void(0);" class="facebook-text-hvr"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="javascript:void(0);" class="twitter-text-hvr"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="javascript:void(0);" class="instagram-text-hvr"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="javascript:void(0);" class="pinterest-text-hvr"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="javascript:void(0);" class="linkedin-text-hvr"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="javascript:void(0);" class="google-text-hvr"><i class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+
+                <h6 class="text-white mb-3">Ocassionally hear from us</h6>
+                <label class="input-group footer-mail">
+                    <input type="email" class="form-control" placeholder="Enter Email Address">
+                <button class="btn btn-medium btn-green btn-hvr-white" type="submit">YES I'M IN</button>
+                </label>
             </div>
         </div>
     </div>
 </footer>
-<!--Footer ends-->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--Footer End-->
+
+<!--Scroll Top Start-->
+<span class="scroll-top-arrow"><i class="fas fa-angle-up"></i></span>
+<!--Scroll Top End-->
+-------------------------
+
 <script src="{{asset("vendor/js/bundle.min.js")}}"></script> 
 <!--to view items on reach-->
 <script src="{{asset("vendor/js/jquery.appear.js")}}"></script> 
@@ -1126,7 +885,39 @@
 <script src="{{asset("vendor/js/extensions/revolution.extension.parallax.min.js")}}"></script>
 <script src="{{asset("vendor/js/extensions/revolution.extension.slideanims.min.js")}}"></script>
 <script src="{{asset("vendor/js/extensions/revolution.extension.video.min.js")}}"></script>
-<!--custom functions and script-->
-<script src="{{asset("logistic/js/functions.js")}}"></script>
+
+
+
+-------------------------
+{{-- <!-- JavaScript -->
+<script src="vendor/js/bundle.min.js"></script>
+<!-- Plugin Js -->
+<script src="vendor/js/jquery.appear.js"></script>
+<script src="vendor/js/jquery.fancybox.min.js"></script>
+<script src="vendor/js/owl.carousel.min.js"></script>
+<script src="vendor/js/parallaxie.min.js"></script>
+<script src="vendor/js/wow.min.js"></script>
+<script src="vendor/js/jquery.cubeportfolio.min.js"></script>
+<!-- REVOLUTION JS FILES -->
+<script src="vendor/js/jquery.themepunch.tools.min.js"></script>
+<script src="vendor/js/jquery.themepunch.revolution.min.js"></script>
+<!-- SLIDER REVOLUTION EXTENSIONS -->
+<script src="vendor/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="vendor/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="vendor/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="vendor/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="vendor/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="vendor/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="vendor/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="vendor/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="vendor/js/extensions/revolution.extension.video.min.js"></script>
+<!--contact form--> --}}
+<script src="{{asset("vendor/js/contact_us.js")}}"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJRG4KqGVNvAPY4UcVDLcLNXMXk2ktNfY"></script>
+<script src="{{asset("corporate/js/map.js")}}"></script>
+<!-- custom script -->
+<script src="{{asset("corporate/js/script.js")}} "></script>
+
 </body>
 </html>
