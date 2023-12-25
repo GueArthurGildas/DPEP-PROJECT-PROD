@@ -53,35 +53,15 @@
 
 <!--header Start-->
 <header class="header-with-top">
-    <!--header top-->
-    <div class="top-header-area text-white alt-font" style="background-color:#df6d14">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <div class="address text-left">
-                        +1 234 888 9876  ( 9AM - 5PM GST )
-                    </div>
-                </div>
-                <div class="col-6">
-                    <ul class="header-social text-right">
-                        <li><a href="javascript:void(0);" class="facebook-text-hvr"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="javascript:void(0);" class="twitter-text-hvr"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="javascript:void(0);" class="instagram-text-hvr"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="javascript:void(0);" class="pinterest-text-hvr"><i class="fab fa-pinterest-p"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-    </div>
-
-    <!--Navigation-->
+ <!--Navigation-->
     <nav class="navbar navbar-expand-lg navbar-static">
         <div class="container">
+                <img src="{{asset("images/logo_mirah.png")}}" alt="logo">
 
-            <a href="#home" title="Logo" class="logo scroll">
+            {{-- <a href="#home" title="Logo" class="logo scroll">
                 <img src="corporate/img/logo-black.png" class="logo-dark default" alt="logo">
-            </a>
+            </a> --}}
 
             <button class="sidemenu-button d-lg-none" type="button" data-toggle="collapse" data-target="#ntg" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sidemenu-toggler"></span>
@@ -107,13 +87,45 @@
                         <a class="nav-link scroll" href="#blog">Latest News</a>
                     </li>
                 </ul>
-                <a href="#contact" class="btn btn-nav scroll">Connexion</a>
-                <a href="#contact" class="btn btn-nav scroll ml-2">Inscription</a>
+                <a href="#contact" class="btn btn-nav scroll" style="background-color:#066C02;border:none">Connexion</a>
+                <a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn-nav ml-2 " style="background-color:#df6d14;border:none" >Inscription</a>
             </div>
 
         </div>
     </nav>
 
+
+    <!--header top-->
+    <div class="top-header-area text-white alt-font" style="background-color:#df6d14">
+        <div class="container">
+         
+            <div class="row">
+                <div class="col-6 justify-start">
+               
+
+                    <div class=" text-left mt-3">
+                      MIRAH   | e-Dpep (Demande préalable d'entrée au port)
+                    <div> 
+                    </div>
+                    </div>
+                   
+                </div>
+                <div class="col-6">
+                    <ul class="header-social text-right">
+                        <li><a href="javascript:void(0);" class="facebook-text-hvr"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="javascript:void(0);" class="twitter-text-hvr"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="javascript:void(0);" class="instagram-text-hvr"><i class="fab fa-instagram"></i></a></li>
+                        {{-- <li><a href="javascript:void(0);" class="pinterest-text-hvr"><i class="fab fa-pinterest-p"></i></a></li> --}}
+                        <li> <img src="{{asset("images/CI-Logov-2.png")}}" alt="logo"></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   
 </header>
 <!--header End-->
 
@@ -125,7 +137,76 @@
             <ul>	<!-- SLIDE  -->
                 <li data-index="rs-95" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="corporate/img/slider-slide1.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <img src="{{asset("images/408828181.jpg")}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+                    <div class="bg-overlay bg-black opacity-5"></div>
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption   tp-resizeme"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','-1','-1']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-65','-65','-65','-65']"
+                         data-fontsize="['70','70','55','40']"
+                         data-lineheight="['75','75','60','60']"
+                         data-width="['1000','1000','600','450']"
+                         data-height="none"
+                         data-whitespace="nowrap"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":330,"speed":1490,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['center','center','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 5; min-width: 1000px; max-width: 1000px; white-space: nowrap; font-size: 70px; line-height: 75px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family: 'UbuntuTitling', Arial, sans-serif;">WE LOVE WEB DESIGN </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption   tp-resizeme"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-11','-11']"
+                         data-fontsize="['20','20','18','16']"
+                         data-width="['800','800','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":1430,"speed":1490,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['center','center','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 6; min-width: 800px; max-width: 800px; white-space: normal; font-size: 18px; line-height: 20px; font-weight: 300; color: #ffffff; letter-spacing: 1px;font-family: 'Ubuntu', sans-serif;">Creativity And Productivity Reaches At Peak Here</div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption   tp-resizeme"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','top','middle','middle']" data-voffset="['69','370','50','70']"
+                         data-width="['801','801','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+
+                         data-type="text"
+                         data-responsive_offset="on"
+
+                         data-frames='[{"delay":2570,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['center','center','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+
+                         style="z-index: 7; "><a class="btn btn-large bg-success mr-3 btn-hvr-white" href="javascript:void(0);">FAIRE UNE DEMANDE</a><a class="btn btn-large btn-green btn-hvr-white" href="javascript:void(0);">S'INSCRIRE</a></div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-96" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{asset("images/navie-peche-1.jpg")}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <div class="bg-overlay bg-black opacity-5"></div>
                     <!-- LAYER NR. 1 -->
@@ -190,11 +271,14 @@
                          data-paddingleft="[0,0,0,0]"
 
                          style="z-index: 7; "><a class="btn btn-large btn-blue mr-3 btn-hvr-white" href="javascript:void(0);">START FREE TRIAL NOW</a><a class="btn btn-large btn-green btn-hvr-white" href="javascript:void(0);">GET STARTED NOW</a></div>
+
+
                 </li>
-                <!-- SLIDE  -->
-                <li data-index="rs-96" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+
+                 <!-- SLIDE  -->
+                <li data-index="rs-97" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="corporate/img/slider-slide2.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <img src="{{asset("images/412663718.jpg")}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <div class="bg-overlay bg-black opacity-5"></div>
                     <!-- LAYER NR. 1 -->
