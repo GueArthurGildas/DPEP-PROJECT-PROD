@@ -11,9 +11,9 @@
                   <div class="container-xl wide-lg">
                      <div class="nk-content-inner">
                         <div class="nk-content-body ml-5 mr-5">
-                           <div class=""><a class="back-to text-danger" href="{{route("home.demandes.uploadfiledemande.index")}}" ><em class="icon ni ni-arrow-left"></em><span>Annuler la demande</span></a></div>
-                           <br>
-                           <hr>
+                           {{-- <div class=""><a class="back-to text-danger" href="{{route("home.demandes.uploadfiledemande.index")}}" ><em class="icon ni ni-arrow-left"></em><span>Annuler la demande</span></a></div>
+                           <br> --}}
+                           {{-- <hr> --}}
                            <div class="nk-block-between-md g-4">
                               <div class="nk-block-head-content">
                                  <h2 class="nk-block-title fw-normal">Récapitulatif </h2>
@@ -223,7 +223,6 @@
                                        <input type="text" class="form-control" id="default-1-03" disabled="" value="info@softnio.com">
                                     </div>
                                  </div>
-                                 <hr style="color:red">
                                  <div class="nk-block-between-md g-4">
                                     <div class="nk-block-head-content">
                                     </div>

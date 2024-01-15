@@ -12,11 +12,44 @@ function affSpinerInsideBtnCommencer(){
                      $("#text-commencer").html("Chargement...") 
             
                 setTimeout(function () {
-                     SubmitFormDoGoToStep1();
+                   doAllElementDiseapearToShowLoadingText();
+                   
+                   //  SubmitFormDoGoToStep1();
                 }, 2000);  
 
+}
+
+
+// ici pour cette fonction je ferai tout disparaitre sur la page pour montrer un text qui fait du genre chargement 
+function  doAllElementDiseapearToShowLoadingText(){
+    
+                    $("#Contain-present-with-image").css({
+                        "display":"none",
+                    })   
+                    
+                    
+                    $("#text-content-loading").css({
+                            "display":"block",
+                    }) 
+
+                    setTimeout(function () {
+                         changeTextPreparation();
+                    }, 1000); 
+                    
+}
+
+
+// ici je suis je vais changer le texte de preparation pour faire un effet
+function changeTextPreparation(){
+  
+                    $("#preparation-text").text("chargement de la demande...")
+
+                    setTimeout(function () {
+                         SubmitFormDoGoToStep1();
+                    }, 1000); 
 
 }
+
 
 
 //// ici la fonction qui fera tout disparaître sur la page de presentation pour montrer le le texte de chargement 
@@ -36,8 +69,6 @@ function SubmitFormDoGoToStep1(){
 // cette fonction affiche la roue dans la page puis la faire disparaitre
     function showAndDisapearingLoadGetFromDaslite(){
 
-                
-
                 $("#loadingGetFromDashLite").fadeIn();
 
                 // Utilisez setTimeout() pour définir un délai en millisecondes avant de faire disparaître l'élément.
@@ -53,9 +84,7 @@ function SubmitFormDoGoToStep1(){
 
 
                 }, 1500);  
-
-                
-                
+       
     }
 
 </script>

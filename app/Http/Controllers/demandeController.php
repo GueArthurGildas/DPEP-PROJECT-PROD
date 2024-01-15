@@ -45,7 +45,7 @@ class demandeController extends Controller
        
 
        // $this->setCurrentPageView();
-        dd("je suis ici");
+        //dd("je suis ici");
         return view('demande.index',[
             'currentPage'=>$this->currentPage, 
             'idDemadne'=>$this->idDemandeLoading,
@@ -190,7 +190,7 @@ class demandeController extends Controller
             ]
         );
 
-     session(['IdDemandeRunning' => $this->myNewDemande->id]);
+        session(['IdDemandeRunning' => $this->myNewDemande->id]);
 
 
     }
@@ -206,14 +206,18 @@ class demandeController extends Controller
     // affiche la page relative à la première section de la demande qui concerne le navire selectionné
     function affNavireForDemande(request $request){
 
+       // dd($request->input("test"));
+        
         $navireStep1="";
         //dd($request->input("idNavireStep1"));
         if($request->input("idNavireStep1")){
-          
             $navireStep1= Navire::find($request->input('idNavireStep1'));
         }
 
-        if($request->input("newdemande")){
+    
+
+        if($request->input("test")){
+            //dd("je suis la inh");
             $this->createDemande();
         }
         
@@ -251,19 +255,20 @@ class demandeController extends Controller
 
     public function traitStep1(Request $request ){
 
-        
-
+       
+       
         $request->validate([
-        "navire-selected" => "required",
-        "portEscalEnvisage" => "required",
-        "dateLastEscale" => "required",
-        "accueilPort" => "required",
-        "dateArriveEstim" => "required",
-        "heureArriveEstim" => "required",
-        "minuteArriveEstim" => "required",
-        "objetAccesPort" => "required"
+            "navire-selected" => "required",
+            "portEscalEnvisage" => "required",
+            "dateLastEscale" => "required",
+            "accueilPort" => "required",
+            "dateArriveEstim" => "required",
+            "heureArriveEstim" => "required",
+            "minuteArriveEstim" => "required",
+            "objetAccesPort" => "required"
             
         ]);
+
 
       
 
@@ -271,12 +276,14 @@ class demandeController extends Controller
 
         session(['step1' => $step1]);
 
-        //dd(session("step1")["navire-selected"]);
+        // dd(session("step1"));
+        // dd(session("step1")["navire-selected"]);
 
         $this->updateIdNavireForAllCapture();
         $this->updateIdNavireForAllAutoPeche();
 
-        return redirect()->route('home.demandes.caputredemande.index',["checkhascaptures"=>true]);
+        // return redirect()->route('home.demandes.caputredemande.index',["checkhascaptures"=>true]);
+        return redirect()->route('home.demandes.caputredemande.index');
 
     } 
 
@@ -294,7 +301,7 @@ class demandeController extends Controller
             $lesCaptures =DB::table('Captures')->where("demande_id","like",session("IdDemandeRunning"))->get();
         }
 
-        
+        //dd(session("IdDemandeRunning"));
 
         return view("demande.step-demande.step2",[
             'lesCaptures'=>$lesCaptures,

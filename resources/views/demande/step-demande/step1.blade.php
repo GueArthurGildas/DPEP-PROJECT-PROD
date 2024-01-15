@@ -1,15 +1,15 @@
 @extends("layouts.master")
 @section("content")
-<div class="nk-content nk-content-lg nk-content-fluid">
-   <div class="container-xl wide-lg">
-      <div class="example-alert">
-         <div class="alert alert-pro alert-warning">
-            <div class="nk-content-inner">
-               <div class="nk-content-body">
+<div class="nk-content nk-content-lg nk-content-fluid ">
+   <div class="container-xl wide-lg ">
+      <div class="example-alert" id="content-step1">
+         <div class="alert alert-pro alert-warning ">
+            <div class="nk-content-inner ">
+               <div class="nk-content-body ">
                   <div class="nk-content nk-content-lg nk-content-fluid">
                      <div class="container-xl wide-lg"></div>
                      <div class="nk-content-inner">
-                        <div class="nk-content-body">
+                        <div class="nk-content-body ">
                            {{-- 
                            <div class="row">
                               <div class="col-6">
@@ -22,15 +22,6 @@
                               </div>
                            </div>
                            <br> --}}
-                           @if ($errors->any())
-                           @foreach ($errors->all() as $error )
-                           <div class="alert alert-warning alert-icon">
-                              <em class="icon ni ni-cross-circle"></em> <strong>Attention</strong> ! Rassurez-vous d'avoir selectionné le navire et remplir correctement les champs ci-dessous !.
-                           </div>
-                           <p class="text-danger"></p><hr>
-                           @endforeach
-                           @endif
-                           
                            <div class="nk-block-between-md g-4">
                               <div class="nk-block-head-content">
                                  <h2 class="nk-block-title fw-normal">Navire & Port d'accueil</h2>
@@ -40,22 +31,50 @@
                               </div>
                               <div class="nk-block-head-content">
                                  <div>
-                                    <li class="order-md-last"><a href="{{route("home.demandes.naviredemande.index")}}" class="btn  btn-dark" title="Rafraichir la page"><span><em class="icon ni ni-undo"></em></span></a></li>
+                                    <ul class="nk-block-tools g-3">
+                                       <li> 
+                                          <a href="#" id="Ajouter-navire" class="btn btn-dark"><em class="icon ni ni-plus"></em> Ajouter un navire</a>
+                                       </li>
+                                       <li> 
+                                          <a href="{{route("home.demandes.naviredemande.index")}}" class="btn btn-dark"    style="background-color:#066C02"><em class="icon ni ni-home"></em><span>Mes demandes</span></a>
+                                       </li>
+                                    </ul>
+                                    {{-- 
+                                    <li class="order-md-last">
+                                       <a href="{{route("home.demandes.naviredemande.index")}}" class="btn text-white btn-outline-dark bg-dark    d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Retour</span></a>
+                                    </li>
+                                    <li class="order-md-last">
+                                       <a href="{{route("home.demandes.naviredemande.index")}}" class="btn text-white btn-outline-dark bg-dark    d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Retour</span></a>
+                                    </li>
+                                    --}}
                                     <br>
-                                    <li class="order-md-last"><a href="#"  style=" display: none;" id="btnAfficheSelectNavire" class="btn  btn-dark"><span><em class="icon ni ni-trash-alt"></em></span></a></li>
+                                    {{-- 
+                                    <li class="order-md-last"><a href="#"  style=" display: none;" id="btnAfficheSelectNavire" class="btn  btn-dark"><span><em class="icon ni ni-trash-alt"></em> Test Something </span></a></li>
+                                    --}}
                                  </div>
                                  <li>
-                                    {{-- <div id="loading-svg" style=" display: none;" class="pl-5">
+                                    {{-- 
+                                    <div id="loading-svg" style=" display: none;" class="pl-5">
                                        <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
-                                    </div> --}}
+                                    </div>
+                                    --}}
                                  </li>
                                  </ul>
                               </div>
                            </div>
                         </div>
                         <!-- .nk-block-head -->
+                        @if ($errors->any())
+                        @foreach ($errors->all() as $error )
+                        <div class="alert alert-warning alert-icon">
+                           <em class="icon ni ni-cross-circle"></em> <strong>Attention :  </strong> {{$error}}
+                        </div>
+                        <p class="text-danger"></p>
                         <hr>
-                        <form action="{{route("home.demandes.traitStep1.index")}}" method="post">
+                        @endforeach
+                        @endif
+                        <hr>
+                        <form action="{{route("home.demandes.traitStep1.index")}}" id="FormStep1" method="post">
                         @csrf
                         <div class="row g-4 mb-3">
                            <div class="col-12">
@@ -66,75 +85,75 @@
                                     </div>
                                  </div>
                               </div>
+                              <div class="nk-block">
+                                 <div class="example-alert">
+                                    <div class="alert alert-success alert-icon">
+                                       <em class="icon ni ni-check-circle"></em> <strong>Selectionner un navire</strong>
+                                       <p>Faites une recherche dans le champ afin de selectionner le navire concerné par la demande</p>
+                                    </div>
+                                 </div>
+                              </div>
                               <div id="sectionSelectNavire">
                                  <div class="" >
                                     <br>
+                                    {{-- 
                                     <div class="justify-end mt-2">
                                        <div class="form-group ">
-                                          {{-- <a href="#" id="valide-select-navire" class="btn btn-danger"><em class="icon ni ni-search"></em>Rechercher</a> --}}
-                                          <a href="#" id="Ajouter-navire" class="btn btn-danger"><em class="icon ni ni-plus"></em> Ajouter un navire</a>
+                                          <a href="#" id="valide-select-navire" class="btn btn-danger"><em class="icon ni ni-search"></em>Rechercher</a>
+                                          <a href="#" id="Ajouter-navire" class="btn btn-dark"><em class="icon ni ni-plus"></em> Ajouter un navire</a>
                                        </div>
                                     </div>
+                                    --}}
                                     <div class="form-group" >
                                        <label class="form-label text-danger">
-                                       Selectionner le Navire
+                                       <em class="icon ni ni-search"></em> Selectionner le Navire 
                                        </label>
                                        </label>
                                        <input type="text" name="navire-selected"  id="takeIdNavireSelected" @if($navireStep1) value={{$navireStep1->id}} @endif class=""  style="display:none" required >
                                        <div class="form-control-wrap field-navire" >
                                           <select class="form-select js-select2 "    data-search="on" id="navire-selected" onchange="getSelectNavire()" data-placeholder="Selectionner un navire"  >
-                                             <option value="default_option">Selectionner un navire </option>
+                                             <option value="default_option"><em class="icon ni ni-search"></em> Selectionner un navire </option>
                                              @foreach ( $lesNavires as $i )
                                              <option value="{{$i->id}}">{{$i->Nom_Navire}} |  {{$i->Etat_Pavillon}}    </option>
-                                             @endforeach
+                                             @endforeach 
                                           </select>
                                        </div>
                                     </div>
-
-                                     {{-- ici le loading svg  --}}
-                        
-                           <div id="loading-svg" style=" display: none;">
-                              <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
-                           </div>
-                       
+                                    {{-- ici le loading svg  --}}
+                                    <div id="loading-svg" style=" display: none;">
+                                       <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
+                                    </div>
                                     <div class="" id="blockToShowNavireDetailSelected" style="display:none" >
-                                     
-
-                                    <div class="form-group">
-                                       <label class="form-label" for="pay-amount">~ Etat du pavillon  </label>
-                                       <div class="form-control-wrap">
-                                          <input type="text" class="form-control"   id="etatPavillon"  disabled>
+                                       <div class="form-group">
+                                          <label class="form-label" for="pay-amount">1- Etat du pavillon  </label>
+                                          <div class="form-control-wrap">
+                                             <input type="text" class="form-control"   id="etatPavillon"  disabled>
+                                          </div>
                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                       <label class="form-label" for="pay-amount">~ Type de Navire  </label>
-                                       <div class="form-control-wrap">
-                                          <input type="text" class="form-control"   id="typeNavire" disabled>
+                                       <div class="form-group">
+                                          <label class="form-label" for="pay-amount">2- Type de Navire  </label>
+                                          <div class="form-control-wrap">
+                                             <input type="text" class="form-control"   id="typeNavire" disabled>
+                                          </div>
                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                       <label class="form-label" for="pay-amount">~ IRCS   </label>
-                                       <div class="form-control-wrap">
-                                          <input type="text" class="form-control"  id="ircsNavire"  disabled>
+                                       <div class="form-group">
+                                          <label class="form-label" for="pay-amount">3- IRCS   </label>
+                                          <div class="form-control-wrap">
+                                             <input type="text" class="form-control"  id="ircsNavire"  disabled>
+                                          </div>
                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                       <label class="form-label" for="pay-amount">~ Id certificat d'immatriculation  </label>
-                                       <div class="form-control-wrap">
-                                          <input type="text" class="form-control"   id="certifNavire" disabled>
+                                       <div class="form-group">
+                                          <label class="form-label" for="pay-amount">4- Id certificat d'immatriculation  </label>
+                                          <div class="form-control-wrap">
+                                             <input type="text" class="form-control"   id="certifNavire" disabled>
+                                          </div>
                                        </div>
+                                       <br>
                                     </div>
-
-                                    </div>
-                                   
                                  </div>
                               </div>
                            </div>
                         </div>
-                       
                         <div class="" id="formAjoutNewNAvire"  >
                            <div class="no-passport-details clearfix" style="border-bottom: 3px solid red; margin-top: 15px; margin-bottom: 10px;">
                               <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left" style="position: relative;">
@@ -143,12 +162,20 @@
                                  </div>
                               </div>
                            </div>
+                           <div class="example-alert">
+                              <div class="alert alert-success alert-icon">
+                                 <em class="icon ni ni-check-circle"></em> <strong>Description des champs</strong>
+                                 <p>Objet de l'accès au port : la raison pour laquelle le bateau souhaite accéder à un port.</p>
+                                 <p>Port de la dernière escale : le Port où le bateau a fait escale pour la dernière fois.</p>
+                                 <p>Date d'arrivée estimée : date à laquelle le bateau est susceptible d'arriver au port.</p>
+                              </div>
+                           </div>
                            <div class="nk-kycfm">
                               <div class="row g-4 mb-3">
                                  <div class="col-md-12">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Port d'escale envisagé<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                          <label class="form-label">Port d'escale envisagé<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           {{-- <input type="text" class="form-control form-control-lg"> --}}
@@ -169,7 +196,7 @@
                                  <div class="col-md-12">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Objet de l'accès au port <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                          <label class="form-label">Objet de l'accès au port <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group" >
                                           <select  id="objetAccesPort"  onchange="getObjectPort()" class="form-select js-select2" multiple="multiple" data-placeholder="Veuillez selectionner un objet" required >
@@ -187,11 +214,8 @@
                                     </div>
                                     <div class="form-group mt-2"  id="containAutreObjetAccPort" style="display:none">
                                        <label class="form-label text-danger">~ Autre objet d'accès au port <span class="text-danger"> * </span> </label>
-                                       
                                        <input type="text" class="form-control"   placeholder="Saisir l'objet de votre entrée au port " required>
-                                   
                                     </div>
-                                    
                                  </div>
                                  <!-- .col -->
                               </div>
@@ -200,7 +224,7 @@
                                  <div class="col-md-6">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Date de la dernière escale<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                          <label class="form-label">Date de la dernière escale<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           <input type="text" class="form-control date-picker" id="dateLastEscale" placeholder="YYYY-MM-JJ" name="dateLastEscale" @if (Session::has("step1")) value={{session('step1')['dateLastEscale']}} @endif required>
@@ -211,7 +235,7 @@
                                  <div class="col-md-6">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Port de la dernière escale<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                          <label class="form-label">Port de la dernière escale<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           <select required class="form-select js-select2" data-placeholder="test-ici" name="accueilPort" placeholder="-- Selectionner un port --"  id="portDerniereEscale"   required>
@@ -231,7 +255,7 @@
                                  <div class="col-md-6">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Date d'arrivée estimée<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                          <label class="form-label">Date d'arrivée estimée<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           <input type="text" class="form-control date-picker" name="dateArriveEstim" id="dateArriveEstim" @if (Session::has("step1")) value={{session('step1')['dateArriveEstim']}} @endif  placeholder="YYYY-MM-JJ" required>
@@ -242,7 +266,7 @@
                                  <div class="col-md-6 mt-4 ">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Heure d'arrivée estimée <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                          <label class="form-label">Heure d'arrivée estimée <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           <div class="row g-4">
@@ -289,15 +313,19 @@
                                  <!-- .col -->
                                  <!-- .row -->
                               </div>
-                              <hr style="color:red">
+                              <br>
                               <div class="nk-block-between-md g-4">
                                  <div class="nk-block-head-content">
                                  </div>
                                  <div class="nk-block-head-content">
                                     <div>
+                                       {{-- <a href="#" id="Ajouter-navire" class="btn btn-danger"><em class="icon ni ni-plus"></em> Ajouter un navire</a> --}}
+                                       <a href="javascript:void(0);" onclick="showSpinnerLoadingToGoOnStep2()" class="btn btn-dark" ><span>Suivant</span><em class="icon ni ni-arrow-right"></em></a>
+                                       {{-- 
                                        <li class="order-md-last">
-                                          <input type="submit" class="btn btn-xl text-white" value="Suivant" style="background-color:#066C02"> 
+                                          <input type="submit" class="btn btn-wider btn-primary"value="Suivant" style="background-color:#066C02"> 
                                        </li>
+                                       --}}
                                     </div>
                                     <li>
                                        <div id="loading-svg" style=" display: none;" class="pl-5">
@@ -313,6 +341,14 @@
                   </div>
                </div>
             </div>
+         </div>
+      </div>
+      <div class="justify-center"  >
+         <div id="text-content-loading" style="display:none;">
+            <h3 class="mt-5" id="preparation-text" >suivant ...</h3>
+            <div></div>
+            <div class="spinner-border justify-center"  style="width: 5rem; height: 5rem" role="status"></div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
          </div>
       </div>
    </div>

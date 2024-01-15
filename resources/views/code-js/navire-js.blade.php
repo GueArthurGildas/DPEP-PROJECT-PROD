@@ -1,6 +1,25 @@
 <script>
 
 
+function showSpinnerLoadingToGoOnStep2(){
+
+                    $("#content-step1").css({
+                        "display":"none",
+                    })   
+                    
+                    
+                    $("#text-content-loading").css({
+                            "display":"block",
+                    }) 
+
+                    setTimeout(function () {
+                         submitFormNavirePort();
+                    }, 200); 
+
+}
+
+
+
 $('#btnGoToStep2').click(function(e) {
     e.preventDefault();
    
@@ -31,6 +50,20 @@ $('#btnGoToStep2').click(function(e) {
      }
 
 })
+
+
+/// la fonction qui lancera le formulaire
+function submitFormNavirePort(){
+               
+                // soummettre le formulaire de vente 
+                var form = $('#FormStep1');
+
+                // Soumettez le formulaire
+                form.submit();
+
+}
+
+
 
 //ici je test pour recuperer les elements dans l'objet de la demande
 function getObjectPort(){
@@ -272,6 +305,6 @@ $('#Ajouter-navire').click(function(e) {
                     $("#loading-svg").css({
                         "display": "none"   ,
                     });   
-                }, 450);  
+                }, 350);  
     }
 </script>

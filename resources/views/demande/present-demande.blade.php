@@ -1,43 +1,23 @@
 @extends("layouts.master")
 @section("content")
+
 <div class="row" id="Contain-present-with-image">
-   <div class="col-6  ">
-      <div class="nk-block-between-md g-4">
-         <div class="nk-block-head-content">
-            <h2 class="nk-block-title fw-normal">Avant de commencer </h2>
-            <div class="nk-block-des">
-               <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
-            </div>
-         </div>
-         <div class="nk-block-head-content">
-            <div>
-               {{-- <a href="#" id="btnAddCaptureToCollection" class="btn btn-danger m-1"><em class="icon ni ni-plus"></em>Ajouter </a> --}}
-               {{-- <a href="#" id="Ajouter-navire" class="btn btn-dark m-1"> <em class="icon ni ni-trash-alt"></em> </a> --}}
-            </div>
-            <li>
-               <div id="loading-svg" style=" display: none;" class="pl-5">
-                  <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
-               </div>
-            </li>
-            </ul>
-         </div>
-      </div>
-      <img src="{{asset("images/Work_7.jpg")}}" >
-   </div>
-   <div class="col-6 ">
+   
+   
+      <div class="col-6">
       
-         <div class="card ">
+         <div class="card bg-lighter">
             <div class="card-inner ">
                <div class="card-title-group">
                   <div class="card-title">
-                     <h5 class="title">Les etapes de soummision</h5>
+                     <h5 class="title">Avant de commencer </h5>
                   </div>
                   <div class="card-tools"><a href="#" class="link">Télécharger</a></div>
                </div>
             </div>
             <div class="card-inner">
                <div class="timeline">
-                  <h6 class="timeline-head ">Veuillez suivre les étapes suivantes lors de la soummission de votre demande</h6><br>
+                  <h6 class="timeline-head">Veuillez suivre les étapes suivantes lors de la soummission de votre demande</h6><br>
                   <ul class="timeline-list">
                      <li class="timeline-item">
                         <div class="timeline-status bg-warning"></div>
@@ -111,19 +91,57 @@
 
             </a>
             
-                                                        <form id="goToStep1" action="{{route("home.demandes.naviredemande.index",["newdemande"=>"ok"])}}" method="get" class="d-none">
+                                                        <form id="goToStep1" action="{{route("home.demandes.naviredemande.index")}}" method="get" class="d-none">
                                                             @csrf
+                                                            <input type="text" name="test" value="ok">
                                                         </form> 
 
 
          </div>
      
    </div>
+   
+   
+   
+   
+   <div class="col-6  ">
+      <div class="nk-block-between-md g-4">
+         <div class="nk-block-head-content">
+            <h2 class="nk-block-title fw-normal"></h2>
+            <div class="nk-block-des">
+               {{-- <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p> --}}
+            </div>
+         </div>
+         <div class="nk-block-head-content">
+            <div>
+               {{-- <a href="#" id="btnAddCaptureToCollection" class="btn btn-danger m-1"><em class="icon ni ni-plus"></em>Ajouter </a> --}}
+               {{-- <a href="#" id="Ajouter-navire" class="btn btn-dark m-1"> <em class="icon ni ni-trash-alt"></em> </a> --}}
+            </div>
+            <li>
+               <div id="loading-svg" style=" display: none;" class="pl-5">
+                  <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
+               </div>
+            </li>
+            </ul>
+         </div>
+      </div>
+      <img src="{{asset("images/Work_7.jpg")}}" >
+   </div>
+
 </div>
 
 
-<div class="justify-center"  >
-   <h3  id="contain-only-loading-text" style="display:none;">Préparation ...</h3>
+<div class="justify-center "  >
+   
+   <div id="text-content-loading" style="display:none;">
+      
+         <h3 class="mt-5" id="preparation-text" >Préparation ...</h3>
+         <div></div>
+         <div class="spinner-border justify-center"  style="width: 5rem; height: 5rem" role="status"></div>
+         <br><br><br><br><br><br><br><br><br><br><br><br><br>
+   </div>
+ 
+   
 </div>
 
 

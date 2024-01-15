@@ -40,9 +40,9 @@
                 {{-- <x-main-header/> --}}
             <!-- main header @e -->
             <!-- content @s -->
-            <div class="nk-content nk-content-fluid">
-                <div class="container-xl wide-xl">
-                    <div class="nk-content-inner ">
+            <div class="nk-content nk-content-fluid bg-lighter">
+                <div class="container-xl wide-xl bg-lighter ">
+                    <div class="nk-content-inner bg-lighter ">
                         @yield("content")
                     </div>
                 </div>
