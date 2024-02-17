@@ -44,7 +44,7 @@
                                 <img class="" src="{{asset("images/CI-Logov-2.png")}}" alt="User profile picture">
                                     <li class="dropdown notification-dropdown">
                                        {{-- <a href="#" class="btn btn-round btn-danger">Déconexion</a> --}}
-                                        <a class="btn btn-round btn-danger" href="{{ route('logout') }}"
+                                        <a class="btn btn-round btn-dark" href="{{ route('logout') }}"
                                                             onclick="event.preventDefault();
                                                                             document.getElementById('logout-form').submit();">
                                                            <span>Déconnexion</span> <em class="icon ni ni-signout"></em>

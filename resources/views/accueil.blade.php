@@ -60,6 +60,36 @@
 <!--header Start-->
 <header class="header-with-top">
 
+    <!--header top-->
+    <div class="top-header-area text-white alt-font"  style="background-color:#066C02">
+        <div class="container">
+         
+            <div class="row">
+                <div class="col-6 justify-start">
+               
+
+                    <div class=" text-left mt-3">
+                      MIRAH   | e-Dpep (Demande préalable d'entrée au port)
+                    <div> 
+                    </div>
+                    </div>
+                   
+                </div>
+                <div class="col-6">
+                    <ul class="header-social text-right">
+                        <li><a href="javascript:void(0);" class="facebook-text-hvr"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="javascript:void(0);" class="twitter-text-hvr"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="javascript:void(0);" class="instagram-text-hvr"><i class="fab fa-instagram"></i></a></li>
+
+                        <li> <img src="{{asset("images/CI-Logov-2.png")}}" alt="logo"></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
  <!--Navigation-->
     <nav class="navbar navbar-expand-lg navbar-static">
         <div class="container">
@@ -100,36 +130,18 @@
         </div>
     </nav>
 
+ 
 
     <!--header top-->
-    <div class="top-header-area text-white alt-font" style="background-color:#df6d14">
+   {{-- <div class="top-header-area text-white alt-font"  style="background-color:#df6d14">
         <div class="container">
          
             <div class="row">
-                <div class="col-6 justify-start">
-               
-
-                    <div class=" text-left mt-3">
-                      MIRAH   | e-Dpep (Demande préalable d'entrée au port)
-                    <div> 
-                    </div>
-                    </div>
-                   
-                </div>
-                <div class="col-6">
-                    <ul class="header-social text-right">
-                        <li><a href="javascript:void(0);" class="facebook-text-hvr"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="javascript:void(0);" class="twitter-text-hvr"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="javascript:void(0);" class="instagram-text-hvr"><i class="fab fa-instagram"></i></a></li>
-                        {{-- <li><a href="javascript:void(0);" class="pinterest-text-hvr"><i class="fab fa-pinterest-p"></i></a></li> --}}
-                        <li> <img src="{{asset("images/CI-Logov-2.png")}}" alt="logo"></li>
-
-                    </ul>
-                </div>
+            
             </div>
         </div>
 
-    </div>
+    </div> --}}
 
    
 </header>

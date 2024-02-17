@@ -5,28 +5,45 @@
    <div class="container-xl wide-lg">
       <div class="nk-content-inner">
          <div class="nk-content-body">
+          <div class="nk-block-head nk-block-head-lg">
+                           <div class="nk-block-head-sub"><span></span></div>
+                           <div class="nk-block-between-md g-4">
+                              <div class="nk-block-head-content">
+                                 <h2 class="nk-block-title fw-normal">Bienvenue, {{Auth()->user()->name}} ! 👋</h2>
+                                 <div class="nk-block-des">
+                                    <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
+                                 </div>
+                              </div>
+                              <div class="nk-block-head-content">
+                                 <ul class="nk-block-tools gx-3">
+                                    <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn-secondary"  ><span>Mon espace</span></a></li>
+                                    <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn-secondary" style="background-color:#066C02"><span>Nouvelle Demande</span></a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
             <p></p>
             <div class="nk-block">
                <div class="row g-gs">
                   <div class="col-lg-4 col-xl-4 col-xxl-3 ">
                      <div class="card card-bordered">
                         <div class="card-inner-group">
-                           <div class="card-inner ">
+                           {{-- <div class="card-inner ">
                               <div class="user-card user-card-s2">
-                                 {{-- 
+                                 
                                  <div class="user-avatar lg bg-light"></div>
-                                 --}}
+                                
                                  <img src={{asset("images/icons8-utilisateur-100.png")}} alt="">
                                  <div class="user-info">
-                                    {{-- 
+                                    
                                     <div class="badge bg-light rounded-pill ucap">Platinam</div>
-                                    --}}
+                                   
                                     <h5>{{Auth()->user()->name}} </h5>
                                     <span class="sub-text">{{Auth()->user()->email}}</span>
                                     <p>{{userRole()}}</p>
                                  </div>
                               </div>
-                           </div>
+                           </div> --}}
                            {{-- 
                            <div class="card-inner card-inner-sm">
                               <ul class="btn-toolbar justify-center gx-1">
@@ -108,23 +125,7 @@
                            </div>
                         </div>
                         --}}
-                        <div class="nk-block-head nk-block-head-lg">
-                           <div class="nk-block-head-sub"><span></span></div>
-                           <div class="nk-block-between-md g-4">
-                              <div class="nk-block-head-content">
-                                 <h2 class="nk-block-title fw-normal">Bienvenue,</h2>
-                                 <h2 class="nk-block-title fw-normal"> {{Auth()->user()->name}} ! 👋</h2>
-                                 <div class="nk-block-des">
-                                    <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
-                                 </div>
-                              </div>
-                              <div class="nk-block-head-content">
-                                 <ul class="nk-block-tools gx-3">
-                                    <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn btn-warning  "><span>Nouvelle Demande</span></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
+                       
                         <!-- .nk-block-head -->
                         {{-- <hr class=""> --}}
                         <!-- nk-block-head -->

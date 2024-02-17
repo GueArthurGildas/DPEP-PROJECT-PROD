@@ -64,7 +64,7 @@ Route::group([
         Route::post('/step-1/traitement', [demandeController::class,'traitStep1'])->name("traitStep1.index"); //home.demandes.traitStep1.index
         Route::get('/demande/navire-for-demande',[demandeController::class,'getNavieForDemandeFunct'])->name("navirefordemande.index"); // home.demandes.navirefordemande.index
 
-        Route::get('/step-2', [demandeController::class,'affCaptuDemande'])->name("caputredemande.index"); //home.demandes.caputredemande.index
+        Route::get('/step-B', [demandeController::class,'affCaptuDemande'])->name("caputredemande.index"); //home.demandes.caputredemande.index
         Route::get('/step-2/traitement', [demandeController::class,'traitStep2'])->name("traitStep2.index"); //home.demandes.traitStep2.index
 
 
@@ -73,11 +73,11 @@ Route::group([
         Route::get('/demande/capture-delete', [demandeController::class,'CaptureDeleteFunct'])->name("capturedelete.index"); // home.demandes.capturedelete.index
        
         
-        Route::get('/step-3', [demandeController::class,'affAutoPecheDemande'])->name("autopechedemande.index"); //home.demandes.autopechedemande.index
+        Route::get('/step-C', [demandeController::class,'affAutoPecheDemande'])->name("autopechedemande.index"); //home.demandes.autopechedemande.index
         Route::get('/demande/peche', [demandeController::class,'PecheFunct'])->name("peche.index"); // home.demandes.peche.index
         Route::get('/demande/peche-delete', [demandeController::class,'PecheDeleteFunct'])->name("pechedelete.index"); // home.demandes.pechedelete.index
 
-        Route::get('/step-4', [demandeController::class,'affuploadFileDemande'])->name("uploadfiledemande.index"); //home.demandes.uploadfiledemande.index
+        Route::get('/step-D', [demandeController::class,'affuploadFileDemande'])->name("uploadfiledemande.index"); //home.demandes.uploadfiledemande.index
         Route::get('/step-4/traitement', [demandeController::class,'traitStep4'])->name("traitStep4.index"); //home.demandes.traitStep4.index
 
         Route::get('/recape-demande', [demandeController::class,'affRecapDemande'])->name("recapedemande.index"); //home.demandes.recapedemande.index

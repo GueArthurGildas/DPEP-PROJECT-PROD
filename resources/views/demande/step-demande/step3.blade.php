@@ -84,13 +84,13 @@
                            <div class="row g-gs  mt-1">
                               <div class="col-lg-6">
                                  <div class="form-group">
-                                    <label class="form-label" for="full-name">Identificateur <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                    <label class="form-label" for="full-name">Identificateur <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                     <div class="form-control-wrap">
                                        <input type="text" class="form-control" id="Identificateur">
                                     </div>
                                  </div>
                                  <div class="form-group">
-                                    <label class="form-label" for="email-address">Delivré Par <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                    <label class="form-label" for="email-address">Delivré Par <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                     <div class="form-control-wrap">
                                        <input type="text" class="form-control" id="devlivrePar">
                                     </div>
@@ -98,7 +98,7 @@
                                  <div class="row mb-3">
                                     <div class="col-6">
                                        <div class="form-group">
-                                          <label class="form-label" for="pay-amount">Date Emission <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                          <label class="form-label" for="pay-amount">Date Emission <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                           <div class="form-control-wrap">
                                              <div class="form-icon form-icon-right">
                                                 <em class="icon ni ni-calendar-alt"></em>
@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="col-6">
                                        <div class="form-group">
-                                          <label class="form-label" for="pay-amount">Date Expiration <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                          <label class="form-label" for="pay-amount">Date Expiration <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                           <div class="form-control-wrap">
                                              <div class="form-icon form-icon-right">
                                                 <em class="icon ni ni-calendar-alt"></em>
@@ -126,7 +126,7 @@
                               </div>
                               <div class="col-lg-6">
                                  <div class="form-group">
-                                    <label class="form-label" for="email-address">Zone de pêche <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                    <label class="form-label" for="email-address">Zone de pêche <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                     <div class="form-control-wrap">
                                        <select class="form-select js-select2" data-search="on" id="zondPeche">
                                           <option value="default_option">Default Option</option>
@@ -136,7 +136,7 @@
                                     </div>
                                  </div>
                                  <div class="form-group">
-                                    <label class="form-label" for="phone-no">Espèce <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                    <label class="form-label" for="phone-no">Espèce <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                     <div class="form-control-wrap">
                                        <select class="form-select js-select2" data-search="on" id="especeForPeche">
                                           <option value="option_select_name">Option select name  </option>
@@ -144,7 +144,7 @@
                                     </div>
                                  </div>
                                  <div class="form-group">
-                                    <label class="form-label" for="phone-no">Engin <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                    <label class="form-label" for="phone-no">Engin <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                     <div class="form-control-wrap">
                                        <select class="form-select js-select2" data-search="on" id="engin">
                                           <option value="default_option">Default Option</option>

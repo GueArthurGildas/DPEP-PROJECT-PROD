@@ -6,16 +6,26 @@
         //// ici la fonction qui supprime la capture depuis la base deonnées
         function myDelete(element) {
             // Récupérer l'élément parent de l'élément cliqué
-            var parentTr = $(element).closest('tr');
+            //var parentTr = $(element).closest('div').attr("content-capture-added");
+            //var refArticle = $(e).closest('tr').find('td[data-ref]')
 
-            // Récupérer l'ID de l'élément parent
+            //var parentTr = $(element).closest('div').attr("content-capture-added");
+
+            var parentTr = $(element).parent().parent();
+            
+
+            //Récupérer l'ID de l'élément parent
             //var captureId = parentTr.find('.text-white').text();
             var captureId = $(element).closest('a').attr("data-id");
             //console.log(captureId);
 
+            
 
             // recuperer l'Id de la demande en cours de traitement
              let demandeId = $('#demandeId').text();
+
+
+
 
             // remplir la valeur data
              var data = {
@@ -28,7 +38,7 @@
                 type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
                 data: data,
                 success: function (response) {
-                   parentTr.html('');
+                   parentTr.remove();
                    console.log(response);          
                 },
                 error: function (error) {
@@ -96,6 +106,21 @@ $(document).ready(function () {
                    $('#qteBord').val("");
                    $('#qteDebarque').val("");
                   
+                    //// construire le formr qui recevra 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                    toastr.success('Have fun storming the castle!', 'Miracle Max Says')
                 },
                 error: function (error) {

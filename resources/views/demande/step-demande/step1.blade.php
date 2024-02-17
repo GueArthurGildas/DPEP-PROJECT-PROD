@@ -33,10 +33,10 @@
                                  <div>
                                     <ul class="nk-block-tools g-3">
                                        <li> 
-                                          <a href="#" id="Ajouter-navire" class="btn btn-dark"><em class="icon ni ni-plus"></em> Ajouter un navire</a>
+                                          <a href="#" id="Ajouter-navire" class="btn btn-dark" ><em class="icon ni ni-plus"></em> Ajouter un navire</a>
                                        </li>
                                        <li> 
-                                          <a href="{{route("home.demandes.naviredemande.index")}}" class="btn btn-dark"    style="background-color:#066C02"><em class="icon ni ni-home"></em><span>Mes demandes</span></a>
+                                          <a href="{{route("home.demandes.naviredemande.index")}}" class="btn btn-secondary"  ><em class="icon ni ni-home"></em><span>Mes demandes</span></a>
                                        </li>
                                     </ul>
                                     {{-- 
@@ -64,23 +64,16 @@
                            </div>
                         </div>
                         <!-- .nk-block-head -->
-                        @if ($errors->any())
-                        @foreach ($errors->all() as $error )
-                        <div class="alert alert-warning alert-icon">
-                           <em class="icon ni ni-cross-circle"></em> <strong>Attention :  </strong> {{$error}}
-                        </div>
-                        <p class="text-danger"></p>
-                        <hr>
-                        @endforeach
-                        @endif
+                        
+                       
                         <hr>
                         <form action="{{route("home.demandes.traitStep1.index")}}" id="FormStep1" method="post">
                         @csrf
                         <div class="row g-4 mb-3">
                            <div class="col-12">
-                              <div class="no-passport-details clearfix" style="border-bottom: 3px solid red; margin-top: 15px; margin-bottom: 10px;">
+                              <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
                                  <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left" style="position: relative;">
-                                    <div class="number-square">
+                                    <div class="number-square" style="background-color:green">
                                        A 
                                     </div>
                                  </div>
@@ -105,11 +98,12 @@
                                     </div>
                                     --}}
                                     <div class="form-group" >
-                                       <label class="form-label text-danger">
-                                       <em class="icon ni ni-search"></em> Selectionner le Navire 
+                                       <label class="form-label">
+                                       <em class="icon ni ni-search"></em> Selectionner le Navire <span class="text-danger"> * </span>
                                        </label>
                                        </label>
-                                       <input type="text" name="navire-selected"  id="takeIdNavireSelected" @if($navireStep1) value={{$navireStep1->id}} @endif class=""  style="display:none" required >
+                                       
+                                       <input type="text" name="navire-selected"  id="takeIdNavireSelected" value="@if(Session::has("step1")) {{session('navireSelectedData')['id']}} @else {{old('navire-selected')}} @endif"  class=""  style="display:none" required >
                                        <div class="form-control-wrap field-navire" >
                                           <select class="form-select js-select2 "    data-search="on" id="navire-selected" onchange="getSelectNavire()" data-placeholder="Selectionner un navire"  >
                                              <option value="default_option"><em class="icon ni ni-search"></em> Selectionner un navire </option>
@@ -117,35 +111,39 @@
                                              <option value="{{$i->id}}">{{$i->Nom_Navire}} |  {{$i->Etat_Pavillon}}    </option>
                                              @endforeach 
                                           </select>
+                                           @if ($errors->hasAny("navire-selected"))
+                                                 <p class="text-danger"> Veuillez senlectionner un navire *</p>
+                                           @endif
                                        </div>
                                     </div>
+                                    
                                     {{-- ici le loading svg  --}}
                                     <div id="loading-svg" style=" display: none;">
                                        <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
                                     </div>
-                                    <div class="" id="blockToShowNavireDetailSelected" style="display:none" >
+                                    <div class="" id="blockToShowNavireDetailSelected"  >
                                        <div class="form-group">
                                           <label class="form-label" for="pay-amount">1- Etat du pavillon  </label>
                                           <div class="form-control-wrap">
-                                             <input type="text" class="form-control"   id="etatPavillon"  disabled>
+                                             <input type="text" class="form-control "   id="etatPavillon"  value="@if(Session::has("step1")) {{session('navireSelectedData')['Etat_Pavillon']}} @endif"  disabled>
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="form-label" for="pay-amount">2- Type de Navire  </label>
                                           <div class="form-control-wrap">
-                                             <input type="text" class="form-control"   id="typeNavire" disabled>
+                                             <input type="text" class="form-control "   id="typeNavire" name="typeNavire" value="@if(Session::has("step1")) {{session('navireSelectedData')['Type_Navire']}} @else {{old('typeNavire')}}  @endif" disabled>
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="form-label" for="pay-amount">3- IRCS   </label>
                                           <div class="form-control-wrap">
-                                             <input type="text" class="form-control"  id="ircsNavire"  disabled>
+                                             <input type="text" class="form-control "  id="ircsNavire"  value="@if(Session::has("step1")) {{session('navireSelectedData')['Num_IRCS']}} @endif" disabled>
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="form-label" for="pay-amount">4- Id certificat d'immatriculation  </label>
                                           <div class="form-control-wrap">
-                                             <input type="text" class="form-control"   id="certifNavire" disabled>
+                                             <input type="text" class="form-control "   id="certifNavire"  value="@if(Session::has("step1")) {{session('navireSelectedData')['Id_Certificat_Immat']}} @endif" disabled>
                                           </div>
                                        </div>
                                        <br>
@@ -155,9 +153,9 @@
                            </div>
                         </div>
                         <div class="" id="formAjoutNewNAvire"  >
-                           <div class="no-passport-details clearfix" style="border-bottom: 3px solid red; margin-top: 15px; margin-bottom: 10px;">
+                           <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
                               <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left" style="position: relative;">
-                                 <div class="number-square">
+                                 <div class="number-square" style="background-color:green" >
                                     B 
                                  </div>
                               </div>
@@ -165,8 +163,8 @@
                            <div class="example-alert">
                               <div class="alert alert-success alert-icon">
                                  <em class="icon ni ni-check-circle"></em> <strong>Description des champs</strong>
-                                 <p>Objet de l'accès au port : la raison pour laquelle le bateau souhaite accéder à un port.</p>
                                  <p>Port de la dernière escale : le Port où le bateau a fait escale pour la dernière fois.</p>
+                                 <p>Objet de l'accès au port : la raison pour laquelle le bateau souhaite accéder à un port.</p>
                                  <p>Date d'arrivée estimée : date à laquelle le bateau est susceptible d'arriver au port.</p>
                               </div>
                            </div>
@@ -180,12 +178,16 @@
                                        <div class="form-control-group">
                                           {{-- <input type="text" class="form-control form-control-lg"> --}}
                                           <select id="pays"  class="form-select-lg js-select2 form-control form-control-lg"  name="portEscalEnvisage" data-placeholder="Selectionner le pays" required>
+                                             <option value="@if(Session::has("step1")) {{session('step1')['portEscalEnvisage']}} @else {{old('portEscalEnvisage')}}  @endif">@if(Session::has("step1")) {{session('step1')['portEscalEnvisage']}} @else {{old('portEscalEnvisage')}}  @endif</option> 
                                              <option value="Abidjan" >Abidjan</option>
                                              <option value="San-Pedro">San-Pedro</option>
                                              {{-- 
                                              <option value="option_select_name"></option>
                                              --}}
                                           </select>
+                                          @if ($errors->hasAny("portEscalEnvisage"))
+                                                 <p class="text-danger"> Le port d'escale envisgé est réquis *</p>
+                                          @endif
                                        </div>
                                     </div>
                                  </div>
@@ -199,16 +201,17 @@
                                           <label class="form-label">Objet de l'accès au port <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group" >
-                                          <select  id="objetAccesPort"  onchange="getObjectPort()" class="form-select js-select2" multiple="multiple" data-placeholder="Veuillez selectionner un objet" required >
-                                             {{-- 
-                                             <option value="default_option">Default Option</option>
-                                             --}}
+                                          <select  id="objetAccesPort"  onchange="getObjectPort()" class="form-select js-select2" multiple="multiple" name='testValue' data-placeholder="@if(Session::has("step1")) {{session('step1')['objetAccesPort']}}   @endif" value=" " required >
+                                             
                                              <option value="-Ravitaillement">Ravitaillement</option>
                                              <option value="-Debarquement">Débarquement</option>
                                              <option value="-Transbordement">Transbordement</option>
                                              <option value="-Escale Technique">Escale Technique</option>
                                              <option value="-Autre">Autre </option>
                                           </select>
+                                           @if ($errors->hasAny("objetAccesPort"))
+                                                 <p class="text-danger"> Veuillez senlectionner l'objet de votre accès au port *</p>
+                                           @endif
                                           {{-- <small class="text-primary">Veuillez cliquer ici si vous vloulez ajouter un motif d'entrée au port</small> --}}
                                        </div>
                                     </div>
@@ -227,8 +230,11 @@
                                           <label class="form-label">Date de la dernière escale<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
-                                          <input type="text" class="form-control date-picker" id="dateLastEscale" placeholder="YYYY-MM-JJ" name="dateLastEscale" @if (Session::has("step1")) value={{session('step1')['dateLastEscale']}} @endif required>
+                                          <input type="text" class="form-control date-picker" id="dateLastEscale" placeholder="YYYY-MM-JJ" name="dateLastEscale"  value="@if(Session::has("step1")) {{session('step1')['dateLastEscale']}} @else {{old('dateArriveEstim')}}  @endif" required>
                                        </div>
+                                        @if ($errors->hasAny("dateLastEscale"))
+                                                 <p class="text-danger"> date obligatoire *</p>
+                                        @endif
                                     </div>
                                  </div>
                                  <!-- .col -->
@@ -238,13 +244,18 @@
                                           <label class="form-label">Port de la dernière escale<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
-                                          <select required class="form-select js-select2" data-placeholder="test-ici" name="accueilPort" placeholder="-- Selectionner un port --"  id="portDerniereEscale"   required>
+                                          <select required class="form-select js-select2" data-placeholder="" name="PortDernEscal" value="@if(Session::has("step1")) {{session('step1')['PortDernEscal']}} @else {{old('PortDernEscal')}}  @endif" placeholder="-- Selectionner un port --"  id="portDerniereEscale"   required>
                                              {{-- @if (Session::has("step1")) 
                                              <option value={{session('step1')['accueilPort']}}>{{session('step1')['accueilPort']}}</option>
                                              @endif  --}}
+                                             <option value="@if(Session::has("step1")) {{session('step1')['PortDernEscal']}} @else {{old('PortDernEscal')}}  @endif">@if(Session::has("step1")) {{session('step1')['PortDernEscal']}} @else {{old('PortDernEscal')}}  @endif</option> 
+                                             {{-- <option value="" ></option> --}}
                                              <option value="Option-1" >Option-1</option>
                                              <option value="Option-2">Option-2</option>
                                           </select>
+                                          @if ($errors->hasAny("PortDernEscal"))
+                                                 <p class="text-danger"> Le port de la dernière escale est obligatoire *</p>
+                                          @endif
                                        </div>
                                     </div>
                                  </div>
@@ -258,8 +269,11 @@
                                           <label class="form-label">Date d'arrivée estimée<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
-                                          <input type="text" class="form-control date-picker" name="dateArriveEstim" id="dateArriveEstim" @if (Session::has("step1")) value={{session('step1')['dateArriveEstim']}} @endif  placeholder="YYYY-MM-JJ" required>
+                                          <input type="text" class="form-control date-picker" name="dateArriveEstim" id="dateArriveEstim"  value="@if(Session::has("step1")) {{session('step1')['dateArriveEstim']}} @else {{old('dateArriveEstim')}}  @endif"  placeholder="YYYY-MM-JJ" required>
                                        </div>
+                                       @if ($errors->hasAny("dateArriveEstim"))
+                                                 <p class="text-danger"> date obligatoire *</p>
+                                        @endif
                                     </div>
                                  </div>
                                  <!-- .col -->
@@ -309,7 +323,7 @@
                                     </div>
                                  </div>
                                  {{-- ici l'element qui enregistre reelement la valeur de l'objet à envoyer --}}
-                                 <input type="text" id="getObjectAccessPort" name="objetAccesPort" class=""  style="display:none">
+                                 <input type="text" id="getObjectAccessPort" name="objetAccesPort"  value="@if(Session::has("step1")) {{session('step1')['objetAccesPort']}} @else {{old('objetAccesPort')}}  @endif" class=""  >
                                  <!-- .col -->
                                  <!-- .row -->
                               </div>
@@ -320,7 +334,7 @@
                                  <div class="nk-block-head-content">
                                     <div>
                                        {{-- <a href="#" id="Ajouter-navire" class="btn btn-danger"><em class="icon ni ni-plus"></em> Ajouter un navire</a> --}}
-                                       <a href="javascript:void(0);" onclick="showSpinnerLoadingToGoOnStep2()" class="btn btn-dark" ><span>Suivant</span><em class="icon ni ni-arrow-right"></em></a>
+                                       <a href="javascript:void(0);" onclick="showSpinnerLoadingToGoOnStep2()" class="btn btn-secondary" style="background-color:#066C02"><span>Suivant</span><em class="icon ni ni-arrow-right"></em></a>
                                        {{-- 
                                        <li class="order-md-last">
                                           <input type="submit" class="btn btn-wider btn-primary"value="Suivant" style="background-color:#066C02"> 

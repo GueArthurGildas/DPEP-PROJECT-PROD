@@ -6,7 +6,7 @@
                                     <div class="sp-plan-info card-inner">
                                        <div class="row gx-0 gy-3">
                                           <div class="sp-plan-name">
-                                             <h5 class="title">DPEP-AYX-014 </a><span class="badge bg-warning">En cours</span></h5>
+                                             <h5 class="title">DPEP-AYX-014 </a><span class="badge" style="background-color:#df6d14">En cours</span></h5>
                                              {{-- <p>ID: <span class="text-base">100394949</span> </p> --}}
                                              <p>Contact : <strong>info@e-Dpep.com</strong> </p>
                                           </div>

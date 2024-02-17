@@ -1,5 +1,6 @@
 @extends("layouts.master")
 @section("content")
+
 <div class="nk-content nk-content-lg nk-content-fluid">
    <div class="container-xl wide-lg">
       <div class="example-alert">
@@ -98,22 +99,22 @@
                            </div>
                         </div>
                         <div class="" id="formAjoutNewNAvire"  >
-                           <div class="no-passport-details clearfix" style="border-bottom: 3px solid red; margin-top: 15px; margin-bottom: 10px;">
+                           <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
                               <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left" style="position: relative;">
-                                 <div class="number-square">
+                                 <div class="number-square" style="background-color:green">
                                     A 
                                  </div>
                               </div>
                            </div>
                            <div class="justify-end">
-                              <a href="#" id="btnAddCaptureToCollection" class="btn btn-danger m-1"><em class="icon ni ni-plus"></em>Ajouter </a>
+                              <a href="#" id="btnAddCaptureToCollection" class="btn btn-dark m-1"><em class="icon ni ni-plus"></em>Ajouter </a>
                               {{-- <a href="#" id="Ajouter-navire" class="btn btn-dark m-1"> <em class="icon ni ni-trash-alt"></em> </a> --}}
                            </div>
                            <div class="nk-kycfm">
                               <div class="row g-4 mb-3">
                                  <div class="col-md-6">
                                     <div class="form-group">
-                                       <label class="form-label" for="full-name">Espèce  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                       <label class="form-label" for="full-name">Espèce  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        <div class="form-control-wrap">
                                           <select required class="form-select js-select2 " data-search="on" data-placeholder="Select  options" name="espece "   id="espece" required>
                                              <option ></option>
@@ -126,7 +127,7 @@
                                  <!-- .col -->
                                  <div class="col-md-6">
                                     <div class="form-group">
-                                       <label class="form-label" for="pay-amount">Qté à Bord  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                       <label class="form-label" for="pay-amount">Qté à Bord  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        <div class="form-control-wrap">
                                           <input type="number" class="form-control"  name="qteBord" id="qteBord"  placeholder="Saisir  la quantités à bord pour l'espèce choisie " required>
                                        </div>
@@ -138,7 +139,7 @@
                               <div class="row g-4 mb-3">
                                  <div class="col-md-6">
                                     <div class="form-group">
-                                       <label class="form-label" for="phone-no">Zone de capture  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                       <label class="form-label" for="phone-no">Zone de capture  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        <div class="form-control-wrap">
                                           <select required class="form-select js-select2" data-placeholder="Select  options" name="zoneCapture " id="zoneCapture" placeholder="-- Selectionner un port --" required>
                                              <option ></option>
@@ -151,7 +152,7 @@
                                  <!-- .col -->
                                  <div class="col-md-6">
                                     <div class="form-group">
-                                       <label class="form-label" for="pay-amount">Qté à Débarquer  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                       <label class="form-label" for="pay-amount">Qté à Débarquer  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        <div class="form-control-wrap">
                                           <input type="number" class="form-control" name="qteDebarque" id="qteDebarque" placeholder="Saisir  la quantités à debarquer pour l'espèce choisie " required>
                                        </div>
@@ -162,7 +163,7 @@
                               <!-- .row -->
                               <div class="row g-4">
                                  <div class="form-group">
-                                    <label class="form-label" for="email-address">Produit  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici ">[?]</strong></label>
+                                    <label class="form-label" for="email-address">Produit  <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                     <div class="form-control-wrap">
                                        <select required class="form-select js-select2" data-placeholder="Select  options" name=" produit" id="produit" placeholder="-- Selectionner un port --" required>
                                           <option ></option>
@@ -175,53 +176,85 @@
                               <!-- .row -->
                            </div>
                            <hr>
-                           <div class="row ">
-                              <table class="table table-ulogs">
-                                 <thead class="table-light" style="backgr">
-                                    <tr>
-                                       <th class="tb-col-os"><span class="overline-title">Espèce <span class="d-sm-none">/ IP</span></span></th>
-                                       <th class="tb-col-ip"><span class="overline-title">Produit</span></th>
-                                       <th class="tb-col-ip"><span class="overline-title">Zone de capture</span></th>
-                                       <th class="tb-col-ip"><span class="overline-title">Qté à Bord </span></th>
-                                       <th class="tb-col-time"><span class="overline-title">Qté à Débarquer</span></th>
-                                       <th class="tb-col-action"><span class="overline-title">&nbsp;</span></th>
-                                    </tr>
-                                 </thead>
-                                 <tbody id="iciAddRetourAcptureOk">
-                                    @if ($lesCaptures)
-                                    @foreach ($lesCaptures as $myCapture)
-                                    <tr>
-                                       <span class="text-white" >{{$myCapture->id}}</span>
-                                       <td class="tb-col-os">{{$myCapture->espece}}</td>
-                                       <td class="tb-col-ip"><span class="sub-text">{{$myCapture->Produit}}</span></td>
-                                       <td class="tb-col-ip"><span class="sub-text">{{$myCapture->zone_capture}}</span></td>
-                                       <td class="tb-col-ip"><span class="sub-text">{{$myCapture->qte_a_bord}}</span></td>
-                                       <td class="tb-col-time"><span class="sub-text"><span class="d-none d-sm-inline-block">{{$myCapture->qte_debarque}}</span></span></td>
-                                       <td class="tb-col-action"><a href="javascript:void(0);" data-id="{{$myCapture->id}}" onclick="myDelete(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                    </tr>
-                                    @endforeach
-                                    @endif
-                                    {{-- 
-                                    <tr>
-                                       <td class="tb-col-os">Mozilla on Window</td>
-                                       <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
-                                       <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
-                                       <td class="tb-col-ip"><span class="sub-text">86.188.154.225</span></td>
-                                       <td class="tb-col-time"><span class="sub-text">Nov 20, 2019 <span class="d-none d-sm-inline-block">10:34 PM</span></span></td>
-                                       <td class="tb-col-action"><a href="javascript:void(0);" onclick="myDelete(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                                    </tr>
-                                    --}}
-                                 </tbody>
-                              </table>
+                           <div class="row " id="iciAddRetourAcptureOk">
+                                       @foreach ( $lesCaptures as $myCapture ) 
+                                             <div class="content-capture-added">
+   <span class="text-white" >{{$myCapture->id}}</span>
+   <div class="ml-2 mr-2" id="testDelete">
+      <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
+         <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left ml-3 mr-3" style="position: relative;">
+         </div>
+      </div>
+   </div>
+   <div class="justify-end">
+      <a href="javascript:void(0);" data-id="{{$myCapture->id}}" onclick="myDelete(this)" class="btn btn-dark m-1">[X]</a>
+   </div>
+   <div class="nk-kycfm">
+      <div class="row g-4 mb-3">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="form-label" for="full-name">Espèce  <span class="text-danger"></label>
+               <div class="form-control-wrap">
+                  <input type="number" class="form-control" placeholder="{{$myCapture->espece}}" disabled>
+               </div>
+            </div>
+         </div>
+         <!-- .col -->
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="form-label" for="pay-amount">Qté à Bord  <span class="text-danger"></label>
+               <div class="form-control-wrap">
+                  <input type="number" class="form-control" placeholder="{{$myCapture->qte_a_bord}}"   disabled>
+               </div>
+            </div>
+         </div>
+         <!-- .col -->
+      </div>
+      <!-- .row -->
+      <div class="row g-4 mb-3">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="form-label" for="phone-no">Zone de capture  <span class="text-danger"></label>
+               <div class="form-control-wrap">
+                  <input type="number" class="form-control" placeholder="{{$myCapture->zone_capture}}"   disabled>
+               </div>
+            </div>
+         </div>
+         <!-- .col -->
+         <div class="col-md-6">
+            <div class="form-group">
+               <label class="form-label" for="pay-amount">Qté à Débarquer  <span class="text-danger"></label>
+               <div class="form-control-wrap">
+                  <input type="number" class="form-control" placeholder="{{$myCapture->qte_debarque}}"   disabled>
+               </div>
+            </div>
+         </div>
+         <!-- .col -->
+      </div>
+      <!-- .row -->
+      <div class="row g-4">
+         <div class="form-group">
+            <label class="form-label" for="email-address">Produit  <span class="text-danger"></label>
+            <div class="form-control-wrap">
+               <input type="number" class="form-control" placeholder="{{$myCapture->Produit}}"   disabled>
+            </div>
+         </div>
+      </div>
+      <!-- .row -->
+   </div>
+   <hr>
+</div>
+                                       @endforeach
+                                
                            </div>
                      </form>
-                     <hr style="color:red">
+                    
                      <div class="nk-block-between-md g-4">
                      <div class="nk-block-head-content">
                      </div>
                      <div class="nk-block-head-content">
                      <div>
-                     <li class="order-md-last"><a href="{{route("home.demandes.traitStep2.index")}}" class="btn btn-xl btn-white btn-dim btn-outline-danger"><span>Etape 3</span></a></li>
+                     <li class="order-md-last"><a href="{{route("home.demandes.traitStep2.index")}}" class="btn btn-secondary" style="background-color:#066C02" ><span>Suivant</span></a></li>
                      </div>
                      <li>
                      <div id="loading-svg" style=" display: none;" class="pl-5">

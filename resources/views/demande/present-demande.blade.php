@@ -79,7 +79,7 @@
 
             </div> 
              
-            <a href="javascript:void(0);"  onclick="affSpinerInsideBtnCommencer()" class="btn btn-xl btn-warning justify-center">
+            <a href="javascript:void(0);"  onclick="affSpinerInsideBtnCommencer()" class="btn btn-xl btn-dark justify-center" >
 
              <div class="spinner-border" id="loadingForButton" style="width: 3rem; height: 3rem; display:none" role="status">
                
@@ -92,7 +92,7 @@
             </a>
             
                                                         <form id="goToStep1" action="{{route("home.demandes.naviredemande.index")}}" method="get" class="d-none">
-                                                            @csrf
+                                                          
                                                             <input type="text" name="test" value="ok">
                                                         </form> 
 
