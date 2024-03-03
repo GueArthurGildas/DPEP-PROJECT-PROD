@@ -42,6 +42,15 @@
 
     <!-- Style Sheet -->
     <link rel="stylesheet" href="{{asset("corporate/css/style.css")}}">
+
+
+    <!-- Style Sheet -->
+    <link href="{{asset("creative-designer/css/line-awesome.min.css")}}" rel="stylesheet">
+    <link href="{{asset("creative-designer/css/style.css")}}" rel="stylesheet">
+    <link href="{{asset("creative-designer/css/custom.css")}}" rel="stylesheet">
+
+
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
@@ -61,7 +70,7 @@
 <header class="header-with-top">
 
     <!--header top-->
-    <div class="top-header-area text-white alt-font"  style="background-color:#066C02">
+    <div class="top-header-area text-white alt-font" style="background-color:#df6d14">
         <div class="container">
          
             <div class="row">
@@ -89,6 +98,8 @@
         </div>
 
     </div>
+
+    
 
  <!--Navigation-->
     <nav class="navbar navbar-expand-lg navbar-static">
@@ -346,6 +357,62 @@
     
 </section>
 <!--About End--> --}}
+
+
+<!-- START BANNER -->
+<section class="section slide1 p-0 bg-white" id="home" >
+    <div class="slider-area" id="slider-area">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 col-lg-4 offset-lg-2 text-md-center text-lg-left wow fadeInLeft content-margin" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                    <div class="area-heading text-center text-lg-left">
+                        <h1 class="main-font text-white font-weight-bold mb-4 text-dark ">Hi I’m <span class="d-block text-white" style="background-color:#df6d14">Morris Douglas</span></h1>
+                        <p class="text-white alt-font mb-5 text-dark">Donec quis nunc mollis, tincidunt mi vel, pellentesque arcu. Nam nec tristique ex, vitae posuere enim. Nunc vulputate metus id ex pretium fermentum. </p>
+                        {{-- <a href="#portfolio-area" class="scroll btn btn-medium btn-rounded btn-trans-dark mb-5 text-dark">My Work</a> --}}
+
+                        <a href="#" class="scroll btn btn-medium btn-rounded btn-trans-white mt-2" style="background-color:#df6d14">Learn More</a>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 image-order wow fadeInRight" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                    <div class="slider-image">
+                        <img src="creative-designer/images/slider-img.png" alt="Slider-Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Author Skills -->
+        <div class="author-skills " style="background-color:#df6d14">
+            <div class="container">
+                <div class="row text-center text-lg-left">
+                    <!-- First Skill -->
+                    <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <span class="about-icon"><a href="#"><i class="la la-laptop"></i></a></span>
+                        <h4 class="small-heading main-font">Web Design</h4>
+                        <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
+                    </div>
+                    <!-- Second Skill -->
+                    <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
+                        <span class="about-icon"><a href="#"><i class="las la-pen-fancy"></i></a></span>
+                        <h4 class="small-heading main-font">Logo Designs</h4>
+                        <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
+                    </div>
+                    <!-- Third Skill -->
+                    <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.8s">
+                        <span class="about-icon"><a href="#"><i class="las la-digital-tachograph"></i></a></span>
+                        <h4 class="small-heading main-font">SEO Marketing</h4>
+                        <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END BANNER -->
+
+
+
+{{-- <!--  DIT MINISTRE  -->
 <section id="about" class="single-feature padding mt-n5 ">
     <div class="container">
         <div class="row d-flex align-items-center">
@@ -354,7 +421,7 @@
                     <h2 class="darkcolor font-normal bottom30">Ce que dit<span class="text-warning"> le Ministre </span> à propos de la e-Dpep</h2>
                 </div>
                 <p class="bottom35">L'adoption de la plateforme e-Dpep est une illustration de notre vision pour un avenir où la technologie joue un rôle central dans l'efficacité, la transparence et la rapidité de nos services.</p>
-                {{-- <a href="javascript:void(0)" class="button gradient-btn mb-sm-0 mb-4">Learn More</a> --}}
+                <a href="javascript:void(0)" class="button gradient-btn mb-sm-0 mb-4">Learn More</a>
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-delay="300ms">
                 <div class="image"><img alt="SEO" src="{{asset("images/Ministre-tof.jpg")}}" ></div>
@@ -362,81 +429,40 @@
         </div>
     </div>
 </section>
+<!-- END DIT MINISTRE --> --}}
 
-
-<!-- Start Services -->
-<section class="services-section" id="services">
-   <div class="container">
-    
-      <div class="row no-gutters ">
-         <!-- Box-1 -->
-         <div class="col-lg-4 col-md-4 col-sm-12 flip-boxes wow fadeInLeft" data-wow-delay="400ms">
-            <div class="flip-box" >
-               <div class="flip-box-inner ">
-                  <div class="flip-box-front bg-warning">
-                     <p class="text-warning">test test</p>
-
-                     <i class="fas fa-edit"></i>
-                     <h5>Soumission</h5>
-                     <p>L'objectif est de recueillir toutes les données nécessaires pour que la demande puisse être évaluée et traitée</p>
-                  </div>
-                  <div class="flip-box-back">
-                     <p class="text-dark">test test</p>
-                     <i class="fas fa-edit"></i>
-
-                     <h5>Soumission</h5>
-                     <p>L'objectif est de recueillir toutes les données nécessaires pour que la demande puisse être évaluée et traitée</p>
-                  </div>
-               </div>
+<!-- START ABOUT -->
+<section class=" bg-white" id="about"  >
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- About Video -->
+            <div class=" col-sm-12 col-md-6 img-sec mt-5 mt-md-0 wow fadeIn order-2 order-md-1" data-wow-duration="1.5s" data-wow-delay=".5s">
+                <div class="red_rectangle bg-dark" ></div>
+                <div class="about_img position-relative">
+                    <img src="creative-designer/images/about-img.jpg" alt="About Image">
+                    <a data-fancybox="video" href="https://www.youtube.com/watch?v=7e90gBu4pas" class="video-play-button position-absolute">
+                        <i class="las la-play"></i>
+                    </a>
+                </div>
             </div>
-         </div>
-         <!-- Box-2 -->
-         <div class="col-lg-4 col-md-4 col-sm-12 flip-boxes wow fadeIn" data-wow-delay="300ms">
-            <div class="flip-box">
-               <div class="flip-box-inner blue-box">
-                  <div class="flip-box-front">
-                   <p class="text-white">test test</p>
-                     <i class="fas fa-chart-bar"></i>
-                     <h5>Analyse & Traitement</h5>
-                     <p>Le traitement implique les  étapes, telles que l'analyse, la validation, la vérification des antécédents.</p>
-                  </div>
-                  <div class="flip-box-back">
-                   <p class="text-dark">test test</p>
-                     <i class="fas fa-chart-bar"></i>
-                     <h5>Analyse & Traitement</h5>
-                     <p>Le traitement implique les  étapes, telles que l'analyse, la validation, la vérification des antécédents.</p>
-                  </div>
-               </div>
+            <!-- Content -->
+            <div class="col-sm-12 col-md-6 pl-md-5 wow fadeInRight order-1 order-md-1" data-wow-duration="1.5s" data-wow-delay=".5s">
+                <div class="about-heading">
+                    <p class="text-small alt-font text-red">My Success Story</p>
+                    <h1 class="heading margin_heading main-font">How I Started</h1>
+                    <p class="info text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu. Lorem ipsum dolor sit amet.</p>
+                    <p class="info my-4 text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
+                    <a href="#" class="scroll btn btn-medium btn-rounded btn-trans-white mt-2" style="background-color:#df6d14">Learn More</a>
+                </div>
             </div>
-         </div>
-         <!-- Box-3 -->
-         <div class="col-lg-4 col-md-4 col-sm-12 flip-boxes wow fadeInRight" data-wow-delay="400ms">
-            <div class="flip-box">
-               <div class="flip-box-inner">
-                  <div class="flip-box-front  bg-success">
-                   <p class="text-success">test test</p>
-                     
-                     <i class="fas fa-laptop"></i>
-                     <h5>Résultat</h5>
-                     <p> À la fin du processus de traitement, un résultat est généré et communiqué à l'utilisateur</p>
-                  </div>
-                  <div class="flip-box-back">
-                   <p class="text-dark">test test</p>
-                     <i class="fas fa-laptop"></i>
-                    <h5>Résultat</h5>
-                     <p> À la fin du processus de traitement, un résultat est généré et communiqué à l'utilisateur</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 </section>
-<!-- End Services -->
+<!-- END ABOUT -->
 
 
 
-<section id="our-apps" class="">
+<section id="our-apps" class="" >
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-7 col-sm-12">
@@ -501,16 +527,7 @@
             </div>
         </div>
 
-         <div class="row d-flex align-items-center mt-4">
-            <div class="col-lg-12 text-sm-left text-center wow fadeInLeft" data-wow-delay="300ms">
-                <div class="heading-title mb-4">
-                    
-                    {{-- <img src="{{asset("images/dpepprocess-1.PNG")}}"><br> <br><br><br> --}}
-                    <h4 class="darkcolor font-normal ">   Procédure de soumission de votre demande</h4><br>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kfEUpt9kzgY?si=fpi8gKRUTwJJNl3Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                 {{-- <a href="javascript:void(0)" class="button gradient-btn mb-sm-0 mb-4">Learn More</a> --}}
-            </div>
-        </div>
+         
     </div>
 </section>
 
@@ -524,7 +541,7 @@
                 <!--Heading-->
                 <div class="title">
                     <h5 class="mb-3 text-dark">Restons en contact</h5>
-                    <h2 class="text-dark">Ecrivez-nous, et nous vous revenons pour plus d'informations .</h2>
+                    <h2 class="text-dark">Ecrivez-nous, et nous vous reviendrons pour plus d'informations .</h2>
                     <p class="text-dark">Le Service e-dpep reste ouvert à toutes vos préoccupation qu'elles que soient.</p>
                 </div>
             </div>
@@ -563,7 +580,7 @@
 
 
 <!--Footer Start-->
-<footer class="footer-area section-padding">
+<footer class="footer-area section-padding" style="background-color:#df6d14" >
     <div class="container">
         <div class="row text-md-left text-center">
             <!--Column-->
@@ -687,6 +704,12 @@
 <script src="{{asset("corporate/js/map.js")}}"></script>
 <!-- custom script -->
 <script src="{{asset("corporate/js/script.js")}} "></script>
+
+
+
+<!-- CUSTOM JS -->
+<script src="{{asset("creative-designer/js/circle-progress.min.js")}}"></script>
+<script src="{{asset("creative-designer/js/script.js")}}></script>
 
 </body>
 </html>

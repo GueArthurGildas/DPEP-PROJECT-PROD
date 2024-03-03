@@ -4,10 +4,11 @@
         function myDeleteAutoPeche(element) {
            
             // Récupérer l'élément parent de l'élément cliqué
-            var parentTr = $(element).closest('tr');
-
+            var parentTr = $(element).parent().parent();
+           
             // Récupérer l'ID de l'élément parent
-            var pecheId = parentTr.find('.text-white').text();
+            var pecheId = $(element).closest('a').attr("data-id");
+            
 
             // recuperer l'Id de la demande en cours de traitement
             let demandeId = $('#demandeId').text();
@@ -25,7 +26,7 @@
                 type: 'GET', // ou 'GET' selon le type de requête que vous souhaitez
                 data: data,
                 success: function (response) {
-                   parentTr.html('');
+                   parentTr.remove();
                    console.log(response);          
                 },
                 error: function (error) {
@@ -90,7 +91,8 @@
                    $('#dateEmission').val("");
                    $('#dateExpiration').val("");
                    $('#zondPeche').val("");
-                   $('#especeForPeche').val("");
+                   
+                   $('#especeForPeche').firstElementChild.selected = true;
                    $('#engin').val("");
                    
                    toastr.success('Have fun storming the castle!', 'Miracle Max Says')
@@ -103,5 +105,37 @@
  })
 
 
+
+//// ici pour l'affichage du spinner afin de passer à la page suivante
+
+
+function showSpinnerLoadingToGoOnStep4(){
+
+                    $("#content-step3").css({
+                        "display":"none",
+                    })   
+                    
+                    
+                    $("#text-content-loading-step3").css({
+                            "display":"block",
+                    }) 
+
+                    setTimeout(function () {
+                         submitFormAutoPeche();
+                    }, 200); 
+
+}
+
+
+/// la fonction qui lancera le formulaire
+function submitFormAutoPeche(){
+               
+                // soummettre le formulaire de vente 
+                var form = $('#FormStep3');
+
+                // Soumettez le formulaire
+                form.submit();
+
+}
 
 </script>

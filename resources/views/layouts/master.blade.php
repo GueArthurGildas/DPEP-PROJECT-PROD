@@ -27,6 +27,7 @@
     @include("style-css.css-for-circle")
     @include("style-css.css-fleche-blade")
     @include("style-css.css-for-svg")
+    @include("style-css.css-small-table-detail-demande")
 </head>
 
 <body class="nk-body npc-invest bg-white ">
@@ -52,7 +53,7 @@
             <div class="nk-footer nk-footer-fluid bg-dark">
                 <div class="container-xl">
                     <div class="nk-footer-wrap">
-                        <div class="nk-footer-copyright"> &copy;© 2023 MIRAH. Application / <a href="https://softnio.com" target="_blank"> e-Dpep</a>
+                        <div class="nk-footer-copyright"> &copy;© 2023 MIwRAH. Application / <a href="https://softnio.com" target="_blank"> e-Dpep</a>
                         </div>
                         <div class="nk-footer-links">
                             <ul class="nav nav-sm">
@@ -275,6 +276,7 @@
 @include("code-js.peche-auto")
 @include("code-js.upload-js")
 @include("code-js.present-js")
+@include("style-css.css-enveloppe-animation")
 
 </body>
 

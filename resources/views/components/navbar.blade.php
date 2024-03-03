@@ -44,10 +44,10 @@
                                 <img class="" src="{{asset("images/CI-Logov-2.png")}}" alt="User profile picture">
                                     <li class="dropdown notification-dropdown">
                                        {{-- <a href="#" class="btn btn-round btn-danger">Déconexion</a> --}}
-                                        <a class="btn btn-round btn-dark" href="{{ route('logout') }}"
+                                        <a class="btn btn-round btn-danger"
                                                             onclick="event.preventDefault();
                                                                             document.getElementById('logout-form').submit();">
-                                                           <span>Déconnexion</span> <em class="icon ni ni-signout"></em>
+                                                           <span>Déconnexion</span>
                                                         </a>
                                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                             @csrf

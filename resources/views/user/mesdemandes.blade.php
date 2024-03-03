@@ -1,49 +1,52 @@
-{{-- <div class="js-preloader">
+{{-- 
+<div class="js-preloader">
    <div class="loading-animation tri-ring"></div>
-</div> --}}
+</div>
+--}}
 <div class="nk-content nk-content-lg nk-content-fluid">
    <div class="container-xl wide-lg">
       <div class="nk-content-inner">
          <div class="nk-content-body">
-          <div class="nk-block-head nk-block-head-lg">
-                           <div class="nk-block-head-sub"><span></span></div>
-                           <div class="nk-block-between-md g-4">
-                              <div class="nk-block-head-content">
-                                 <h2 class="nk-block-title fw-normal">Bienvenue, {{Auth()->user()->name}} ! 👋</h2>
-                                 <div class="nk-block-des">
-                                    <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
-                                 </div>
-                              </div>
-                              <div class="nk-block-head-content">
-                                 <ul class="nk-block-tools gx-3">
-                                    <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn-secondary"  ><span>Mon espace</span></a></li>
-                                    <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn-secondary" style="background-color:#066C02"><span>Nouvelle Demande</span></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
+            <div class="nk-block-head nk-block-head-lg">
+               <div class="nk-block-head-sub"><span></span></div>
+               <div class="nk-block-between-md g-4">
+                  <div class="nk-block-head-content">
+                     {{-- 👋 --}}
+                     <h1 class="nk-block-title fw-normal">Bienvenue, {{Auth()->user()->name}} ! </h1>
+                     <div class="nk-block-des">
+                        <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
+                     </div>
+                  </div>
+                  <div class="nk-block-head-content">
+                     <ul class="nk-block-tools gx-3">
+                        <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn-l btn-white btn-dim btn-outline-dark" ><span>Nouvelle demande</span>  <em class="icon ni ni-signout"></em></a></li>
+                        {{-- 
+                        <li class="order-md-last"><a href="{{route("home.demandes.presentdemande.index")}}" class="btn btn-secondary" style="background-color:#066C02"><span>Nouvelle Demande</span></a></li>
+                        --}}
+                     </ul>
+                  </div>
+               </div>
+            </div>
             <p></p>
             <div class="nk-block">
                <div class="row g-gs">
                   <div class="col-lg-4 col-xl-4 col-xxl-3 ">
                      <div class="card card-bordered">
                         <div class="card-inner-group">
-                           {{-- <div class="card-inner ">
+                           {{-- 
+                           <div class="card-inner ">
                               <div class="user-card user-card-s2">
-                                 
                                  <div class="user-avatar lg bg-light"></div>
-                                
                                  <img src={{asset("images/icons8-utilisateur-100.png")}} alt="">
                                  <div class="user-info">
-                                    
                                     <div class="badge bg-light rounded-pill ucap">Platinam</div>
-                                   
                                     <h5>{{Auth()->user()->name}} </h5>
                                     <span class="sub-text">{{Auth()->user()->email}}</span>
                                     <p>{{userRole()}}</p>
                                  </div>
                               </div>
-                           </div> --}}
+                           </div>
+                           --}}
                            {{-- 
                            <div class="card-inner card-inner-sm">
                               <ul class="btn-toolbar justify-center gx-1">
@@ -69,7 +72,6 @@
                                     </div>
                                  </div>
                               </div>
-
                            </div>
                            <!-- .card-inner -->
                            <div class="card-inner">
@@ -116,7 +118,7 @@
                         <li class="text-danger"> <em class="icon ni ni-clock text-danger"></em>  Date  : Dimanche le 12 Novembre 2023 :  00 heure 45 min </li>
                      </ul>
                      --}}
-                     <div class="nk-block">
+                     <div class="nk-block ">
                         {{-- 
                         <div class="nk-block-head nk-block-head-lg wide-sm">
                            <div class="nk-block-head-content">
@@ -125,60 +127,111 @@
                            </div>
                         </div>
                         --}}
-                       
                         <!-- .nk-block-head -->
-                        {{-- <hr class=""> --}}
+                        {{-- 
+                        <hr class="">
+                        --}}
                         <!-- nk-block-head -->
-                      
-                           <div id="conaitner-user-demandes" style="display:none" >
-                                 @if ($nbDemandeUser == 0)
-                                 <div class="card card-bordered card-stretch">
-                                    <br><br><br>
-                                    <div class="circle-line justify-content-center ">
-                                       <div class="circle"> <em class="fas fa-solid fa-envelope-open-text"></em></div>
-                                    </div>
-                                    <div class="nk-kyc-app p-sm-2 text-center pt-5">
-                                       <div class="nk-kyc-app-text mx-auto">
-                                          <p class="lead"> Vous n'avez aucune demande pour l'instant ! </p>
-                                       </div>
-                                       <br>
-                                       <div class="text-center pt-4">
-                                          <p>Avez-vous des questions ?  Veuillez contacter notre service <a href="mailto:info@softnio.com">info@e-dpep.com</a></p>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <br>
-                                 <div class="card card-bordered ">
-                                    <div class="card-inner">
-                                       <div class="between-center flex-wrap flex-md-nowrap g-3">
-                                          <div class="media media-center gx-3 wide-xs">
-                                             <div class="media-object"><em class="icon icon-circle icon-circle-lg ni ni-facebook-f"></em></div>
-                                             <div class="media-content">
-                                                <p>Vous pouvez également nous suivre sur notre page facebook via ce lien .</p>
-                                             </div>
-                                          </div>
-                                          <div class="nk-block-actions flex-shrink-0"><a href="#" class="btn btn-lg btn-primary">Accedez Maintenant</a></div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <br>
-                                 @else
-                                 <div class="card card-bordered card-stretch">
-                                    @include("user.liste-demande-user")
-                                 </div>
-                                 <!-- .card -->
-                                 @endif
-                           
-                           </div>
+                        <div id="conaitner-user-demandes" style="display:block" >
 
-                          
-                           
-                           <div id="conaitner-preload-demande">
-                              @for ($i=0;$i<3;$i++)
-                                 @include("user.preloader-les-dmandes-user")
-                              @endfor
+                           @if ($nbDemandeUser == 0)
+                           <div class="card card-bordered card-stretch mt-5 bg-lighter">
+                              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                              <div class="circle-line justify-content-center ">
+                                 {{-- <div class="circle"> <em class="fas fa-solid fa-envelope-open-text"></em></div> --}}
+                                       <div class="letter-image">
+                                          <div class="animated-mail">
+                                             <div class="back-fold"></div>
+                                             <div class="letter">
+                                                <div class="letter-border"></div>
+                                                <div class="letter-title"></div>
+                                                <div class="letter-context"></div>
+                                                <div class="letter-context-body">
+                                                      <p><strong>Bonjour,<br>MIRAH</strong><br> Je veux faire une demande</p>
+                                                </div>
+                                                <div class="letter-stamp">
+                                                      <div class="letter-stamp-inner"></div>
+                                                </div>
+                                             </div>
+                                             <div class="top-fold"></div>
+                                             <div class="body"></div>
+                                             <div class="left-fold"></div>
+                                          </div>
+                                          <div class="shadow"></div>
+                                    </div>
+                              </div>
+
                            </div>
-                         
+                           <br>
+                           {{-- 
+                           <div class="card card-bordered ">
+                              <div class="card-inner">
+                                 <div class="between-center flex-wrap flex-md-nowrap g-3">
+                                    <div class="media media-center gx-3 wide-xs">
+                                       <div class="media-object"><em class="icon icon-circle icon-circle-lg ni ni-facebook-f"></em></div>
+                                       <div class="media-content">
+                                          <p>Vous pouvez également nous suivre sur notre page facebook via ce lien .</p>
+                                       </div>
+                                    </div>
+                                    <div class="nk-block-actions flex-shrink-0"><a href="#" class="btn btn-lg btn-primary">Accedez Maintenant</a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           --}}
+                           <br>
+                           @else
+                           <div class="card card-bordered card-stretch">
+                                 <div class="nk-block-head-content justify-end mt-2 p-1">
+                                        <div class="toggle-wrap nk-block-tools-toggle">
+                                            <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1 active" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
+                                            <div class="toggle-expand-content expanded" data-content="pageMenu" style="display: block;">
+                                                {{-- <div class="nk-block-head-content">
+                                                    <ul class="nk-block-tools g-3">
+                                                      <li>
+                                                         <div class="drodown">
+                                                               <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown" aria-expanded="false"><em class="d-none d-sm-inline icon ni ni-calender-date"></em><span><span class="d-none d-md-inline">Filtre</span> </span><em class="dd-indc icon ni ni-chevron-right"></em></a>
+                                                               <div class="dropdown-menu dropdown-menu-end" style="">
+                                                                  <ul class="link-list-opt no-bdr">
+                                                                     <li><a href="#"><span>Last 30 Days</span></a></li>
+                                                                     <li><a href="#"><span>Last 6 Months</span></a></li>
+                                                                     <li><a href="#"><span>Last 1 Years</span></a></li>
+                                                                  </ul>
+                                                               </div>
+                                                         </div>
+                                                      </li>
+                                                      <li><a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-reload"></em></a></li>
+
+                                                      <li>
+                                                         <div class="drodown">
+                                                               <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown" aria-expanded="false"><em class="d-none d-sm-inline icon ni ni-calender-date"></em><span><span class="d-none d-md-inline">Last</span> 30 Days</span><em class="dd-indc icon ni ni-chevron-right"></em></a>
+                                                               <div class="dropdown-menu dropdown-menu-end" style="">
+                                                                  <ul class="link-list-opt no-bdr">
+                                                                     <li><a href="#"><span>Last 30 Days</span></a></li>
+                                                                     <li><a href="#"><span>Last 6 Months</span></a></li>
+                                                                     <li><a href="#"><span>Last 1 Years</span></a></li>
+                                                                  </ul>
+                                                               </div>
+                                                         </div>
+                                                      </li>
+                                                   </ul>
+                                                </div> --}}
+                                                
+                                                
+                                            </div>
+                                    </div>
+                                    
+                                 </div>
+                              @include("user.liste-demande-user")
+                              {{$userdemandes->links()}}
+                           </div>
+                           <!-- .card -->
+                           @endif
+                        </div>
+                        {{-- <div id="conaitner-preload-demande">
+                           @for ($i=0;$i<80;$i++)
+                              @include("user.preloader-les-dmandes-user")
+                           @endfor
+                        </div> --}}
                      </div>
                   </div>
                   <!-- .col -->
@@ -190,5 +243,4 @@
       </div>
    </div>
 </div>
-
 @include("user.js-accueil-user-page")

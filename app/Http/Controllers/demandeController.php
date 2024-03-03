@@ -45,7 +45,7 @@ class demandeController extends Controller
        
 
        // $this->setCurrentPageView();
-        //dd("je suis ici");
+        
         return view('demande.index',[
             'currentPage'=>$this->currentPage, 
             'idDemadne'=>$this->idDemandeLoading,
@@ -58,8 +58,13 @@ class demandeController extends Controller
     /*******Affiche le detail d'une demande selectionnée par l'user dans son interface */
     /******************************************************/
     /******************************************************/
-    public function affOneDemandeDetail(Request $request ){
-        return view('demande.detail-one-demande');
+    public function affOneDemandeDetail(Demande $demande){
+
+        Carbon::setLocale("fr");
+        return view('demande.detail-one-demande',
+        [
+            "demande"=>$demande,
+        ]);
     }
 
 
@@ -96,20 +101,6 @@ class demandeController extends Controller
 
 
 
-
-        // Retourner dans la vue lo'bjet mis en base de données de sorte à le voir s'afficher dans un tableau 
-        
-        // $testCapture = ' <tr> 
-        //                     <span class="text-white" >'.$myCapture->id.'</span>
-        //                     <td class="tb-col-os">'.$espece.'</td>
-        //                     <td class="tb-col-ip"><span class="sub-text">'.$produit.'</span></td>
-        //                     <td class="tb-col-ip"><span class="sub-text">'.$zoneCapture.'</span></td>
-        //                     <td class="tb-col-ip"><span class="sub-text">'.$qteBord.'</span></td>
-        //                     <td class="tb-col-time"><span class="sub-text"><span class="d-none d-sm-inline-block">'.$qteDebarque.'</span></span></td>
-        //                     <td class="tb-col-action"><a href="javascript:void(0);" data-id="'.$myCapture->id.'" onclick="myDelete(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-        //                 </tr>';
-
-
         $testCapture ='
        
 <div class="content-capture-added">
@@ -121,7 +112,7 @@ class demandeController extends Controller
       </div>
    </div>
    <div class="justify-end">
-      <a href="javascript:void(0);" data-id="'.$myCapture->id.'"onclick="myDelete(this)" class="btn btn-dark m-1">[X]</a>
+      <a href="javascript:void(0);" data-id="'.$myCapture->id.'"onclick="myDelete(this)" class="btn btn-l btn-white btn-dim btn-outline-dark text-danger">[X]</a>
    </div>
    <div class="nk-kycfm">
       <div class="row g-4 mb-3">
@@ -194,7 +185,7 @@ class demandeController extends Controller
     public function updateIdNavireForAllCapture(){
 
         $lesCapturesToUpdate= DB::table('Captures')->where("demande_id","=", session("IdDemandeRunning"))->get();
-
+        
         foreach($lesCapturesToUpdate as $capture){
 
             Capture::find($capture->id)        
@@ -270,12 +261,15 @@ class demandeController extends Controller
     /******************************************************/
     
     function affNavireForDemande(request $request){
-
+       
         $navireStep1="";
         //dd($request->input("idNavireStep1"));
         if($request->input("idNavireStep1")){
+            
             $navireStep1= Navire::find($request->input('idNavireStep1'));
         }
+
+        
 
 
         if($request->input("test")){
@@ -529,10 +523,9 @@ class demandeController extends Controller
         $engin = $request->input('engin');
         $demandeId = session("IdDemandeRunning");
 
-        //dd("je suis ici");
         
 
-        // iserer directement dans une base de donnée chaque objet capture 
+        // iserer directement dans une base de donnée chaque objet 
             $myPeche = Autori_peche::create([
                 'identif_auto_peche' => $Identificateur,
                 'Deliv_Par' =>  $devlivrePar,
@@ -548,20 +541,84 @@ class demandeController extends Controller
             
 
 
-            // Retourner dans la vue lo'bjet mis en base de données de sorte à le voir s'afficher dans un tableau 
+            // Retourner dans la vue l'objet mis en base de données de sorte à le voir s'afficher dans un tableau 
             
-            $testPeche ='<tr>
-                        
-                            <td class="tb-col-os">'.$Identificateur.'<span class="sub-text text-white">'.$myPeche->id.'</span></td>
-                            <td class="tb-col-ip"><span class="sub-text">'.$devlivrePar.'</span></td>
-                            <td class="tb-col-ip"><span class="sub-text">'.$dateEmission.'/span></td>
-                            <td class="tb-col-ip"><span class="sub-text">'.$dateExpiration.'</span></td>
-                            <td class="tb-col-ip"><span class="sub-text">'.$zondPeche.'</span></td>
-                            <td class="tb-col-ip"><span class="sub-text">'.$especeForPeche.'</span></td>
-                            <td class="tb-col-time"><span class="sub-text">'.$engin.'<span class="d-none d-sm-inline-block">'.$myPeche->id.'</span></span></td>
-                            <td class="tb-col-action"><a href="javascript:void(0);" onclick="myDeleteAutoPeche(this)" class="link-cross me-sm-n1"><em class="icon ni ni-cross"></em></a></td>
-                               
-                        </tr>';
+            $testPeche = '
+
+            <div class=" row g-4 mb-3  content-autopeche-added">
+                    
+            <div class="ml-2 mr-2" id="testDelete">
+            <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
+                <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left ml-3 mr-3" style="position: relative;">
+                </div>
+            </div>
+        </div>
+        <div class="justify-end">
+            <a href="javascript:void(0);" data-id="'.$myPeche->id.'"onclick="myDelete(this)" class="btn btn-l btn-white btn-dim btn-outline-dark text-danger">[X]</a>
+        </div>
+        <div class="col-lg-6">
+           <div class="form-group">
+              <label class="form-label" for="full-name">Identificateur <span class="text-danger"></span> <strong class="text-danger"></strong></label>
+              <div class="form-control-wrap">
+                 <input type="text" class="form-control" id="Identificateur" placeholder="'.$Identificateur.'"   disabled>
+              </div>
+           </div>
+           <div class="form-group">
+              <label class="form-label" for="email-address">Delivré Par <span class="text-danger"> </span> <strong class="text-danger"></strong></label>
+              <div class="form-control-wrap">
+                 <input type="text" class="form-control" id="devlivrePar" placeholder="'.$devlivrePar.'"   disabled>
+              </div>
+           </div>
+           <div class="row mb-3">
+              <div class="col-6">
+                 <div class="form-group">
+                    <label class="form-label" for="pay-amount">Date Emission <span class="text-danger"></span> <strong class="text-danger"></strong></label>
+                    <div class="form-control-wrap">
+                       <div class="form-icon form-icon-right">
+                          <em class="icon ni ni-calendar-alt"></em>
+                       </div>
+                       <input type="text" class="form-control date-picker" id="dateEmission" placeholder="'.$dateEmission.'"   disabled>
+                    </div>
+                 </div>
+              </div>
+              <div class="col-6">
+                 <div class="form-group">
+                    <label class="form-label" for="pay-amount">Date Expiration <span class="text-danger"></span> <strong class="text-danger"></strong></label>
+                    <div class="form-control-wrap">
+                       <div class="form-icon form-icon-right">
+                          <em class="icon ni ni-calendar-alt"></em>
+                       </div>
+                       <input type="text" class="form-control date-picker" id="dateExpiration" placeholder="'.$dateExpiration.'"   disabled >
+                    </div>
+                 </div>
+              </div>
+           </div>
+           
+        </div>
+        <div class="col-lg-6">
+           <div class="form-group">
+              <label class="form-label" for="email-address">Zone de pêche <span class="text-danger"></span> <strong class="text-danger"></strong></label>
+              <div class="form-control-wrap">
+                <input type="number" class="form-control" placeholder="'.$zondPeche.'"   disabled>
+              </div>
+           </div>
+           <div class="form-group">
+              <label class="form-label" for="phone-no">Espèce <span class="text-danger"></span> <strong class="text-danger"></strong></label>
+              <div class="form-control-wrap">
+                <input type="number" class="form-control" placeholder="'.$especeForPeche.'"   disabled>
+              </div>
+           </div>
+           <div class="form-group">
+              <label class="form-label" for="phone-no">Engin <span class="text-danger"></span> <strong class="text-danger"></strong></label>
+              <div class="form-control-wrap">
+                <input type="number" class="form-control" placeholder="'.$engin.'"   disabled>
+              </div>
+           </div>
+        </div>
+            </div>
+        
+
+            ' ;
 
 
             return response()->json([
@@ -625,7 +682,7 @@ class demandeController extends Controller
         
         //dd($data['email']);
 
-        Mail::to($data["email"])->send(new successDemandeSentMail($data)); // l'envoi du pour l'instant  à l'user ibi des l'enregitrement dans l'application
+        // Mail::to($data["email"])->send(new successDemandeSentMail($data)); // l'envoi du pour l'instant  à l'user ibi des l'enregitrement dans l'application
 
         return redirect()->route('home');
         
@@ -639,7 +696,15 @@ class demandeController extends Controller
     /******************************************************/
 
     public function affRecapDemande(){
-        return view("demande.recap-demande");
+        
+        $Captures = DB::table('Captures')->where("demande_id","=", session("IdDemandeRunning"))->get(); //
+        
+        $AutoPeches= DB::table('autori_peches')->where("demande_id","=", session("IdDemandeRunning"))->get(); //
+        
+        return view("demande.recap-demande",[
+            "Captures"=>$Captures,
+            "AutoPeches"=>$AutoPeches,
+        ]);
     }
 
 

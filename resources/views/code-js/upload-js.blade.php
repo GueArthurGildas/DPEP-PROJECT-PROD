@@ -31,4 +31,39 @@
             );
         }
 
+
+
+//// ici il faut encore faire tourner le spinner dans la page upload
+
+//// ici pour l'affichage du spinner afin de passer à la page suivante
+
+function showSpinnerLoadingToGoToRecap(){
+
+                    $("#content-step4").css({
+                        "display":"none",
+                    })   
+                    
+                    
+                    $("#text-content-loading-step4").css({
+                            "display":"block",
+                    }) 
+
+                    setTimeout(function () {
+                         submitFormUpload();
+                    }, 200); 
+
+}
+
+
+/// la fonction qui lancera le formulaire
+function submitFormUpload(){
+               
+                // soummettre le formulaire de vente 
+                var form = $('#FormStep4');
+
+                // Soumettez le formulaire
+                form.submit();
+
+}
+
 </script>

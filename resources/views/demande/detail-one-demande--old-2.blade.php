@@ -3,7 +3,7 @@
 <div class="nk-content nk-content-fluid">
    <div class="container-xl wide-xl">
       <div class="nk-content-inner">
-         <div class="nk-block-head-sub"><a href="{{route("home")}}" class="text-soft back-to"><em class="icon ni ni-arrow-left"> </em><span>Mon espace</span></a></div>
+         <div class="nk-block-head-sub"><a href="html/invest/schemes.html" class="text-soft back-to"><em class="icon ni ni-arrow-left"> </em><span>Mon espace</span></a></div>
          <div class="nk-block-between-md g-3">
             <div class="nk-block-head-content">
                <div class="nk-block-head-sub"><span></span></div>
@@ -12,7 +12,7 @@
                   <div><a href="#" class="btn btn-white btn-light"> <em class="icon ni ni-arrow-long-left text-danger ms-2"></em> Retour </a></div>
                   --}}
                   <div>
-                     <h2 class="nk-block-title fw-normal text-danger"><em class="fs-20px far fa-paper-plane"></em>&nbsp{{$demande->Ref}} {{$demande->id}}</h2>
+                     <h2 class="nk-block-title fw-normal text-danger"><em class="fs-20px far fa-paper-plane"></em> DPEP-A03-2Z0   </h2>
                      <div class="nk-block-des">
                      </div>
                   </div>
@@ -26,7 +26,7 @@
             <!-- .nk-block-head-content -->
             <div class="nk-block-head-content d-none d-md-block">
                <div class="nk-slider nk-slider-s1">
-                  <div class="slider-dots"> test ici mettre le qrCode</div>
+                  <div class="slider-dots"> test ici je suis la</div>
                </div>
                <!-- .nk-slider -->
             </div>
@@ -45,9 +45,9 @@
                         <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
                         <div class="toggle-expand-content" data-content="pageMenu">
                            <ul class="nk-block-tools g-3">
-                              <li><a href="#" class="btn btn-white btn-dim btn-outline-danger"><em class="icon ni ni-cross-circle"></em><span>Annuler</span></a></li>
-                              <li><a href="#" class="btn btn-white btn-dim btn-outline-dark"><em class="icon ni ni-printer"></em><span>Imprimer</span></a></li>
-                              {{-- <li class="nk-block-tools-opt">
+                              <li><a href="#" class="btn btn-white btn-dim btn-outline-danger"><em class="icon ni ni-download-cloud"></em><span>Export</span></a></li>
+                              <li><a href="#" class="btn btn-white btn-dim btn-outline-warning"><em class="icon ni ni-reports"></em><span>Reports</span></a></li>
+                              <li class="nk-block-tools-opt">
                                  <div class="drodown">
                                     <a href="#" class="dropdown-toggle btn btn-icon btn-danger" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
                                     <div class="dropdown-menu dropdown-menu-end">
@@ -58,7 +58,7 @@
                                        </ul>
                                     </div>
                                  </div>
-                              </li> --}}
+                              </li>
                            </ul>
                         </div>
                      </div>
@@ -83,10 +83,10 @@
                   </thead>
                   <tbody>
                      <tr style="border-width: 0;">
-                        <td>{{$demande->created_at}}</td>
-                        <td>{{userFullName()}}</td>
-                        <td>{{$demande->Objet_Acces_Port}}</td>
-                        <td><span class="badge bg-outline bg-danger">{{$demande->Resultat}}</span></td>
+                        <td>80ZB</td>
+                        <td>o	Honeywell</td>
+                        <td>bonjour je suis , je suis ici, et toi </td>
+                        <td><span class="badge bg-outline bg-danger">Running</span></td>
                         <td class="text-danger">1fedsjdoofj </td>
                      </tr>
                   </tbody>
@@ -95,13 +95,9 @@
          </div>
          <div class="nk-block">
             <div class="row g-gs">
-               <div class="col-md-8 col-xxl-8">
+               <div class="col-xxl-8">
                   <div class="card card-bordered">
                      <div class="card-inner">
-                        <div class="card-title">
-                           <h5 class="nk-block-title fw-normal">Statut du  traitement</h5>
-                           <p>Situation de l'avancement du traitement de la demande  <a href="#" class="link link-sm">: DPEP-A03-2Z0 </a></p>
-                        </div>
                         <div class="circle-line justify-content-center ">
                            <div class="circle"><i class=" fas fa-solid fa-check text-warning"></i></div>
                            <div class="line"></div>
@@ -120,7 +116,7 @@
                   </div>
                   <!-- .card -->
                   <div class="row g-gs">
-                     <div class=" col-xxl-12">
+                     <div class="col-lg-6 col-xxl-12">
                         <div class="card card-bordered">
                            <div class="card-inner">
                               <div class="nk-block-head">
@@ -215,22 +211,6 @@
                                              </div>
                                           </li>
                                           <li class="data-item">
-                                             <div class="data-col">
-                                                <div class="data-label">15- Nom du capitaine</div>
-                                                <div class="data-value">
-                                                   <span>@tokenlite</span> <a href="https://t.me/tokenlite" target="_blank"><em class="icon ni ni-telegram"></em></a>
-                                                </div>
-                                             </div>
-                                          </li>
-                                          <li class="data-item">
-                                             <div class="data-col">
-                                                <div class="data-label">15- Nom du capitaine</div>
-                                                <div class="data-value">
-                                                   <span>@tokenlite</span> <a href="https://t.me/tokenlite" target="_blank"><em class="icon ni ni-telegram"></em></a>
-                                                </div>
-                                             </div>
-                                          </li>
-                                          <li class="data-item">
                                              <div class="data-col justify-end">
                                                 <div class="data-value ">
                                                    <span class="text-primary"> </span> <a href="https://t.me/tokenlite" target="_blank"><< Voir plus >></a>
@@ -245,8 +225,57 @@
                         </div>
                      </div>
                      <!-- .col -->
-                     <div class=" col-xxl-12">
+                     <div class="col-lg-6 col-xxl-12">
                         <div class="row g-gs">
+                           <div class="col-sm-6 col-lg-12 col-xxl-6">
+                              <div class="card card-bordered">
+                                 <div class="card-inner">
+                                    <div class="card-title-group align-start mb-2">
+                                       <div class="card-title">
+                                          <h6 class="title">Active Subscriptions</h6>
+                                       </div>
+                                       <div class="card-tools">
+                                          <em class="card-hint icon ni ni-help-fill bg-danger" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Total active subscription" data-bs-original-title="Total active subscription"></em>
+                                       </div>
+                                    </div>
+                                    <div class="align-end flex-sm-wrap g-4 flex-md-nowrap">
+                                       <div class="nk-sale-data">
+                                          <span class="amount">9.69K</span>
+                                          <span class="sub-title"><span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>1.93%</span>since last month</span>
+                                       </div>
+                                       <div class="nk-sales-ck">
+                                          <canvas class="sales-bar-chart" id="activeSubscription" width="761" height="112" style="display: block; box-sizing: border-box; height: 56px; width: 380px;"></canvas>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- .card -->
+                           </div>
+                           <!-- .col -->
+                           <div class="col-sm-6 col-lg-12 col-xxl-6">
+                              <div class="card card-bordered">
+                                 <div class="card-inner">
+                                    <div class="card-title-group align-start mb-2">
+                                       <div class="card-title">
+                                          <h6 class="title">Avg Subscriptions</h6>
+                                       </div>
+                                       <div class="card-tools">
+                                          <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Daily Avg. subscription" data-bs-original-title="Daily Avg. subscription"></em>
+                                       </div>
+                                    </div>
+                                    <div class="align-end flex-sm-wrap g-4 flex-md-nowrap">
+                                       <div class="nk-sale-data">
+                                          <span class="amount">346.2</span>
+                                          <span class="sub-title"><span class="change up text-success"><em class="icon ni ni-arrow-long-up"></em>2.45%</span>since last week</span>
+                                       </div>
+                                       <div class="nk-sales-ck">
+                                          <canvas class="sales-bar-chart" id="totalSubscription" width="774" height="112" style="display: block; box-sizing: border-box; height: 56px; width: 387px;"></canvas>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- .card -->
+                           </div>
                            <!-- .col -->
                         </div>
                         <!-- .row -->
@@ -256,13 +285,13 @@
                   <!-- .row -->
                </div>
                <!-- .col -->
-               <div class="col-md-4 col-xxl-4">
+               <div class="col-md-6 col-xxl-4">
                   <div>
                      <div class="card card-bordered card-full">
                         <div class="card-inner border-bottom">
                            <div class="card-title-group">
                               <div class="card-title">
-                                 <h6 class="title">Les étapes du traitement</h6>
+                                 <h6 class="title">Recent Activities</h6>
                               </div>
                               <div class="card-tools">
                                  <ul class="card-tools-nav">
@@ -313,38 +342,7 @@
                         </ul>
                      </div>
                      <!-- .card -->
-                     <div class="nk-refwg-url mt-1">
-                        <div class="form-control-wrap">
-                           <div class="form-clip clipboard-init" data-clipboard-target="#refUrl" data-success="Copied" data-text="Copy Link"><em class="clipboard-icon icon ni ni-copy"></em> <span class="clipboard-text">Cliquer ici</span></div>
-                           <div class="form-icon">
-                              <em class="icon ni ni-link-alt"></em>
-                           </div>
-                           <input type="text" class="form-control copy-text bg-white" id="refUrl" value="Liste des documents afferent " disabled>
-                        </div>
-                     </div>
-                     <div class="card card-bordered mt-1">
-                        <div class="card-inner">
-                           <div class="card-title-group align-start mb-2">
-                              <div class="card-title">
-                                 <h6 class="title">Total capture à bord</h6>
-                              </div>
-                              <div class="card-tools">
-                                 <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Daily Avg. subscription" data-bs-original-title="Daily Avg. subscription"></em>
-                              </div>
-                           </div>
-                           <div class="align-end flex-sm-wrap g-4 flex-md-nowrap">
-                              <div class="nk-sale-data">
-                                 <span class="amount">346.2</span>
-                                 <span class="sub-title"><span class="change up text-success"><em class="icon ni ni-arrow-long-up"></em>2.45%</span>since last week</span>
-                              </div>
-                              <div class="nk-sales-ck">
-                                 <canvas class="sales-bar-chart" id="totalSubscription" width="774" height="112" style="display: block; box-sizing: border-box; height: 56px; width: 387px;"></canvas>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- .card -->
-                      <div class="card card-bordered mt-1">
+                     <div class="card card-bordered">
                         <div class="card-inner">
                            <div class="card-title-group align-start mb-2">
                               <div class="card-title">
@@ -354,75 +352,40 @@
                                  <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Total active subscription" data-bs-original-title="Total active subscription"></em>
                               </div>
                            </div>
-                           <div class="card-body table-responsive bg-white  table-head-fixedp-0" style="height: 130px;">
-                              
-                                 
-                                 
-                                    
-                                          <div class="form-control-wrap">
-                                             <div class="form-clip clipboard-init" data-clipboard-target="#refUrl" data-success="Copied" data-text="Copy Link"><em class="clipboard-icon icon ni ni-copy"></em> <span class="clipboard-text">voir</span></div>
-                                             <div class="form-icon">
-                                                <em class="icon ni ni-link-alt"></em>
-                                             </div>
-                                             <input type="text" class="form-control copy-text bg-white" id="refUrl" value="Liste des documents afferent " disabled>
-                                            
-                                          </div>
-                                          <div class="form-control-wrap">
-                                             <div class="form-clip clipboard-init" data-clipboard-target="#refUrl" data-success="Copied" data-text="Copy Link"><em class="clipboard-icon icon ni ni-copy"></em> <span class="clipboard-text">voir</span></div>
-                                             <div class="form-icon">
-                                                <em class="icon ni ni-link-alt"></em>
-                                             </div>
-                                             <input type="text" class="form-control copy-text bg-white" id="refUrl" value="Liste des documents afferent " disabled>
-                                          </div>
-                                       
-                                    
-
-                             
-                           </div>
+                           <div class="card-body table-responsive bg-white  table-head-fixedp-0" style="height: 180px;">
+                                 <table style="table table-bordered;font-size: 0.8em;border-collapse: collapse;">
+                                    <thead>
+                                       <tr>
+                                          <th>Titre 1</th>
+                                          <th>Titre 2</th>
+                                          <th>Titre 3</th>
+                                          <th>Titre 3</th>
+                                          <th>Titre 3</th>
+                                          <th>Titre 3</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody class="tb-aff-detail-demande">
+                                       <tr>
+                                          <td>Contenu 1</td>
+                                          <td>Contenu 2</td>
+                                          <td>Contenu 3</td>
+                                          <td>Contenu 3</td>
+                                          <td>Contenu 3</td>
+                                          <td>Contenu 3</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Contenu 4</td>
+                                          <td>Contenu 5</td>
+                                          <td>Contenu 6</td>
+                                          <td>Contenu 3</td>
+                                          <td>Contenu 3</td>
+                                          <td>Contenu 3</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
                         </div>
                      </div>
-                     <!-- .card -->
-
-                     
-                      <div class="card card-bordered mt-1">
-                        <div class="card-inner">
-                           <div class="card-title-group align-start mb-2">
-                              <div class="card-title">
-                                 <h5 class="title">Les autorisations de pêche</h5>
-                              </div>
-                              <div class="card-tools">
-                                 <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Total active subscription" data-bs-original-title="Total active subscription"></em>
-                              </div>
-                           </div>
-                           <div class="card-body table-responsive bg-white  table-head-fixedp-0" style="height: 130px;">
-                              
-                                 
-                                 
-                                    
-                                          <div class="form-control-wrap">
-                                             <div class="form-clip clipboard-init" data-clipboard-target="#refUrl" data-success="Copied" data-text="Copy Link"><em class="clipboard-icon icon ni ni-copy"></em> <span class="clipboard-text">voir</span></div>
-                                             <div class="form-icon">
-                                                <em class="icon ni ni-link-alt"></em>
-                                             </div>
-                                             <input type="text" class="form-control copy-text" id="refUrl" value="Liste des documents afferent "disabled>
-                                          </div>
-                                          <div class="form-control-wrap">
-                                             <div class="form-clip clipboard-init" data-clipboard-target="#refUrl" data-success="Copied" data-text="Copy Link"><em class="clipboard-icon icon ni ni-copy"></em> <span class="clipboard-text">voir</span></div>
-                                             <div class="form-icon">
-                                                <em class="icon ni ni-link-alt"></em>
-                                             </div>
-                                             <input type="text" class="form-control copy-text" id="refUrl" value="Liste des documents afferent ">
-                                          </div>
-                                       
-                                    
-
-                             
-                           </div>
-                        </div>
-                     </div>
-                     <!-- .card -->
-                     
-                    
                   </div>
                </div>
                <!-- .col -->

@@ -1,5 +1,5 @@
                  {{-- style="background-color:#df6d14" --}}
-                <div class="" style="background-color:#066C02">
+                <div class="" style="background-color:#df6d14">
                     <div class="container-lg wide-xl">
                         <div class="nk-header-wrap">
                             <div class="nk-header-brand">

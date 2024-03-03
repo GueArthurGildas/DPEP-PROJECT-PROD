@@ -1,55 +1,64 @@
 @extends("layouts.master")
 @section("content")
 <div class="nk-content nk-content-lg nk-content-fluid">
-   <div class="container-xl wide-lg">
+   <div class="container-xl wide-lg" id="content-step4">
+
+   <div class="nk-block-between-md g-4">
+                  <div class="nk-block-head-content">
+                     <h2 class="nk-block-title fw-normal">Les Documents justificatifs</h2>
+                     <div class="nk-block-des">
+                        <p>Facilitez la vie en utilisant e-Dpep pour vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
+                     </div>
+                  </div>
+                  <div class="nk-block-head-content">
+                     <div>
+                        <ul class="nk-block-tools g-3">
+                           <li> 
+                               <h5><a href="{{route('home.demandes.autopechedemande.index',['checkhascautopeche'=>1]) }}" class=" text-dark btn-outline-dark  "><em class="icon ni ni-arrow-left text-danger"></em><span>Retour</span></a></h5>
+                           </li>
+                           {{-- <li> 
+                              <a href="{{route('home.demandes.autopechedemande.index',['checkhascautopeche'=>1]) }}" class="btn text-white btn-outline-dark bg-dark "><em class="icon ni ni-arrow-left"></em><span>Retour</span></a>
+                           </li>
+                           <li> 
+                              <a href="" class="btn btn-dark" style="background-color:#066C02"><em class="icon ni ni-home"></em><span>Mes demandes</span></a>
+                           </li> --}}
+                        </ul>
+                       
+                     </div>
+                     <li>
+                        {{-- 
+                        <div id="loading-svg" style=" display: none;" class="pl-5">
+                           <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
+                        </div>
+                        --}}
+                     </li>
+                     </ul>
+                  </div>
+               </div>
+                                    <!-- .nk-block-head -->
+                     <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
+                        <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left" style="position: relative;">
+                           <div class="number-square style" style="background-color:green">
+                              
+                           </div>
+                        </div>
+                     </div>
+               <hr>
       <div class="example-alert">
          <div class="alert alert-pro alert-warning">
             <div class="nk-content-inner">
                <div class="nk-content-body">
-                  <div class="row">
-                     <div class="col-6">
-                        <div class=""><a class="back-to text-danger" href="{{route('home.demandes.autopechedemande.index',['checkhascautopeche'=>1]) }}" ><em class="icon ni ni-arrow-left"></em><span>Retour</span></a></div>
-                     </div>
-                     <div class="col-6 justify-end">
-                        <ul>
-                           <li><a >Accueil</a> > <a >Etape 1 </a> > <a>Etape 2 </a> > <a>Etape 3</a> > <a  class="text-danger" href="#">Fin</a>  </li>
-                        </ul>
-                     </div>
-                  </div>
-                  <br>
-                  {{-- 
-                  <div class="nk-block">
-                     <div class="nk-news card card-bordered">
-                        <div class="card-inner">
-                           <div class="nk-news-list">
-                              <a class="nk-news-item" href="#">
-                                 <div class="nk-news-icon">
-                                    <em class="icon ni ni-card-view"></em>
-                                 </div>
-                                 <div class="nk-news-text">
-                                    <p>Do you know the latest update of 2022? <span> A overview of our is now available on YouTube</span></p>
-                                    <em class="icon ni ni-external"></em>
-                                 </div>
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- .card -->
-                  </div>
-                  <br> --}}
+                  
+                 
+                  
                   @if ($errors->any())
                   @foreach ($errors->all() as $error )
                   <p>pas bon il ya des erreurs</p>
                   @endforeach
                   @endif
-                  <hr>
+                 
                   <div class="nk-block-between-md g-4">
-                     <div class="nk-block-head-content">
-                        <h2 class="nk-block-title fw-normal">Les Documents justificatifs </h2>
-                        <div class="nk-block-des">
-                           <p>Ici vous pouvez consulter et effectuer vos demandes. <span class="text-primary"><em class="icon ni ni-info"></em></span></p>
-                        </div>
-                     </div>
+                     
                      <div class="nk-block-head-content">
                         <div>
                            {{-- <a href="#" id="btnAddCaptureToCollection" class="btn btn-danger m-1"><em class="icon ni ni-plus"></em>Ajouter </a> --}}
@@ -65,17 +74,16 @@
                   </div>
                </div>
                <!-- .nk-block-head -->
-               <hr>
+              
                <div class="row">
                   <div class="row m-1" id="sectionContainUploadFile">
-                     <div class="no-passport-details clearfix" style="border-bottom: 3px solid red; margin-top: 15px; margin-bottom: 10px;">
-                     </div>
-                     <div class="justify-end mb-2">
+                    
+                     {{-- <div class="justify-end mb-2">
                         <a  href="javascript:void(0);" onclick="addUploadFileSection()" class="btn btn-danger m-1"><em class="icon ni ni-plus"></em>Ajouter un fichier</a>     
-                     </div>
+                     </div> --}}
                      <div class="example-alert mb-2">
                         <div class="alert alert-light alert-icon">
-                           <a href="javascript:void(0);" onclick="myDeleteUplodSection(this)" class="text-danger justify-end" title="supprimer">[X]</a>
+                           <a href="javascript:void(0);" onclick="myDeleteUplodSection(this)" class="text-danger justify-end" title="supprimer"></a>
                            <em class="icon ni ni-upload text-danger"></em>Your credit card <strong>already expired</strong>. Please enter a valid &amp; up-to-date <a href="#" class="alert-link">credit card</a> for make deposit.
                            <div class="form-group">
                               <label class="form-label" for="customFileLabel">Default File Upload</label>
@@ -90,7 +98,23 @@
                      </div>
                      <div class="example-alert mb-2">
                         <div class="alert alert-light alert-icon">
-                           <a href="javascript:void(0);" onclick="myDeleteUplodSection(this)" class="text-danger justify-end" title="supprimer">[X]</a>
+                           <a href="javascript:void(0);" onclick="myDeleteUplodSection(this)" class="text-danger justify-end" title="supprimer"></a>
+                           <em class="icon ni ni-upload text-danger"></em>Your credit card <strong>already expired</strong>. Please enter a valid &amp; up-to-date <a href="#" class="alert-link">credit card</a> for make deposit.
+                           <div class="form-group">
+                              <label class="form-label" for="customFileLabel">Default File Upload</label>
+                              <div class="form-control-wrap">
+                                 <div class="form-file">
+                                    <input type="file" class="form-file-input" id="customFile">
+                                    <label class="form-file-label" for="customFile">Choose file</label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="example-alert mb-2">
+                        <div class="alert alert-light alert-icon">
+                           <a href="javascript:void(0);" onclick="myDeleteUplodSection(this)" class="text-danger justify-end" title="supprimer"></a>
                            <em class="icon ni ni-upload text-danger"></em>Your credit card <strong>already expired</strong>. Please enter a valid &amp; up-to-date <a href="#" class="alert-link">credit card</a> for make deposit.
                            <div class="form-group">
                               <label class="form-label" for="customFileLabel">Default File Upload</label>
@@ -104,42 +128,21 @@
                         </div>
                      </div>
                   </div>
-                  {{-- 
-                  <div class="row m-1">
-                     <div class="example-alert">
-                        <div class="alert alert-light alert-icon">
-                           <em class="icon ni ni-upload text-danger"></em>Your credit card <strong>already expired</strong>. Please enter a valid &amp; up-to-date <a href="#" class="alert-link">credit card</a> for make deposit.
-                        </div>
-                     </div>
-                     <div class="no-passport-details clearfix" style="border-bottom: 3px solid red; margin-top: 15px; margin-bottom: 10px;">
-                     </div>
-                     <div class="justify-end">
-                        <a href="#" id="btnAddAutoPecheToCollection" class="btn btn-danger m-1"><em class="icon ni ni-plus"></em>Ajouter un fichier</a>     
-                     </div>
-                  </div>
-                  <hr>
-                  <div class="row m-1">
-                     <div class="example-alert">
-                        <div class="alert alert-light alert-icon">
-                           <em class="icon ni ni-upload text-danger"></em>Your credit card <strong>already expired</strong>. Please enter a valid &amp; up-to-date <a href="#" class="alert-link">credit card</a> for make deposit.
-                        </div>
-                     </div>
-                     <div class="no-passport-details clearfix" style="border-bottom: 3px solid red; margin-top: 15px; margin-bottom: 10px;">
-                     </div>
-                     <div class="justify-end">
-                        <a href="#" id="btnAddAutoPecheToCollection" class="btn btn-danger m-1"><em class="icon ni ni-plus"></em>Ajouter un fichier</a>     
-                     </div>
-                  </div>
-                  --}}
+                  
                </div>
                <br>
-               <hr style="color:red">
+               <hr>
                <div class="nk-block-between-md g-4">
                   <div class="nk-block-head-content">
                   </div>
                   <div class="nk-block-head-content">
                      <div>
-                        <li class="order-md-last"><a href="{{route("home.demandes.traitStep4.index")}}" class="btn btn-xl btn-white btn-dim btn-outline-danger"><span>Terminer</span></a></li>
+                        <li class="order-md-last">
+                           {{-- <a href="{{route("home.demandes.traitStep4.index")}}" class="btn btn-l btn-white btn-dim btn-outline-dark"><span>Terminer</span></a> --}}
+                           <a href="javascript:void(0);" class="btn btn-l btn-white btn-dim btn-outline-dark" onclick="showSpinnerLoadingToGoToRecap()"><span>Terminer</span><em class="icon ni ni-arrow-right"></em></a>
+                           <form id="FormStep4" action="{{route("home.demandes.traitStep4.index")}}" method="GET" class="d-none">
+                           </form>
+                        </li>
                      </div>
                      <li>
                         <div id="loading-svg" style=" display: none;" class="pl-5">
@@ -152,5 +155,13 @@
          </div>
       </div>
    </div>
+      <div class="justify-center"  >
+         <div id="text-content-loading-step4" style="display:none;">
+            <h3 class="mt-5" id="preparation-text" >suivant ...</h3>
+            <div></div>
+            <div class="spinner-border justify-center"  style="width: 5rem; height: 5rem" role="status"></div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+         </div>
+      </div>
 </div>
 @endsection

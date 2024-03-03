@@ -6,9 +6,9 @@
                                     <div class="sp-plan-info card-inner">
                                        <div class="row gx-0 gy-3">
                                           <div class="sp-plan-name">
-                                             <h5 class="title">DPEP-AYX-014 </a><span class="badge" style="background-color:#df6d14">En cours</span></h5>
+                                             <h5 class="title">{{$demandeUser->Ref}}{{$demandeUser->id}} </a><span class="badge" style="background-color:#df6d14">En cours</span></h5>
                                              {{-- <p>ID: <span class="text-base">100394949</span> </p> --}}
-                                             <p>Contact : <strong>info@e-Dpep.com</strong> </p>
+                                             <p>Fais le <span>{{$demandeUser->created_at->formatLocalized('%d %B %Y')}}</span></p> 
                                           </div>
                                        </div>
                                     </div>
@@ -42,7 +42,7 @@
                                     <div class="sp-plan-action card-inner">
                                        <div class="sp-plan-btn" >
                                           <ul class="btn-toolbar justify-center gx-1">
-                                             <li><a href="{{route('home.demandes.detailonedemande.index')}}" class="btn btn-trigger btn-icon"><em class="icon ni ni-eye-fill"></em></a></li>
+                                             <li><a href="{{route('home.demandes.detailonedemande.index',['demande' => $demandeUser])}}" class="btn btn-trigger btn-icon"><em class="icon ni ni-eye-fill"></em></a></li>
                                              <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-mail"></em></a></li>
                                              <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-file-img"></em></a></li>
                                              <li><a href="#" class="btn btn-trigger btn-icon text-danger"><em class="icon ni ni-trash-alt"></em></a></li>
@@ -51,7 +51,9 @@
                                        </div>
                                        
                                        <div class="sp-plan-note text-md-center">
-                                          <p>Fais le <span>12 NOvembre, 2023</span></p>
+                                          {{--  <p>Fais le <span>12 NOvembre, 2023</span></p> --}}
+                                          {{-- <p>Contact : <strong>info@e-Dpep.com</strong> </p> --}}
+
                                        </div>
                                       
                                     </div>

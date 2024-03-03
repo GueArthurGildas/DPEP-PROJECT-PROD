@@ -15,25 +15,28 @@
         }
 
         .circle {
-            width: 100px;
-            height: 100px;
-            border: 5px solid orange; /*#3498db;*/
-            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            border: 1px solid black; /*#3498db;*/
+            border-radius: 10%;
             display: flex;
             justify-content: center;
             align-items: center;
             color: black; /*#3498db;*/
             font-size: 40px;
+            background-color: #f0f0f0;
         }
+        
+        
 
         .line {
             width: 50px;
             height: 5px;
-            background-color:orange;
+            background-color:black;
         }
 
         .number-square {
-    width: 40px; /* Largeur du carré */
+    width: 20px; /* Largeur du carré */
     height: 40px; /* Hauteur du carré */
     background-color: red; /* Couleur de fond du carré */
     color: white; /* Couleur du texte (nombre) à l'intérieur du carré */

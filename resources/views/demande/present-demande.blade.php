@@ -92,7 +92,6 @@
             </a>
             
                                                         <form id="goToStep1" action="{{route("home.demandes.naviredemande.index")}}" method="get" class="d-none">
-                                                          
                                                             <input type="text" name="test" value="ok">
                                                         </form> 
 

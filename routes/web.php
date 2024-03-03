@@ -57,7 +57,7 @@ Route::group([
         "as" => "demandes."
     ], function(){
 
-        Route::get('/detail-demande', [demandeController::class,'affOneDemandeDetail'])->name("detailonedemande.index"); //home.demandes.detailonedemande.index
+        Route::get('/detail-demande-{demande}', [demandeController::class,'affOneDemandeDetail'])->name("detailonedemande.index"); //home.demandes.detailonedemande.index
 
         Route::get('/demande-presentation', [demandeController::class,'affpresentDemande'])->name("presentdemande.index"); //home.demandes.presentdemande.index
         Route::get('/step-A', [demandeController::class,'affNavireForDemande'])->name("naviredemande.index"); //home.demandes.naviredemande.index

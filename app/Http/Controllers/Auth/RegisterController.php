@@ -70,7 +70,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        Mail::to($data["email"])->send(new successRegisterUserMail($data)); // l'envoi du pour l'instant  à l'user ibi des l'enregitrement dans l'application
+        // Mail::to($data["email"])->send(new successRegisterUserMail($data)); // l'envoi du pour l'instant  à l'user ibi des l'enregitrement dans l'application
 
         return User::create([
             'name' => $data['name'],

@@ -1,6 +1,7 @@
 {{-- --------------------------------------------------------------------------- --}}
 {{-- @s send capture section to the controller throw ajax query --}}
 
+
 <script>
 
         //// ici la fonction qui supprime la capture depuis la base deonnées
@@ -136,6 +137,46 @@ $(document).ready(function () {
 
 
 
+
+// {{-- @e send capture section to the controller throw ajax query --}}
+// {{-- --------------------------------------------------------------------------- --}}
+
+
+
+
+
+//{{-- --------------------------------------------------------------------------- --------------}}
+//{{-- faire dispaaraitre les element de la page sur le step 2  afin d'afficher un spinner  --}}
+//{{-- --------------------------------------------------------------------------- --------------}}
+
+/// ici je vais afficher le spinner dans le bouton de validation qui pointera vers la page step-2 de la demande 
+
+function showSpinnerLoadingToGoOnStep3(){
+
+                    $("#content-step2").css({
+                        "display":"none",
+                    })   
+                    
+                    
+                    $("#text-content-loading-step2").css({
+                            "display":"block",
+                    }) 
+
+                    setTimeout(function () {
+                         submitFormCapture();
+                    }, 200); 
+
+}
+
+
+/// la fonction qui lancera le formulaire
+function submitFormCapture(){
+               
+                // soummettre le formulaire de vente 
+                var form = $('#FormStep2');
+
+                // Soumettez le formulaire
+                form.submit();
+
+}
 </script>
-{{-- @e send capture section to the controller throw ajax query --}}
-{{-- --------------------------------------------------------------------------- --}}

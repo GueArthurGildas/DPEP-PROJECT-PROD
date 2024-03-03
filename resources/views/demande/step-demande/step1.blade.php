@@ -1,28 +1,8 @@
 @extends("layouts.master")
 @section("content")
-<div class="nk-content nk-content-lg nk-content-fluid ">
+<div class="nk-content nk-content-lg nk-content-fluid " id="content-step1">
    <div class="container-xl wide-lg ">
-      <div class="example-alert" id="content-step1">
-         <div class="alert alert-pro alert-warning ">
-            <div class="nk-content-inner ">
-               <div class="nk-content-body ">
-                  <div class="nk-content nk-content-lg nk-content-fluid">
-                     <div class="container-xl wide-lg"></div>
-                     <div class="nk-content-inner">
-                        <div class="nk-content-body ">
-                           {{-- 
-                           <div class="row">
-                              <div class="col-6">
-                                 <div class=""><a class="back-to text-danger" href="{{route('home')}}" ><em class="icon ni ni-arrow-left"></em><span>Annuler la demande</span></a></div>
-                              </div>
-                              <div class="col-6 justify-end">
-                                 <ul>
-                                    <li><a href="#">Accueil</a> > <a class="text-danger" href="#">Etape 1 </a> > <a href="#">Etape 2 </a> > <a href="#" >Etape 3</a> > <a href="#">Fin</a>  </li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <br> --}}
-                           <div class="nk-block-between-md g-4">
+    <div class="nk-block-between-md g-4" >
                               <div class="nk-block-head-content">
                                  <h2 class="nk-block-title fw-normal">Navire & Port d'accueil</h2>
                                  <div class="nk-block-des">
@@ -32,12 +12,13 @@
                               <div class="nk-block-head-content">
                                  <div>
                                     <ul class="nk-block-tools g-3">
+                                    
                                        <li> 
-                                          <a href="#" id="Ajouter-navire" class="btn btn-dark" ><em class="icon ni ni-plus"></em> Ajouter un navire</a>
+                                          <a href="#" id="Ajouter-navire" class="btn btn-l btn-white btn-dim btn-outline-dark"  ><em class="icon ni ni-plus"></em> Ajouter un navire</a>
                                        </li>
-                                       <li> 
-                                          <a href="{{route("home.demandes.naviredemande.index")}}" class="btn btn-secondary"  ><em class="icon ni ni-home"></em><span>Mes demandes</span></a>
-                                       </li>
+                                       {{-- <li> 
+                                          <a href="{{route("home.demandes.naviredemande.index")}}" class="btn btn-secondary" style="background-color:#066C02" ><em class="icon ni ni-home"></em><span>Mes demandes</span></a>
+                                       </li> --}}
                                     </ul>
                                     {{-- 
                                     <li class="order-md-last">
@@ -62,22 +43,45 @@
                                  </ul>
                               </div>
                            </div>
-                        </div>
-                        <!-- .nk-block-head -->
-                        
-                       
-                        <hr>
-                        <form action="{{route("home.demandes.traitStep1.index")}}" id="FormStep1" method="post">
-                        @csrf
-                        <div class="row g-4 mb-3">
-                           <div class="col-12">
-                              <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
+                            <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
                                  <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left" style="position: relative;">
                                     <div class="number-square" style="background-color:green">
                                        A 
                                     </div>
                                  </div>
                               </div>
+                        <hr>
+      <div class="example-alert" >
+         <div class="alert alert-pro alert-warning ">
+            <div class="nk-content-inner ">
+            
+               <div class="nk-content-body ">
+               
+                  <div class="nk-content nk-content-lg nk-content-fluid">
+                     <div class="container-xl wide-lg"></div>
+                     <div class="nk-content-inner">
+                     
+                        <div class="nk-content-body ">
+                           {{-- 
+                           <div class="row">
+                              <div class="col-6">
+                                 <div class=""><a class="back-to text-danger" href="{{route('home')}}" ><em class="icon ni ni-arrow-left"></em><span>Annuler la demande</span></a></div>
+                              </div>
+                              <div class="col-6 justify-end">
+                                 <ul>
+                                    <li><a href="#">Accueil</a> > <a class="text-danger" href="#">Etape 1 </a> > <a href="#">Etape 2 </a> > <a href="#" >Etape 3</a> > <a href="#">Fin</a>  </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <br> --}}
+                          </div>
+                        <!-- .nk-block-head -->
+                        
+                        <form action="{{route("home.demandes.traitStep1.index")}}" id="FormStep1" method="post">
+                        @csrf
+                        <div class="row g-4 mb-3">
+                           <div class="col-12">
+                             
                               <div class="nk-block">
                                  <div class="example-alert">
                                     <div class="alert alert-success alert-icon">
@@ -99,7 +103,7 @@
                                     --}}
                                     <div class="form-group" >
                                        <label class="form-label">
-                                       <em class="icon ni ni-search"></em> Selectionner le Navire <span class="text-danger"> * </span>
+                                       <em class="icon ni ni-search"></em> <b>Selectionner le Navire</b> <span class="text-danger"> * </span>
                                        </label>
                                        </label>
                                        
@@ -112,7 +116,7 @@
                                              @endforeach 
                                           </select>
                                            @if ($errors->hasAny("navire-selected"))
-                                                 <p class="text-danger"> Veuillez senlectionner un navire *</p>
+                                                 <p class="text-danger"> <b>Veuillez senlectionner un navire *</b></p>
                                            @endif
                                        </div>
                                     </div>
@@ -155,9 +159,7 @@
                         <div class="" id="formAjoutNewNAvire"  >
                            <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
                               <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left" style="position: relative;">
-                                 <div class="number-square" style="background-color:green" >
-                                    B 
-                                 </div>
+                                 
                               </div>
                            </div>
                            <div class="example-alert">
@@ -173,7 +175,7 @@
                                  <div class="col-md-12">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Port d'escale envisagé<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
+                                          <label class="form-label"></b>Port d'escale envisagé</b><span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           {{-- <input type="text" class="form-control form-control-lg"> --}}
@@ -186,7 +188,7 @@
                                              --}}
                                           </select>
                                           @if ($errors->hasAny("portEscalEnvisage"))
-                                                 <p class="text-danger"> Le port d'escale envisgé est réquis *</p>
+                                                 <p class="text-danger"> <b>Le port d'escale envisgé est réquis *</b></p>
                                           @endif
                                        </div>
                                     </div>
@@ -198,7 +200,7 @@
                                  <div class="col-md-12">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Objet de l'accès au port <span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
+                                          <label class="form-label"><b>Objet de l'accès au port </b><span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group" >
                                           <select  id="objetAccesPort"  onchange="getObjectPort()" class="form-select js-select2" multiple="multiple" name='testValue' data-placeholder="@if(Session::has("step1")) {{session('step1')['objetAccesPort']}}   @endif" value=" " required >
@@ -210,7 +212,7 @@
                                              <option value="-Autre">Autre </option>
                                           </select>
                                            @if ($errors->hasAny("objetAccesPort"))
-                                                 <p class="text-danger"> Veuillez senlectionner l'objet de votre accès au port *</p>
+                                                 <p class="text-danger"> Veuillez senlectionner l'objet de votre accès au port</p>
                                            @endif
                                           {{-- <small class="text-primary">Veuillez cliquer ici si vous vloulez ajouter un motif d'entrée au port</small> --}}
                                        </div>
@@ -227,13 +229,13 @@
                                  <div class="col-md-6">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Date de la dernière escale<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
+                                          <label class="form-label"><b>Date de la dernière escale</b><span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           <input type="text" class="form-control date-picker" id="dateLastEscale" placeholder="YYYY-MM-JJ" name="dateLastEscale"  value="@if(Session::has("step1")) {{session('step1')['dateLastEscale']}} @else {{old('dateArriveEstim')}}  @endif" required>
                                        </div>
                                         @if ($errors->hasAny("dateLastEscale"))
-                                                 <p class="text-danger"> date obligatoire *</p>
+                                                 <p class="text-danger"> date obligatoire </p>
                                         @endif
                                     </div>
                                  </div>
@@ -241,7 +243,7 @@
                                  <div class="col-md-6">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Port de la dernière escale<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
+                                          <label class="form-label"><b>Port de la dernière escale</b><span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           <select required class="form-select js-select2" data-placeholder="" name="PortDernEscal" value="@if(Session::has("step1")) {{session('step1')['PortDernEscal']}} @else {{old('PortDernEscal')}}  @endif" placeholder="-- Selectionner un port --"  id="portDerniereEscale"   required>
@@ -266,7 +268,7 @@
                                  <div class="col-md-6">
                                     <div class="form-group mt-2">
                                        <div class="form-label-group">
-                                          <label class="form-label">Date d'arrivée estimée<span class="text-danger"> * </span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
+                                          <label class="form-label"><b>Date d'arrivée estimée</b><span class="text-danger"> *</span> <strong class="text-danger" title="ici ici ici ici ici ici ici "></strong></label>
                                        </div>
                                        <div class="form-control-group">
                                           <input type="text" class="form-control date-picker" name="dateArriveEstim" id="dateArriveEstim"  value="@if(Session::has("step1")) {{session('step1')['dateArriveEstim']}} @else {{old('dateArriveEstim')}}  @endif"  placeholder="YYYY-MM-JJ" required>
@@ -323,10 +325,11 @@
                                     </div>
                                  </div>
                                  {{-- ici l'element qui enregistre reelement la valeur de l'objet à envoyer --}}
-                                 <input type="text" id="getObjectAccessPort" name="objetAccesPort"  value="@if(Session::has("step1")) {{session('step1')['objetAccesPort']}} @else {{old('objetAccesPort')}}  @endif" class=""  >
+                                 <input type="text" id="getObjectAccessPort" name="objetAccesPort"  value="@if(Session::has("step1")) {{session('step1')['objetAccesPort']}} @else {{old('objetAccesPort')}}  @endif" class="" style="display:none"  >
                                  <!-- .col -->
                                  <!-- .row -->
                               </div>
+                              <hr>
                               <br>
                               <div class="nk-block-between-md g-4">
                                  <div class="nk-block-head-content">
@@ -334,7 +337,7 @@
                                  <div class="nk-block-head-content">
                                     <div>
                                        {{-- <a href="#" id="Ajouter-navire" class="btn btn-danger"><em class="icon ni ni-plus"></em> Ajouter un navire</a> --}}
-                                       <a href="javascript:void(0);" onclick="showSpinnerLoadingToGoOnStep2()" class="btn btn-secondary" style="background-color:#066C02"><span>Suivant</span><em class="icon ni ni-arrow-right"></em></a>
+                                       <a href="javascript:void(0);" onclick="showSpinnerLoadingToGoOnStep2()" class="btn btn-l btn-white btn-dim btn-outline-dark" ><span>Suivant</span><em class="icon ni ni-arrow-right"></em></a>
                                        {{-- 
                                        <li class="order-md-last">
                                           <input type="submit" class="btn btn-wider btn-primary"value="Suivant" style="background-color:#066C02"> 
@@ -357,7 +360,11 @@
             </div>
          </div>
       </div>
-      <div class="justify-center"  >
+      
+   </div>
+</div>
+</div>
+<div class="justify-center"  >
          <div id="text-content-loading" style="display:none;">
             <h3 class="mt-5" id="preparation-text" >suivant ...</h3>
             <div></div>
@@ -365,8 +372,5 @@
             <br><br><br><br><br><br><br><br><br><br><br><br><br>
          </div>
       </div>
-   </div>
-</div>
-</div>
 </div>
 @endsection
