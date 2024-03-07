@@ -114,7 +114,7 @@
 
                <div class="form-group">
                    {{-- style="background-color:#df6d14" --}}
-               <button type="submit" class="btn btn-lg btn-block text-white bg-warning">
+               <button type="submit" class="btn btn-lg btn-block text-white" style="background-color:#df6d14">
                      {{ __('Login') }}
                      </button>
                      @if (Route::has('password.request'))

@@ -82,28 +82,28 @@
                                     <span>UD003054</span>
                                  </div>
                                  <div class="col-sm-6 col-md-4 col-lg-12">
-                                    <span class="sub-text">Billing Email:</span>
-                                    <span>billing@softnio.com</span>
+                                    <span class="sub-text">Email Utilisateur:</span>
+                                    <span>{{auth()->user()->email}}</span>
                                  </div>
                                  <div class="col-sm-6 col-md-4 col-lg-12">
-                                    <span class="sub-text">Billing Address:</span>
-                                    <span>551 Swanston Street, Melbourne <br /> Victoria 3053 Australia</span>
+                                    <span class="sub-text">Address:</span>
+                                    <span>Côte d'ivoire<br /> Abidjan 01 bp 202</span>
                                  </div>
                                  <div class="col-sm-6 col-md-4 col-lg-12">
-                                    <span class="sub-text">Language:</span>
-                                    <span>English, France</span>
+                                    <span class="sub-text">Langage:</span>
+                                    <span>Français, Anglais</span>
                                  </div>
                                  <div class="col-sm-6 col-md-4 col-lg-12">
-                                    <span class="sub-text">Last Login:</span>
-                                    <span>15 Feb, 2019 01:02 PM</span>
+                                    <span class="sub-text">Dernière session:</span>
+                                    <span>12 Fev, 2024 01:02 PM</span>
                                  </div>
                                  <div class="col-sm-6 col-md-4 col-lg-12">
-                                    <span class="sub-text">KYC Status:</span>
-                                    <span class="lead-text text-success">Approved</span>
+                                    <span class="sub-text">Entreprise Status:</span>
+                                    <span class="lead-text text-success"></span>Confirmer</span>
                                  </div>
                                  <div class="col-sm-6 col-md-4 col-lg-12">
-                                    <span class="sub-text">Register At:</span>
-                                    <span>Nov 24, 2019</span>
+                                    <span class="sub-text">Inscrit le:</span>
+                                    <span>{{auth()->user()->created_at}}</span>
                                  </div>
                               </div>
                            </div>
@@ -147,7 +147,7 @@
                                                 <div class="letter-title"></div>
                                                 <div class="letter-context"></div>
                                                 <div class="letter-context-body">
-                                                      <p><strong>Bonjour,<br>MIRAH</strong><br> Je veux faire une demande</p>
+                                                      <p><strong>Bonjour,<br>Ici le service eDpep</strong><br> Cliquez sur le bouton faire une demande pour commencer</p>
                                                 </div>
                                                 <div class="letter-stamp">
                                                       <div class="letter-stamp-inner"></div>
@@ -181,11 +181,13 @@
                            <br>
                            @else
                            <div class="card card-bordered card-stretch">
-                                 <div class="nk-block-head-content justify-end mt-2 p-1">
-                                        <div class="toggle-wrap nk-block-tools-toggle">
+                                 {{-- <div class="nk-block-head-content justify-end mt-2 p-1">
+                                    <div class="toggle-wrap nk-block-tools-toggle">
                                             <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1 active" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
+                                            
                                             <div class="toggle-expand-content expanded" data-content="pageMenu" style="display: block;">
-                                                {{-- <div class="nk-block-head-content">
+                                                
+                                                <div class="nk-block-head-content">
                                                     <ul class="nk-block-tools g-3">
                                                       <li>
                                                          <div class="drodown">
@@ -214,13 +216,90 @@
                                                          </div>
                                                       </li>
                                                    </ul>
-                                                </div> --}}
-                                                
-                                                
+                                                </div>
+                                                <ul class="nk-block-tools g-3">
+                                                      <li><a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-reload"></em></a></li>
+                                                      <li>
+                                                         <div class="drodown">
+                                                               <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown" aria-expanded="false"><em class="d-none d-sm-inline icon ni ni-calender-date"></em><span><span class="d-none d-md-inline">Filtre période</span> </span><em class="dd-indc icon ni ni-chevron-right"></em></a>
+                                                               <div class="dropdown-menu dropdown-menu-end" style="">
+                                                                  <ul class="link-list-opt no-bdr">
+                                                                     <li><a href="#"><span>Last 30 Days</span></a></li>
+                                                                     <li><a href="#"><span>Last 6 Months</span></a></li>
+                                                                     <li><a href="#"><span>Last 1 Years</span></a></li>
+                                                                  </ul>
+                                                               </div>
+                                                         </div>
+                                                      </li>
+                                                       <li>
+                                                         <div class="drodown">
+                                                               <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown" aria-expanded="false"><em class="d-none d-sm-inline icon ni ni-filter-alt"></em><span><span class="d-none d-md-inline">Filtre statut</span> </span><em class="dd-indc icon ni ni-chevron-right"></em></a>
+                                                               <div class="dropdown-menu dropdown-menu-end" style="">
+                                                                  <ul class="link-list-opt no-bdr">
+                                                                     <li><a href="#"><span>Accepté</span></a></li>
+                                                                     <li><a href="#"><span>Refusé</span></a></li>
+                                                                     <li><a href="#"><span>En cours</span></a></li>
+                                                                  </ul>
+                                                               </div>
+                                                         </div>
+                                                      </li>
+
+
+                                                </ul>
+
                                             </div>
                                     </div>
                                     
-                                 </div>
+                                 </div> --}}
+
+                                 <div class="nk-block-head nk-block-head-sm mt-1 p-2">
+                                    <div class="nk-block-between">
+                                        <div class="nk-block-head-content m-2">
+                                             <li><a href="#" class="btn btn-icon btn-light "><em class="icon ni ni-reload"></em></a></li>
+                                        </div><!-- .nk-block-head-content -->
+                                        <div class="nk-block-head-content">
+                                            <div class="toggle-wrap nk-block-tools-toggle">
+                                                <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
+                                                <div class="toggle-expand-content" data-content="pageMenu">
+                                                    <ul class="nk-block-tools g-3">
+                                                        <li>
+                                                            <div class="form-control-wrap">
+                                                                <div class="form-icon form-icon-right">
+                                                                    <em class="icon ni ni-search"></em>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="default-04" placeholder="Receherche par Ref">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="drodown">
+                                                               <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown" aria-expanded="false"><em class="d-none d-sm-inline icon ni ni-filter-alt"></em><span>Statut</span><em class="dd-indc icon ni ni-chevron-right"></em></a>
+                                                                <div class="dropdown-menu dropdown-menu-end">
+                                                                    <ul class="link-list-opt no-bdr">
+                                                                        <li><a href="#"><span>En cours</span></a></li>
+                                                                        <li><a href="#"><span>Accepté</span></a></li>
+                                                                        <li><a href="#"><span>Rejeté</span></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                         <div class="drodown">
+                                                               <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown" aria-expanded="false"><em class="d-none d-sm-inline icon ni ni-calender-date"></em><span>Période </span><em class="dd-indc icon ni ni-chevron-right"></em></a>
+                                                               <div class="dropdown-menu dropdown-menu-end" style="">
+                                                                  <ul class="link-list-opt no-bdr">
+                                                                     <li><a href="#"><span>Il y'a 30 Jours </span></a></li>
+                                                                     <li><a href="#"><span>Il y'a 6 mois </span></a></li>
+                                                                     <li><a href="#"><span></span>Il y'a plus d'un an</a></li>
+                                                                  </ul>
+                                                               </div>
+                                                         </div>
+                                                      </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div><!-- .nk-block-head-content -->
+                                    </div><!-- .nk-block-between -->
+                                </div>
                               @include("user.liste-demande-user")
                               {{$userdemandes->links()}}
                            </div>

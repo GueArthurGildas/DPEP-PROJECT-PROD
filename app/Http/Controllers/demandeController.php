@@ -61,9 +61,18 @@ class demandeController extends Controller
     public function affOneDemandeDetail(Demande $demande){
 
         Carbon::setLocale("fr");
+
+        // recuperer toutes les captures spécialement relatives à la demande cliquée
+        $captures= DB::table('captures')->where("demande_id","=", $demande->id)->get();
+
+        // recuperer toutes les Autorisations spécialement relatives à la demande cliquée
+        $autoPeches= DB::table('autori_peches')->where("demande_id","=", $demande->id)->get();
+       // dd($captures);
         return view('demande.detail-one-demande',
         [
             "demande"=>$demande,
+            "captures"=>$captures,
+            "autopeches" => $autoPeches,
         ]);
     }
 
@@ -768,4 +777,33 @@ class demandeController extends Controller
            $this->currentPage = PAGEDEMANDEDETAIL;
        }  
    }
+
+     /**************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************/
+    //Toutes les fonctions qui traiterons la logique quant aux informatiions des requêtes venant des agents 
+    /**************************************************************************************************************************************************************/
+    /**************************************************************************************************************************************************************/ 
+
+
+
+    /******************************************************/
+    /******************************************************/
+    //ici la fonction qui affichera la liste des demandes  venant de la page des agents  
+    /******************************************************/
+    /******************************************************/
+
+   public function  affListeDemandes() {
+        $demandes = Demande::orderby("id","desc")->paginate(10);
+        return view("demande.agent-section.list-demande",[
+            "demandes"=>$demandes,
+        ]);
+   }
+
+   public function affAccueilAgent(){
+    return view("home-agent");
+   }
+
+
+
+
 }

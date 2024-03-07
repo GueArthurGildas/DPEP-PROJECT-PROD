@@ -22,7 +22,7 @@
                                     <h6 class="overline-title text-primary-alt">Dashboards</h6>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item ">
-                                    <a href="#" class="nk-menu-link ">
+                                    <a href="{{route("home.demandes.accueilagents.index")}}" class="nk-menu-link ">
                                         <span class="nk-menu-icon"><em class="icon ni ni-growth-fill "></em></span>
                                         <span class="nk-menu-text">Statistiques</span>
                                     </a>
@@ -36,11 +36,9 @@
                                         <span class="nk-menu-text">Demandes</span>
                                     </a>
                                     <ul class="nk-menu-sub">
-                                          <li class="nk-menu-item">
-                                            <a href="#" class="nk-menu-link"><span class="nk-menu-text">Traiter une Demande</span></a>
-                                        </li>
+                                         
                                         <li class="nk-menu-item">
-                                            <a href="#" class="nk-menu-link"><span class="nk-menu-text">Liste des Demandes</span></a>
+                                            <a href="{{route("home.demandes.listedemandeforagents.index")}}" class="nk-menu-link"><span class="nk-menu-text">Liste des Demandes</span></a>
                                         </li>
                                         <li class="nk-menu-item">
                                             <a href="#" class="nk-menu-link"><span class="nk-menu-text">Demande(s) Traitée(s)</span></a>

@@ -14,7 +14,7 @@ class Demande extends Model
 
     
     public function User(){
-      return  $this->belongsTo(User::class);
+      return  $this->belongsTo(User::class,'users_id');
     }
 
     // public function inspection(){
@@ -45,5 +45,7 @@ class Demande extends Model
     public function infoTransbord(){
         return  $this->hasMany(Info_Transb::class);
     }
+
+
 
 }

@@ -126,7 +126,7 @@
                                     <li class="dropdown user-dropdown">
                                         <a href="#" class="dropdown-toggle me-n1" data-bs-toggle="dropdown">
                                             <div class="user-toggle">
-                                                <div class="user-avatar sm bg-warning">
+                                                <div class="user-avatar sm " style="background-color:#df6d14">
                                                     <em class="icon ni ni-user-alt "></em>
                                                 </div>
                                                 <div class="user-info d-none d-xl-block">

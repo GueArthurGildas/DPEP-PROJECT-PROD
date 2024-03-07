@@ -83,12 +83,12 @@ Route::group([
         Route::get('/recape-demande', [demandeController::class,'affRecapDemande'])->name("recapedemande.index"); //home.demandes.recapedemande.index
         Route::get('/traite-recap-demande', [demandeController::class,'traiteRecapDemande'])->name("traiterecapedemande.index"); //home.demandes.traiterecapedemande.index
 
-
-
-
-
         // --------------------------------
+        // ici je ne sais pas s'il faut encore enlever carrement les requêtes venant de la page des agents mais il faudra faire un test puis en suite reclasser cela
         
+        Route::get('/liste-demandes', [demandeController::class,'affListeDemandes'])->name("listedemandeforagents.index"); //home.demandes.afflistedemandeforagents.index
+        Route::get('/agent-accueil', [demandeController::class,'affAccueilAgent'])->name("accueilagents.index"); //home.demandes.accueilagents.index
+
 
 
     });

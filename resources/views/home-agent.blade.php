@@ -4,7 +4,7 @@
             <img class="" src="{{asset("images/loading.gif")}}" srcset="{{asset("images/loading.gif")}}"  alt="logo">
     </div>
     <div class="js-preloader">
-    <div class="loading-animation tri-ring"></div>
+    {{-- <div class="loading-animation tri-ring"></div> --}}
 </div>
         @include("agent.welcome")
         <hr>

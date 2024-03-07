@@ -59,8 +59,13 @@ class User extends Authenticatable
         return $this->roles()->whereIn("nomRole",$roleS)->first()!==null;
     }
 
-    public function Vente(){
-        return  $this->hasMany(Vente::class);
+    // public function Vente(){
+    //     return  $this->hasMany(Vente::class);
+    // }
+
+    public function demandes(){
+        return  $this->hasMany(Demande::class);
+
     }
 
 

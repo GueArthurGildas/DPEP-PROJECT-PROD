@@ -320,11 +320,11 @@
                                     </div>
                                     <div class="nk-block-head-content">
                                        <div>
-                                          <li class="order-md-last">
-                                             <a href="{{route("home.demandes.traiterecapedemande.index")}}" class="btn btn-l btn-white btn-dim btn-outline-danger "><span>Annuler</span></a>
-                                             <a href="{{route("home.demandes.traiterecapedemande.index")}}" class="btn btn-l btn-white btn-dim btn-outline-dark"><span>Valider</span></a>
-                                          
-                                          </li>
+
+                                       <ul class="nk-block-tools g-3">
+                                          <li><a href="#" class="btn btn-white btn-dim btn-outline-danger"><em class="icon ni ni-cross-circle"></em><span>Annuler</span></a></li>
+                                          <li><a href="{{route("home.demandes.traiterecapedemande.index")}}" class="btn btn-white btn-dim btn-outline-dark"><em class="icon ni ni-check-circle-fill"></em><span>Valider</span></a></li>
+                                       </ul>
                                        </div>
                                        <li>
                                           <div id="loading-svg" style=" display: none;" class="pl-5">

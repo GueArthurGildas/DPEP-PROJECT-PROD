@@ -128,7 +128,7 @@
                   @enderror
                </div>
                <div class="form-group">
-                  <button type="submit" class="btn btn-lg btn-warning btn-block">
+                  <button type="submit" class="btn btn-lg btn-block text-white" style="background-color:#df6d14">
                   {{ __('Valider') }}
                   </button>
                   @if (Route::has('password.request'))

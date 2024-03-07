@@ -188,7 +188,7 @@
                                              --}}
                                           </select>
                                           @if ($errors->hasAny("portEscalEnvisage"))
-                                                 <p class="text-danger"> <b>Le port d'escale envisgé est réquis *</b></p>
+                                                 <p class="text-danger"> Le champ est réquis *</p>
                                           @endif
                                        </div>
                                     </div>
