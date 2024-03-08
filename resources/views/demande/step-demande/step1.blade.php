@@ -218,7 +218,7 @@
                                        </div>
                                     </div>
                                     <div class="form-group mt-2"  id="containAutreObjetAccPort" style="display:none">
-                                       <label class="form-label text-danger">~ Autre objet d'accès au port <span class="text-danger"> * </span> </label>
+                                       <label class="form-label text-dark">~ Autre objet d'accès au port <span class="text-danger"> * </span> </label>
                                        <input type="text" class="form-control"   placeholder="Saisir l'objet de votre entrée au port " required>
                                     </div>
                                  </div>

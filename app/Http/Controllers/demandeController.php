@@ -803,6 +803,10 @@ class demandeController extends Controller
     return view("home-agent");
    }
 
+   public function affdetailDemandeAgent(){
+    return view("agent.agent-detail-demande");
+   }
+
 
 
 

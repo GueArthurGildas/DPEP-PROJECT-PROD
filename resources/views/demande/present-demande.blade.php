@@ -25,8 +25,8 @@
                         <div class="timeline-data">
                            <h6 class="timeline-title">Information relative au navire</h6>
                            <div class="timeline-des">
-                              <p>Re-submitted KYC Application form.</p>
-                              <span class="time">09:30am</span>
+                              <p>Integer lectus enim vivamus natoque sagittis duis.ridiculus dapibus hac</p>
+                              <span class="time">...</span>
                            </div>
                         </div>
                      </li>
@@ -36,8 +36,8 @@
                         <div class="timeline-data">
                            <h6 class="timeline-title">Information concernant le port d'accueil</h6>
                            <div class="timeline-des">
-                              <p>Re-submitted KYC Application form.</p>
-                              <span class="time">09:30am</span>
+                              <p>Integer lectus enim vivamus natoque sagittis duis.ridiculus dapibus hac</p>
+                              <span class="time">...</span>
                            </div>
                         </div>
                      </li>
@@ -47,8 +47,8 @@
                         <div class="timeline-data">
                            <h6 class="timeline-title">Les captures à bord du navire</h6>
                            <div class="timeline-des">
-                              <p>Re-submitted KYC Application form.</p>
-                              <span class="time">09:30am</span>
+                              <p>Integer lectus enim vivamus natoque sagittis duis.ridiculus dapibus hac.</p>
+                              <span class="time">....</span>
                            </div>
                         </div>
                      </li>
@@ -58,8 +58,8 @@
                         <div class="timeline-data">
                            <h6 class="timeline-title">Les autorisations de pêche (Optionnel)</h6>
                            <div class="timeline-des">
-                              <p>Re-submitted KYC Application form.</p>
-                              <span class="time">09:30am</span>
+                              <p>Integer lectus enim vivamus natoque sagittis duis.ridiculus dapibus hac.</p>
+                              <span class="time">.....</span>
                            </div>
                         </div>
                      </li>
@@ -69,8 +69,8 @@
                         <div class="timeline-data">
                            <h6 class="timeline-title">Les autorisations de transbordement (Optionnel)</h6>
                            <div class="timeline-des">
-                              <p>Re-submitted KYC Application form.</p>
-                              <span class="time">09:30am</span>
+                              <p>Integer lectus enim vivamus natoque sagittis duis.ridiculus dapibus hac.</p>
+                              <span class="time">....</span>
                            </div>
                         </div>
                      </li>

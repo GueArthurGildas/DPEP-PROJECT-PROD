@@ -42,10 +42,10 @@
                                     <div class="sp-plan-action card-inner">
                                        <div class="sp-plan-btn" >
                                           <ul class="btn-toolbar justify-center gx-1">
-                                             <li><a href="{{route('home.demandes.detailonedemande.index',['demande' => $demandeUser])}}" class="btn btn-trigger btn-icon"><em class="icon ni ni-eye-fill"></em></a></li>
-                                             <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-mail"></em></a></li>
-                                             <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-file-img"></em></a></li>
-                                             <li><a href="#" class="btn btn-trigger btn-icon text-danger"><em class="icon ni ni-trash-alt"></em></a></li>
+                                             <li><a href="{{route('home.demandes.detailonedemande.index',['demande' => $demandeUser])}}" class="btn btn-trigger btn-icon"><em class="icon ni ni-eye-fill" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Voir la demande" data-bs-original-title="Voir la demande"></em></a></li>
+                                             <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-mail" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="envoyer un mail" data-bs-original-title="envoyer un mail"></em></a></li>
+                                             <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-file-img" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Imprimer le reçu" data-bs-original-title="Imprimer le reçu"></em></a></li>
+                                             <li><a href="#" class="btn btn-trigger btn-icon text-danger"><em class="icon ni ni-trash-alt" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Supprimer" data-bs-original-title="Supprimer"></em></a></li>
                                           </ul>
                                           {{-- <a class="btn btn-danger" data-bs-toggle="modal" ><span>Voir le demande</span></a> --}}
                                        </div>

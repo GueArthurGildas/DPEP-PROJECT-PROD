@@ -88,6 +88,7 @@ Route::group([
         
         Route::get('/liste-demandes', [demandeController::class,'affListeDemandes'])->name("listedemandeforagents.index"); //home.demandes.afflistedemandeforagents.index
         Route::get('/agent-accueil', [demandeController::class,'affAccueilAgent'])->name("accueilagents.index"); //home.demandes.accueilagents.index
+        Route::get('/agent-demande-detail', [demandeController::class,'affdetailDemandeAgent'])->name("detaildemandeagents.index"); //home.demandes.detaildemandeagents.index
 
 
 

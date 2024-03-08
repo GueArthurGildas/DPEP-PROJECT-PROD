@@ -83,16 +83,17 @@
                                           --}}
                                           <div class="align-center flex-wrap pb-2 gx-4 gy-3">
                                              <div>
-                                                <h2 class="nk-block-title fw-normal text-danger"> N* : DPEP-01A-154</h2>
+                                                <h2 class="nk-block-title fw-normal text-danger"> N* : DPEP-01A154</h2>
                                              </div>
                                              {{-- 
                                              <div><a href="html/invest/schemes.html" class="btn btn-white btn-light">My Plans <em class="icon ni ni-arrow-long-right ms-2"></em></a></div>
                                              --}}
+                                             <div>ICi remettre le QRcode de la demande</div>
                                           </div>
                                           <div class="nk-block-des">
-                                             {{-- 
-                                             <p>ci-dessous le recapitulatif de votre demande</p>
-                                             --}}
+                                             
+                                             <p>Aliquam mauris diam tristique ligula. Natoque sit</p>
+                                            
                                           </div>
                                        </div>
                                        <!-- .nk-block-head-content -->
@@ -146,10 +147,10 @@
                                  
                                  <div class="example-alert mt-1">
                                     <div class="alert alert-success alert-icon">
-                                       <em class="icon ni ni-check-circle"></em> <strong>Thanks for your deposit</strong>. Your account balance has been updated accordingly.
-                                       <p>Your account balance has been updated accordingly.</p>
-                                       <p>Your account balance has been updated accordingly. Your account balance has been updated accordingly.</p>
-                                       <p>Your account balance has been updated accordingly.</p>
+                                       <em class="icon ni ni-check-circle"></em> <strong>Integer lectus enim vivamus </strong>. Integer lectus enim vivamus natoque.
+                                       <p> natoque sagittis duis.ridiculus dapibus hac.</p>
+                                       <p>Integer lectus enim vivamus natoque sagittis duis.ridiculus dapibus hac Your account balance has been updated accordingly.</p>
+                                       <p> enim vivamus natoque sagittis duis.ridiculus dapibus hacy.</p>
                                     </div>
                                  </div>
                                  <div class="form-group mt-4">
