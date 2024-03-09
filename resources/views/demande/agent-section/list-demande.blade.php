@@ -292,8 +292,8 @@
                   </div>
                   <div class="nk-tb-col tb-col-xxl">
                      <span>
-                        <div class="progress progress-lg bg-danger" >
-                           <div class="progress-bar bg-dark " data-progress="50">50% {{$demande->Statut_traitement}}</div>
+                        <div class="progress progress-lg bg-light" >
+                           <div class="progress-bar bg-dark " data-progress="70">70% </div>
                         </div>
                      </span>
                   </div>
@@ -322,8 +322,8 @@
                            </a>
                         </li>
                         <li class="nk-tb-action-hidden">
-                           <a href="#" class="btn btn-sm btn-icon btn-trigger" data-bs-toggle="tooltip" data-bs-placement="top" title=" Voir Demandeur">
-                           <em class="icon ni ni-user-fill"></em>
+                           <a href="{{route("home.demandes.detaildemandeagents.index")}}" class="btn btn-sm btn-icon btn-trigger" data-bs-toggle="tooltip" data-bs-placement="top" title=" Détail">
+                           <em class="icon ni ni-eye"></em> 
                            </a>
                         </li>
                         <li>
@@ -331,7 +331,7 @@
                               <a href="#" class="btn btn-sm btn-icon btn-trigger dropdown-toggle" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                               <div class="dropdown-menu dropdown-menu-end">
                                  <ul class="link-list-opt no-bdr">
-                                    <li><a href="{{route("home.demandes.detaildemandeagents.index")}}"><em class="icon ni ni-eye"></em><span>Détails</span></a></li>
+                                    <li><a  href="#" ><em class="icon ni ni-user-fill"></em><span>Demandeur</span></a></li>
                                     <li><a href="#"><em class="icon ni ni-repeat"></em><span>Exporter</span></a></li>
                                     <li class="divider"></li>
                                     {{-- <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Demandeur</span></a></li> --}}

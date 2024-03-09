@@ -7,7 +7,9 @@
                                        <div class="row gx-0 gy-3">
                                           <div class="sp-plan-name">
                                              <h5 class="title">{{$demandeUser->Ref}}{{$demandeUser->id}} </a><span class="badge" style="background-color:#df6d14">En cours</span></h5>
-                                             {{-- <p>ID: <span class="text-base">100394949</span> </p> --}}
+                                             <p><div class="progress progress-lg bg-light" >
+                           <div class="progress-bar bg-dark " data-progress="70">70% </div>
+                        </div></p>
                                              <p>Fais le <span>{{$demandeUser->created_at->formatLocalized('%d %B %Y')}}</span></p> 
                                           </div>
                                        </div>

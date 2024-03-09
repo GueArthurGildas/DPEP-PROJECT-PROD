@@ -26,145 +26,273 @@
              <div class="card-content">
                 <ul class="nav nav-tabs nav-tabs-mb-icon nav-tabs-card">
                    <li class="nav-item">
-                      <a class="nav-link " href="#"><em class="icon ni ni-user-circle"></em><span>Personal</span></a>
+                      <a class="nav-link active"  data-bs-toggle="tab" href="#tabItem5"  ><em class="icon ni ni-activity"></em><span>Information Demande </span></a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link active" href="#"><em class="icon ni ni-repeat"></em><span>Transactions</span></a>
+                      <a class="nav-link " data-bs-toggle="tab" href="#tabItem6" ><em class="icon ni ni-repeat"></em><span>Les autorisations</span></a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link" href="#"><em class="icon ni ni-file-text"></em><span>Documents</span></a>
+                      <a class="nav-link" data-bs-toggle="tab" href="#tabItem5"><em class="icon ni ni-file-text"></em><span>Documents</span></a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link" href="#"><em class="icon ni ni-bell"></em><span>Notifications</span></a>
+                      <a class="nav-link"data-bs-toggle="tab" href="#tabItem7"><em class="icon ni ni-activity"></em><span>Navires</span></a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link" href="#"><em class="icon ni ni-activity"></em><span>Activities</span></a>
+                      <a class="nav-link" href="#tabItem7"><em class="icon ni ni-user-circle"></em><span>Demandeur</span></a>
                    </li>
                    <li class="nav-item nav-item-trigger d-xxl-none">
-                      <a href="#" class="toggle btn btn-icon btn-trigger" data-target="userAside"><em class="icon ni ni-user-list-fill"></em></a>
+                      <a href="#tabItem6" class="toggle btn btn-icon btn-trigger" data-target="userAside"><em class="icon ni ni-user-list-fill"></em></a>
                    </li>
                 </ul>
                 <!-- .nav-tabs -->
-                <div class="card-inner">
-                   <div class="nk-block">
-                      <div class="nk-block-head">
-                         <h5 class="title">Demande Information</h5>
-                         <p>Basic info, like your name and address, that you use on Nio Platform.</p>
-                      </div>
-                      <!-- .nk-block-head -->
-                      <div class="profile-ud-list">
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Title</span>
-                               <span class="profile-ud-value">Mr.</span>
-                            </div>
-                         </div>
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Full Name</span>
-                               <span class="profile-ud-value">Abu Bin Ishtiyak</span>
-                            </div>
-                         </div>
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Date of Birth</span>
-                               <span class="profile-ud-value">10 Aug, 1980</span>
-                            </div>
-                         </div>
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Surname</span>
-                               <span class="profile-ud-value">IO</span>
-                            </div>
-                         </div>
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Mobile Number</span>
-                               <span class="profile-ud-value">01713040400</span>
-                            </div>
-                         </div>
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Email Address</span>
-                               <span class="profile-ud-value">info@softnio.com</span>
-                            </div>
-                         </div>
-                      </div>
-                      <!-- .profile-ud-list -->
-                   </div>
-                   <!-- .nk-block -->
-                   <div class="nk-block">
-                      <div class="nk-block-head nk-block-head-line">
-                         <h6 class="title overline-title text-base">Additional Information</h6>
-                      </div>
-                      <!-- .nk-block-head -->
-                      <div class="profile-ud-list">
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Joining Date</span>
-                               <span class="profile-ud-value">08-16-2018 09:04PM</span>
-                            </div>
-                         </div>
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Reg Method</span>
-                               <span class="profile-ud-value">Email</span>
-                            </div>
-                         </div>
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Country</span>
-                               <span class="profile-ud-value">United State</span>
-                            </div>
-                         </div>
-                         <div class="profile-ud-item">
-                            <div class="profile-ud wider">
-                               <span class="profile-ud-label">Nationality</span>
-                               <span class="profile-ud-value">United State</span>
-                            </div>
-                         </div>
-                      </div>
-                      <!-- .profile-ud-list -->
-                   </div>
-                   <!-- .nk-block -->
-                   <div class="nk-divider divider md"></div>
-                   <div class="nk-block">
-                      <div class="nk-block-head nk-block-head-sm nk-block-between">
-                         <h5 class="title">Admin Note</h5>
-                         <a href="#" class="link link-sm">+ Add Note</a>
-                      </div>
-                      <!-- .nk-block-head -->
-                      <div class="bq-note">
-                         <div class="bq-note-item">
-                            <div class="bq-note-text">
-                               <p>Aproin at metus et dolor tincidunt feugiat eu id quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sollicitudin non nunc vel pharetra. </p>
-                            </div>
-                            <div class="bq-note-meta">
-                               <span class="bq-note-added">Added on <span class="date">November 18, 2019</span> at <span class="time">5:34 PM</span></span>
-                               <span class="bq-note-sep sep">|</span>
-                               <span class="bq-note-by">By <span>Softnio</span></span>
-                               <a href="#" class="link link-sm link-danger">Delete Note</a>
-                            </div>
-                         </div>
-                         <!-- .bq-note-item -->
-                         <div class="bq-note-item">
-                            <div class="bq-note-text">
-                               <p>Aproin at metus et dolor tincidunt feugiat eu id quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sollicitudin non nunc vel pharetra. </p>
-                            </div>
-                            <div class="bq-note-meta">
-                               <span class="bq-note-added">Added on <span class="date">November 18, 2019</span> at <span class="time">5:34 PM</span></span>
-                               <span class="bq-note-sep sep">|</span>
-                               <span class="bq-note-by">By <span>Softnio</span></span>
-                               <a href="#" class="link link-sm link-danger">Delete Note</a>
-                            </div>
-                         </div>
-                         <!-- .bq-note-item -->
-                      </div>
-                      <!-- .bq-note -->
-                   </div>
-                   <!-- .nk-block -->
-                </div>
-                <!-- .card-inner -->
+
+                 <div class="tab-content">
+                        <div class="tab-pane active" id="tabItem5">
+                                 <div class="card-inner">
+                                    <div class="nk-block">
+                                       <div class="nk-block-head">
+                                          <h5 class="title">Détail Demande</h5>
+                                          <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+                                       </div>
+                                       <!-- .nk-block-head -->
+                                       <div class="profile-ud-list">
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Title</span>
+                                                <span class="profile-ud-value">Mr.</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Full Name</span>
+                                                <span class="profile-ud-value">Abu Bin Ishtiyak</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Date of Birth</span>
+                                                <span class="profile-ud-value">10 Aug, 1980</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Surname</span>
+                                                <span class="profile-ud-value">IO</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Mobile Number</span>
+                                                <span class="profile-ud-value">01713040400</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Email Address</span>
+                                                <span class="profile-ud-value">info@softnio.com</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <!-- .profile-ud-list -->
+                                    </div>
+                                    <!-- .nk-block -->
+                                    <div class="nk-block">
+                                       <div class="nk-block-head nk-block-head-line">
+                                          <h6 class="title overline-title text-base">Additional Information</h6>
+                                       </div>
+                                       <!-- .nk-block-head -->
+                                       <div class="profile-ud-list">
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Joining Date</span>
+                                                <span class="profile-ud-value">08-16-2018 09:04PM</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Reg Method</span>
+                                                <span class="profile-ud-value">Email</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Country</span>
+                                                <span class="profile-ud-value">United State</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Nationality</span>
+                                                <span class="profile-ud-value">United State</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <!-- .profile-ud-list -->
+                                    </div>
+                                    <!-- .nk-block -->
+                                    <div class="nk-divider divider md"></div>
+                                    <div class="nk-block">
+                                       <div class="nk-block-head nk-block-head-sm nk-block-between">
+                                          <h5 class="title">Admin Note</h5>
+                                          <a href="#" class="link link-sm">+ Add Note</a>
+                                       </div>
+                                       <!-- .nk-block-head -->
+                                       <div class="bq-note">
+                                          <div class="bq-note-item">
+                                             <div class="bq-note-text">
+                                                <p>Aproin at metus et dolor tincidunt feugiat eu id quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sollicitudin non nunc vel pharetra. </p>
+                                             </div>
+                                             <div class="bq-note-meta">
+                                                <span class="bq-note-added">Added on <span class="date">November 18, 2019</span> at <span class="time">5:34 PM</span></span>
+                                                <span class="bq-note-sep sep">|</span>
+                                                <span class="bq-note-by">By <span>Softnio</span></span>
+                                                <a href="#" class="link link-sm link-danger">Delete Note</a>
+                                             </div>
+                                          </div>
+                                          <!-- .bq-note-item -->
+                                          <div class="bq-note-item">
+                                             <div class="bq-note-text">
+                                                <p>Aproin at metus et dolor tincidunt feugiat eu id quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sollicitudin non nunc vel pharetra. </p>
+                                             </div>
+                                             <div class="bq-note-meta">
+                                                <span class="bq-note-added">Added on <span class="date">November 18, 2019</span> at <span class="time">5:34 PM</span></span>
+                                                <span class="bq-note-sep sep">|</span>
+                                                <span class="bq-note-by">By <span>Softnio</span></span>
+                                                <a href="#" class="link link-sm link-danger">Delete Note</a>
+                                             </div>
+                                          </div>
+                                          <!-- .bq-note-item -->
+                                       </div>
+                                       <!-- .bq-note -->
+                                    </div>
+                                    <!-- .nk-block -->
+                                 </div>
+                                 <!-- .card-inner --> 
+                        </div>
+                        <div class="tab-pane active" id="tabItem6">
+                                 <div class="card-inner">
+                                    <div class="nk-block">
+                                       <div class="nk-block-head">
+                                          <h5 class="title">Les Differentes Autorisations renseignées </h5>
+                                          <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+                                       </div>
+                                       <!-- .nk-block-head -->
+                                       <div class="profile-ud-list">
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Title</span>
+                                                <span class="profile-ud-value">Mr.</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Full Name</span>
+                                                <span class="profile-ud-value">Abu Bin Ishtiyak</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Date of Birth</span>
+                                                <span class="profile-ud-value">10 Aug, 1980</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Surname</span>
+                                                <span class="profile-ud-value">IO</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Mobile Number</span>
+                                                <span class="profile-ud-value">01713040400</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Email Address</span>
+                                                <span class="profile-ud-value">info@softnio.com</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <!-- .profile-ud-list -->
+                                    </div>
+                                    <!-- .nk-block -->
+                                    <div class="nk-block">
+                                       <div class="nk-block-head nk-block-head-line">
+                                          <h6 class="title overline-title text-base">Additional Information</h6>
+                                       </div>
+                                       <!-- .nk-block-head -->
+                                       <div class="profile-ud-list">
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Joining Date</span>
+                                                <span class="profile-ud-value">08-16-2018 09:04PM</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Reg Method</span>
+                                                <span class="profile-ud-value">Email</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Country</span>
+                                                <span class="profile-ud-value">United State</span>
+                                             </div>
+                                          </div>
+                                          <div class="profile-ud-item">
+                                             <div class="profile-ud wider">
+                                                <span class="profile-ud-label">Nationality</span>
+                                                <span class="profile-ud-value">United State</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <!-- .profile-ud-list -->
+                                    </div>
+                                    <!-- .nk-block -->
+                                    <div class="nk-divider divider md"></div>
+                                    <div class="nk-block">
+                                       <div class="nk-block-head nk-block-head-sm nk-block-between">
+                                          <h5 class="title">Admin Note</h5>
+                                          <a href="#" class="link link-sm">+ Add Note</a>
+                                       </div>
+                                       <!-- .nk-block-head -->
+                                       <div class="bq-note">
+                                          <div class="bq-note-item">
+                                             <div class="bq-note-text">
+                                                <p>Aproin at metus et dolor tincidunt feugiat eu id quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sollicitudin non nunc vel pharetra. </p>
+                                             </div>
+                                             <div class="bq-note-meta">
+                                                <span class="bq-note-added">Added on <span class="date">November 18, 2019</span> at <span class="time">5:34 PM</span></span>
+                                                <span class="bq-note-sep sep">|</span>
+                                                <span class="bq-note-by">By <span>Softnio</span></span>
+                                                <a href="#" class="link link-sm link-danger">Delete Note</a>
+                                             </div>
+                                          </div>
+                                          <!-- .bq-note-item -->
+                                          <div class="bq-note-item">
+                                             <div class="bq-note-text">
+                                                <p>Aproin at metus et dolor tincidunt feugiat eu id quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sollicitudin non nunc vel pharetra. </p>
+                                             </div>
+                                             <div class="bq-note-meta">
+                                                <span class="bq-note-added">Added on <span class="date">November 18, 2019</span> at <span class="time">5:34 PM</span></span>
+                                                <span class="bq-note-sep sep">|</span>
+                                                <span class="bq-note-by">By <span>Softnio</span></span>
+                                                <a href="#" class="link link-sm link-danger">Delete Note</a>
+                                             </div>
+                                          </div>
+                                          <!-- .bq-note-item -->
+                                       </div>
+                                       <!-- .bq-note -->
+                                    </div>
+                                    <!-- .nk-block -->
+                                 </div>
+                                 <!-- .card-inner --> 
+                        </div>
+                  </div>
+              
              </div>
              <!-- .card-content -->
              <div class="card-aside card-aside-right user-aside toggle-slide toggle-slide-right toggle-break-xxl toggle-screen-xxl" data-content="userAside" data-toggle-screen="xxl" data-toggle-overlay="true" data-toggle-body="true">
@@ -179,44 +307,61 @@
                                <div class="simplebar-content" style="padding: 0px;">
                                   <div class="card-inner">
                                      <div class="user-card user-card-s2">
-                                        <div class="user-avatar lg bg-primary">
-                                           <span>AB</span>
-                                        </div>
+                                        {{-- <div class="user-avatar lg " style="background-color:#df6d14">
+                                           <span></span>
+                                        </div> --}}
                                         <div class="user-info">
-                                           <div class="badge bg-outline-light rounded-pill ucap">Investor</div>
-                                           <h5>Abu Bin Ishtiyak</h5>
-                                           <span class="sub-text">info@softnio.com</span>
+                                           <div class="badge bg-outline-light rounded-pill ucap">Demande</div>
+                                           <h5>Evaluation de la demande</h5>
+                                           <span class="sub-text">Note /20</span>
+                                           <ul class="btn-toolbar justify-center gx-1 mt-1">
+                                        {{-- <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-shield-off"></em></a></li>
+                                        <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-mail"></em></a></li>
+                                        <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-download-cloud"></em></a></li>
+                                        <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-bookmark"></em></a></li>
+                                        <li><a href="#" class="btn btn-trigger btn-icon text-danger"><em class="icon ni ni-na"></em></a></li> --}}
+                                        
+                                          <li><a href="#" class="btn btn-white btn-dim btn-outline-danger"><em class="icon ni ni-cross-circle"></em><span>refuser </span></a></li>
+                                          <li><a href="{{route("home.demandes.traiterecapedemande.index")}}" class="btn btn-white btn-dim btn-outline-dark"><em class="icon ni ni-check-circle-fill"></em><span>Accepter</span></a></li>
+                                       
+                                     </ul>
                                         </div>
                                      </div>
                                   </div>
                                   <!-- .card-inner -->
-                                  <div class="card-inner card-inner-sm">
+                                  {{-- <div class="card-inner card-inner-sm">
                                      <ul class="btn-toolbar justify-center gx-1">
                                         <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-shield-off"></em></a></li>
                                         <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-mail"></em></a></li>
                                         <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-download-cloud"></em></a></li>
                                         <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-bookmark"></em></a></li>
                                         <li><a href="#" class="btn btn-trigger btn-icon text-danger"><em class="icon ni ni-na"></em></a></li>
+                                        
+                                          <li><a href="#" class="btn btn-white btn-dim btn-outline-danger"><em class="icon ni ni-cross-circle"></em><span>refuser </span></a></li>
+                                          <li><a href="{{route("home.demandes.traiterecapedemande.index")}}" class="btn btn-white btn-dim btn-outline-dark"><em class="icon ni ni-check-circle-fill"></em><span>Accepter</span></a></li>
+                                       
                                      </ul>
                                   </div>
-                                  <!-- .card-inner -->
+                                  <!-- .card-inner --> --}}
                                   <div class="card-inner">
                                      <div class="overline-title-alt mb-2">In Account</div>
                                      <div class="profile-balance">
                                         <div class="profile-balance-group gx-4">
-                                           <div class="profile-balance-sub">
-                                              <div class="profile-balance-amount">
-                                                 <div class="number">2,500.00 <small class="currency currency-usd">USD</small></div>
-                                              </div>
-                                              <div class="profile-balance-subtitle">Invested Amount</div>
-                                           </div>
-                                           <div class="profile-balance-sub">
-                                              <span class="profile-balance-plus text-soft"><em class="icon ni ni-plus"></em></span>
-                                              <div class="profile-balance-amount">
-                                                 <div class="number">1,643.76</div>
-                                              </div>
-                                              <div class="profile-balance-subtitle">Profit Earned</div>
-                                           </div>
+                                                <ul class="custom-control-group">
+                                                   
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-radio custom-control-pro">
+                                                            <input type="radio" class="custom-control-input" name="btnRadio" id="btnRadio3">
+                                                            <label class="custom-control-label" for="btnRadio3">Radio Label</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-radio custom-control-pro">
+                                                            <input type="radio" class="custom-control-input" name="btnRadio" id="btnRadio5" checked>
+                                                            <label class="custom-control-label" for="btnRadio5">Radio Checked</label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                         </div>
                                      </div>
                                   </div>
@@ -256,7 +401,7 @@
                                            <span>15 Feb, 2019 01:02 PM</span>
                                         </div>
                                         <div class="col-6">
-                                           <span class="sub-text">KYC Status:</span>
+                                           <span class="sub-text">Status:</span>
                                            <span class="lead-text text-success">Approved</span>
                                         </div>
                                         <div class="col-6">
