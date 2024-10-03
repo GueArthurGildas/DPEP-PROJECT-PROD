@@ -3,6 +3,7 @@
    <div class="loading-animation tri-ring"></div>
 </div>
 --}}
+{{userRole()}}
 <div class="nk-content nk-content-lg nk-content-fluid">
    <div class="container-xl wide-lg">
       <div class="nk-content-inner">

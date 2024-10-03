@@ -1,6 +1,7 @@
 
 
                  <div class="nk-block-head m-4" >
+
                                 <div class="nk-block-between-md g-3">
                                     <div class="nk-block-head-content">
                                         <div class="align-center flex-wrap pb-2 gx-4 gy-3">
@@ -8,16 +9,19 @@
                                                 <h2 class="nk-block-title fw-normal">Bienvenue <b> <strong>{{userFullName()}}</strong>  /  Accueil </h2>
                                             </div>
                                             <div>
-                                                <a href="javascript:void(0);"  onclick="afficheAndDisapearingLoadSvg()" class="btn btn-white btn-light">Liste des demandes <em class="icon ni ni-arrow-long-right ms-2"></em>
-                                                </a>
-                                                 <form id="form-go-to-ListeDemande" action="{{route("home.navires.listnavire.index")}}" method="get" class="d-none">
-                                                            @csrf
-                                                 </form>
+                                                @can("Agent")
+                                                        <a href="javascript:void(0);"  onclick="afficheAndDisapearingLoadSvg()" class="btn btn-white btn-light">Liste des demandes <em class="icon ni ni-arrow-long-right ms-2"></em>
+                                                        </a>
+                                                        <form id="form-go-to-ListeDemande" action="{{route("home.navires.listnavire.index")}}" method="get" class="d-none">
+                                                                    @csrf
+                                                        </form>
+                                                @endcan
+                                                
 
                                             </div>
                                         </div>
                                         <div class="nk-block-des">
-                                            <p>Voici un aperçu des statistiques de toute les demandes dans l'application MIRAH GESTION e-DPEP  . Profitez!</p>
+                                            <p>Aperçu des statistiques de toute les demandes dans l'application MIRAH GESTION e-DPEP  . Profitez!</p>
                                         </div>
                                     </div><!-- .nk-block-head-content -->
                                     <div class="nk-block-head-content d-none d-md-block">

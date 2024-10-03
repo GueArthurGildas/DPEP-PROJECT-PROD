@@ -30,6 +30,8 @@
                                 <li class="nk-menu-heading">
                                     <h6 class="overline-title text-primary-alt">Menu Pricipale </h6>
                                 </li><!-- .nk-menu-heading -->
+
+                                @can("Agent")
                                 <li class="nk-menu-item has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
                                         <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb-fill"></em></span>
@@ -75,6 +77,10 @@
                                         </li>
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
+                                @endcan
+
+                                @can("Inspecteur")
+                                    
                                 <li class="nk-menu-item has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
                                         <span class="nk-menu-icon"><em class="icon ni ni-cc-alt2-fill"></em></span>
@@ -90,18 +96,24 @@
                                         </li>
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-heading">
-                                    <h6 class="overline-title text-primary-alt">Configuration</h6>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item  ">
-                                    <a href="#" class="nk-menu-link ">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-setting-alt-fill"></em></span>
-                                        <span class="nk-menu-text">Paramètre</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
 
-                                <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-account-setting-fill"></em></span><span class="nk-menu-text">Administration</span></a></li>
-                                
+                                @endcan
+
+                                @can("admin")
+                                    <li class="nk-menu-heading">
+                                        <h6 class="overline-title text-primary-alt">Configuration</h6>
+                                    </li><!-- .nk-menu-item -->
+                                    <li class="nk-menu-item  ">
+                                        <a href="#" class="nk-menu-link ">
+                                            <span class="nk-menu-icon"><em class="icon ni ni-setting-alt-fill"></em></span>
+                                            <span class="nk-menu-text">Paramètre</span>
+                                        </a>
+                                    </li><!-- .nk-menu-item -->
+
+                                    <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-account-setting-fill"></em></span><span class="nk-menu-text">Administration</span></a></li>
+                                 @endcan
+
+
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->

@@ -33,13 +33,14 @@ class HomeController extends Controller
         // dd(userRole());
         $viewToShow = "home";
 
-        if($userRoleAuth==="Armateur"){
+
+        if($userRoleAuth==="Agent" || $userRoleAuth==="Inspecteur" ){
             $viewToShow="home-agent";
         }
 
         //return redirect()->route('home.demandes.recapedemande.index');
 
-
+    
         return view($viewToShow,[
             "userdemandes"=> Demande::where("users_id", "like", Auth()->user()->id)->orderby("id","desc")->paginate(4),
             "nbDemandeUser"=> $nbDemdemandeUsers,

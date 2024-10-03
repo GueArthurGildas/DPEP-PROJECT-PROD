@@ -6,9 +6,12 @@
     <div class="js-preloader">
     {{-- <div class="loading-animation tri-ring"></div> --}}
 </div>
+     
+        <p>je suis ici et toi </p>{{ userRole()}}
         @include("agent.welcome")
         <hr>
         @include("agent.agent-page-stat")
-   
+        <hr>
+        
 
 @endsection

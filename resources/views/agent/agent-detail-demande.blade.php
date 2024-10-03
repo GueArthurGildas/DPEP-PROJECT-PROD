@@ -5,7 +5,7 @@
     <div class="nk-block-head nk-block-head-sm">
        <div class="nk-block-between g-3">
           <div class="nk-block-head-content">
-             <h3 class="nk-block-title page-title">Demande  / <strong class="text-warning small">DPEP-0D575D</strong></h3>
+             <h4 class="nk-block-title page-title mt-2">Ref :   <strong class="text-danger small">DPEP-0D575D</strong></h4>
              <div class="nk-block-des text-soft">
                 <ul class="list-inline">
                    <li>ID demandeur: <span class="text-base">UD003054</span></li>
@@ -14,7 +14,7 @@
              </div>
           </div>
           <div class="nk-block-head-content">
-             <a href="html/user-list-regular.html" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
+             <a href="{{route("home.demandes.listedemandeforagents.index")}}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Retour</span></a>
              <a href="html/user-list-regular.html" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-left"></em></a>
           </div>
        </div>
@@ -26,20 +26,21 @@
              <div class="card-content">
                 <ul class="nav nav-tabs nav-tabs-mb-icon nav-tabs-card">
                    <li class="nav-item">
-                      <a class="nav-link active"  data-bs-toggle="tab" href="#tabItem5"  ><em class="icon ni ni-activity"></em><span>Information Demande </span></a>
+                      <a class="nav-link active"  data-bs-toggle="tab" href="#tabItem5"  ><em class="icon ni ni-file-text"></em><span>Détail Demande </span></a>
                    </li>
                    <li class="nav-item">
                       <a class="nav-link " data-bs-toggle="tab" href="#tabItem6" ><em class="icon ni ni-repeat"></em><span>Les autorisations</span></a>
                    </li>
-                   <li class="nav-item">
-                      <a class="nav-link" data-bs-toggle="tab" href="#tabItem5"><em class="icon ni ni-file-text"></em><span>Documents</span></a>
+                    <li class="nav-item">
+                      <a class="nav-link"data-bs-toggle="tab" href="#tabItem7"><em class="icon ni ni-activity"></em><span>Capture</span></a>
                    </li>
                    <li class="nav-item">
-                      <a class="nav-link"data-bs-toggle="tab" href="#tabItem7"><em class="icon ni ni-activity"></em><span>Navires</span></a>
+                      <a class="nav-link" data-bs-toggle="tab" href="#tabItem5"><em class="icon ni ni-clip"></em><span>Documents</span></a>
                    </li>
-                   <li class="nav-item">
+                  
+                   {{-- <li class="nav-item">
                       <a class="nav-link" href="#tabItem7"><em class="icon ni ni-user-circle"></em><span>Demandeur</span></a>
-                   </li>
+                   </li> --}}
                    <li class="nav-item nav-item-trigger d-xxl-none">
                       <a href="#tabItem6" class="toggle btn btn-icon btn-trigger" data-target="userAside"><em class="icon ni ni-user-list-fill"></em></a>
                    </li>
@@ -47,30 +48,31 @@
                 <!-- .nav-tabs -->
 
                  <div class="tab-content">
+                        
                         <div class="tab-pane active" id="tabItem5">
                                  <div class="card-inner">
                                     <div class="nk-block">
                                        <div class="nk-block-head">
                                           <h5 class="title">Détail Demande</h5>
-                                          <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+                                          <p>Basic info, like your Demande ID and so on, that you use on Nio Platform.</p>
                                        </div>
                                        <!-- .nk-block-head -->
                                        <div class="profile-ud-list">
                                           <div class="profile-ud-item">
                                              <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Title</span>
-                                                <span class="profile-ud-value">Mr.</span>
+                                                <span class="profile-ud-label">Port d'escale Envisagé</span>
+                                                <span class="profile-ud-value">Abidjan</span>
                                              </div>
                                           </div>
                                           <div class="profile-ud-item">
                                              <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Full Name</span>
-                                                <span class="profile-ud-value">Abu Bin Ishtiyak</span>
+                                                <span class="profile-ud-label">Etat du port</span>
+                                                <span class="profile-ud-value">Côte d'Ivoire</span>
                                              </div>
                                           </div>
                                           <div class="profile-ud-item">
                                              <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Date of Birth</span>
+                                                <span class="profile-ud-label">Date et heure d'arrivée estimées</span>
                                                 <span class="profile-ud-value">10 Aug, 1980</span>
                                              </div>
                                           </div>
@@ -133,7 +135,7 @@
                                     <div class="nk-divider divider md"></div>
                                     <div class="nk-block">
                                        <div class="nk-block-head nk-block-head-sm nk-block-between">
-                                          <h5 class="title">Admin Note</h5>
+                                          <h5 class="title">Demandeur</h5>
                                           <a href="#" class="link link-sm">+ Add Note</a>
                                        </div>
                                        <!-- .nk-block-head -->
@@ -169,128 +171,319 @@
                                  </div>
                                  <!-- .card-inner --> 
                         </div>
-                        <div class="tab-pane active" id="tabItem6">
+
+                        <div class="tab-pane" id="tabItem6">
                                  <div class="card-inner">
                                     <div class="nk-block">
                                        <div class="nk-block-head">
-                                          <h5 class="title">Les Differentes Autorisations renseignées </h5>
+                                          <h5 class="title">Les Autorisations de pêche </h5>
                                           <p>Basic info, like your name and address, that you use on Nio Platform.</p>
                                        </div>
                                        <!-- .nk-block-head -->
                                        <div class="profile-ud-list">
                                           <div class="profile-ud-item">
                                              <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Title</span>
-                                                <span class="profile-ud-value">Mr.</span>
+                                                <span class="profile-ud-label">Nb de demandes</span>
+                                                <span class="profile-ud-value">5</span>
                                              </div>
                                           </div>
                                           <div class="profile-ud-item">
                                              <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Full Name</span>
-                                                <span class="profile-ud-value">Abu Bin Ishtiyak</span>
+                                                <span class="profile-ud-label">peche</span>
+                                                <span class="profile-ud-value">4</span>
                                              </div>
                                           </div>
                                           <div class="profile-ud-item">
                                              <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Date of Birth</span>
+                                                <span class="profile-ud-label">Autorisation</span>
                                                 <span class="profile-ud-value">10 Aug, 1980</span>
                                              </div>
                                           </div>
                                           <div class="profile-ud-item">
                                              <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Surname</span>
-                                                <span class="profile-ud-value">IO</span>
+                                                <span class="profile-ud-label">Pêches</span>
+                                                <span class="profile-ud-value">20</span>
                                              </div>
                                           </div>
-                                          <div class="profile-ud-item">
-                                             <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Mobile Number</span>
-                                                <span class="profile-ud-value">01713040400</span>
-                                             </div>
-                                          </div>
-                                          <div class="profile-ud-item">
-                                             <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Email Address</span>
-                                                <span class="profile-ud-value">info@softnio.com</span>
-                                             </div>
-                                          </div>
+                                       
                                        </div>
                                        <!-- .profile-ud-list -->
                                     </div>
                                     <!-- .nk-block -->
                                     <div class="nk-block">
-                                       <div class="nk-block-head nk-block-head-line">
-                                          <h6 class="title overline-title text-base">Additional Information</h6>
-                                       </div>
-                                       <!-- .nk-block-head -->
-                                       <div class="profile-ud-list">
-                                          <div class="profile-ud-item">
-                                             <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Joining Date</span>
-                                                <span class="profile-ud-value">08-16-2018 09:04PM</span>
-                                             </div>
-                                          </div>
-                                          <div class="profile-ud-item">
-                                             <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Reg Method</span>
-                                                <span class="profile-ud-value">Email</span>
-                                             </div>
-                                          </div>
-                                          <div class="profile-ud-item">
-                                             <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Country</span>
-                                                <span class="profile-ud-value">United State</span>
-                                             </div>
-                                          </div>
-                                          <div class="profile-ud-item">
-                                             <div class="profile-ud wider">
-                                                <span class="profile-ud-label">Nationality</span>
-                                                <span class="profile-ud-value">United State</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <!-- .profile-ud-list -->
+                                      <div class="card card-preview">
+                                            <table class="table table-tranx is-compact">
+                                                <thead>
+                                                    <tr class="tb-tnx-head">
+                                                        <th class="tb-tnx-id"><span class="">#</span></th>
+                                                        <th class="tb-tnx-info">
+                                                            <span class="tb-tnx-desc d-none d-sm-inline-block">
+                                                                <span>Nom </span>
+                                                            </span>
+                                                            <span class="tb-tnx-date d-md-inline-block d-none">
+                                                                <span class="d-md-none">Date</span>
+                                                                <span class="d-none d-md-block">
+                                                                    <span>Issue Date</span>
+                                                                    <span>Due Date</span>
+                                                                </span>
+                                                            </span>
+                                                        </th>
+                                                        <th class="tb-tnx-amount">
+                                                            <span class="tb-tnx-total">Total</span>
+                                                            <span class="tb-tnx-status d-none d-md-inline-block">Autre</span>
+                                                        </th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4947</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Enterprize Year Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">10-05-2019</span>
+                                                                <span class="date">10-13-2019</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$599.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status">
+                                                                <span class="badge badge-dot bg-warning">test</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4904</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Maintenance Year Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">06-19-2019</span>
+                                                                <span class="date">06-26-2019</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$99.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status"><span class="badge badge-dot bg-success">test</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4829</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Enterprize Year Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">10-04-2018</span>
+                                                                <span class="date">10-12-2018</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$599.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status"><span class="badge badge-dot bg-success">test</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4830</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Enterprize Anniversary Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">12-04-2018</span>
+                                                                <span class="date">14-12-2018</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$399.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status"><span class="badge badge-dot bg-success">test</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4840</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Enterprize Coverage Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">12-08-2018</span>
+                                                                <span class="date">13-22-2018</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$99.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status"><span class="badge badge-dot bg-danger">test</span></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div><!-- .card -->
                                     </div>
                                     <!-- .nk-block -->
                                     <div class="nk-divider divider md"></div>
                                     <div class="nk-block">
                                        <div class="nk-block-head nk-block-head-sm nk-block-between">
-                                          <h5 class="title">Admin Note</h5>
+                                          <h5 class="title">Les autorisations de transbordement</h5>
                                           <a href="#" class="link link-sm">+ Add Note</a>
                                        </div>
                                        <!-- .nk-block-head -->
-                                       <div class="bq-note">
-                                          <div class="bq-note-item">
-                                             <div class="bq-note-text">
-                                                <p>Aproin at metus et dolor tincidunt feugiat eu id quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sollicitudin non nunc vel pharetra. </p>
-                                             </div>
-                                             <div class="bq-note-meta">
-                                                <span class="bq-note-added">Added on <span class="date">November 18, 2019</span> at <span class="time">5:34 PM</span></span>
-                                                <span class="bq-note-sep sep">|</span>
-                                                <span class="bq-note-by">By <span>Softnio</span></span>
-                                                <a href="#" class="link link-sm link-danger">Delete Note</a>
-                                             </div>
-                                          </div>
-                                          <!-- .bq-note-item -->
-                                          <div class="bq-note-item">
-                                             <div class="bq-note-text">
-                                                <p>Aproin at metus et dolor tincidunt feugiat eu id quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sollicitudin non nunc vel pharetra. </p>
-                                             </div>
-                                             <div class="bq-note-meta">
-                                                <span class="bq-note-added">Added on <span class="date">November 18, 2019</span> at <span class="time">5:34 PM</span></span>
-                                                <span class="bq-note-sep sep">|</span>
-                                                <span class="bq-note-by">By <span>Softnio</span></span>
-                                                <a href="#" class="link link-sm link-danger">Delete Note</a>
-                                             </div>
-                                          </div>
-                                          <!-- .bq-note-item -->
-                                       </div>
-                                       <!-- .bq-note -->
+                                       <div class="card card-preview">
+                                            <table class="table table-tranx is-compact">
+                                                <thead>
+                                                    <tr class="tb-tnx-head">
+                                                        <th class="tb-tnx-id"><span class="">#</span></th>
+                                                        <th class="tb-tnx-info">
+                                                            <span class="tb-tnx-desc d-none d-sm-inline-block">
+                                                                <span>Nom</span>
+                                                            </span>
+                                                            <span class="tb-tnx-date d-md-inline-block d-none">
+                                                                <span class="d-md-none">Date</span>
+                                                                <span class="d-none d-md-block">
+                                                                    <span>Issue Date</span>
+                                                                    <span>Due Date</span>
+                                                                </span>
+                                                            </span>
+                                                        </th>
+                                                        <th class="tb-tnx-amount">
+                                                            <span class="tb-tnx-total">Total</span>
+                                                            <span class="tb-tnx-status d-none d-md-inline-block">Status</span>
+                                                        </th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4947</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Enterprize Year Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">10-05-2019</span>
+                                                                <span class="date">10-13-2019</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$599.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status">
+                                                                <span class="badge badge-dot bg-warning">Test</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4904</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Maintenance Year Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">06-19-2019</span>
+                                                                <span class="date">06-26-2019</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$99.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status"><span class="badge badge-dot bg-success">Test</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4829</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Enterprize Year Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">10-04-2018</span>
+                                                                <span class="date">10-12-2018</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$599.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status"><span class="badge badge-dot bg-success">Test</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4830</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Enterprize Anniversary Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">12-04-2018</span>
+                                                                <span class="date">14-12-2018</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$399.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status"><span class="badge badge-dot bg-success">Test</span></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tb-tnx-item">
+                                                        <td class="tb-tnx-id">
+                                                            <a href="#"><span>4840</span></a>
+                                                        </td>
+                                                        <td class="tb-tnx-info">
+                                                            <div class="tb-tnx-desc">
+                                                                <span class="title">Enterprize Coverage Subscription</span>
+                                                            </div>
+                                                            <div class="tb-tnx-date">
+                                                                <span class="date">12-08-2018</span>
+                                                                <span class="date">13-22-2018</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tb-tnx-amount">
+                                                            <div class="tb-tnx-total">
+                                                                <span class="amount">$99.00</span>
+                                                            </div>
+                                                            <div class="tb-tnx-status"><span class="badge badge-dot bg-danger">Test</span></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div><!-- .card -->
                                     </div>
                                     <!-- .nk-block -->
                                  </div>
                                  <!-- .card-inner --> 
                         </div>
+
+                        
+                        
                   </div>
               
              </div>
@@ -307,13 +500,13 @@
                                <div class="simplebar-content" style="padding: 0px;">
                                   <div class="card-inner">
                                      <div class="user-card user-card-s2">
-                                        {{-- <div class="user-avatar lg " style="background-color:#df6d14">
+                                        <div class="user-avatar lg " style="background-color:#df6d14">
                                            <span></span>
-                                        </div> --}}
+                                        </div>
                                         <div class="user-info">
                                            <div class="badge bg-outline-light rounded-pill ucap">Demande</div>
-                                           <h5>Evaluation de la demande</h5>
-                                           <span class="sub-text">Note /20</span>
+                                           <h5>Navire</h5>
+                                           <span class="sub-text">Nom du navire :</span>
                                            <ul class="btn-toolbar justify-center gx-1 mt-1">
                                         {{-- <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-shield-off"></em></a></li>
                                         <li><a href="#" class="btn btn-trigger btn-icon"><em class="icon ni ni-mail"></em></a></li>
@@ -371,7 +564,7 @@
                                         <div class="col-4">
                                            <div class="profile-stats">
                                               <span class="amount">23</span>
-                                              <span class="sub-text">Total Order</span>
+                                              <span class="sub-text">Nb Inspections</span>
                                            </div>
                                         </div>
                                         <div class="col-4">

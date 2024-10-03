@@ -43,16 +43,10 @@
                                  </ul>
                               </div>
                            </div>
-                            <div class="no-passport-details clearfix" style="border-bottom: 3px solid green; margin-top: 15px; margin-bottom: 10px;">
-                                 <div class="col-md-1 col-sm-1 col-xs-2 no-padding-left" style="position: relative;">
-                                    <div class="number-square" style="background-color:green">
-                                       A 
-                                    </div>
-                                 </div>
-                              </div>
+                            
                         <hr>
       <div class="example-alert" >
-         <div class="alert alert-pro alert-warning ">
+         <div class="alert alert-pro  ">
             <div class="nk-content-inner ">
             
                <div class="nk-content-body ">

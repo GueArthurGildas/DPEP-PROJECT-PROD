@@ -119,19 +119,19 @@
             <div class="collapse navbar-collapse justify-content-between align-items-center" id="ntg">
                 <ul class="navbar-nav mx-auto alt-font">
                     <li class="nav-item">
-                        <a class="nav-link scroll active" href="#home">Home</a>
+                        <a class="nav-link scroll active" href="#home">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#about">About Us</a>
+                        <a class="nav-link scroll" href="#about">A propos </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#services">Our Services</a>
+                        <a class="nav-link scroll" href="#services">Nos Services</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link scroll" href="#portfolio">Portfolio</a>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#blog">Latest News</a>
+                        <a class="nav-link scroll" href="#blog">Actualité MIRAH</a>
                     </li>
                 </ul>
                 <a href="{{route('login')}}" class="btn btn-nav " style="background-color:#066C02;border:none">Connexion</a>
@@ -235,7 +235,7 @@
                 <!-- SLIDE  -->
                 <li data-index="rs-97" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset("images/412663718.jpg")}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <img src="{{asset("images/navie-peche-1.jpg")}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <div class="bg-overlay bg-black opacity-5"></div>
                     <!-- LAYER NR. 1 -->
@@ -366,11 +366,11 @@
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 col-lg-4 offset-lg-2 text-md-center text-lg-left wow fadeInLeft content-margin" data-wow-duration="1.5s" data-wow-delay="1.2s">
                     <div class="area-heading text-center text-lg-left">
-                        <h1 class="main-font text-white font-weight-bold mb-4 text-dark ">Hi I’m <span class="d-block text-white" style="background-color:#df6d14">Morris Douglas</span></h1>
+                        <h1 class="main-font text-white font-weight-bold mb-4 text-dark ">MIRAH <span class="d-block text-white" style="background-color:#df6d14">eDpep-News </span></h1>
                         <p class="text-white alt-font mb-5 text-dark">Donec quis nunc mollis, tincidunt mi vel, pellentesque arcu. Nam nec tristique ex, vitae posuere enim. Nunc vulputate metus id ex pretium fermentum. </p>
                         {{-- <a href="#portfolio-area" class="scroll btn btn-medium btn-rounded btn-trans-dark mb-5 text-dark">My Work</a> --}}
 
-                        <a href="#" class="scroll btn btn-medium btn-rounded btn-trans-white mt-2" style="background-color:#df6d14">Learn More</a>
+                        <a href="#" class="scroll btn btn-medium btn-rounded btn-trans-white mt-2" style="background-color:#df6d14">Voir plus</a>
 
                     </div>
                 </div>
@@ -388,19 +388,19 @@
                     <!-- First Skill -->
                     <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.2s">
                         <span class="about-icon"><a href="#"><i class="la la-laptop"></i></a></span>
-                        <h4 class="small-heading main-font">Web Design</h4>
+                        <h4 class="small-heading main-font">Demande </h4>
                         <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
                     </div>
                     <!-- Second Skill -->
                     <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
                         <span class="about-icon"><a href="#"><i class="las la-pen-fancy"></i></a></span>
-                        <h4 class="small-heading main-font">Logo Designs</h4>
+                        <h4 class="small-heading main-font">Traitement</h4>
                         <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
                     </div>
                     <!-- Third Skill -->
                     <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.8s">
                         <span class="about-icon"><a href="#"><i class="las la-digital-tachograph"></i></a></span>
-                        <h4 class="small-heading main-font">SEO Marketing</h4>
+                        <h4 class="small-heading main-font">Résultat</h4>
                         <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
                     </div>
                 </div>
@@ -448,11 +448,11 @@
             <!-- Content -->
             <div class="col-sm-12 col-md-6 pl-md-5 wow fadeInRight order-1 order-md-1" data-wow-duration="1.5s" data-wow-delay=".5s">
                 <div class="about-heading">
-                    <p class="text-small alt-font text-red">My Success Story</p>
-                    <h1 class="heading margin_heading main-font">How I Started</h1>
+                    <p class="text-small alt-font text-red">Quoi faire ?</p>
+                    <h1 class="heading margin_heading main-font">Demonstration eDpep</h1>
                     <p class="info text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu. Lorem ipsum dolor sit amet.</p>
                     <p class="info my-4 text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
-                    <a href="#" class="scroll btn btn-medium btn-rounded btn-trans-white mt-2" style="background-color:#df6d14">Learn More</a>
+                    <a href="#" class="scroll btn btn-medium btn-rounded btn-trans-white mt-2" style="background-color:#df6d14">Apprendre plus</a>
                 </div>
             </div>
         </div>
@@ -585,7 +585,7 @@
         <div class="row text-md-left text-center">
             <!--Column-->
             <div class="col-lg-4 col-md-6">
-                <h3 class="mb-3 text-white">Company</h3>
+                <h3 class="mb-3 text-white">MIRAH</h3>
                 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     <br>
                     Donec orci felis, feugiat in aliquam eu, dictum in arcu. Sed vel cursus lectus,
@@ -630,7 +630,7 @@
                 <h6 class="text-white mb-3">Ocassionally hear from us</h6>
                 <label class="input-group footer-mail">
                     <input type="email" class="form-control" placeholder="Enter Email Address">
-                <button class="btn btn-medium btn-green btn-hvr-white" type="submit">YES I'M IN</button>
+                <button class="btn btn-medium btn-green btn-hvr-white" type="submit">S'inscrire</button>
                 </label>
             </div>
         </div>

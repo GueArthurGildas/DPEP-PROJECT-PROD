@@ -293,7 +293,7 @@
                   <div class="nk-tb-col tb-col-xxl">
                      <span>
                         <div class="progress progress-lg bg-light" >
-                           <div class="progress-bar bg-dark " data-progress="70">70% </div>
+                           <div class="progress-bar bg-dark " data-progress="70"><b>70% </b></div>
                         </div>
                      </span>
                   </div>

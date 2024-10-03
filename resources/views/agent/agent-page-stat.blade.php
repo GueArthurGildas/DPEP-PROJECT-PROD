@@ -1,4 +1,7 @@
                                
+                                <div>
+                                
+                                
                                 <div class="nk-block">
                                     <div class="row g-gs">
                                         <div class="col-xxl-3 col-sm-6">
@@ -81,7 +84,7 @@
                                                     <div class="card-inner">
                                                         <div class="card-title-group mb-3">
                                                             <div class="card-title">
-                                                                <h6 class="title">Acceptées VS refusées</h6>
+                                                                <h6 class="title">Stat Inspections</h6>
                                                             </div>
                                                             <div class="card-tools">
                                                                 <div class="dropdown">
@@ -100,13 +103,13 @@
                                                             <li>
                                                                 <div class="title">
                                                                     <span class="dot dot-lg sq" data-bg="#6576ff"></span>
-                                                                    <span>Total Acceptés</span>
+                                                                    <span>Navires CICTA</span>
                                                                 </div>
                                                             </li>
                                                             <li>
                                                                 <div class="title">
                                                                     <span class="dot dot-lg sq" data-bg="#eb6459"></span>
-                                                                    <span>Total refusés</span>
+                                                                    <span>Navires non CICTA</span>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -198,5 +201,48 @@
                                                 </div><!-- .card-inner -->
                                             </div><!-- .card -->
                                         </div><!-- .col -->
+
+                                        <div class="col-xxl-3 col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group mb-2">
+                                                        <div class="card-title">
+                                                            <h6 class="title text-danger">Stat demandes par objet</h6>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="nk-store-statistics">
+                                                        <li class="item">
+                                                            <div class="info">
+                                                                <div class="title">Escales Technique </div>
+                                                                <div class="count">75</div>
+                                                            </div>
+                                                            <em class="icon bg-primary-dim ni ni-bag"></em>
+                                                        </li>
+                                                        <li class="item">
+                                                            <div class="info">
+                                                                <div class="title">Transbordement </div>
+                                                                <div class="count">8</div>
+                                                            </div>
+                                                            <em class="icon bg-warning-dim fas fa-solid fa-ship "></em>
+                                                        </li>
+                                                        <li class="item">
+                                                            <div class="info">
+                                                                <div class="title">Débarquement</div>
+                                                                <div class="count">674</div>
+                                                            </div>
+                                                            <em class="icon bg-info-dim fas fa-solid fa-anchor "></em>
+                                                        </li>
+                                                        <li class="item">
+                                                            <div class="info">
+                                                                <div class="title">Autre Raison</div>
+                                                                <div class="count">68</div>
+                                                            </div>
+                                                            <em class="icon bg-purple-dim ni ni-server"></em>
+                                                        </li>
+                                                    </ul>
+                                                </div><!-- .card-inner -->
+                                            </div><!-- .card -->
+                                        </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .nk-block -->
+                                </div>
